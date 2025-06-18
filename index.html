@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Miraglio - Desarrollador Full Stack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Luis Miraglio</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#habilidades" class="nav-link">Habilidades</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <!-- Partículas de fondo para aspecto técnico -->
+        <div id="particles-js" class="hero-particles"></div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-header">
+                    <span class="hero-greeting" data-aos="fade-up">Bienvenido a mi portafolio</span>
+                    <h1 class="hero-title" data-aos="fade-right">
+                        Soy <span class="highlight">Luis Miraglio</span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-right" data-aos-delay="200">
+                        Especialista en Automatización de Redes FTTH y Desarrollo Full Stack
+                    </p>
+                    <div class="title-bar" data-aos="fade-right" data-aos-delay="300"></div>
+                </div>
+                
+                <div class="hero-tags" data-aos="fade-up" data-aos-delay="400">
+                    <span class="hero-tag">Python</span>
+                    <span class="hero-tag">Automatización</span>
+                    <span class="hero-tag">Redes FTTH</span>
+                    <span class="hero-tag">Redes Informáticas</span>
+                    <span class="hero-tag">Desarrollo Full Stack</span>
+                </div>
+                
+                <div class="hero-company" data-aos="fade-up" data-aos-delay="600">
+                    <span class="company-badge">
+                        <i class="fas fa-building"></i> Conectar SRL
+                    </span>
+                    <span class="cert-badge">
+                        <i class="fab fa-aws"></i> AWS Certified Cloud Practitioner
+                    </span>
+                </div>
+                
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                <div class="profile-card">
+                    <div class="card-decoration">
+                        <div class="code-lines">
+                            <span class="code-line"><span class="code-keyword">class</span> <span class="code-class">Developer</span> {</span>
+                            <span class="code-line">  <span class="code-property">name:</span> <span class="code-string">'Luis Miraglio'</span>,</span>
+                            <span class="code-line">  <span class="code-property">skills:</span> [<span class="code-string">'Python'</span>, <span class="code-string">'Automation'</span>],</span>
+                            <span class="code-line">  <span class="code-property">expertise:</span> <span class="code-string">'Networks'</span>,</span>
+                            <span class="code-line">  <span class="code-method">getSolution</span>() {</span>
+                            <span class="code-line">    <span class="code-keyword">return</span> <span class="code-string">'Efficient Code'</span>;</span>
+                            <span class="code-line">  }</span>
+                            <span class="code-line">}</span>
+                        </div>
+                        <div class="cursor-blink"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#sobre-mi">
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="section-subtitle">Conoce más sobre mi trayectoria y pasión por la programación</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-cards-container">
+                    <div class="about-card" data-aos="fade-up">
+                        <div class="card-header">
+                            <i class="fas fa-user-tie"></i>
+                            <h3>Perfil Profesional</h3>
+                        </div>
+                        <p>Soy Técnico Superior en Redes Informáticas con una fuerte orientación a la automatización de procesos técnicos, especialmente en el entorno de FTTH (Fibra hasta el Hogar). Me desempeño en Conectar SRL, una empresa radicada en Sunchales que ofrece servicios de Internet por fibra óptica, streaming, soluciones corporativas, ciberseguridad y desarrollo de software a medida.</p>
+                    </div>
+                    
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-header">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Desarrollo de Soluciones</h3>
+                        </div>
+                        <p>Dentro de Conectar, diseño y mantengo herramientas en Python que automatizan la configuración de ONUs y módems, diagnostican redes GPON (vía SecureCRT) o integran notificaciones de tickets. Estas soluciones se usan actualmente en el entorno de producción, optimizando procesos técnicos, reduciendo errores y acelerando las activaciones de servicio, alineándose con la promesa de Conectar de "conectividad confiable y de vanguardia".</p>
+                    </div>
+                    
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <i class="fas fa-code-branch"></i>
+                            <h3>Experiencia Técnica</h3>
+                        </div>
+                        <p>Poseo también experiencia en SQL y C#/.NET Framework, lo que me permite integrar soluciones de escritorio o bases de datos cuando el proyecto lo requiere. Me apasiona aprender nuevas tecnologías, especialmente en el ámbito de la computación en la nube, respaldado por mi certificación AWS Cloud Practitioner.</p>
+                    </div>
+                    
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-header">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Enfoque y Disponibilidad</h3>
+                        </div>
+                        <p>Soy un profesional orientado a resultados, que busca continuamente optimizar los procesos de red, integrando automatizaciones que faciliten la labor técnica y aseguren la calidad en el servicio. Si querés ver más o hablar sobre cómo contribuir a tu próximo proyecto, estoy disponible para colaborar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mis Proyectos</h2>
+                <p class="section-subtitle">Una muestra de mi trabajo y experiencia en desarrollo</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Proyecto de Automatización de ONUs -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-branded-overlay">
+                            <div class="brand-name">DATACOM</div>
+                            <div class="brand-slogan">AUTOMATION</div>
+                        </div>
+                        <img src="images/onu-automation.jpg" alt="Automatización de ONUs" onerror="this.style.display='none'">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/LuisMiraglio" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/LuisMiraglio?tab=repositories" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Automatización de Configuración de ONUs DATACOM</h3>
+                        <p class="project-description">Este proyecto consiste en una herramienta de automatización diseñada para simplificar y acelerar el proceso de configuración de ONUs (Unidades de Red Óptica) utilizadas en entornos de telecomunicaciones. Utilizando Python y Selenium, desarrollé tres scripts personalizados para los modelos DATACOM DM984-422, DM986-414 y DM986-416 AX30, capaces de realizar toda la configuración inicial del equipo sin intervención manual.</p>
+                        
+                        <p class="project-description">Cada script ejecuta automáticamente tareas clave como:</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Acceso al panel de administración del módem</li>
+                            <li><i class="fas fa-check-circle"></i> Configuración de usuario y contraseña PPPoE</li>
+                            <li><i class="fas fa-check-circle"></i> Asignación de parámetros WAN y VLAN</li>
+                            <li><i class="fas fa-check-circle"></i> Definición de redes Wi-Fi con nombre, canal, seguridad y potencia</li>
+                            <li><i class="fas fa-check-circle"></i> Activación o ajuste de funciones como bridge, NAT o firewall</li>
+                        </ul>
+                        
+                        <p class="project-description">Todo el proceso, que usualmente requiere entre 8 y 15 minutos de configuración manual, se reduce a menos de 2 minutos con mínima interacción del técnico. Esto no solo estandariza las instalaciones, sino que permite escalar procesos de provisión de servicios en empresas de internet (ISPs) con mayor eficiencia.</p>
+                        
+                        <!-- Sección modificada para mostrar los scripts individuales -->
+                        <div class="project-components">
+                            <h4>Proyectos disponibles:</h4>
+                            <div class="script-cards">
+                                <div class="script-card">
+                                    <div class="script-icon">
+                                        <i class="fas fa-terminal"></i>
+                                    </div>
+                                    <div class="script-info">
+                                        <h5>DATACOM DM984-422</h5>
+                                        <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM984-422" class="script-link" target="_blank">
+                                            <i class="fab fa-github"></i> Ver repositorio
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="script-card">
+                                    <div class="script-icon">
+                                        <i class="fas fa-terminal"></i>
+                                    </div>
+                                    <div class="script-info">
+                                        <h5>DATACOM DM986-414</h5>
+                                        <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-414" class="script-link" target="_blank">
+                                            <i class="fab fa-github"></i> Ver repositorio
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="script-card">
+                                    <div class="script-icon">
+                                        <i class="fas fa-terminal"></i>
+                                    </div>
+                                    <div class="script-info">
+                                        <h5>DATACOM DM986-416 AX30</h5>
+                                        <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-416-AX30" class="script-link" target="_blank">
+                                            <i class="fab fa-github"></i> Ver repositorio
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech-container">
+                            <h4 class="tech-title">Tecnologías utilizadas</h4>
+                            <div class="project-tech">
+                                <div class="tech-tag">
+                                    <i class="fab fa-python"></i>
+                                    <span>Python</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fas fa-code"></i>
+                                    <span>Selenium WebDriver</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fas fa-desktop"></i>
+                                    <span>UI Automation</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fas fa-cube"></i>
+                                    <span>PyInstaller</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto SecureCRT-Slots -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <div class="project-branded-overlay">
+                            <div class="brand-name">SecureCRT</div>
+                            <div class="brand-slogan">SLOTS</div>
+                        </div>
+                        <img src="images/securecrt-slots.jpg" alt="SecureCRT Slots" onerror="this.style.display='none'">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/LuisMiraglio/SecureCRT-Slots" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/LuisMiraglio/SecureCRT-Slots" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Diagnóstico Automatizado de ONU en Slots – SecureCRT Script</h3>
+                        <p class="project-description">Este script está diseñado para ejecutarse directamente en SecureCRT, aprovechando su capacidad nativa para correr automatizaciones en entornos de red por consola. La herramienta automatiza el diagnóstico completo de un slot específico en una OLT, simplificando el proceso de monitoreo y resolución de problemas.</p>
+                        
+                        <p class="project-description">La herramienta automatiza las siguientes acciones:</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Ejecuta el comando onu show para identificar los virtuales disponibles dentro del slot seleccionado</li>
+                            <li><i class="fas fa-check-circle"></i> Lanza automáticamente 64 consultas onu status, una para cada virtual, consolidando en un solo paso el estado de todas las ONUs asociadas a ese slot</li>
+                            <li><i class="fas fa-check-circle"></i> Genera una salida completa que muestra estado de conexión (activa, caída, ausente)</li>
+                            <li><i class="fas fa-check-circle"></i> Reporta valores de potencia óptica (RX y TX)</li>
+                            <li><i class="fas fa-check-circle"></i> Identifica indicadores de error para diagnóstico rápido</li>
+                        </ul>
+                        
+                        <p class="project-description">Antes, este análisis debía hacerse manualmente virtual por virtual. Ahora, el script permite diagnosticar el estado completo del slot en segundos, reduciendo drásticamente el tiempo técnico requerido y facilitando tareas preventivas o correctivas. Una solución práctica y eficiente para técnicos de redes y personal de soporte en ISPs que necesitan una visión rápida y detallada del estado de las ONUs en infraestructura FTTH.</p>
+                        
+                        <!-- Nueva sección agregada para mostrar el repositorio de SecureCRT -->
+                        <div class="project-components">
+                            <h4>Proyecto disponible:</h4>
+                            <div class="script-cards">
+                                <div class="script-card">
+                                    <div class="script-icon">
+                                        <i class="fas fa-terminal"></i>
+                                    </div>
+                                    <div class="script-info">
+                                        <h5>SecureCRT Slots</h5>
+                                        <a href="https://github.com/LuisMiraglio/SecureCRT-Slots" class="script-link" target="_blank">
+                                            <i class="fab fa-github"></i> Ver repositorio
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech-container">
+                            <h4 class="tech-title">Tecnologías utilizadas</h4>
+                            <div class="project-tech">
+                                <div class="tech-tag">
+                                    <i class="fab fa-python"></i>
+                                    <span>Python</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fas fa-terminal"></i>
+                                    <span>Script VBS</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>SecureCRT API</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fas fa-wrench"></i>
+                                    <span>Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto Control de Stock -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="project-branded-overlay">
+                            <div class="brand-name">CONTROL</div>
+                            <div class="brand-slogan">DE STOCK</div>
+                        </div>
+                        <img src="images/inventory-management.jpg" alt="Control de Stock" onerror="this.style.display='none'">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/LuisMiraglio/Control-de-Stock" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/LuisMiraglio/Control-de-Stock" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Control de Stock de Productos</h3>
+                        <p class="project-description">Aplicación web completa desarrollada para gestionar el inventario y distribución de productos, permitiendo el seguimiento detallado del stock disponible y entregas realizadas a técnicos. Esta Single Page Application (SPA) funciona completamente en el lado del cliente, sin necesidad de conexión a internet ni servidores externos.</p>
+                        
+                        <p class="project-description">Funcionalidades principales:</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Sistema de autenticación para control de acceso seguro</li>
+                            <li><i class="fas fa-check-circle"></i> Gestión completa de productos (CRUD de transformadores con seguimiento de stock)</li>
+                            <li><i class="fas fa-check-circle"></i> Administración de técnicos con visualización de productos asignados</li>
+                            <li><i class="fas fa-check-circle"></i> Registro de entregas con actualización automática del inventario</li>
+                            <li><i class="fas fa-check-circle"></i> Sistema de respaldo de datos con importación/exportación y respaldos automáticos</li>
+                            <li><i class="fas fa-check-circle"></i> Base de datos SQL completa ejecutándose directamente en el navegador</li>
+                        </ul>
+                        
+                        <p class="project-description">El proyecto utiliza una arquitectura MVC simplificada y demuestra cómo implementar una aplicación de gestión empresarial completa con JavaScript vanilla, aprovechando SQL.js para crear una base de datos relacional que funciona enteramente en el navegador. Toda la persistencia de datos se maneja localmente mediante localStorage, lo que permite una experiencia offline completa sin sacrificar la potencia de las consultas SQL.</p>
+                        
+                        <!-- Sección para mostrar el repositorio -->
+                        <div class="project-components">
+                            <h4>Proyecto disponible:</h4>
+                            <div class="script-cards">
+                                <div class="script-card">
+                                    <div class="script-icon">
+                                        <i class="fas fa-boxes"></i>
+                                    </div>
+                                    <div class="script-info">
+                                        <h5>Control de Stock</h5>
+                                        <a href="https://github.com/LuisMiraglio/Control-de-Stock" class="script-link" target="_blank">
+                                            <i class="fab fa-github"></i> Ver repositorio
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech-container">
+                            <h4 class="tech-title">Tecnologías utilizadas</h4>
+                            <div class="project-tech">
+                                <div class="tech-tag">
+                                    <i class="fab fa-js-square"></i>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fab fa-html5"></i>
+                                    <span>HTML5</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="tech-tag">
+                                    <i class="fas fa-database"></i>
+                                    <span>SQL.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ESPACIO PARA AÑADIR MÁS PROYECTOS EN EL FUTURO -->
+                
+                <!-- ESTRUCTURA DE REFERENCIA PARA NUEVOS PROYECTOS:
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="images/nombre-imagen.jpg" alt="Título del Proyecto" onerror="this.style.display='none'">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#URL_DEL_PROYECTO" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#URL_DEL_GITHUB" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Título del Proyecto</h3>
+                        <p class="project-description">Descripción del proyecto y sus principales características.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tecnología 1</span>
+                            <span class="tech-tag">Tecnología 2</span>
+                            <span class="tech-tag">Tecnología 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Habilidades -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <p class="section-subtitle">Tecnologías y herramientas que domino</p>
+            </div>
+            
+            <!-- Introducción a las habilidades -->
+            <div class="skills-intro" data-aos="fade-up">
+                <p>Mi enfoque técnico combina especialización en redes con desarrollo de software, permitiéndome crear soluciones que integran ambos mundos de manera eficiente.</p>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- NUEVA CATEGORÍA: Redes y Telecomunicaciones -->
+                <div class="skill-category featured-category" data-aos="fade-up">
+                    <div class="category-header">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Redes y Telecomunicaciones</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item featured">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Redes FTTH/GPON</span>
+                        </div>
+                        <div class="skill-item featured">
+                            <i class="fas fa-server"></i>
+                            <span>OLT Management</span>
+                        </div>
+                        <div class="skill-item featured">
+                            <i class="fas fa-wifi"></i>
+                            <span>Configuración ONUs</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Cisco IOS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Seguridad de Red</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-ethernet"></i>
+                            <span>TCP/IP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item featured">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-flask"></i>
+                            <span>Flask</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-windows"></i>
+                            <span>C#</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-window-restore"></i>
+                            <span>.NET Framework</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL/Bases de datos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-wordpress"></i>
+                            <span>WordPress</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3"></i>
+                            <span>Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Herramientas y DevOps</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item featured">
+                            <i class="fas fa-terminal"></i>
+                            <span>SecureCRT</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-vial"></i>
+                            <span>Selenium IDE</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS Cloud</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>Inteligencia Artificial</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>ChatGPT</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>GitHub Copilot</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Claude</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>Deepseek</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:soporteluisdev@gmail.com">soporteluisdev@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://linkedin.com/in/luismiraglio" target="_blank">linkedin.com/in/luismiraglio</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/luismiraglio" target="_blank">github.com/luismiraglio</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/0349315410086" target="_blank">0349315410086</a></p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu email" required>
+                    <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    
+                    <div class="form-privacy">
+                        <input type="checkbox" id="privacy-policy" required>
+                        <label for="privacy-policy">Acepto la <a href="#" class="privacy-link">política de privacidad</a> y el procesamiento de mis datos.</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    
+                    <div class="form-status">
+                        <div class="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <p>¡Mensaje enviado con éxito! Te responderé a la brevedad.</p>
+                        </div>
+                        <div class="form-error">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Ha ocurrido un error. Por favor, inténtalo nuevamente.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Luis Miraglio. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
