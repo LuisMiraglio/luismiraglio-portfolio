@@ -703,7 +703,8 @@
             .project-item,
             .education-item,
             .certification-item,
-            .language-item {
+            .language-item,
+            .role-section {
                 box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
                 page-break-inside: avoid;
                 background-color: white !important;
@@ -801,6 +802,153 @@
             
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Mejoras para dispositivos móviles */
+        @media screen and (max-width: 767px) {
+            .cv-container {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .left-column {
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+                padding: 25px 20px;
+            }
+            
+            .right-column {
+                padding: 25px 20px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .age {
+                font-size: 0.9rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .contact-item {
+                font-size: 0.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .profile-summary {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+            
+            .project-item, .education-item, .certification-item, .language-item, .role-section {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .company {
+                font-size: 1.1rem;
+            }
+            
+            .position {
+                font-size: 0.95rem;
+            }
+            
+            .date-location {
+                font-size: 0.8rem;
+            }
+            
+            .responsibilities li {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+            }
+            
+            .education-title, .certification-name {
+                font-size: 0.95rem;
+            }
+            
+            .education-institution, .certification-provider {
+                font-size: 0.85rem;
+            }
+            
+            .skill-tag {
+                padding: 4px 8px;
+                font-size: 0.8rem;
+            }
+            
+            .skill-category-title {
+                font-size: 0.95rem;
+            }
+            
+            .project-title {
+                font-size: 0.95rem;
+            }
+            
+            .project-description {
+                font-size: 0.85rem;
+            }
+            
+            .project-link {
+                font-size: 0.75rem;
+                word-break: break-all;
+            }
+        }
+        
+        /* Mejoras adicionales para dispositivos muy pequeños */
+        @media screen and (max-width: 380px) {
+            .name {
+                font-size: 1.5rem;
+            }
+            
+            .age {
+                font-size: 0.8rem;
+            }
+            
+            .section {
+                margin-bottom: 25px;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+            
+            .responsibilities li {
+                font-size: 0.8rem;
+            }
+            
+            .contact-item i {
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 12px;
+            }
+            
+            .skill-tag {
+                padding: 3px 6px;
+                margin-bottom: 5px;
+                font-size: 0.75rem;
+            }
+            
+            .skills-list {
+                gap: 5px;
             }
         }
         
