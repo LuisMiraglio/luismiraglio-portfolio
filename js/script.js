@@ -8,6 +8,35 @@ document.addEventListener('DOMContentLoaded', function() {
         mirror: false
     });
     
+    // Función para detectar sección activa durante el scroll
+    const navLinksScroll = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    
+    function highlightNavOnScroll() {
+        let scrollPosition = window.scrollY;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinksScroll.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    // Activar la primera sección por defecto
+    navLinksScroll[0].classList.add('active');
+    
+    // Escuchar evento de scroll
+    window.addEventListener('scroll', highlightNavOnScroll);
+    
     // Inicializar Particles.js
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
@@ -112,8 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Cierra el menú al hacer click en un enlace
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
+    const navLinksMenu = document.querySelectorAll('.nav-link');
+    navLinksMenu.forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');

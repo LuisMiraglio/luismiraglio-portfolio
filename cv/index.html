@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Luis Miraglio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,19 +14,19 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #232946;
+            background: linear-gradient(120deg, #e0e7ff 0%, #c7d2fe 100%);
         }
         
         .cv-container {
             max-width: 210mm;
             margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background: white; /* Fondo blanco clásico restaurado */
+            box-shadow: 0 0 32px rgba(80, 63, 205, 0.13), 0 1.5px 8px rgba(80, 63, 205, 0.08);
             min-height: 297mm;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
         }
         
@@ -169,28 +170,30 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #1a2a47 0%, #2563eb 100%);
+            background: linear-gradient(100deg, #2563eb 0%, #232946 60%, #181a20 100%);
             color: white;
-            padding: 25px 20px;
+            padding: 38px 20px 28px 20px;
             text-align: center;
             position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 16px rgba(80,63,205,0.10);
         }
         
         .header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 120"><circle cx="60" cy="30" r="2.5" fill="%23fff" opacity="0.13"/><circle cx="120" cy="80" r="1.5" fill="%23fff" opacity="0.10"/><circle cx="200" cy="50" r="2.5" fill="%23fff" opacity="0.10"/><circle cx="300" cy="100" r="2" fill="%23fff" opacity="0.08"/><circle cx="350" cy="30" r="1.5" fill="%23fff" opacity="0.10"/><circle cx="80" cy="100" r="1.5" fill="%23fff" opacity="0.08"/><circle cx="250" cy="20" r="2" fill="%23fff" opacity="0.10"/></svg>');
+            opacity: 0.25;
+            z-index: 0;
         }
         
         .header-content {
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
         
         .profile-img {
@@ -222,65 +225,80 @@
         }
         
         .name {
-            font-size: 2.4em;
-            font-weight: 600;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            background: linear-gradient(to right, #ffffff, #e5e9f2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
+            font-size: 3.2em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-align: center;
+            color: #fff; /* Color blanco para resaltar sobre fondo oscuro */
+            margin-bottom: 8px;
+            text-shadow: 0 6px 24px rgba(80,63,205,0.13), 0 1.5px 8px rgba(80,63,205,0.10), 0 2px 8px #232946;
+            transition: text-shadow 0.3s;
+        }
+        
+        .name:hover {
+            text-shadow: 0 8px 32px #7c3aed33, 0 2px 12px #2563eb22;
         }
         
         .age {
-            font-size: 1em;
-            opacity: 0.9;
-            margin-bottom: 10px;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-size: 1.3em;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #ede9fe;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 8px rgba(80,63,205,0.10);
         }
         
         .contact-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 18px;
             margin-top: 10px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            font-size: 0.85em;
+            gap: 8px;
+            font-size: 1.08em;
+            color: #fff;
+            background: rgba(37,99,235,0.13);
+            border-radius: 22px;
+            padding: 6px 16px 6px 10px;
+            box-shadow: 0 2px 8px rgba(80,63,205,0.08);
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            position: relative;
         }
         
         .contact-item i {
-            width: 24px;
+            width: 28px;
             text-align: center;
-            font-size: 14px;
-            background-color: rgba(255, 255, 255, 0.2);
-            height: 24px;
-            line-height: 24px;
+            font-size: 18px;
+            background: linear-gradient(135deg, #2563eb 60%, #a78bfa 100%);
+            color: #fff;
+            height: 28px;
+            line-height: 28px;
             border-radius: 50%;
-            transition: transform 0.3s ease, background-color 0.3s;
-        }
-        
-        .contact-item:hover i {
-            transform: scale(1.2);
-            background-color: rgba(255, 255, 255, 0.3);
+            margin-right: 4px;
+            box-shadow: 0 1px 4px #7c3aed22;
         }
         
         .contact-link {
-            color: inherit;
+            color: #fff;
             text-decoration: none;
-            transition: color 0.2s, text-decoration 0.2s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
         }
         
-        .contact-link:hover {
-            color: #3498db;
+        .contact-item:hover {
+            background: linear-gradient(90deg, #2563eb 60%, #a78bfa 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px #7c3aed33;
+        }
+        
+        .contact-item:hover .contact-link {
+            color: #fff;
             text-decoration: underline;
         }
         
@@ -978,7 +996,6 @@
                         <span>Sunchales, Santa Fe</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fab fa-linkedin-in"></i>
                         <a href="https://linkedin.com/in/luismiraglio" class="contact-link" target="_blank">linkedin.com/in/luismiraglio</a>
                     </div>
                     <div class="contact-item">
