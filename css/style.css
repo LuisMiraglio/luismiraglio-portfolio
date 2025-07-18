@@ -1878,6 +1878,3 @@ img {
     height: auto;
     border-radius: var(--border-radius);
 }
-
-/* Script para activar la clase 'active' en la navegación basado en el scroll */
-/* (Añadir esto al final de script.js) */
