@@ -168,7 +168,7 @@
                 </div>
             </div>
         </div>
- <!-- Sección Proyectos -->
+<!-- Sección Proyectos -->
 <section id="proyectos" class="projects">
   <div class="container">
     <div class="section-header">
@@ -184,156 +184,152 @@
         <h3 class="project-title">Automatización de ONUs DATACOM</h3>
         <button class="btn btn-primary" onclick="openModal('datacom-modal')">Ver detalles</button>
       </div>
-
       <!-- Proyecto 2: SecureCRT Slots -->
       <div class="project-card">
         <img src="images/securecrt-slots.png" alt="SecureCRT Slots" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
         <h3 class="project-title">Diagnóstico ONU en Slots – SecureCRT Script</h3>
         <button class="btn btn-primary" onclick="openModal('securecrt-modal')">Ver detalles</button>
       </div>
-
       <!-- Proyecto 3: Control de Stock -->
       <div class="project-card">
         <img src="images/inventory-management.png" alt="Control de Stock" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
         <h3 class="project-title">Sistema de Control de Stock de Productos</h3>
         <button class="btn btn-primary" onclick="openModal('stock-modal')">Ver detalles</button>
       </div>
-    </div>
+    </div> <!-- /projects-grid -->
+  </div> <!-- /container -->
 
-    <!-- Modals fuera del grid -->
-
-    <!-- Modal Proyecto 1 -->
-    <div id="datacom-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('datacom-modal')">&times;</span>
-        <h2>Automatización de Configuración de ONUs DATACOM</h2>
-        <img src="images/datacom.png" alt="Automatización de ONUs DATACOM" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
-        <p>
-          Este proyecto consiste en una herramienta de automatización diseñada para simplificar y acelerar el proceso de configuración de ONUs (Unidades de Red Óptica) utilizadas en entornos de telecomunicaciones.<br><br>
-          Utilizando Python y Selenium, desarrollé scripts personalizados para los modelos DATACOM DM984-422, DM986-414 y DM986-416 AX30, capaces de realizar la configuración inicial del equipo sin intervención manual.
-        </p>
-        <h4>Características principales:</h4>
-        <ul>
-          <li>Acceso al panel de administración del módem</li>
-          <li>Configuración de usuario y contraseña PPPoE</li>
-          <li>Asignación de parámetros WAN y VLAN</li>
-          <li>Definición de redes Wi-Fi con nombre, canal, seguridad y potencia</li>
-          <li>Activación o ajuste de funciones como bridge, NAT o firewall</li>
-        </ul>
-        <p>
-          <strong>Beneficio:</strong> El proceso de configuración se reduce de 8-15 minutos a menos de 2 minutos con mínima interacción del técnico.
-        </p>
-        <h4>Repositorios:</h4>
-        <ul>
-          <li>
-            <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM984-422" target="_blank">
-              <i class="fab fa-github"></i> DATACOM DM984-422
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-414" target="_blank">
-              <i class="fab fa-github"></i> DM986-414
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-416-AX30" target="_blank">
-              <i class="fab fa-github"></i> DM986-416 AX30
-            </a>
-          </li>
-        </ul>
-        <h4>Tecnologías utilizadas</h4>
-        <div class="project-tech">
-          <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-          <span class="tech-tag"><i class="fas fa-code"></i> Selenium WebDriver</span>
-          <span class="tech-tag"><i class="fas fa-desktop"></i> UI Automation</span>
-          <span class="tech-tag"><i class="fas fa-cube"></i> PyInstaller</span>
-        </div>
+  <!-- Modals FUERA del container y del grid -->
+  <!-- Modal Proyecto 1 -->
+  <div id="datacom-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('datacom-modal')">&times;</span>
+      <h2>Automatización de Configuración de ONUs DATACOM</h2>
+      <img src="images/datacom.png" alt="Automatización de ONUs DATACOM" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
+      <p>
+        Este proyecto consiste en una herramienta de automatización diseñada para simplificar y acelerar el proceso de configuración de ONUs (Unidades de Red Óptica) utilizadas en entornos de telecomunicaciones.<br><br>
+        Utilizando Python y Selenium, desarrollé scripts personalizados para los modelos DATACOM DM984-422, DM986-414 y DM986-416 AX30, capaces de realizar la configuración inicial del equipo sin intervención manual.
+      </p>
+      <h4>Características principales:</h4>
+      <ul>
+        <li>Acceso al panel de administración del módem</li>
+        <li>Configuración de usuario y contraseña PPPoE</li>
+        <li>Asignación de parámetros WAN y VLAN</li>
+        <li>Definición de redes Wi-Fi con nombre, canal, seguridad y potencia</li>
+        <li>Activación o ajuste de funciones como bridge, NAT o firewall</li>
+      </ul>
+      <p>
+        <strong>Beneficio:</strong> El proceso de configuración se reduce de 8-15 minutos a menos de 2 minutos con mínima interacción del técnico.
+      </p>
+      <h4>Repositorios:</h4>
+      <ul>
+        <li>
+          <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM984-422" target="_blank">
+            <i class="fab fa-github"></i> DATACOM DM984-422
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-414" target="_blank">
+            <i class="fab fa-github"></i> DM986-414
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-416-AX30" target="_blank">
+            <i class="fab fa-github"></i> DM986-416 AX30
+          </a>
+        </li>
+      </ul>
+      <h4>Tecnologías utilizadas</h4>
+      <div class="project-tech">
+        <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+        <span class="tech-tag"><i class="fas fa-code"></i> Selenium WebDriver</span>
+        <span class="tech-tag"><i class="fas fa-desktop"></i> UI Automation</span>
+        <span class="tech-tag"><i class="fas fa-cube"></i> PyInstaller</span>
       </div>
     </div>
+  </div>
 
-    <!-- Modal Proyecto 2 -->
-    <div id="securecrt-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('securecrt-modal')">&times;</span>
-        <h2>Diagnóstico Automatizado de ONU en Slots – SecureCRT Script</h2>
-        <img src="images/securecrt-slots.png" alt="SecureCRT Slots" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
-        <p>
-          Este script está diseñado para ejecutarse directamente en SecureCRT, aprovechando su capacidad nativa para correr automatizaciones en entornos de red por consola.<br><br>
-          La herramienta automatiza el diagnóstico completo de un slot específico en una OLT, simplificando el proceso de monitoreo y resolución de problemas.
-        </p>
-        <h4>Acciones automatizadas:</h4>
-        <ul>
-          <li>Ejecuta el comando <b>onu show</b> para identificar los virtuales disponibles dentro del slot seleccionado.</li>
-          <li>Lanza automáticamente 64 consultas <b>onu status</b>, una para cada virtual, consolidando en un solo paso el estado de todas las ONUs asociadas a ese slot.</li>
-          <li>Genera una salida completa que muestra estado de conexión (activa, caída, ausente).</li>
-          <li>Reporta valores de potencia óptica (RX y TX).</li>
-          <li>Identifica indicadores de error para diagnóstico rápido.</li>
-        </ul>
-        <p>
-          Antes, este análisis debía hacerse manualmente virtual por virtual. Ahora, el script permite diagnosticar el estado completo del slot en segundos, reduciendo drásticamente el tiempo técnico requerido y facilitando tareas preventivas o correctivas.<br>
-          Una solución práctica y eficiente para técnicos de redes y personal de soporte en ISPs que necesitan una visión rápida y detallada del estado de las ONUs en infraestructura FTTH.
-        </p>
-        <h4>Repositorio:</h4>
-        <ul>
-          <li>
-            <a href="https://github.com/LuisMiraglio/SecureCRT-Slots" target="_blank">
-              <i class="fab fa-github"></i> SecureCRT Slots – Ver repositorio
-            </a>
-          </li>
-        </ul>
-        <h4>Tecnologías utilizadas</h4>
-        <div class="project-tech">
-          <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-          <span class="tech-tag"><i class="fas fa-terminal"></i> Script VBS</span>
-          <span class="tech-tag"><i class="fas fa-network-wired"></i> SecureCRT API</span>
-          <span class="tech-tag"><i class="fas fa-wrench"></i> Automation</span>
-        </div>
+  <!-- Modal Proyecto 2 -->
+  <div id="securecrt-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('securecrt-modal')">&times;</span>
+      <h2>Diagnóstico Automatizado de ONU en Slots – SecureCRT Script</h2>
+      <img src="images/securecrt-slots.png" alt="SecureCRT Slots" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
+      <p>
+        Este script está diseñado para ejecutarse directamente en SecureCRT, aprovechando su capacidad nativa para correr automatizaciones en entornos de red por consola.<br><br>
+        La herramienta automatiza el diagnóstico completo de un slot específico en una OLT, simplificando el proceso de monitoreo y resolución de problemas.
+      </p>
+      <h4>Acciones automatizadas:</h4>
+      <ul>
+        <li>Ejecuta el comando <b>onu show</b> para identificar los virtuales disponibles dentro del slot seleccionado.</li>
+        <li>Lanza automáticamente 64 consultas <b>onu status</b>, una para cada virtual, consolidando en un solo paso el estado de todas las ONUs asociadas a ese slot.</li>
+        <li>Genera una salida completa que muestra estado de conexión (activa, caída, ausente).</li>
+        <li>Reporta valores de potencia óptica (RX y TX).</li>
+        <li>Identifica indicadores de error para diagnóstico rápido.</li>
+      </ul>
+      <p>
+        Antes, este análisis debía hacerse manualmente virtual por virtual. Ahora, el script permite diagnosticar el estado completo del slot en segundos, reduciendo drásticamente el tiempo técnico requerido y facilitando tareas preventivas o correctivas.<br>
+        Una solución práctica y eficiente para técnicos de redes y personal de soporte en ISPs que necesitan una visión rápida y detallada del estado de las ONUs en infraestructura FTTH.
+      </p>
+      <h4>Repositorio:</h4>
+      <ul>
+        <li>
+          <a href="https://github.com/LuisMiraglio/SecureCRT-Slots" target="_blank">
+            <i class="fab fa-github"></i> SecureCRT Slots – Ver repositorio
+          </a>
+        </li>
+      </ul>
+      <h4>Tecnologías utilizadas</h4>
+      <div class="project-tech">
+        <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+        <span class="tech-tag"><i class="fas fa-terminal"></i> Script VBS</span>
+        <span class="tech-tag"><i class="fas fa-network-wired"></i> SecureCRT API</span>
+        <span class="tech-tag"><i class="fas fa-wrench"></i> Automation</span>
       </div>
     </div>
+  </div>
 
-    <!-- Modal Proyecto 3 -->
-    <div id="stock-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('stock-modal')">&times;</span>
-        <h2>Sistema de Control de Stock de Productos</h2>
-        <img src="images/inventory-management.png" alt="Control de Stock" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-        <p>
-          Aplicación web completa desarrollada para gestionar el inventario y distribución de productos, permitiendo el seguimiento detallado del stock disponible y entregas realizadas a técnicos.<br><br>
-          Esta Single Page Application (SPA) funciona completamente en el lado del cliente, sin necesidad de conexión a internet ni servidores externos.
-        </p>
-        <h4>Funcionalidades principales:</h4>
-        <ul>
-          <li>Sistema de autenticación para control de acceso seguro</li>
-          <li>Gestión completa de productos (CRUD de transformadores con seguimiento de stock)</li>
-          <li>Administración de técnicos con visualización de productos asignados</li>
-          <li>Registro de entregas con actualización automática del inventario</li>
-          <li>Sistema de respaldo de datos con importación/exportación y respaldos automáticos</li>
-          <li>Base de datos SQL completa ejecutándose directamente en el navegador</li>
-        </ul>
-        <p>
-          El proyecto utiliza una arquitectura MVC simplificada y demuestra cómo implementar una aplicación de gestión empresarial completa con JavaScript vanilla, aprovechando SQL.js para crear una base de datos relacional que funciona enteramente en el navegador.<br>
-          Toda la persistencia de datos se maneja localmente mediante <b>localStorage</b>, lo que permite una experiencia offline completa sin sacrificar la potencia de las consultas SQL.
-        </p>
-        <h4>Repositorio:</h4>
-        <ul>
-          <li>
-            <a href="https://github.com/LuisMiraglio/Control-de-Stock" target="_blank">
-              <i class="fab fa-github"></i> Control de Stock – Ver repositorio
-            </a>
-          </li>
-        </ul>
-        <h4>Tecnologías utilizadas</h4>
-        <div class="project-tech">
-          <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
-          <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
-          <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-          <span class="tech-tag"><i class="fas fa-database"></i> SQL.js</span>
-        </div>
+  <!-- Modal Proyecto 3 -->
+  <div id="stock-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('stock-modal')">&times;</span>
+      <h2>Sistema de Control de Stock de Productos</h2>
+      <img src="images/inventory-management.png" alt="Control de Stock" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+      <p>
+        Aplicación web completa desarrollada para gestionar el inventario y distribución de productos, permitiendo el seguimiento detallado del stock disponible y entregas realizadas a técnicos.<br><br>
+        Esta Single Page Application (SPA) funciona completamente en el lado del cliente, sin necesidad de conexión a internet ni servidores externos.
+      </p>
+      <h4>Funcionalidades principales:</h4>
+      <ul>
+        <li>Sistema de autenticación para control de acceso seguro</li>
+        <li>Gestión completa de productos (CRUD de transformadores con seguimiento de stock)</li>
+        <li>Administración de técnicos con visualización de productos asignados</li>
+        <li>Registro de entregas con actualización automática del inventario</li>
+        <li>Sistema de respaldo de datos con importación/exportación y respaldos automáticos</li>
+        <li>Base de datos SQL completa ejecutándose directamente en el navegador</li>
+      </ul>
+      <p>
+        El proyecto utiliza una arquitectura MVC simplificada y demuestra cómo implementar una aplicación de gestión empresarial completa con JavaScript vanilla, aprovechando SQL.js para crear una base de datos relacional que funciona enteramente en el navegador.<br>
+        Toda la persistencia de datos se maneja localmente mediante <b>localStorage</b>, lo que permite una experiencia offline completa sin sacrificar la potencia de las consultas SQL.
+      </p>
+      <h4>Repositorio:</h4>
+      <ul>
+        <li>
+          <a href="https://github.com/LuisMiraglio/Control-de-Stock" target="_blank">
+            <i class="fab fa-github"></i> Control de Stock – Ver repositorio
+          </a>
+        </li>
+      </ul>
+      <h4>Tecnologías utilizadas</h4>
+      <div class="project-tech">
+        <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+        <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+        <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+        <span class="tech-tag"><i class="fas fa-database"></i> SQL.js</span>
       </div>
     </div>
   </div>
 </section>
-
 
                <!-- Sección Servicios -->
 <section id="servicios" class="services">
