@@ -1964,4 +1964,36 @@ img {
   scroll-margin-top: 90px; /* Ajusta según la altura de tu navbar */
 }
 
+.modal-gallery {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.modal-gallery img {
+  max-width: 340px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #0001;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+@media (max-width: 600px) {
+  .modal-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .modal-gallery img {
+    max-width: 98vw;
+  }
+}
+.project-card .btn {
+  margin-top: auto;        /* Empuja el botón siempre hacia el fondo */
+  margin-bottom: 10px;     /* Para que no quede pegado al borde */
+  width: 70%;              /* Opcional: iguala el ancho con otras tarjetas */
+  max-width: 180px;        /* Opcional: limita el ancho */
+}
+
 

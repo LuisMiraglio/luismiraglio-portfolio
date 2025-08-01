@@ -196,6 +196,20 @@
         <h3 class="project-title">Sistema de Control de Stock de Productos</h3>
         <button class="btn btn-primary" onclick="openModal('stock-modal')">Ver detalles</button>
       </div>
+
+      <!-- Proyecto 4: TaskFlow -->
+    <div class="project-card">
+    <img src="images/taskflow-1.png" alt="TaskFlow Django" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+    <h3 class="project-title">TaskFlow - Gestor de Tareas (Django)</h3>
+    <button class="btn btn-primary" onclick="openModal('taskflow-modal')">Ver detalles</button>
+    </div>
+
+    <!-- Proyecto 5: Diagnóstico de Red -->
+    <div class="project-card">
+    <img src="images/diagnostico-red.png" alt="Diagnóstico de Red" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+    <h3 class="project-title">Diagnóstico de Red</h3>
+    <button class="btn btn-primary" onclick="openModal('diagnostico-modal')">Ver detalles</button>
+    </div>
     </div> <!-- /projects-grid -->
   </div> <!-- /container -->
 
@@ -329,6 +343,98 @@
       </div>
     </div>
   </div>
+
+ <!-- Modal Proyecto TaskFlow -->
+<div id="taskflow-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('taskflow-modal')">&times;</span>
+    <h2>TaskFlow – Gestor de Tareas con Django</h2>
+    <div class="modal-gallery">
+      <img src="images/taskflow1.png" alt="Login TaskFlow">
+      <img src="images/taskflow2.png" alt="Listado de tareas TaskFlow">
+      <img src="images/taskflow3.png" alt="Registro de Usurios">
+    </div>
+    <p>
+      <strong>TaskFlow</strong> es una aplicación web desarrollada con Django para la gestión de tareas personales. Permite organizar, priorizar y visualizar tareas de forma simple y moderna, asegurando que cada usuario sólo vea y administre sus propias tareas.
+    </p>
+    <h4>Características principales:</h4>
+    <ul>
+      <li>Autenticación de usuarios: registro, login y logout visual y seguro</li>
+      <li>Gestión de tareas por usuario</li>
+      <li>CRUD de tareas: crear, ver, editar y eliminar</li>
+      <li>Prioridades visuales (alta, media, baja)</li>
+      <li>Completar o marcar como pendiente con un clic</li>
+      <li>Filtrado y búsqueda por nombre y estado</li>
+      <li>Fecha de vencimiento opcional</li>
+      <li>Paginación para listas extensas</li>
+      <li>Confirmación visual al eliminar con modal</li>
+      <li>Diseño responsivo y moderno con Bootstrap 5</li>
+      <li>Notificaciones flash para acciones importantes</li>
+    </ul>
+    <h4>Repositorio:</h4>
+    <ul>
+      <li>
+        <a href="https://github.com/LuisMiraglio/Python-Django-Proyect" target="_blank">
+          <i class="fab fa-github"></i> TaskFlow – Ver repositorio
+        </a>
+      </li>
+    </ul>
+    <h4>Tecnologías utilizadas</h4>
+    <div class="project-tech">
+      <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+      <span class="tech-tag"><i class="fas fa-server"></i> Django</span>
+      <span class="tech-tag"><i class="fab fa-bootstrap"></i> Bootstrap 5</span>
+      <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+      <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+      <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+    </div>
+  </div>
+</div>
+<!-- Modal Proyecto Diagnóstico de Red -->
+<div id="diagnostico-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('diagnostico-modal')">&times;</span>
+    <h2>Diagnóstico de Red – Aplicación de Monitoreo</h2>
+    <img src="images/interfaz-proyecto5.png" alt="Diagnóstico de Red" class="project-thumb" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
+    <p>
+      <strong>Diagnóstico de Red</strong> es una aplicación de escritorio creada en Python y PySide6 para visualizar información fundamental de tu red local e internet. 
+      Permite realizar pruebas rápidas y obtener detalles útiles para el soporte técnico o el auto-diagnóstico.
+    </p>
+    <h4>Funcionalidades principales:</h4>
+    <ul>
+      <li>Mostrar IP privada de la máquina local</li>
+      <li>Obtener y registrar la IP pública de la conexión</li>
+      <li>Escanear y listar todos los dispositivos conectados a la red local</li>
+      <li>Mostrar dirección MAC y nombre del host (si está disponible)</li>
+      <li>Guardar historial de IP pública en archivo</li>
+    </ul>
+    <h4>Nota: Guía de pruebas manuales</h4>
+    <div style="background:#f5f7fa;padding:12px 18px;border-radius:8px;margin-bottom:14px;font-size:0.97em;">
+      ¿Querés aprender cómo realizar estas pruebas manualmente (sin la app)? Podés consultar el siguiente archivo en el repositorio:
+      <br>
+      <a href="https://github.com/LuisMiraglio/diagnostico-red/blob/main/MANUAL_PRUEBAS_MANUALES.md" target="_blank" style="font-weight:bold;color:#2563eb;text-decoration:underline;">
+        👉 Ver manual de pruebas manuales
+      </a>
+      <br>
+      Allí vas a encontrar instrucciones para obtener tu IP privada, pública, escanear la red con <b>arp -a</b> y más.
+    </div>
+    <h4>Repositorio:</h4>
+    <ul>
+      <li>
+        <a href="https://github.com/LuisMiraglio/diagnostico-red" target="_blank">
+          <i class="fab fa-github"></i> Diagnóstico de Red – Ver repositorio
+        </a>
+      </li>
+    </ul>
+    <h4>Tecnologías utilizadas</h4>
+    <div class="project-tech">
+      <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+      <span class="tech-tag"><i class="fas fa-window-maximize"></i> PySide6</span>
+      <span class="tech-tag"><i class="fas fa-network-wired"></i> Scapy</span>
+      <span class="tech-tag"><i class="fas fa-cloud"></i> Requests</span>
+    </div>
+  </div>
+</div>
 </section>
 
                <!-- Sección Servicios -->
