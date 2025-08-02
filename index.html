@@ -211,8 +211,29 @@
     <h3 class="project-title">Diagnóstico de Red</h3>
     <button class="btn btn-primary" onclick="openModal('diagnostico-modal')">Ver detalles</button>
     </div>
+
+    <!-- Proyecto 6: Menú Desplegable -->
+    <div class="project-card">
+    <img src="images/menu-desplegable.png" alt="Menú Desplegable" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+    <h3 class="project-title">Menú Desplegable (JS + SCSS)</h3>
+    <button class="btn btn-primary" onclick="openModal('menu-modal')">Ver detalles</button>
+    </div>
+
+    <!-- Proyecto 7: Etiquetador de Viandas Zebra -->
+    <div class="project-card">
+    <img src="images/etiquetador-zebra.png" alt="Etiquetador de Viandas Cebra" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+    <h3 class="project-title">Etiquetador de Viandas Cebra</h3>
+    <button class="btn btn-primary" onclick="openModal('cebra-modal')">Ver detalles</button>
+    </div>
+
+    <!-- Proyecto 8: Calculadora en JavaScript -->
+    <div class="project-card">
+    <img src="images/calculadora-js.png" alt="Calculadora en JavaScript" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+    <h3 class="project-title">Calculadora en JavaScript</h3>
+    <button class="btn btn-primary" onclick="openModal('calculadora-modal')">Ver detalles</button>
+    </div>
     </div> <!-- /projects-grid -->
-  </div> <!-- /container -->
+    </div> <!-- /container -->
 
   <!-- Modals FUERA del container y del grid -->
   <!-- Modal Proyecto 1 -->
@@ -268,7 +289,7 @@
   <div id="securecrt-modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('securecrt-modal')">&times;</span>
-      <h2>Diagnóstico Automatizado de ONU en Slots – SecureCRT Script</h2>
+      <h2>Diagnóstico Automatizado de ONUS</h2> <h2>SecureCRT Script</h2>
       <img src="images/securecrt-slots.png" alt="SecureCRT Slots" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
       <p>
         Este script está diseñado para ejecutarse directamente en SecureCRT, aprovechando su capacidad nativa para correr automatizaciones en entornos de red por consola.<br><br>
@@ -345,7 +366,7 @@
     </div>
   </div>
 
- <!-- Modal Proyecto TaskFlow -->
+ <!-- Modal Proyecto 4 TaskFlow -->
 <div id="taskflow-modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('taskflow-modal')">&times;</span>
@@ -391,7 +412,7 @@
     </div>
   </div>
 </div>
-<!-- Modal Proyecto Diagnóstico de Red -->
+<!-- Modal Proyecto 5 Diagnóstico de Red -->
 <div id="diagnostico-modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('diagnostico-modal')">&times;</span>
@@ -436,6 +457,121 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Proyecto 6 Menú Desplegable -->
+<div id="menu-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('menu-modal')">&times;</span>
+    <h2>Menú Desplegable</h2><h2>JavaScript + SCSS</h2>
+    <img src="images/interfaz-proyecto6.PNG" alt="Menú Desplegable" class="project-thumb" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
+    <p>
+      <strong>Menú Desplegable</strong> es un proyecto simple y práctico desarrollado para aplicar conocimientos en JavaScript, CSS y SCSS. Permite crear menús interactivos con animaciones suaves y un diseño moderno.<br><br>
+      Este proyecto es ideal para practicar la lógica de interacción con el usuario y la organización de estilos usando SCSS.
+    </p>
+    <h4>Características principales:</h4>
+    <ul>
+      <li>Menú desplegable con efectos visuales atractivos</li>
+      <li>Uso de SCSS para un código más modular y mantenible</li>
+      <li>Animaciones y transiciones suaves para mejorar la experiencia de usuario</li>
+    </ul>
+    <h4>Repositorio:</h4>
+    <ul>
+      <li>
+        <a href="https://github.com/LuisMiraglio/Menu-Desplegable" target="_blank">
+          <i class="fab fa-github"></i> Menú Desplegable – Ver repositorio
+        </a>
+      </li>
+    </ul>
+    <h4>Tecnologías utilizadas</h4>
+    <div class="project-tech">
+      <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+      <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+      <span class="tech-tag"><i class="fab fa-sass"></i> SCSS</span>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Proyecto 7: Etiquetador de Viandas Zebra -->
+<div id="cebra-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('cebra-modal')">&times;</span>
+    <h2>Etiquetador de Viandas Cebra</h2>
+    <img src="images/interfaz-proyecto7.png" alt="Etiquetador de Viandas Cebra" class="project-thumb" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
+    <p>
+      Aplicación de escritorio desarrollada en Python que permite generar e imprimir etiquetas adhesivas para viandas de comida utilizando impresoras Zebra (ZPL).
+      <br><br>
+      Lee un archivo Excel con los pedidos de menú por empleado y genera automáticamente etiquetas personalizadas con el nombre, el menú elegido, la fecha de vencimiento y un código de barras EAN13.
+    </p>
+    <h4>Características principales:</h4>
+    <ul>
+      <li>Lectura automática de archivos Excel para generar etiquetas por empleado</li>
+      <li>Impresión directa en impresoras Zebra usando lenguaje ZPL</li>
+      <li>Diseño de etiquetas configurable: nombre, menú, fechas y código de barras EAN13</li>
+      <li>Interfaz gráfica fácil de usar desarrollada con Tkinter</li>
+      <li>Automatización total del proceso de etiquetado</li>
+      <li>Incluye versión compilada lista para usar en Windows</li>
+    </ul>
+    <h4>Repositorio:</h4>
+    <ul>
+      <li>
+        <a href="https://github.com/LuisMiraglio/Nombre-del-repo-CEBRA" target="_blank">
+          <i class="fab fa-github"></i> Etiquetador de Viandas Cebra – Ver repositorio
+        </a>
+      </li>
+    </ul>
+    <h4>Tecnologías utilizadas</h4>
+    <div class="project-tech">
+      <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+      <span class="tech-tag"><i class="fas fa-desktop"></i> Tkinter</span>
+      <span class="tech-tag"><i class="fas fa-file-excel"></i> Pandas</span>
+      <span class="tech-tag"><i class="fas fa-barcode"></i> ZPL</span>
+      <span class="tech-tag"><i class="fab fa-windows"></i> Pywin32</span>
+    </div>
+    <div style="margin-top: 1em; background: #e0f7fa; border-radius: 8px; padding: 14px;">
+      <strong>Versión compilada incluida:</strong><br>
+      Si estás en Windows, podrás ejecutar directamente el archivo EXE sin instalar Python.
+    </div>
+  </div>
+</div>
+
+<!-- Modal Proyecto 8: Calculadora -->
+<div id="calculadora-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('calculadora-modal')">&times;</span>
+    <h2>Calculadora en JavaScript</h2>
+    <div class="modal-gallery">
+      <img src="images/interfaz-proyecto8.png" alt="Interfaz Calculadora JS" />
+      <img src="images/interfaz2-proyecto8.png" alt="Interfaz móvil Calculadora JS" />
+    </div>
+    <p>
+      <strong>Calculadora en JavaScript</strong> es un proyecto simple y práctico diseñado para reforzar el aprendizaje de JavaScript, CSS y SCSS.<br>
+      Permite realizar operaciones matemáticas básicas con una interfaz moderna y totalmente responsiva.
+    </p>
+    <h4>Características principales:</h4>
+    <ul>
+      <li>Operaciones básicas: suma, resta, multiplicación y división</li>
+      <li>Diseño moderno y adaptativo a cualquier dispositivo</li>
+      <li>Botón para borrar y limpiar la pantalla</li>
+      <li>Animaciones y transiciones suaves</li>
+      <li>SCSS para un código más modular y fácil de mantener</li>
+    </ul>
+    <h4>Repositorio:</h4>
+    <ul>
+      <li>
+        <a href="https://github.com/LuisMiraglio/Calculadora-JS" target="_blank">
+          <i class="fab fa-github"></i> Calculadora en JavaScript – Ver repositorio
+        </a>
+      </li>
+    </ul>
+    <h4>Tecnologías utilizadas</h4>
+    <div class="project-tech">
+      <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+      <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+      <span class="tech-tag"><i class="fab fa-sass"></i> SCSS</span>
+    </div>
+  </div>
+</div>
+
 </section>
 
                <!-- Sección Servicios -->
