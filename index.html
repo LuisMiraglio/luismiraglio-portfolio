@@ -232,6 +232,13 @@
     <h3 class="project-title">Calculadora en JavaScript</h3>
     <button class="btn btn-primary" onclick="openModal('calculadora-modal')">Ver detalles</button>
     </div>
+
+    <!-- Proyecto 9: Buscador de Nodos FTTH -->
+  <div class="project-card">
+    <img src="images/buscador-nodos.png" alt="Buscador de Nodos FTTH" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+    <h3 class="project-title">Buscador de Nodos FTTH</h3>
+    <button class="btn btn-primary" onclick="openModal('nodos-ftth-modal')">Ver detalles</button>
+  </div>
     </div> <!-- /projects-grid -->
     </div> <!-- /container -->
 
@@ -571,6 +578,45 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Proyecto 9: Buscador de Nodos FTTH -->
+<div id="nodos-ftth-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('nodos-ftth-modal')">&times;</span>
+    <h2>Buscador de Nodos FTTH</h2>
+    <img src="images/interfaz-proyecto9.PNG" alt="Buscador de Nodos FTTH" style="width:100%;max-width:400px;margin:0 auto 16px;display:block;">
+    <p>
+      Aplicación de escritorio desarrollada en <strong>Python</strong> con <strong>Tkinter</strong>, diseñada para la consulta y localización rápida de nodos en redes de fibra óptica utilizando datos provenientes de un archivo Excel de referencia.
+    </p>
+    <h4>Descripción:</h4>
+    <p>
+      Esta herramienta permite buscar nodos ingresando su número y obtener, de forma automática, los datos asociados como placa, puerto, OLT y hoja correspondiente. 
+      Su interfaz gráfica moderna y de tema oscuro está optimizada para la rapidez y claridad en entornos de trabajo técnico.
+    </p>
+    <h4>Tecnologías utilizadas</h4>
+    <div class="project-tech">
+      <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+      <span class="tech-tag"><i class="fas fa-desktop"></i> Tkinter</span>
+      <span class="tech-tag"><i class="fas fa-file-excel"></i> OpenPyXL</span>
+      <span class="tech-tag"><i class="fas fa-adjust"></i> Tema oscuro</span>
+    </div>
+    <h4>¿Cómo funciona?</h4>
+    <ul>
+      <li>Cargá el archivo Excel presionando el botón correspondiente.</li>
+      <li>Ingresá el número de nodo que quieras buscar.</li>
+      <li>Visualizá en pantalla la información detallada del nodo: placa, puerto, OLT y hoja correspondiente.</li>
+    </ul>
+    <h4>Repositorio:</h4>
+    <ul>
+      <li>
+        <a href="https://github.com/LuisMiraglio/Buscador-Nodos-FTTH" target="_blank">
+          <i class="fab fa-github"></i> Buscador de Nodos FTTH – Ver repositorio
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 </section>
 
