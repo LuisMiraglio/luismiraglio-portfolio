@@ -41,6 +41,7 @@
     --spacing-xl: 4rem;            /* 64px */
     --spacing-xxl: 6rem;           /* 96px */
     --background-main: #eaf1fb; /* Azul muy claro para fondo general */
+    --section-pattern: url('data:image/svg+xml;utf8,<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="%23c7d2fe" fill-opacity="0.18"/><rect x="40" y="40" width="40" height="40" fill="%233b82f6" fill-opacity="0.08"/></svg>');
 }
 
 body {
@@ -63,7 +64,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95); /* Cambia aquí el color de fondo */
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-light);
     z-index: 1000;
@@ -737,23 +738,36 @@ body {
     }
 }
 
+/* Fondo patrón para TODAS las secciones principales */
+.about,
+.curriculum,
+.skills,
+.services,
+.projects,
+.certificates,
+.contact {
+    background-color: var(--white); /* Ahora todas las secciones tienen fondo blanco */
+    background-image: var(--section-pattern);
+    background-size: 80px 80px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+/* El hero mantiene su gradiente y patrón propio */
+/* .hero ruleset removed because it was empty */
+
+/* Las tarjetas siguen con fondo sólido para destacar */
+.about-card,
+.stat,
+.service-card,
+.certificate-card,
+.project-card {
+    background: #fff !important;
+}
+
 /* Estandarización de espaciado en secciones */
 section {
     padding: var(--spacing-xxl) 0;
-}
-
-/* Secciones con fondos alternados para mejor separación visual */
-/* Fondo alternado para secciones */
-.about, .curriculum, .skills, .services {
-    background-color: var(--light-color);
-}
-
-.hero, .projects, .certificates, .contact {
-    background-color: var(--background-main);
-}
-
-.about-card, .stat, .service-card, .certificate-card {
-    background: var(--background-main);
 }
 
 /* Ajustes específicos por sección */
@@ -773,9 +787,12 @@ section {
 }
 
 /* Sobre Mí */
+/* Quita el fondo sólido para que se vea el patrón global */
+/*
 .about {
     background: var(--light-color);
 }
+*/
 
 .about-content {
     max-width: 800px;
@@ -908,10 +925,15 @@ section {
 
 /* Proyectos */
 .projects {
-    background: linear-gradient(180deg, var(--white) 0%, rgba(241, 245, 249, 0.5) 100%);
     position: relative;
     overflow: hidden;
 }
+
+/* .projects {
+    background: linear-gradient(180deg, var(--white) 0%, rgba(241, 245, 249, 0.5) 100%);
+    position: relative;
+    overflow: hidden;
+} */
 
 .projects::before {
     content: '';
@@ -1174,8 +1196,14 @@ section {
 }
 
 /* Habilidades */
+/* Quita el fondo gradiente y deja solo el fondo blanco con patrón como el resto */
 .skills {
-    background: linear-gradient(to bottom, var(--light-color) 0%, #f8fafc 100%);
+    /* background: linear-gradient(to bottom, var(--light-color) 0%, #f8fafc 100%); */
+    background-color: var(--white);
+    background-image: var(--section-pattern);
+    background-size: 80px 80px;
+    background-repeat: repeat;
+    background-attachment: fixed;
     padding-bottom: 120px;
 }
 
@@ -1522,8 +1550,14 @@ section {
 }
 
 /* Estilos específicos para servicios */
+/* Cambia el fondo a blanco y patrón como el resto de las secciones */
 .services {
-    background-color: var(--light-color);
+    /* background-color: var(--light-color); */
+    background-color: var(--white);
+    background-image: var(--section-pattern);
+    background-size: 80px 80px;
+    background-repeat: repeat;
+    background-attachment: fixed;
     position: relative;
     z-index: 1;
 }
