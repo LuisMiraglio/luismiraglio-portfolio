@@ -31,8 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Activar la primera sección por defecto
-    navLinksScroll[0].classList.add('active');
+    // Activar la primera sección por defecto (si existe)
+    if (navLinksScroll.length > 0) {
+        navLinksScroll[0].classList.add('active');
+    }
     
     // Escuchar evento de scroll
     window.addEventListener('scroll', highlightNavOnScroll);
@@ -41,89 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             "particles": {
-                "number": {
-                    "value": 60,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.2,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.2,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
+                "number": {"value": 60,"density": {"enable": true,"value_area": 800}},
+                "color": {"value": "#ffffff"},
+                "shape": {"type": "circle","stroke": {"width": 0,"color": "#000000"},"polygon": {"nb_sides": 5}},
+                "opacity": {"value": 0.2,"random": true,"anim": {"enable": true,"speed": 1,"opacity_min": 0.1,"sync": false}},
+                "size": {"value": 3,"random": true,"anim": {"enable": false,"speed": 40,"size_min": 0.1,"sync": false}},
+                "line_linked": {"enable": true,"distance": 150,"color": "#ffffff","opacity": 0.2,"width": 1},
+                "move": {"enable": true,"speed": 2,"direction": "none","random": false,"straight": false,"out_mode": "out","bounce": false,"attract": {"enable": false,"rotateX": 600,"rotateY": 1200}}
             },
             "interactivity": {
                 "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": false,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 0.6
-                        }
-                    }
-                }
+                "events": {"onhover": {"enable": true,"mode": "grab"},"onclick": {"enable": false,"mode": "push"},"resize": true},
+                "modes": {"grab": {"distance": 140,"line_linked": {"opacity": 0.6}}}
             },
             "retina_detect": true
         });
@@ -133,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (hamburger) {
+    if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
@@ -144,14 +75,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinksMenu = document.querySelectorAll('.nav-link');
     navLinksMenu.forEach(link => {
         link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (hamburger && navMenu) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
     });
 
     // Cambio de color de la navbar al hacer scroll
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -165,37 +99,68 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Ocultar mensajes anteriores
-            document.querySelector('.form-success').style.display = 'none';
-            document.querySelector('.form-error').style.display = 'none';
+            // Ocultar mensajes anteriores (si existen)
+            const ok = document.querySelector('.form-success');
+            const err = document.querySelector('.form-error');
+            if (ok) ok.style.display = 'none';
+            if (err) err.style.display = 'none';
             
             // Simulación de envío de formulario
             const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
+            const originalText = submitBtn ? submitBtn.textContent : '';
             
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+            }
             
             // Simulación de tiempo de envío
             setTimeout(function() {
-                // Simulamos éxito (en producción, aquí iría la lógica real de envío)
-                const success = Math.random() > 0.2; // 80% de probabilidad de éxito para la demo
-                
+                const success = Math.random() > 0.2; // 80% éxito demo
                 if (success) {
-                    document.querySelector('.form-success').style.display = 'flex';
+                    if (ok) ok.style.display = 'flex';
                     contactForm.reset();
                 } else {
-                    document.querySelector('.form-error').style.display = 'flex';
+                    if (err) err.style.display = 'flex';
                 }
-                
-                // Restaurar el botón después de unos segundos
+                // Restaurar botón
                 setTimeout(function() {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
                 }, 3000);
             }, 1500);
         });
     }
+
+    /* ===========================================================
+       PROYECTOS — tarjetas clickeables (delegación y accesibilidad)
+       =========================================================== */
+    const projectsGrid = document.querySelector('.projects-grid');
+
+    if (projectsGrid) {
+        // Click en cualquier parte de la tarjeta abre el modal
+        projectsGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('.project-card[data-modal]');
+            if (!card) return;
+            openModal(card.dataset.modal);
+        });
+    }
+
+    // Soporte teclado (Enter / Space) para cada tarjeta
+    document.querySelectorAll('.project-card[data-modal]').forEach(card => {
+        // Por si el HTML no lo trae, garantizamos focusabilidad
+        if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+        if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
+
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(card.dataset.modal);
+            }
+        });
+    });
 });
 
 // Mostrar imagen de perfil con fade-in si está disponible
@@ -214,11 +179,15 @@ window.addEventListener('load', function() {
 
 // === Modales de Proyectos: Simple por ID ===
 function openModal(id) {
-  document.getElementById(id).style.display = 'block';
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = 'block';
   document.body.style.overflow = 'hidden'; // Evita scroll de fondo
 }
 function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = 'none';
   document.body.style.overflow = '';
 }
 // Cerrar al hacer click fuera del contenido

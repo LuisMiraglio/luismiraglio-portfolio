@@ -112,64 +112,74 @@
 </section>
 
 
-    <!-- Sección Sobre Mí -->
-    <section id="sobre-mi" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sobre Mí</h2>
-                <p class="section-subtitle">Conoce más sobre mi trayectoria y pasión por la programación</p>
-            </div>
+<!-- Sección Sobre Mí (reemplazo completo) -->
+<section id="sobre-mi" class="about">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Sobre mí</h2>
+      <p class="section-subtitle">Redes + Automatización + Software que reduce tiempos y errores</p>
+    </div>
 
-            <div class="about-content">
-                <div class="about-cards-container">
-                    <div class="about-card perfil-profesional" data-aos="fade-up">
-                        <div class="card-header">
-                            <i class="fas fa-user-tie"></i>
-                            <h3>Perfil Profesional</h3>
-                        </div>
-                        <p>Soy Técnico Superior en Redes Informáticas con una fuerte orientación a la automatización de
-                            procesos técnicos, especialmente en el entorno de FTTH (Fibra hasta el Hogar). Me desempeño
-                            en Conectar SRL, una empresa radicada en Sunchales que ofrece servicios de Internet por
-                            fibra óptica, streaming, soluciones corporativas, ciberseguridad y desarrollo de software a
-                            medida.</p>
-                    </div>
+    <div class="about-grid">
+<!-- Columna izquierda -->
+<div class="about-box">
+  <h3 class="about-title"><i class="fas fa-user-tie"></i> Perfil</h3>
+  <p>
+    Técnico Superior en Redes Informáticas con foco en <strong>FTTH/GPON</strong> y
+    <strong>automatización con Python</strong>. Diseño herramientas y apps que pasan a
+    producción con documentación y capacitación.
+  </p>
 
-                    <div class="about-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-header">
-                            <i class="fas fa-laptop-code"></i>
-                            <h3>Desarrollo de Soluciones</h3>
-                        </div>
-                        <p>Dentro de Conectar, diseño y mantengo herramientas en Python que automatizan la configuración
-                            de ONUs y módems, diagnostican redes GPON (vía SecureCRT) o integran notificaciones de
-                            tickets. Estas soluciones se usan actualmente en el entorno de producción, optimizando
-                            procesos técnicos, reduciendo errores y acelerando las activaciones de servicio, alineándose
-                            con la promesa de Conectar de "conectividad confiable y de vanguardia".</p>
-                    </div>
+  <ul class="metric-list">
+    <li><i class="fas fa-bolt"></i> Activaciones FTTH: <strong>12–15 min → ~2 min</strong></li>
+    <li><i class="fas fa-shield-alt"></i> Errores manuales: <strong>−90%</strong></li>
+    <li><i class="fas fa-rocket"></i> Entregas <strong>listas para producción</strong></li>
+  </ul>
 
-                    <div class="about-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-header">
-                            <i class="fas fa-code-branch"></i>
-                            <h3>Experiencia Técnica</h3>
-                        </div>
-                        <p>Poseo también experiencia en SQL y C#/.NET Framework, lo que me permite integrar soluciones
-                            de escritorio o bases de datos cuando el proyecto lo requiere. Me apasiona aprender nuevas
-                            tecnologías, especialmente en el ámbito de la computación en la nube, respaldado por mi
-                            certificación AWS Cloud Practitioner.</p>
-                    </div>
+  <div class="pill-stack">
+    <span class="pill">Python</span>
+    <span class="pill">Django</span>
+    <span class="pill">SQL</span>
+    <span class="pill">HTML/CSS/JS</span>
+    <span class="pill">Cisco IOS</span>
+    <span class="pill">FTTH/GPON</span>
+  </div>
 
-                    <div class="about-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card-header">
-                            <i class="fas fa-bullseye"></i>
-                            <h3>Enfoque y Disponibilidad</h3>
-                        </div>
-                        <p>Soy un profesional orientado a resultados, que busca continuamente optimizar los procesos de
-                            red, integrando automatizaciones que faciliten la labor técnica y aseguren la calidad en el
-                            servicio. Si querés ver más o hablar sobre cómo contribuir a tu próximo proyecto, estoy
-                            disponible para colaborar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="facts">
+    <div><i class="fas fa-map-marker-alt"></i> Sunchales, AR (remoto/onsite)</div>
+    <div><i class="fas fa-briefcase"></i> Disponibilidad: <strong>proyectos y freelance</strong></div>
+    <div><i class="fab fa-aws"></i> AWS Cloud Practitioner</div>
+  </div>
+
+  <div class="about-ctas">
+    <a href="docs/Luis-Miraglio-CV.pdf" class="btn btn-secondary" download>
+      <i class="fas fa-download"></i> Descargar CV
+    </a>
+  </div>
+</div>
+
+
+      <!-- Columna derecha -->
+      <div class="about-box">
+        <h3 class="about-title"><i class="fas fa-laptop-code"></i> Qué hago</h3>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Automatización de configuración de ONUs/módems (scripts Selenium/Python)</li>
+          <li><i class="fas fa-check-circle"></i> Diagnóstico masivo en OLT/slots (SecureCRT scripts + reportes)</li>
+          <li><i class="fas fa-check-circle"></i> Bots y dashboards: <strong>alertas y gestión</strong> de tickets</li>
+          <li><i class="fas fa-check-circle"></i> Apps web (Django) y herramientas de escritorio</li>
+          <li><i class="fas fa-check-circle"></i> Entregas con <strong>documentación + capacitación</strong></li>
+        </ul>
+
+        <h4 class="about-subtitle"><i class="fas fa-bullseye"></i> Cómo trabajo</h4>
+        <p>
+          Definimos el flujo, medimos el “antes”, automatizamos, desplegamos en etapas y dejamos
+          todo documentado para que el equipo lo mantenga. Objetivo: <strong>menos tiempo, menos errores</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Sección Proyectos -->
 <section id="proyectos" class="projects">
   <div class="container">
@@ -180,66 +190,70 @@
 
     <!-- Grid de proyectos -->
     <div class="projects-grid">
-      <!-- Proyecto 1: Automatización de ONUs DATACOM -->
-      <div class="project-card">
-        <img src="images/datacom.png" alt="Automatización de ONUs DATACOM" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-        <h3 class="project-title">Automatización de ONUs DATACOM</h3>
-        <button class="btn btn-primary" onclick="openModal('datacom-modal')">Ver detalles</button>
-      </div>
-      <!-- Proyecto 2: SecureCRT Slots -->
-      <div class="project-card">
-        <img src="images/securecrt-slots.png" alt="SecureCRT Slots" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-        <h3 class="project-title">Diagnóstico ONU en Slots – SecureCRT Script</h3>
-        <button class="btn btn-primary" onclick="openModal('securecrt-modal')">Ver detalles</button>
-      </div>
-      <!-- Proyecto 3: Control de Stock -->
-      <div class="project-card">
-        <img src="images/inventory-management.png" alt="Control de Stock" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-        <h3 class="project-title">Sistema de Control de Stock de Productos</h3>
-        <button class="btn btn-primary" onclick="openModal('stock-modal')">Ver detalles</button>
-      </div>
+<!-- Proyecto 1: Automatización de ONUs DATACOM -->
+<div class="project-card" data-modal="datacom-modal" role="button" tabindex="0" aria-label="Ver detalles de Automatización de ONUs DATACOM">
+  <img src="images/datacom.png" alt="Automatización de ONUs DATACOM" class="project-thumb">
+  <h3 class="project-title">Automatización de ONUs DATACOM</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
 
-      <!-- Proyecto 4: TaskFlow -->
-    <div class="project-card">
-    <img src="images/taskflow-1.png" alt="TaskFlow Django" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-    <h3 class="project-title">TaskFlow - Gestor de Tareas (Django)</h3>
-    <button class="btn btn-primary" onclick="openModal('taskflow-modal')">Ver detalles</button>
-    </div>
 
-    <!-- Proyecto 5: Diagnóstico de Red -->
-    <div class="project-card">
-    <img src="images/diagnostico-red.png" alt="Diagnóstico de Red" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-    <h3 class="project-title">Diagnóstico de Red</h3>
-    <button class="btn btn-primary" onclick="openModal('diagnostico-modal')">Ver detalles</button>
-    </div>
+<!-- Proyecto 2: SecureCRT Slots -->
+<div class="project-card" data-modal="securecrt-modal" role="button" tabindex="0" aria-label="Ver detalles de Diagnóstico ONU en Slots – SecureCRT Script">
+  <img src="images/securecrt-slots.png" alt="SecureCRT Slots" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">Diagnóstico ONU en Slots – SecureCRT Script</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
 
-    <!-- Proyecto 6: Menú Desplegable -->
-    <div class="project-card">
-    <img src="images/menu-desplegable.png" alt="Menú Desplegable" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-    <h3 class="project-title">Menú Desplegable (JS + SCSS)</h3>
-    <button class="btn btn-primary" onclick="openModal('menu-modal')">Ver detalles</button>
-    </div>
+<!-- Proyecto 3: Control de Stock -->
+<div class="project-card" data-modal="stock-modal" role="button" tabindex="0" aria-label="Ver detalles de Sistema de Control de Stock de Productos">
+  <img src="images/inventory-management.png" alt="Control de Stock" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">Sistema de Control de Stock de Productos</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
 
-    <!-- Proyecto 7: Etiquetador de Viandas Zebra -->
-    <div class="project-card">
-    <img src="images/etiquetador-zebra.png" alt="Etiquetador de Viandas Cebra" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-    <h3 class="project-title">Etiquetador de Viandas Cebra</h3>
-    <button class="btn btn-primary" onclick="openModal('cebra-modal')">Ver detalles</button>
-    </div>
+<!-- Proyecto 4: TaskFlow -->
+<div class="project-card" data-modal="taskflow-modal" role="button" tabindex="0" aria-label="Ver detalles de TaskFlow - Gestor de Tareas (Django)">
+  <img src="images/taskflow-1.png" alt="TaskFlow Django" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">TaskFlow - Gestor de Tareas (Django)</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
 
-    <!-- Proyecto 8: Calculadora en JavaScript -->
-    <div class="project-card">
-    <img src="images/calculadora-js.png" alt="Calculadora en JavaScript" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-    <h3 class="project-title">Calculadora en JavaScript</h3>
-    <button class="btn btn-primary" onclick="openModal('calculadora-modal')">Ver detalles</button>
-    </div>
+<!-- Proyecto 5: Diagnóstico de Red -->
+<div class="project-card" data-modal="diagnostico-modal" role="button" tabindex="0" aria-label="Ver detalles de Diagnóstico de Red">
+  <img src="images/diagnostico-red.png" alt="Diagnóstico de Red" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">Diagnóstico de Red</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
 
-    <!-- Proyecto 9: Buscador de Nodos FTTH -->
-  <div class="project-card">
-    <img src="images/buscador-nodos.png" alt="Buscador de Nodos FTTH" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
-    <h3 class="project-title">Buscador de Nodos FTTH</h3>
-    <button class="btn btn-primary" onclick="openModal('nodos-ftth-modal')">Ver detalles</button>
-  </div>
+<!-- Proyecto 6: Menú Desplegable -->
+<div class="project-card" data-modal="menu-modal" role="button" tabindex="0" aria-label="Ver detalles de Menú Desplegable (JS + SCSS)">
+  <img src="images/menu-desplegable.png" alt="Menú Desplegable" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">Menú Desplegable (JS + SCSS)</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
+
+<!-- Proyecto 7: Etiquetador de Viandas Zebra -->
+<div class="project-card" data-modal="cebra-modal" role="button" tabindex="0" aria-label="Ver detalles de Etiquetador de Viandas Cebra">
+  <img src="images/etiquetador-zebra.png" alt="Etiquetador de Viandas Cebra" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">Etiquetador de Viandas Cebra</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
+
+<!-- Proyecto 8: Calculadora en JavaScript -->
+<div class="project-card" data-modal="calculadora-modal" role="button" tabindex="0" aria-label="Ver detalles de Calculadora en JavaScript">
+  <img src="images/calculadora-js.png" alt="Calculadora en JavaScript" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">Calculadora en JavaScript</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
+
+<!-- Proyecto 9: Buscador de Nodos FTTH -->
+<div class="project-card" data-modal="nodos-ftth-modal" role="button" tabindex="0" aria-label="Ver detalles de Buscador de Nodos FTTH">
+  <img src="images/buscador-nodos.png" alt="Buscador de Nodos FTTH" class="project-thumb" style="width:100%;border-radius:12px 12px 0 0;">
+  <h3 class="project-title">Buscador de Nodos FTTH</h3>
+  <span class="project-quick">Ver detalles</span>
+</div>
+
     </div> <!-- /projects-grid -->
     </div> <!-- /container -->
 
