@@ -259,289 +259,342 @@
 
   <!-- Modals FUERA del container y del grid -->
   <!-- Modal Proyecto 1: Automatización de ONUs DATACOM -->
-  <div id="datacom-modal" class="modal">
+<!-- Ejemplo: DATACOM -->
+<!-- Modal: DATACOM -->
+<div id="datacom-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="datacom-title" tabindex="-1" data-modal-index="0" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('datacom-modal')">&times;</span>
-    <div class="modal-section">
-      <h2>Automatización de Configuración de ONUs DATACOM</h2>
-      <img src="images/datacom.png" alt="Automatización de ONUs DATACOM" class="project-thumb">
-      <p>
-        Este proyecto consiste en una herramienta de automatización diseñada para simplificar y acelerar el proceso de configuración de ONUs (Unidades de Red Óptica) utilizadas en entornos de telecomunicaciones.
-      </p>
-      <p>
-        Utilizando <b>Python</b> y <b>Selenium</b>, desarrollé scripts personalizados para los modelos DATACOM DM984-422, DM986-414 y DM986-416 AX30, capaces de realizar la configuración inicial del equipo sin intervención manual.
-      </p>
-    </div>
-    <div class="modal-section">
-      <h4>Características principales</h4>
-      <ul>
-        <li>Acceso al panel de administración del módem</li>
-        <li>Configuración de usuario y contraseña PPPoE</li>
-        <li>Asignación de parámetros WAN y VLAN</li>
-        <li>Definición de redes Wi-Fi con nombre, canal, seguridad y potencia</li>
-        <li>Activación o ajuste de funciones como bridge, NAT o firewall</li>
-      </ul>
-      <p>
-        <strong>Beneficio:</strong> El proceso de configuración se reduce de 8-15 minutos a menos de 2 minutos con mínima interacción del técnico.
-      </p>
-    </div>
-    <div class="modal-section">
-      <h4>Repositorios</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM984-422" target="_blank">
-            <i class="fab fa-github"></i> DATACOM DM984-422
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-414" target="_blank">
-            <i class="fab fa-github"></i> DM986-414
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-416-AX30" target="_blank">
-            <i class="fab fa-github"></i> DM986-416 AX30
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-        <span class="tech-tag"><i class="fas fa-code"></i> Selenium WebDriver</span>
-        <span class="tech-tag"><i class="fas fa-desktop"></i> UI Automation</span>
-        <span class="tech-tag"><i class="fas fa-cube"></i> PyInstaller</span>
+
+    <div class="modal-header">
+      <h2 id="datacom-title">Automatización de Configuración de ONUs DATACOM</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
       </div>
     </div>
+
+    <div class="modal-body">
+      <!-- galería -->
+      <div class="modal-gallery">
+        <img src="images/datacom.png" alt="Pantalla principal de automatización DATACOM">
+      </div>
+
+      <!-- estructura clara -->
+      <div class="modal-section">
+        <h4>Problema</h4>
+        <p>Configurar ONUs manualmente tardaba 8–15 min por equipo y generaba errores de carga.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Solución</h4>
+        <ul>
+          <li>Scripts en <b>Python + Selenium</b> para modelos DM984/DM986.</li>
+          <li>Configuración PPPoE, VLAN y Wi-Fi en menos de 2 min.</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Impacto</h4>
+        <ul>
+          <li><b>−85–90%</b> de tiempo operativo.</li>
+          <li>Menos errores y entregas listas para producción.</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+          <span class="tech-tag"><i class="fas fa-code"></i> Selenium</span>
+          <span class="tech-tag"><i class="fas fa-cube"></i> PyInstaller</span>
+        </div>
+      </div>
+
+      <!-- Repositorios -->
+      <div class="modal-section">
+        <h4>Repositorios</h4>
+        <a class="repo-link" target="_blank" href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-414">
+          <i class="fab fa-github"></i> Script-DATACOM-DM986-414 – Ver repositorio
+        </a><br>
+        <a class="repo-link" target="_blank" href="https://github.com/LuisMiraglio/Script-DATACOM-DM986-416-AX30">
+          <i class="fab fa-github"></i> Script-DATACOM-DM986-416-AX30 – Ver repositorio
+        </a><br>
+        <a class="repo-link" target="_blank" href="https://github.com/LuisMiraglio/Script-DATACOM-DM984-422">
+          <i class="fab fa-github"></i> Script-DATACOM-DM984-422 – Ver repositorio
+        </a>
+      </div>
+    </div>
+
+<div class="modal-actions">
+  <button class="btn-modal-close modal-close" type="button">Cerrar</button>
+</div>
   </div>
 </div>
 
  <!-- Modal Proyecto 2: Diagnostico de ONU en Slot - SecureCRT Script -->
-<div id="securecrt-modal" class="modal">
+<!-- Modal: SecureCRT -->
+<div id="securecrt-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="securecrt-title" tabindex="-1" data-modal-index="1" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('securecrt-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>Diagnóstico Automatizado de ONUs – SecureCRT Script</h2>
-      <img src="images/securecrt-slots.png" alt="SecureCRT Slots" class="project-thumb">
-      <p>
-        Este script está diseñado para ejecutarse directamente en SecureCRT, aprovechando su capacidad nativa para correr automatizaciones en entornos de red por consola.
-      </p>
-      <p>
-        La herramienta automatiza el diagnóstico completo de un slot específico en una OLT, simplificando el proceso de monitoreo y resolución de problemas.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Acciones automatizadas</h4>
-      <ul>
-        <li>Ejecuta el comando <b>onu show</b> para identificar los virtuales disponibles del slot seleccionado.</li>
-        <li>Lanza automáticamente 64 consultas <b>onu status</b>, una por virtual, consolidando en un solo paso el estado de todas las ONUs.</li>
-        <li>Muestra estado de conexión (activa, caída, ausente) y valores ópticos (RX/TX).</li>
-        <li>Identifica indicadores de error para diagnóstico rápido.</li>
-      </ul>
-      <p>
-        Antes, este análisis se hacía virtual por virtual. Ahora, el script diagnostica el slot completo en segundos, reduciendo el tiempo técnico y facilitando tareas preventivas/correctivas.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/SecureCRT-Slots" target="_blank">
-            <i class="fab fa-github"></i> SecureCRT Slots – Ver repositorio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-        <span class="tech-tag"><i class="fas fa-terminal"></i> Script VBS</span>
-        <span class="tech-tag"><i class="fas fa-network-wired"></i> SecureCRT API</span>
-        <span class="tech-tag"><i class="fas fa-wrench"></i> Automation</span>
+    <div class="modal-header">
+      <h2 id="securecrt-title">Diagnóstico Automatizado de ONUs SecureCRT Script</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
       </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img src="images/securecrt-slots.png" alt="SecureCRT Slots">
+      </div>
+
+      <div class="modal-section">
+        <p>
+          Este script está diseñado para ejecutarse directamente en SecureCRT, aprovechando su capacidad nativa
+          para correr automatizaciones en entornos de red por consola.
+        </p>
+        <p>
+          La herramienta automatiza el diagnóstico completo de un slot específico en una OLT, simplificando
+          el proceso de monitoreo y resolución de problemas.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Acciones automatizadas</h4>
+        <ul>
+          <li>Ejecuta el comando <b>onu show</b> para identificar los virtuales del slot.</li>
+          <li>Lanza automáticamente 64 consultas <b>onu status</b> (una por virtual).</li>
+          <li>Muestra estado de conexión y valores ópticos (RX/TX).</li>
+          <li>Identifica indicadores de error para diagnóstico rápido.</li>
+        </ul>
+        <p>Antes era manual virtual por virtual; ahora el slot completo en segundos.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/SecureCRT-Slots" target="_blank">
+          <i class="fab fa-github"></i> SecureCRT Slots — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+          <span class="tech-tag"><i class="fas fa-terminal"></i> Script VBS</span>
+          <span class="tech-tag"><i class="fas fa-network-wired"></i> SecureCRT API</span>
+          <span class="tech-tag"><i class="fas fa-wrench"></i> Automation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
 </div>
 
   <!-- Modal Proyecto 3: Sistema de Control de Stock de Productos -->
-<div id="stock-modal" class="modal">
+<!-- Modal: Stock -->
+<div id="stock-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="stock-title" tabindex="-1" data-modal-index="2" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('stock-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>Sistema de Control de Stock de Productos</h2>
-      <img src="images/inventory-management.png" alt="Control de Stock" class="project-thumb">
-      <p>
-        Aplicación web completa para gestionar inventario y distribución de productos, con seguimiento de stock disponible y entregas realizadas a técnicos.
-      </p>
-      <p>
-        Esta Single Page Application (SPA) funciona completamente del lado del cliente, sin necesidad de conexión a internet ni servidores externos.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Funcionalidades principales</h4>
-      <ul>
-        <li>Sistema de autenticación para control de acceso seguro</li>
-        <li>Gestión completa de productos (CRUD de transformadores con seguimiento de stock)</li>
-        <li>Administración de técnicos con visualización de productos asignados</li>
-        <li>Registro de entregas con actualización automática del inventario</li>
-        <li>Respaldo de datos con importación/exportación y respaldos automáticos</li>
-        <li>Base de datos SQL ejecutándose directamente en el navegador</li>
-      </ul>
-      <p>
-        Usa una arquitectura MVC simplificada y demuestra cómo implementar una app de gestión completa con JavaScript vanilla, aprovechando SQL.js para una base de datos relacional en el navegador. La persistencia se maneja localmente mediante <b>localStorage</b>, permitiendo experiencia offline sin sacrificar la potencia de las consultas SQL.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/Control-de-Stock" target="_blank">
-            <i class="fab fa-github"></i> Control de Stock – Ver repositorio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
-        <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
-        <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-        <span class="tech-tag"><i class="fas fa-database"></i> SQL.js</span>
+    <div class="modal-header">
+      <h2 id="stock-title">Sistema de Control de Stock de Productos</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
       </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img src="images/inventory-management.png" alt="Control de Stock">
+      </div>
+
+      <div class="modal-section">
+        <p>
+          Aplicación web completa para gestionar inventario y distribución de productos, con seguimiento de stock disponible y entregas a técnicos.
+        </p>
+        <p>
+          SPA funcionando del lado del cliente, sin necesidad de conexión a internet ni servidores externos.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Funcionalidades principales</h4>
+        <ul>
+          <li>Autenticación para control de acceso</li>
+          <li>CRUD de productos con stock</li>
+          <li>Gestión de técnicos con productos asignados</li>
+          <li>Registro de entregas con actualización automática</li>
+          <li>Importación/exportación y respaldos automáticos</li>
+          <li>Base SQL en el navegador con <b>SQL.js</b></li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/Control-de-Stock" target="_blank">
+          <i class="fab fa-github"></i> Control de Stock — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+          <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+          <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span class="tech-tag"><i class="fas fa-database"></i> SQL.js</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
 </div>
 
-
 <!-- Modal Proyecto 4: TaskFlow -->
-<div id="taskflow-modal" class="modal">
+<!-- Modal: TaskFlow -->
+<div id="taskflow-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="taskflow-title" tabindex="-1" data-modal-index="3" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('taskflow-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>TaskFlow – Gestor de Tareas con Django</h2>
+    <div class="modal-header">
+      <h2 id="taskflow-title">TaskFlow – Gestor de Tareas con Django</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
+      </div>
+    </div>
+
+    <div class="modal-body">
       <div class="modal-gallery">
         <img src="images/taskflow1.png" alt="Login TaskFlow">
         <img src="images/taskflow2.png" alt="Listado de tareas TaskFlow">
         <img src="images/taskflow3.png" alt="Registro de Usuarios">
       </div>
-      <p>
-        <strong>TaskFlow</strong> es una aplicación web desarrollada con Django para la gestión de tareas personales. Permite organizar, priorizar y visualizar tareas de forma simple y moderna, asegurando que cada usuario sólo vea y administre sus propias tareas.
-      </p>
-    </div>
 
-    <div class="modal-section">
-      <h4>Características principales</h4>
-      <ul>
-        <li>Autenticación de usuarios: registro, login y logout visual y seguro</li>
-        <li>Gestión de tareas por usuario</li>
-        <li>CRUD de tareas: crear, ver, editar y eliminar</li>
-        <li>Prioridades visuales (alta, media, baja)</li>
-        <li>Completar o marcar como pendiente con un clic</li>
-        <li>Filtrado y búsqueda por nombre y estado</li>
-        <li>Fecha de vencimiento opcional</li>
-        <li>Paginación para listas extensas</li>
-        <li>Confirmación visual al eliminar con modal</li>
-        <li>Diseño responsivo y moderno con Bootstrap 5</li>
-        <li>Notificaciones flash para acciones importantes</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/Python-Django-Proyect" target="_blank">
-            <i class="fab fa-github"></i> TaskFlow – Ver repositorio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
-        <span class="tech-tag"><i class="fas fa-server"></i> Django</span>
-        <span class="tech-tag"><i class="fab fa-bootstrap"></i> Bootstrap 5</span>
-        <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
-        <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-        <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+      <div class="modal-section">
+        <p>
+          <strong>TaskFlow</strong> es una app en Django para organizar, priorizar y visualizar tareas por usuario.
+        </p>
       </div>
+
+      <div class="modal-section">
+        <h4>Características principales</h4>
+        <ul>
+          <li>Auth: registro, login y logout</li>
+          <li>CRUD de tareas por usuario</li>
+          <li>Prioridades, filtros y búsqueda</li>
+          <li>Fecha de vencimiento (opcional)</li>
+          <li>Paginación y confirmación visual</li>
+          <li>UI responsiva (Bootstrap 5)</li>
+          <li>Notificaciones flash</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/Python-Django-Proyect" target="_blank">
+          <i class="fab fa-github"></i> TaskFlow — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+          <span class="tech-tag"><i class="fas fa-server"></i> Django</span>
+          <span class="tech-tag"><i class="fab fa-bootstrap"></i> Bootstrap 5</span>
+          <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+          <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
 </div>
 
 <!-- Modal Proyecto 5: Diagnóstico de Red -->
-<div id="diagnostico-modal" class="modal">
+<!-- Modal: Diagnóstico de Red -->
+<div id="diagnostico-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="diagnostico-title" tabindex="-1" data-modal-index="4" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('diagnostico-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>Diagnóstico de Red – Aplicación de Monitoreo</h2>
-      <img src="images/interfaz-proyecto5.png" alt="Diagnóstico de Red" class="project-thumb">
-      <p>
-        <strong>Diagnóstico de Red</strong> es una aplicación de escritorio creada en Python y PySide6 para visualizar información fundamental de tu red local e internet. Permite realizar pruebas rápidas y obtener detalles útiles para el soporte técnico o el auto-diagnóstico.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Funcionalidades principales</h4>
-      <ul>
-        <li>Mostrar IP privada de la máquina local</li>
-        <li>Obtener y registrar la IP pública de la conexión</li>
-        <li>Escanear y listar todos los dispositivos conectados a la red local</li>
-        <li>Mostrar dirección MAC y nombre del host (si está disponible)</li>
-        <li>Guardar historial de IP pública en archivo</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Nota: Guía de pruebas manuales</h4>
-      <div class="note-box">
-        ¿Querés aprender cómo realizar estas pruebas manualmente (sin la app)? Podés consultar el siguiente archivo en el repositorio:
-        <br>
-        <a href="https://github.com/LuisMiraglio/diagnostico-red/blob/main/MANUAL_PRUEBAS_MANUALES.md" target="_blank">
-          👉 Ver manual de pruebas manuales
-        </a>
-        <br>
-        Allí vas a encontrar instrucciones para obtener tu IP privada, pública, escanear la red con <b>arp -a</b> y más.
+    <div class="modal-header">
+      <h2 id="diagnostico-title">Diagnóstico de Red – Aplicación de Monitoreo</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
       </div>
     </div>
 
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/diagnostico-red" target="_blank">
-            <i class="fab fa-github"></i> Diagnóstico de Red – Ver repositorio
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img src="images/interfaz-proyecto5.png" alt="Diagnóstico de Red UI">
+      </div>
+
+      <div class="modal-section">
+        <p>
+          App de escritorio en Python + PySide6 para visualizar info de red local e internet y realizar pruebas rápidas.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Funcionalidades principales</h4>
+        <ul>
+          <li>IP privada y pública</li>
+          <li>Escaneo de dispositivos en red</li>
+          <li>MAC y host (si están disponibles)</li>
+          <li>Historial de IP pública</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Nota: Guía de pruebas manuales</h4>
+        <div class="note-box">
+          ¿Querés hacerlo manual? Mirá el archivo:
+          <br>
+          <a href="https://github.com/LuisMiraglio/diagnostico-red/blob/main/MANUAL_PRUEBAS_MANUALES.md" target="_blank">
+            👉 Ver manual de pruebas manuales
           </a>
-        </li>
-      </ul>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/diagnostico-red" target="_blank">
+          <i class="fab fa-github"></i> Diagnóstico de Red — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+          <span class="tech-tag"><i class="fas fa-window-maximize"></i> PySide6</span>
+          <span class="tech-tag"><i class="fas fa-network-wired"></i> Scapy</span>
+          <span class="tech-tag"><i class="fas fa-cloud"></i> Requests</span>
+        </div>
+      </div>
     </div>
 
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
-        <span class="tech-tag"><i class="fas fa-window-maximize"></i> PySide6</span>
-        <span class="tech-tag"><i class="fas fa-network-wired"></i> Scapy</span>
-        <span class="tech-tag"><i class="fas fa-cloud"></i> Requests</span>
-      </div>
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
@@ -549,213 +602,256 @@
 
 
 <!-- Modal Proyecto 6: Menú Desplegable -->
-<div id="menu-modal" class="modal">
+<!-- Modal: Menú Desplegable -->
+<div id="menu-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="menu-title" tabindex="-1" data-modal-index="5" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('menu-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>Menú Desplegable</h2>
-      <img src="images/interfaz-proyecto6.PNG" alt="Menú Desplegable" class="project-thumb">
-      <p>
-        <strong>Menú Desplegable</strong> es un proyecto simple y práctico desarrollado para aplicar conocimientos en JavaScript, CSS y SCSS. Permite crear menús interactivos con animaciones suaves y un diseño moderno.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Características principales</h4>
-      <ul>
-        <li>Menú desplegable con efectos visuales atractivos</li>
-        <li>Uso de SCSS para un código más modular y mantenible</li>
-        <li>Animaciones y transiciones suaves para mejorar la experiencia de usuario</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/Menu-Desplegable" target="_blank">
-            <i class="fab fa-github"></i> Menú Desplegable – Ver repositorio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
-        <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
-        <span class="tech-tag"><i class="fab fa-sass"></i> SCSS</span>
+    <div class="modal-header">
+      <h2 id="menu-title">Menú Desplegable</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
       </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img src="images/interfaz-proyecto6.PNG" alt="Menú Desplegable UI">
+      </div>
+
+      <div class="modal-section">
+        <p><strong>Menú Desplegable</strong> para practicar JS, CSS y SCSS. Animaciones suaves y diseño moderno.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Características principales</h4>
+        <ul>
+          <li>Efectos visuales</li>
+          <li>SCSS modular</li>
+          <li>Transiciones suaves</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/Menu-Desplegable" target="_blank">
+          <i class="fab fa-github"></i> Menú Desplegable — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+          <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+          <span class="tech-tag"><i class="fab fa-sass"></i> SCSS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
 </div>
+
 
 <!-- Modal Proyecto 7: Etiquetador de Viandas Cebra -->
-<div id="cebra-modal" class="modal">
+<!-- Modal: Cebra -->
+<div id="cebra-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="cebra-title" tabindex="-1" data-modal-index="6" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('cebra-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>Etiquetador de Viandas Cebra</h2>
-      <img src="images/interfaz-proyecto7.png" alt="Etiquetador de Viandas Cebra" class="project-thumb">
-      <p>
-        Aplicación de escritorio desarrollada en Python que permite generar e imprimir etiquetas adhesivas para viandas de comida utilizando impresoras Zebra (ZPL).  
-        Lee un archivo Excel con los pedidos de menú por empleado y genera automáticamente etiquetas personalizadas con el nombre, el menú elegido, la fecha de vencimiento y un código de barras EAN13.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Características principales</h4>
-      <ul>
-        <li>Lectura automática de archivos Excel para generar etiquetas por empleado</li>
-        <li>Impresión directa en impresoras Zebra usando lenguaje ZPL</li>
-        <li>Diseño de etiquetas configurable: nombre, menú, fechas y código de barras EAN13</li>
-        <li>Interfaz gráfica fácil de usar desarrollada con Tkinter</li>
-        <li>Automatización total del proceso de etiquetado</li>
-        <li>Incluye versión compilada lista para usar en Windows</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/etiquetador-viandas-zebra" target="_blank">
-            <i class="fab fa-github"></i> Etiquetador de Viandas Cebra – Ver repositorio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
-        <span class="tech-tag"><i class="fas fa-desktop"></i> Tkinter</span>
-        <span class="tech-tag"><i class="fas fa-file-excel"></i> Pandas</span>
-        <span class="tech-tag"><i class="fas fa-barcode"></i> ZPL</span>
-        <span class="tech-tag"><i class="fab fa-windows"></i> Pywin32</span>
+    <div class="modal-header">
+      <h2 id="cebra-title">Etiquetador de Viandas Cebra</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
       </div>
     </div>
 
-    <div class="note-box">
-      <strong>Versión compilada incluida:</strong>  
-      Si estás en Windows, podrás ejecutar directamente el archivo EXE sin instalar Python.
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img src="images/interfaz-proyecto7.png" alt="Etiquetador de Viandas Cebra">
+      </div>
+
+      <div class="modal-section">
+        <p>
+          App de escritorio que genera e imprime etiquetas (Zebra ZPL) desde archivos Excel con pedidos de menú.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Características principales</h4>
+        <ul>
+          <li>Lectura de Excel por empleado</li>
+          <li>Impresión directa ZPL</li>
+          <li>Diseño configurable (nombre, menú, fechas, EAN13)</li>
+          <li>Interfaz con Tkinter</li>
+          <li>Versión compilada para Windows</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/etiquetador-viandas-zebra" target="_blank">
+          <i class="fab fa-github"></i> Etiquetador de Viandas Cebra — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+          <span class="tech-tag"><i class="fas fa-desktop"></i> Tkinter</span>
+          <span class="tech-tag"><i class="fas fa-file-excel"></i> Pandas</span>
+          <span class="tech-tag"><i class="fas fa-barcode"></i> ZPL</span>
+          <span class="tech-tag"><i class="fab fa-windows"></i> Pywin32</span>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>Versión compilada incluida:</strong> Ejecutable directo en Windows sin instalar Python.
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
 </div>
 
+
 <!-- Modal Proyecto 8: Calculadora en JavaScript -->
-<div id="calculadora-modal" class="modal">
+<!-- Modal: Calculadora -->
+<div id="calculadora-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="calculadora-title" tabindex="-1" data-modal-index="7" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('calculadora-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>Calculadora en JavaScript</h2>
+    <div class="modal-header">
+      <h2 id="calculadora-title">Calculadora en JavaScript</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
+      </div>
+    </div>
+
+    <div class="modal-body">
       <div class="modal-gallery">
-        <img src="images/interfaz-proyecto8.png" alt="Interfaz Calculadora JS" />
-        <img src="images/interfaz2-proyecto8.PNG" alt="Interfaz móvil Calculadora JS" />
+        <img src="images/interfaz-proyecto8.png" alt="Interfaz Calculadora JS">
+        <img src="images/interfaz2-proyecto8.PNG" alt="Interfaz móvil Calculadora JS">
       </div>
-      <p>
-        <strong>Calculadora en JavaScript</strong> es un proyecto simple y práctico diseñado para reforzar el aprendizaje de JavaScript, CSS y SCSS.  
-        Permite realizar operaciones matemáticas básicas con una interfaz moderna y totalmente responsiva.
-      </p>
-    </div>
 
-    <div class="modal-section">
-      <h4>Características principales</h4>
-      <ul>
-        <li>Operaciones básicas: suma, resta, multiplicación y división</li>
-        <li>Diseño moderno y adaptativo a cualquier dispositivo</li>
-        <li>Botón para borrar y limpiar la pantalla</li>
-        <li>Animaciones y transiciones suaves</li>
-        <li>SCSS para un código más modular y fácil de mantener</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/Calculadora-JS" target="_blank">
-            <i class="fab fa-github"></i> Calculadora en JavaScript – Ver repositorio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
-        <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-        <span class="tech-tag"><i class="fab fa-sass"></i> SCSS</span>
+      <div class="modal-section">
+        <p>
+          Proyecto para reforzar JS, CSS y SCSS. Operaciones básicas con UI moderna y responsiva.
+        </p>
       </div>
+
+      <div class="modal-section">
+        <h4>Características principales</h4>
+        <ul>
+          <li>Suma, resta, multiplicación y división</li>
+          <li>Diseño adaptativo</li>
+          <li>Borrado y limpieza de pantalla</li>
+          <li>Transiciones suaves</li>
+          <li>SCSS modular</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/Calculadora-JS" target="_blank">
+          <i class="fab fa-github"></i> Calculadora en JavaScript — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+          <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span class="tech-tag"><i class="fab fa-sass"></i> SCSS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
 </div>
 
 <!-- Modal Proyecto 9: Buscador de Nodos FTTH -->
-<div id="nodos-ftth-modal" class="modal">
+<!-- Modal: Nodos FTTH -->
+<div id="nodos-ftth-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="nodos-title" tabindex="-1" data-modal-index="8" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('nodos-ftth-modal')">&times;</span>
 
-    <div class="modal-section">
-      <h2>Buscador de Nodos FTTH</h2>
-      <img src="images/interfaz-proyecto9.PNG" alt="Buscador de Nodos FTTH" class="project-thumb">
-      <p>
-        Aplicación de escritorio desarrollada en <strong>Python</strong> con <strong>Tkinter</strong>, diseñada para la consulta y localización rápida de nodos en redes de fibra óptica utilizando datos provenientes de un archivo Excel de referencia.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>Descripción</h4>
-      <p>
-        Esta herramienta permite buscar nodos ingresando su número y obtener, de forma automática, los datos asociados como placa, puerto, OLT y hoja correspondiente.  
-        Su interfaz gráfica moderna y de tema oscuro está optimizada para la rapidez y claridad en entornos de trabajo técnico.
-      </p>
-    </div>
-
-    <div class="modal-section">
-      <h4>¿Cómo funciona?</h4>
-      <ul>
-        <li>Cargá el archivo Excel presionando el botón correspondiente</li>
-        <li>Ingresá el número de nodo que quieras buscar</li>
-        <li>Visualizá en pantalla la información detallada del nodo: placa, puerto, OLT y hoja correspondiente</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Repositorio</h4>
-      <ul class="repos-list">
-        <li>
-          <a href="https://github.com/LuisMiraglio/Buscador-Nodos-FTTH" target="_blank">
-            <i class="fab fa-github"></i> Buscador de Nodos FTTH – Ver repositorio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Tecnologías utilizadas</h4>
-      <div class="project-tech">
-        <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
-        <span class="tech-tag"><i class="fas fa-desktop"></i> Tkinter</span>
-        <span class="tech-tag"><i class="fas fa-file-excel"></i> OpenPyXL</span>
-        <span class="tech-tag"><i class="fas fa-adjust"></i> Tema oscuro</span>
+    <div class="modal-header">
+      <h2 id="nodos-title">Buscador de Nodos FTTH</h2>
+      <div class="modal-nav">
+        <button class="modal-prev" data-modal-prev aria-label="Proyecto anterior">‹</button>
+        <button class="modal-next" data-modal-next aria-label="Proyecto siguiente">›</button>
       </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <img src="images/interfaz-proyecto9.PNG" alt="Buscador de Nodos FTTH">
+      </div>
+
+      <div class="modal-section">
+        <p>
+          App de escritorio en <strong>Python</strong> + <strong>Tkinter</strong> para consultar y localizar nodos de fibra
+          usando datos de Excel de referencia.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Descripción</h4>
+        <p>
+          Busca un nodo y muestra placa, puerto, OLT y hoja. Interfaz oscura y optimizada para trabajo técnico.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>¿Cómo funciona?</h4>
+        <ul>
+          <li>Cargá el Excel</li>
+          <li>Ingresá el número de nodo</li>
+          <li>Visualizá la información (placa, puerto, OLT, hoja)</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Repositorio</h4>
+        <a class="repo-link" href="https://github.com/LuisMiraglio/Buscador-Nodos-FTTH" target="_blank">
+          <i class="fab fa-github"></i> Buscador de Nodos FTTH — Ver repositorio
+        </a>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tecnologías utilizadas</h4>
+        <div class="project-tech">
+          <span class="tech-tag"><i class="fab fa-python"></i> Python 3</span>
+          <span class="tech-tag"><i class="fas fa-desktop"></i> Tkinter</span>
+          <span class="tech-tag"><i class="fas fa-file-excel"></i> OpenPyXL</span>
+          <span class="tech-tag"><i class="fas fa-adjust"></i> Tema oscuro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-modal-close modal-close">Cerrar</button>
     </div>
 
   </div>
 </div>
-
-
-
 </section>
 
                <!-- Sección Servicios -->
