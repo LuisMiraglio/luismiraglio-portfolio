@@ -2987,3 +2987,23 @@ img {
   .modal-nav { right: 16px; } /* un pelín más cerca del borde en móvil */
   .modal-gallery img { height: 250px; }
 }
+
+.about-highlight {
+  width: 100%;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb); /* azul oscuro → azul vivo */
+  color: #f9fafb; /* blanco-gris muy claro */
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 18px 20px;
+  margin: 16px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.about-highlight p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+
