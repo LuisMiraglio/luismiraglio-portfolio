@@ -1806,114 +1806,7 @@ section {
     font-weight: 500;
 }
 
-/* Estilos específicos para certificados */
-.certificates {
-    background-color: var(--white);
-    position: relative;
-    z-index: 1;
-}
 
-/* Patrón sutil de fondo para certificados */
-.certificates::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(37, 99, 235, 0.02)" width="50" height="50" x="25" y="25" /></svg>');
-    pointer-events: none;
-    opacity: 0.6;
-    z-index: -1;
-}
-
-.certificates-intro {
-    max-width: 800px;
-    margin: 0 auto var(--spacing-lg);
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-}
-
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.certificate-card {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: var(--spacing-md);
-    gap: var(--spacing-md);
-}
-
-.certificate-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
-}
-
-.certificate-icon {
-    width: 70px;
-    height: 70px;
-    min-width: 70px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
-    color: var(--primary-color);
-}
-
-.certificate-content {
-    flex: 1;
-}
-
-.certificate-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--dark-color);
-}
-
-.certificate-issuer {
-    font-size: 0.9rem;
-    color: var(--dark-color);
-    opacity: 0.7;
-    margin-bottom: var(--spacing-sm);
-}
-
-.btn-certificate {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 16px;
-    background: rgba(37, 99, 235, 0.1);
-    color: var(--primary-color);
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.btn-certificate:hover {
-    background: var(--primary-color);
-    color: var(--white);
-    transform: translateY(-2px);
-}
-
-.btn-certificate i {
-    margin-right: 8px;
-}
 
 
 /* Mejoras en la navegación principal */
@@ -3181,4 +3074,186 @@ img {
   background: #e0f2fe;
   border-color: #60a5fa;
   transform: translateY(-2px);
+}
+
+/* ========= SECCIÓN CERTIFICADOS (fondo y utilidades) ========= */
+.certificates {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+.certificates::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(37, 99, 235, 0.02)" width="50" height="50" x="25" y="25"/></svg>');
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* (Opcional) Intro/leyenda arriba de la grid */
+.certificates-intro {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, .08);
+}
+
+/* Título y emisor dentro de cada card */
+.certificate-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+.certificate-issuer {
+  font-size: 0.95rem;
+  color: #334155;
+  margin: 0 0 10px 0;
+  opacity: .9;
+}
+
+/* ========= GRID & CARDS ========= */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+  align-items: stretch;   /* todas las filas a la misma altura */
+}
+
+.certificate-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;  /* icono + contenido */
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(2, 6, 23, .08);
+  height: 100%;                      /* clave para igualar alturas */
+  position: relative;                /* para el overlay clickeable */
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.certificate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, .12);
+}
+
+/* Overlay clickeable de toda la card SIN tapar el botón */
+.card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.certificate-actions .btn-certificate {
+  position: relative;
+  z-index: 2; /* el botón queda por encima del overlay */
+}
+
+/* Icono normalizado (todos iguales) */
+.certificate-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #eef2ff;               /* fondo suave */
+  border: 1px solid #e5e7eb;
+}
+.certificate-icon .certificate-svg,
+.certificate-icon .icon-img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Columna de contenido: botón pegado al fondo */
+.certificate-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;                 /* pulmón para evitar “saltos” */
+}
+.certificate-actions {
+  margin-top: auto;                  /* empuja el botón al final */
+}
+
+/* ========= BOTONES ========= */
+.btn-certificate {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8); /* base (azul) */
+  transition: transform .15s ease, box-shadow .15s ease, background .3s ease;
+}
+.btn-certificate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+}
+
+/* Variantes por certificado */
+.btn-aws {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+.btn-aws:hover {
+  background: linear-gradient(135deg, #fbbf24, #92400e);
+}
+
+.btn-python {
+  background: linear-gradient(135deg, #3776ab, #1e40af);
+}
+.btn-python:hover {
+  background: linear-gradient(135deg, #4a90e2, #153e75);
+}
+
+.btn-csharp {
+  background: linear-gradient(135deg, #68217a, #4b1970);
+}
+.btn-csharp:hover {
+  background: linear-gradient(135deg, #8e44ad, #5e1d74);
+}
+
+.btn-wordpress {
+  background: linear-gradient(135deg, #21759b, #1e3a5f);
+}
+.btn-wordpress:hover {
+  background: linear-gradient(135deg, #299ec6, #153248);
+}
+
+.btn-industry {
+  background: linear-gradient(135deg, #16a34a, #065f46);
+}
+.btn-industry:hover {
+  background: linear-gradient(135deg, #22c55e, #064e3b);
+}
+
+.btn-mentoria {
+  background: linear-gradient(135deg, #ec4899, #be185d);
+}
+.btn-mentoria:hover {
+  background: linear-gradient(135deg, #f472b6, #9d174d);
+}
+
+.btn-intro {
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+}
+.btn-intro:hover {
+  background: linear-gradient(135deg, #60a5fa, #1e40af);
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 640px) {
+  .certificate-content { min-height: 140px; }
+}
+@media (max-width: 420px) {
+  .certificate-content { min-height: 120px; }
+  .certificate-card { grid-template-columns: 64px 1fr; gap: 12px; }
 }
