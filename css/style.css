@@ -3257,3 +3257,94 @@ img {
   .certificate-content { min-height: 120px; }
   .certificate-card { grid-template-columns: 64px 1fr; gap: 12px; }
 }
+
+/* Tarjeta backend */
+.skill-category--backend {
+  background:#fff;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 8px 20px rgba(2,6,23,.08);
+}
+
+/* Grid de solo íconos */
+.skill-tiles.icons-only {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap:16px;
+  justify-items:center;
+}
+
+/* Cada “tile” ahora es solo un marco para el ícono */
+.skill-tiles.icons-only .skill-tile {
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.skill-tiles.icons-only .skill-tile:hover {
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(15,23,42,.1);
+  border-color:#c7d2fe;
+}
+
+/* Iconos SVG grandes */
+.skill-icon {
+  width: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 60px);
+  object-fit:contain;
+}
+
+/* ==== Skill categories ==== */
+.skill-category {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header de cada categoría */
+.category-header {
+  display: flex;
+  justify-content: center;   /* centra horizontal */
+  align-items: center;       /* centra vertical */
+  height: 48px;              /* altura fija para todos */
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.category-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin: 0;
+}
+
+/* Grid de iconos */
+.skill-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 14px;
+}
+
+.skill-tile {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+}
+
+.skill-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
