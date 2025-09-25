@@ -195,7 +195,7 @@ section{padding:var(--spacing-xxl) 0}
 /* =========================================================
    CERTIFICADOS
 ========================================================= */
-.certificates{background:#fff;position:relative;z-index:1}
+.certificates{position:relative;z-index:1}
 .certificates::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(37, 99, 235, 0.02)" width="50" height="50" x="25" y="25"/></svg>');pointer-events:none;opacity:.6;z-index:-1}
 .certificates-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;align-items:stretch}
 .certificate-card{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:16px;border-radius:16px;background:#fff;box-shadow:0 10px 24px rgba(2,6,23,.08);height:100%;position:relative;transition:transform .15s,box-shadow .15s}
@@ -439,3 +439,103 @@ section{padding:var(--spacing-xxl) 0}
   .code-card{ max-width: 580px; }
   .code-pre{ font-size: 14px; }
 }
+
+/*Seccion Contacto*/
+/* contenedor de las dos tarjetas */
+.contact-content {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* estilo tarjeta igual a proyectos/certificados */
+.contact-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+/* botón individual dentro de la tarjeta */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;  /* gris claro como en skills */
+  border-radius: 12px;
+  padding: 10px 14px;   /* más compacto */
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0f172a;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: scale(1.02);
+}
+
+/* íconos fontawesome */
+.contact-item i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* íconos svg personalizados */
+.contact-item img {
+  width: 22px;   /* controla tamaño */
+  height: 22px;  /* asegura proporción */
+  flex-shrink: 0; /* evita que se deforme */
+}
+
+/* chip blanco para los íconos de contacto */
+.contact-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;      /* evita que se deforme */
+}
+
+/* svg dentro del chip */
+.contact-icon img{
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* mantén tu tamaño para íconos FontAwesome si aún los usas */
+.contact-item i{
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* opcional: evita que el chip cambie de color al hover */
+.contact-item:hover .contact-icon{
+  background: #fff;
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,.10);
+}
+
+/* (ya lo tienes) los botones no subrayan texto */
+.contact-item{
+  text-decoration: none;
+}
+
+
+
