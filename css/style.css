@@ -416,29 +416,7 @@ section{padding:var(--spacing-xxl) 0}
 .code-pre .var { color:#94a3b8; }   /* variables (gris azulado) */
 .code-pre .str { color:#86efac; }   /* strings   (verde suave) */
 
-/* Cursor parpadeante en esquina inferior derecha */
-.code-caret{
-  position: absolute;
-  right: 18px;
-  bottom: 16px;
-  width: 10px;
-  height: 22px;
-  border-radius: 2px;
-  background: #a78bfa;                  /* lila */
-  box-shadow: 0 0 14px 3px #a78bfa44;   /* glow */
-  animation: blinkCaret 1s steps(1,end) infinite;
-}
 
-@keyframes blinkCaret {
-  0%, 55% { opacity: 1; }
-  56%, 100% { opacity: 0; }
-}
-
-/* Responsive */
-@media (max-width: 991px){
-  .code-card{ max-width: 580px; }
-  .code-pre{ font-size: 14px; }
-}
 
 /*Seccion Contacto*/
 /* contenedor de las dos tarjetas */
@@ -673,3 +651,43 @@ section{padding:var(--spacing-xxl) 0}
   box-shadow: 0 18px 50px rgba(0,0,0,.35);
 }
 
+/*Responsive en Movil el HERO*/
+/* 1) Permitir que el grid NO desborde */
+.hero-container{
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+}
+@media (max-width:768px){
+  .hero-container{ grid-template-columns: minmax(0,1fr); }
+}
+
+/* 2) ¡Clave en Grid!: dejar que las columnas se encojan */
+.hero-content,
+.hero-image{
+  min-width: 0;   /* evita que el contenido “rompa” el ancho en mobile */
+}
+
+/* 3) Card de código: que nunca fuerce ancho en 481–768px */
+@media (max-width:768px){
+  .profile-card,
+  .code-card{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* 4) <pre>: permitir wraps solo en pantallas chicas */
+@media (max-width:768px){
+  .code-pre{
+    white-space: pre-wrap;   /* permite saltos */
+    word-break: break-word;  /* si hubiera tokens largos */
+  }
+}
+
+/* 5) Partículas: siempre absolutas para no empujar el layout */
+.hero-particles{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
