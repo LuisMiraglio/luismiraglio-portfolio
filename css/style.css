@@ -390,11 +390,57 @@ section{padding:var(--spacing-xxl) 0}
 .cv-points li{display:flex;gap:8px;align-items:center;margin:8px 0;color:#1e293b;font-weight:500}
 .cv-points i{color:#2563eb}
 .cv-actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-.btn-online{
-  background:linear-gradient(135deg,#4f46e5,#2563eb);color:#fff;border:none;border-radius:12px;padding:12px 22px;font-weight:700;
-  box-shadow:0 6px 16px rgba(37,99,235,.25)
+
+/* === CV Buttons (base) === */
+.btn-cv{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:15px;
+  line-height:1;
+  text-decoration:none;              /* 👈 quita subrayado */
+  border:1px solid transparent;
+  box-shadow:0 8px 20px rgba(0,0,0,.10);
+  transition:transform .12s, box-shadow .2s, background .2s, border-color .2s, color .2s;
 }
-.btn-download{background:#f8fafc;color:#1e40af;border:2px solid #93c5fd;border-radius:12px;padding:12px 22px;font-weight:700}
+.btn-cv:hover{ transform:translateY(-2px); }
+.btn-cv:active{ transform:translateY(-1px); }
+.btn-cv:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 3px rgba(59,130,246,.45), 0 8px 20px rgba(0,0,0,.12);
+}
+
+/* === Estilos por tipo === */
+/* Primario sólido (Ver CV Online) */
+.btn-online{
+  color:#fff;
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  border-color:rgba(59,130,246,.55);
+  box-shadow:0 10px 24px rgba(59,130,246,.28);
+}
+.btn-online:hover{
+  background:linear-gradient(135deg,#60a5fa,#2563eb);
+  box-shadow:0 14px 28px rgba(59,130,246,.34);
+}
+
+/* Secundario “glass/outline” (Descargar PDF) */
+.btn-download{
+  color:#1e3a8a;
+  background:rgba(59,130,246,.10);
+  border-color:rgba(59,130,246,.35);
+  backdrop-filter:blur(4px);
+}
+.btn-download:hover{
+  color:#0b1f4f;
+  background:rgba(59,130,246,.16);
+  border-color:rgba(59,130,246,.55);
+  box-shadow:0 10px 24px rgba(59,130,246,.22);
+}
+
 
 /* === CONTACTO (tarjetas dentro de columnas flex) === */
 .contact-content{
