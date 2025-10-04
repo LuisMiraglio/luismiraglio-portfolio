@@ -295,6 +295,87 @@ section{padding:var(--spacing-xxl) 0}
 .skill-category{background:#fff;border-radius:14px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,.06);display:flex;flex-direction:column}
 .category-header{display:flex;justify-content:center;align-items:center;height:48px;margin-bottom:16px;border-bottom:1px solid #e5e7eb}
 .category-header h3{font-size:1.2rem;font-weight:700;color:#1e3a8a;margin:0;text-align:center}
+/* === Fondos personalizados por categoría de habilidades === */
+
+/* Backend – Azul técnico */
+.skill-category--backend {
+  background: linear-gradient(135deg, #dbeafe 0%, #60a5fa 50%, #2563eb 100%);
+  color: #fff;
+}
+
+/* Frontend – Violeta creativo */
+.skill-category--frontend {
+  background: linear-gradient(135deg, #ede9fe 0%, #c084fc 40%, #7c3aed 100%);
+  color: #fff;
+}
+
+/* Herramientas y DevOps – Verde moderno */
+.skill-category--tools {
+  background: linear-gradient(135deg, #dcfce7 0%, #86efac 40%, #16a34a 100%);
+  color: #fff;
+}
+
+/* Redes y Telecomunicaciones – Azul metalizado */
+.skill-category--networks {
+  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 50%, #1e3a8a 100%);
+  color: #fff;
+}
+
+/* Futura tarjeta (por ejemplo, Seguridad / QA) – Plata */
+.skill-category--security {
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 45%, #64748b 100%);
+  color: #fff;
+}
+
+/* Ajuste de encabezado sobre fondos oscuros */
+.skill-category--backend .category-header,
+.skill-category--frontend .category-header,
+.skill-category--tools .category-header,
+.skill-category--networks .category-header,
+.skill-category--security .category-header {
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+.skill-category--backend .category-header h3,
+.skill-category--frontend .category-header h3,
+.skill-category--tools .category-header h3,
+.skill-category--networks .category-header h3,
+.skill-category--security .category-header h3 {
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,.15);
+}
+
+/* Tiles sobre fondo */
+.skill-category--backend .skill-tile,
+.skill-category--frontend .skill-tile,
+.skill-category--tools .skill-tile,
+.skill-category--networks .skill-tile,
+.skill-category--security .skill-tile {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Títulos unificados estilo negro metalizado */
+.skill-category .category-header h3 {
+  background: linear-gradient(90deg, #111827, #374151, #6b7280); /* negro → gris oscuro → gris acero */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* leve relieve */
+}
+
+/* efecto de brillo metálico al pasar el mouse */
+.skill-category .category-header h3 {
+  background-size: 250%;
+  transition: background-position 1.2s ease;
+}
+.skill-category:hover .category-header h3 {
+  background-position: right center;
+}
+
+
+
 
 /* Grid de iconos */
 .skill-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:14px}
@@ -483,33 +564,120 @@ section{padding:var(--spacing-xxl) 0}
 .contact-content{
   display:flex;gap:24px;flex-wrap:wrap
 }
-.contact-card{
-  flex:1;background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
-  padding:20px;display:flex;flex-direction:column;gap:14px;transition:transform .2s ease,box-shadow .2s ease
+.contact-card {
+  flex: 1;
+  background: linear-gradient(135deg, #ede9fe, #818cf8);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.contact-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
-
-.contact-item{
-  display:flex;align-items:center;gap:10px;background:#f8fafc;border-radius:12px;padding:10px 14px;
-  font-size:.95rem;font-weight:500;color:#0f172a;text-decoration:none;transition:background .2s ease,transform .2s ease
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
 }
-.contact-item:hover{transform:scale(1.02)}
-.contact-item i{font-size:1.2rem;color:var(--primary-color)}
-.contact-item img{width:22px;height:22px;flex-shrink:0}
 
-.contact-icon{
-  width:40px;height:40px;border-radius:10px;background:#fff;border:1px solid #e5e7eb;
-  box-shadow:0 2px 8px rgba(0,0,0,.06);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0
+
+/* =========================================================
+   CONTACTO – Tarjetas + botones internos (versión optimizada)
+========================================================= */
+.contact-content {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
-.contact-icon img{width:22px;height:22px;display:block}
 
-/* colores por tarjeta si usas variantes */
-.contact-item.email{background:#e43d30;color:#fff}
-.contact-item.linkedin{background:#1d4ed8;color:#fff}
-.contact-item.github{background:#0b0f19;color:#fff}
-.contact-item.whatsapp{background:#22c55e;color:#fff}
-.contact-item h3{margin:0 0 6px;font-size:1.1rem;font-weight:800;color:inherit}
-.contact-item p,.contact-item small,.contact-item a{color:inherit;margin:0}
+/* ===== Tarjeta de contacto (estructura) ===== */
+.contact-card {
+  flex: 1;
+  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 40%, #60a5fa 100%); /* azul metalizado */
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* ===== Botones dentro de cada tarjeta ===== */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0f172a;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-item:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Icono dentro del botón ===== */
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* ===== Textos ===== */
+.contact-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: inherit;
+}
+.contact-item p,
+.contact-item small,
+.contact-item a {
+  color: inherit;
+  margin: 0;
+}
+
+/* ===== Colores personalizados por red ===== */
+.contact-item.email {
+  background: #e43d30;
+  color: #fff;
+}
+.contact-item.linkedin {
+  background: #1d4ed8;
+  color: #fff;
+}
+.contact-item.github {
+  background: #0b0f19;
+  color: #fff;
+}
+.contact-item.whatsapp {
+  background: #22c55e;
+  color: #fff;
+}
+
 
 .contact .about-highlight{margin-top:10px}
 
