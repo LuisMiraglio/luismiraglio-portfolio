@@ -379,67 +379,104 @@ section{padding:var(--spacing-xxl) 0}
 .pill{background:#f5f8fd;color:#234;border:1px solid #dfe8fb;padding:6px 10px;border-radius:999px;font-size:.9rem;font-weight:500}
 
 .cv-section{margin:60px 0}
-.cv-card{
-  background:#fff;border-radius:16px;padding:30px 28px;box-shadow:0 10px 30px rgba(0,0,0,.08);
-  max-width:820px;margin:0 auto;text-align:center
+.cv-card {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,       /* blanco platino */
+    #dbeafe 25%,      /* azul muy claro */
+    #93c5fd 60%,      /* azul acero */
+    #60a5fa 85%,      /* azul metalizado */
+    #dbeafe 100%      /* reflejo plateado */
+  );
+  border-radius: 16px;
+  padding: 30px 28px;
+  box-shadow:
+    0 12px 36px rgba(15, 23, 42, 0.12),
+    inset 0 0 10px rgba(255, 255, 255, 0.25);
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  color: #0f172a; /* texto oscuro para buen contraste */
+  border: 1px solid rgba(148,163,184,0.25); /* borde metálico sutil */
+  backdrop-filter: blur(6px);
 }
+
 .cv-name{font-size:1.8rem;font-weight:800;color:#0f172a;margin:0}
 .cv-role{font-size:1.05rem;color:#475569;margin:6px 0 0}
 .cv-summary{color:#334155;margin:16px 0;line-height:1.6}
 .cv-points{list-style:none;padding:0;margin:14px 0 22px;display:inline-block;text-align:left}
 .cv-points li{display:flex;gap:8px;align-items:center;margin:8px 0;color:#1e293b;font-weight:500}
 .cv-points i{color:#2563eb}
-.cv-actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
 
-/* === CV Buttons (base) === */
+
+/* Contenedor de botones */
+.cv-actions{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+/* Base de ambos botones */
 .btn-cv{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  padding:12px 22px;
+  padding:14px 26px;
   border-radius:999px;
   font-weight:800;
   font-size:15px;
   line-height:1;
-  text-decoration:none;              /* 👈 quita subrayado */
-  border:1px solid transparent;
-  box-shadow:0 8px 20px rgba(0,0,0,.10);
-  transition:transform .12s, box-shadow .2s, background .2s, border-color .2s, color .2s;
+  text-decoration:none;       /* sin subrayado */
+  color:#fff;
+  border:0;
+  transform:translateY(0) scale(1);
+  box-shadow:0 10px 22px rgba(2,6,23,.12);
+  transition:
+    transform .18s ease,
+    box-shadow .22s ease,
+    filter .22s ease,
+    background .22s ease;
 }
-.btn-cv:hover{ transform:translateY(-2px); }
-.btn-cv:active{ transform:translateY(-1px); }
+
+/* Zoom + sombra al hover */
+.btn-cv:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 16px 34px rgba(2,6,23,.18);
+  filter:saturate(1.05);
+}
+.btn-cv:active{ transform:translateY(-1px) scale(1.01); }
 .btn-cv:focus-visible{
   outline:none;
-  box-shadow:0 0 0 3px rgba(59,130,246,.45), 0 8px 20px rgba(0,0,0,.12);
+  box-shadow:0 0 0 3px rgba(255,255,255,.8), 0 0 0 6px rgba(37,99,235,.45);
 }
 
-/* === Estilos por tipo === */
-/* Primario sólido (Ver CV Online) */
+/* ——— Colores ——— */
+/* Web: cian → azul (referencia a “online/web”) */
 .btn-online{
-  color:#fff;
-  background:linear-gradient(135deg,#3b82f6,#2563eb);
-  border-color:rgba(59,130,246,.55);
-  box-shadow:0 10px 24px rgba(59,130,246,.28);
-}
-.btn-online:hover{
-  background:linear-gradient(135deg,#60a5fa,#2563eb);
-  box-shadow:0 14px 28px rgba(59,130,246,.34);
+  background:linear-gradient(135deg,#06b6d4 0%, #2563eb 100%); /* cian → azul */
 }
 
-/* Secundario “glass/outline” (Descargar PDF) */
+/* PDF: rojo → granate (referencia a documento/pdf) */
 .btn-download{
-  color:#1e3a8a;
-  background:rgba(59,130,246,.10);
-  border-color:rgba(59,130,246,.35);
-  backdrop-filter:blur(4px);
+  background:linear-gradient(135deg,#ef4444 0%, #b91c1c 100%); /* rojo → granate */
+}
+
+/* Opcional: tono un poquito más brillante al hover */
+.btn-online:hover{
+  background:linear-gradient(135deg,#22d3ee 0%, #3b82f6 100%);
 }
 .btn-download:hover{
-  color:#0b1f4f;
-  background:rgba(59,130,246,.16);
-  border-color:rgba(59,130,246,.55);
-  box-shadow:0 10px 24px rgba(59,130,246,.22);
+  background:linear-gradient(135deg,#f87171 0%, #dc2626 100%);
 }
+
+/* Responsive: que no exploten en móvil */
+@media (max-width: 480px){
+  .btn-cv{ width:100%; padding:14px 20px; }
+}
+
+
+
 
 
 /* === CONTACTO (tarjetas dentro de columnas flex) === */
