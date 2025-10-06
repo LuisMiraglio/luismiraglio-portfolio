@@ -327,6 +327,20 @@ section{padding:var(--spacing-xxl) 0}
   color: #fff;
 }
 
+/* REPARACIÓN Y MANTENIMIENTO (consistente con las otras) */
+.skill-category--hardware {
+  background: linear-gradient(
+    135deg,
+    #cfd9df 0%,   /* gris claro frío */
+    #e2ebf0 25%,  /* reflejo plateado */
+    #a6b8c9 60%,  /* azul acero */
+    #dae2e9 100%  /* brillo final */
+  );
+  color: #fff;
+}
+
+
+
 /* Ajuste de encabezado sobre fondos oscuros */
 .skill-category--backend .category-header,
 .skill-category--frontend .category-header,
