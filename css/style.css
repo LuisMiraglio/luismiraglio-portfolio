@@ -549,15 +549,67 @@ section{padding:var(--spacing-xxl) 0}
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Acción final */
+/* =========================================================
+   BOTÓN FINAL DE SERVICIOS — CTA DESTACADO
+========================================================= */
+
 .services-action {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
+  padding-top: 20px;
 }
+
 .services-action p {
-  margin-bottom: 16px;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
+
+/* Botón principal */
+.btn-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #60a5fa 100%);
+  color: #fff;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo animado */
+.btn-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  transform: skewX(-20deg);
+  transition: all 0.5s;
+}
+
+.btn-cta:hover::before {
+  left: 125%;
+}
+
+.btn-cta:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+}
+
 
 /* Contenedor de ambos iconos */
 .service-icons {
@@ -899,6 +951,8 @@ section{padding:var(--spacing-xxl) 0}
   .hero-subtitle{font-size:1.05rem}
   .hero-buttons .btn{min-height:54px}
 }
+
+
 
 
 
