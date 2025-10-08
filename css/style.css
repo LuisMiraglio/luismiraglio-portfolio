@@ -449,11 +449,148 @@ section{padding:var(--spacing-xxl) 0}
 @media (max-width:420px){.certificate-content{min-height:120px}.certificate-card{grid-template-columns:64px 1fr;gap:12px}}
 
 /* =========================================================
-   SERVICES (ligero)
+   SERVICIOS — SIN EFECTOS, SOLO COLOR METALIZADO + ZOOM
 ========================================================= */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px;margin-top:var(--spacing-xl)}
-.service-card{background:#fff;border-radius:var(--border-radius);padding:35px 30px;box-shadow:var(--shadow-light);transition:var(--transition);display:flex;flex-direction:column;height:100%}
-.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-medium)}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* Estilo base de las tarjetas */
+.service-card {
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background: #1e3a8a; /* color de respaldo */
+}
+
+/* Hover con zoom */
+.service-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Ícono */
+.service-icon {
+  font-size: 40px;
+  color: #fff;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =======================================
+   COLORES METALIZADOS SUAVES POR SERVICIO
+======================================= */
+
+/* 1️⃣ Desarrollo y Automatización — Azul metálico */
+.service-card--dev {
+  background: linear-gradient(135deg, #4f80ff, #1e3a8a);
+}
+
+/* 2️⃣ Redes y Telecomunicaciones — Púrpura metálico */
+.service-card--net {
+  background: linear-gradient(135deg, #9b8cff, #4b2cb6);
+}
+
+/* 3️⃣ Soporte Técnico y Mantenimiento — Gris acero */
+.service-card--support {
+  background: linear-gradient(135deg, #9ca3af, #4b5563);
+}
+
+
+
+/* =======================================
+   Texto interno
+======================================= */
+
+.service-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.service-features i {
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Acción final */
+.services-action {
+  text-align: center;
+  margin-top: 40px;
+}
+.services-action p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+/* Contenedor de ambos iconos */
+.service-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.service-svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+  opacity: 0.95;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Efecto leve al pasar el mouse */
+.service-svg:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+
+/* Fondo metálico azul */
+.service-card--dev {
+  background: linear-gradient(135deg, #4f80ff 0%, #1e3a8a 100%);
+  color: #fff;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
 
 /* =========================================================
    CV (ligero)
@@ -762,5 +899,7 @@ section{padding:var(--spacing-xxl) 0}
   .hero-subtitle{font-size:1.05rem}
   .hero-buttons .btn{min-height:54px}
 }
+
+
 
 
