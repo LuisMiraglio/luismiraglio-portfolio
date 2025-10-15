@@ -1016,3 +1016,72 @@ section{padding:var(--spacing-xxl) 0}
 }
 
 
+/* Tarjeta destacada: Título oficial (sin chapita) */
+.certificate-card--degree {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #f0f8ff 0%,     /* celeste claro */
+    #dbeafe 35%,    /* azul suave */
+    #bfdbfe 70%,    /* azul intermedio */
+    #4ea3f1 100%    /* celeste oficial */
+  );
+  border: 1px solid rgba(30, 58, 138, 0.4); /* azul institucional */
+  box-shadow:
+    0 10px 24px rgba(30, 58, 138, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  color: #0f172a;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover elegante */
+.certificate-card--degree:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(30, 58, 138, 0.18);
+  border-color: rgba(30, 58, 138, 0.6);
+}
+
+/* Icono con aro sutil */
+.certificate-card--degree .certificate-icon {
+  background: #eef2ff;
+  border-color: rgba(37, 99, 235, .35);
+  box-shadow:
+    0 2px 8px rgba(37, 99, 235, .20),
+    inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
+
+/* Ajuste fino de contenido: lo movemos un poquito a la izquierda */
+.certificate-card--degree .certificate-content {
+  margin-left: -8px;
+}
+
+/* Botón azul con brillo */
+.btn-degree {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  border: 1px solid rgba(255, 255, 255, .18);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, .25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-degree:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 12px 26px rgba(37, 99, 235, .35);
+  transform: translateY(-2px);
+}
+/* iconito dentro del botón */
+.btn-degree {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;                  /* espacio entre icono y texto */
+  padding-inline: 18px 22px;  /* un pelín más de aire */
+}
+.btn-degree .btn-svg{
+  width: 320x;                /* 16–20px queda bien */
+  height: 30px;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.25));
+}
+
+
+
