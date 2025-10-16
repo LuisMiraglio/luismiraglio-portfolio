@@ -462,13 +462,62 @@ section{padding:var(--spacing-xxl) 0}
 
 .btn-certificate{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;background:linear-gradient(135deg,#2563eb,#1d4ed8);transition:transform .15s,box-shadow .15s,background .3s}
 .btn-certificate:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.btn-aws{background:linear-gradient(135deg,#f59e0b,#b45309)} .btn-aws:hover{background:linear-gradient(135deg,#fbbf24,#92400e)}
-.btn-python{background:linear-gradient(135deg,#3776ab,#1e40af)} .btn-python:hover{background:linear-gradient(135deg,#4a90e2,#153e75)}
-.btn-csharp{background:linear-gradient(135deg,#68217a,#4b1970)} .btn-csharp:hover{background:linear-gradient(135deg,#8e44ad,#5e1d74)}
-.btn-wordpress{background:linear-gradient(135deg,#21759b,#1e3a5f)} .btn-wordpress:hover{background:linear-gradient(135deg,#299ec6,#153248)}
-.btn-industry{background:linear-gradient(135deg,#16a34a,#065f46)} .btn-industry:hover{background:linear-gradient(135deg,#22c55e,#064e3b)}
-.btn-mentoria{background:linear-gradient(135deg,#ec4899,#be185d)} .btn-mentoria:hover{background:linear-gradient(135deg,#f472b6,#9d174d)}
-.btn-intro{background:linear-gradient(135deg,#3b82f6,#1e3a8a)} .btn-intro:hover{background:linear-gradient(135deg,#60a5fa,#1e40af)}
+.btn-aws{background:linear-gradient(135deg,#f59e0b,#b45309)} 
+.btn-aws:hover{background:linear-gradient(135deg,#fbbf24,#92400e)}
+
+.btn-python{background:linear-gradient(135deg,#3776ab,#1e40af)} 
+.btn-python:hover{background:linear-gradient(135deg,#4a90e2,#153e75)}
+
+.btn-csharp{background:linear-gradient(135deg,#68217a,#4b1970)} 
+.btn-csharp:hover{background:linear-gradient(135deg,#8e44ad,#5e1d74)}
+
+.btn-wordpress{background:linear-gradient(135deg,#21759b,#1e3a5f)} 
+.btn-wordpress:hover{background:linear-gradient(135deg,#299ec6,#153248)}
+
+.btn-industry{background:linear-gradient(135deg,#16a34a,#065f46)} 
+.btn-industry:hover{background:linear-gradient(135deg,#22c55e,#064e3b)}
+
+.btn-mentoria{background:linear-gradient(135deg,#ec4899,#be185d)} 
+.btn-mentoria:hover{background:linear-gradient(135deg,#f472b6,#9d174d)}
+
+.btn-intro{background:linear-gradient(135deg,#3b82f6,#1e3a8a)} 
+.btn-intro:hover{background:linear-gradient(135deg,#60a5fa,#1e40af)}
+
+/* Botón exclusivo para Hacking Ético — rojo ladrillo */
+.btn-hacking{
+  background: linear-gradient(135deg, #8B2C22 0%, #5A1A15 100%);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(139,44,34,.28);
+  color:#fff;
+}
+
+.btn-hacking:hover{
+  background: linear-gradient(135deg, #B23B2F 0%, #6D1F19 100%);
+  box-shadow: 0 12px 26px rgba(139,44,34,.36);
+  transform: translateY(-2px);
+}
+
+/* Botón para el Título Oficial (misma lógica que los demás) */
+.btn-degree{
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(37,99,235,.25);
+}
+.btn-degree:hover{
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 12px 26px rgba(37,99,235,.35);
+}
+
+/* Iconito dentro del botón (reutilizable para todos) */
+.btn-certificate .btn-svg{
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+
 
 @media (max-width:640px){.certificate-content{min-height:140px}}
 @media (max-width:420px){.certificate-content{min-height:120px}.certificate-card{grid-template-columns:64px 1fr;gap:12px}}
@@ -1016,72 +1065,6 @@ section{padding:var(--spacing-xxl) 0}
 }
 
 
-/* Tarjeta destacada: Título oficial (sin chapita) */
-.certificate-card--degree {
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    #f0f8ff 0%,     /* celeste claro */
-    #dbeafe 35%,    /* azul suave */
-    #bfdbfe 70%,    /* azul intermedio */
-    #4ea3f1 100%    /* celeste oficial */
-  );
-  border: 1px solid rgba(30, 58, 138, 0.4); /* azul institucional */
-  box-shadow:
-    0 10px 24px rgba(30, 58, 138, 0.12),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
-  color: #0f172a;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Hover elegante */
-.certificate-card--degree:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(30, 58, 138, 0.18);
-  border-color: rgba(30, 58, 138, 0.6);
-}
-
-/* Icono con aro sutil */
-.certificate-card--degree .certificate-icon {
-  background: #eef2ff;
-  border-color: rgba(37, 99, 235, .35);
-  box-shadow:
-    0 2px 8px rgba(37, 99, 235, .20),
-    inset 0 0 0 2px rgba(255, 255, 255, .55);
-}
-
-/* Ajuste fino de contenido: lo movemos un poquito a la izquierda */
-.certificate-card--degree .certificate-content {
-  margin-left: -8px;
-}
-
-/* Botón azul con brillo */
-.btn-degree {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-  border: 1px solid rgba(255, 255, 255, .18);
-  box-shadow: 0 8px 18px rgba(37, 99, 235, .25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.btn-degree:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  box-shadow: 0 12px 26px rgba(37, 99, 235, .35);
-  transform: translateY(-2px);
-}
-/* iconito dentro del botón */
-.btn-degree {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;                  /* espacio entre icono y texto */
-  padding-inline: 18px 22px;  /* un pelín más de aire */
-}
-.btn-degree .btn-svg{
-  width: 320x;                /* 16–20px queda bien */
-  height: 30px;
-  display: block;
-  flex-shrink: 0;
-  filter: drop-shadow(0 1px 0 rgba(255,255,255,.25));
-}
 
 
 
