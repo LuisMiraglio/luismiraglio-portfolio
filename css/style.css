@@ -742,15 +742,61 @@ section{padding:var(--spacing-xxl) 0}
 }
 @media (max-width:992px){.about-grid,.about-cards-container{grid-template-columns:1fr}}
 
-.about-card,.about-box{
-  background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 26px rgba(2,6,23,.08);border:1px solid rgba(0,0,0,.04)
+/* === AMBAS TARJETAS: fondo gris metálico + borde azul === */
+.about-card,
+.about-box{
+  border-radius:16px;
+  padding:24px;
+  /* gris metálico con profundidad */
+  background:linear-gradient(135deg,#6b7280 0%, #4b5563 40%, #374151 100%);
+  color:#e9eefb;
+  border:2px solid #2563eb;               /* borde azul */
+  box-shadow:
+    0 10px 26px rgba(2,6,23,.18),
+    inset 0 1px 0 rgba(255,255,255,.06);
 }
-.card-header,.about-title{display:flex;align-items:center;gap:12px;margin:0 0 12px 0}
-.card-header i{color:#2563eb;font-size:1.25rem}
-.card-header h3,.about-title{
-  font-size:1.1rem;font-weight:700;background:linear-gradient(90deg,#2563eb,#10b981);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+
+/* ===== Título dentro de la tarjeta (sin degradado) ===== */
+.card-header,.about-title{
+  display:flex;align-items:center;gap:12px;margin:0 0 12px 0
 }
+.card-header i{color:#bfdbfe;font-size:1.25rem}
+
+/* OVERRIDE: quita el degradado y pone texto blanco legible */
+.card-header h3,
+.about-title{
+  font-size:1.1rem;
+  font-weight:800;
+  background:none !important;
+  -webkit-text-fill-color:unset !important;
+  background-clip:unset !important;
+  color:#ffffff;
+  text-shadow:0 1px 3px rgba(0,0,0,.35);
+  margin:0 0 12px 0;
+}
+
+/* PERFIL — Icono grande con micro-zoom (igual que service-svg) */
+.about-title .about-icon{
+  width:44px;
+  height:44px;
+  display:inline-block;
+  transition:transform .2s ease, filter .2s ease;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.12));
+}
+.about-title:hover .about-icon{
+  transform:scale(1.08);
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.18));
+}
+
+/* Mejor contraste de textos internos sobre el gris */
+.about-box p,
+.about-card p,
+.about-box li,
+.about-card li{ color:rgba(255,255,255,.95); }
+.about-box strong,
+.about-card strong{ color:#fff; }
+
+
 .pill-stack{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
 .pill{background:#f5f8fd;color:#234;border:1px solid #dfe8fb;padding:6px 10px;border-radius:999px;font-size:.9rem;font-weight:500}
 
