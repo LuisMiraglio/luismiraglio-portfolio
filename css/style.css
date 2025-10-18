@@ -780,9 +780,58 @@ section{padding:var(--spacing-xxl) 0}
 .cv-name{font-size:1.8rem;font-weight:800;color:#0f172a;margin:0}
 .cv-role{font-size:1.05rem;color:#475569;margin:6px 0 0}
 .cv-summary{color:#334155;margin:16px 0;line-height:1.6}
-.cv-points{list-style:none;padding:0;margin:14px 0 22px;display:inline-block;text-align:left}
-.cv-points li{display:flex;gap:8px;align-items:center;margin:8px 0;color:#1e293b;font-weight:500}
-.cv-points i{color:#2563eb}
+/* === CURRÍCULUM – Items tipo tarjeta/pastilla === */
+.cv-points{
+  list-style:none;
+  padding:0;
+  margin:14px 0 22px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;                     /* espacio entre pastillas */
+}
+
+.cv-points li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:0;
+  padding:14px 16px;
+  border-radius:14px;
+
+  /* pastilla clara con borde y leve relieve (funciona sobre fondos claros u oscuros) */
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  border:1px solid #dbe8ff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+
+  color:#0f172a;
+  font-weight:600;
+}
+
+/* Icono circular al estilo “check” */
+.cv-points i{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+
+  background:#e0ecff;          /* aro */
+  border:1px solid #c7daff;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.8);
+
+  color:#2563eb;               /* check azul (FontAwesome) */
+  flex-shrink:0;
+  font-size:14px;              /* tamaño del check */
+}
+
+/* Hover sutil como en Servicios */
+.cv-points li:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  border-color:#c3d7ff;
+  transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
 
 
 /* Contenedor de botones */
