@@ -1160,6 +1160,56 @@ section{padding:var(--spacing-xxl) 0}
 }
 
 
+/*TARJETA DERECHA, EN PERFIL*/
+
+/* === BLOQUES DENTRO DE "Qué hago" === */
+.service-block {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  border-color: #2563eb;
+}
+
+.service-block h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+}
+
+.service-block p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1e293b;
+  margin: 0;
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.service-icon:hover {
+  transform: scale(1.1);
+  background: rgba(37, 99, 235, 0.2);
+}
 
 
 
