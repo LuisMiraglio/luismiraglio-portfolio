@@ -19,7 +19,7 @@
 
 
 <body>
-  <!-- Chatbot (GitHub Pages friendly) -->
+ <!-- Chatbot (GitHub Pages friendly) -->
 <div id="chatbot" class="cb-hidden" aria-live="polite">
   <div class="cb-header">
     <div class="cb-title">Asistente</div>
@@ -34,44 +34,61 @@
   </form>
 </div>
 
-<button id="chatbot-launcher" class="cb-launcher">
+<!-- Launcher con imagen (sin círculo) -->
+<button id="chatbot-launcher" class="cb-launcher" aria-label="Abrir chat">
   <img src="assets/icons/chat-bot.png" alt="Chatbot" />
 </button>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   // ====== Selectores según TU HTML ======
-  const chat    = document.getElementById('chatbot');
-  const list    = document.getElementById('cbMessages');
-  const input   = document.getElementById('cbInput');
-  const form    = document.getElementById('cbForm');
-const launcher = document.getElementById('chatbot-launcher') 
-               || document.getElementById('cbLauncher');
-  const btnClose= document.querySelector('.cb-close');
+  const chat     = document.getElementById('chatbot');
+  const list     = document.getElementById('cbMessages');
+  const input    = document.getElementById('cbInput');
+  const form     = document.getElementById('cbForm');
+  const launcher = document.getElementById('chatbot-launcher') || document.getElementById('cbLauncher');
+  const btnClose = document.querySelector('.cb-close');
 
   if (!chat || !list || !input || !form || !launcher) {
-    console.warn('[Chatbot] Faltan nodos requeridos (#chatbot, #cbMessages, #cbInput, #cbForm, #cbLauncher).');
+    console.warn('[Chatbot] Faltan nodos requeridos (#chatbot, #cbMessages, #cbInput, #cbForm, #chatbot-launcher).');
     return;
   }
 
   // ====== Abrir / cerrar ======
+  const lockBody = (lock) => {
+    document.body.classList.toggle('cb-lock', !!lock);
+  };
+
   const openChat = () => {
     chat.classList.add('open');
     chat.classList.remove('cb-hidden');
-    setTimeout(() => input.focus(), 100);
+    lockBody(true);
+    setTimeout(() => input.focus(), 120);
   };
 
   const closeChat = () => {
     chat.classList.remove('open');
     chat.classList.add('cb-hidden');
+    lockBody(false);
   };
 
   launcher.addEventListener('click', () => {
-    if (chat.classList.contains('open')) closeChat(); else openChat();
+    chat.classList.contains('open') ? closeChat() : openChat();
+  });
+  if (btnClose) btnClose.addEventListener('click', closeChat);
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chat.classList.contains('open')) closeChat();
   });
 
-  if (btnClose) btnClose.addEventListener('click', closeChat);
+  // ====== Evitar que el scroll del chat “arrastre” el body en móvil ======
+  // (el CSS ya ayuda con overscroll-behavior; esto refuerza)
+  ['touchstart','touchmove','wheel'].forEach(evt => {
+    list.addEventListener(evt, (e) => {
+      e.stopPropagation();
+    }, { passive: true });
+  });
 
   // ====== Limpia cualquier persistencia previa (no guardamos historial) ======
   try {
@@ -82,17 +99,16 @@ const launcher = document.getElementById('chatbot-launcher')
   // ====== Utilidades UI ======
   const scrollBottom = () => { list.scrollTop = list.scrollHeight; };
 
-const addMsg = (text, who = 'bot', asHTML = false) => {
-  const el = document.createElement('div');
-  el.className = who === 'bot' ? 'cb-msg bot' : 'cb-msg user';
-  if (asHTML) el.innerHTML = text; else el.textContent = text;
-  list.appendChild(el);
-  // aseguramos que el contenedor sea flex en columna (por si otro CSS lo pisa)
-  list.style.display = 'flex';
-  list.style.flexDirection = 'column';
-  list.scrollTop = list.scrollHeight;
-};
-
+  const addMsg = (text, who = 'bot', asHTML = false) => {
+    const el = document.createElement('div');
+    el.className = who === 'bot' ? 'cb-msg bot' : 'cb-msg user';
+    if (asHTML) el.innerHTML = text; else el.textContent = text;
+    list.appendChild(el);
+    // Forzar columna (por si otro CSS lo pisa)
+    list.style.display = 'flex';
+    list.style.flexDirection = 'column';
+    list.scrollTop = list.scrollHeight;
+  };
 
   const goTo = (hash) => {
     const node = document.querySelector(hash);
@@ -106,11 +122,11 @@ const addMsg = (text, who = 'bot', asHTML = false) => {
 
   const quick = (items) => {
     const wrap = document.createElement('div');
-    wrap.className = 'cb-quick';
+    wrap.className = 'msg-quick';              // coincide con tu CSS
     items.forEach(({label, hash}) => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.className = 'cb-chip';
+      b.className = 'chip';                    // coincide con tu CSS
       b.textContent = label;
       b.addEventListener('click', () => {
         addMsg(label, 'user');
@@ -125,107 +141,74 @@ const addMsg = (text, who = 'bot', asHTML = false) => {
     scrollBottom();
   };
 
+  // ====== Textos ======
   const PRESENTACION = `
 Te cuento un poco sobre mí: soy <strong>Técnico Superior en Redes Informáticas</strong>, egresado del Instituto <strong>Teclab</strong>.<br><br>
 Actualmente formo parte de la empresa <strong>Conectar SRL</strong>, radicada en <strong>Sunchales, Santa Fe</strong>, donde me desempeño tanto en el área de <strong>redes y soporte técnico</strong> como en el <strong>desarrollo y mantenimiento de software</strong>.<br><br>
 Combino mis conocimientos en infraestructura y programación para crear soluciones que optimizan procesos y mejoran la eficiencia operativa.
 `;
 
-const SERVICIOS_INFO = `
+  const SERVICIOS_INFO = `
 Desarrollo soluciones tecnológicas a medida que combinan <strong>programación, automatización y redes informáticas</strong> para optimizar procesos y reducir tiempos operativos.<br><br>
 
-🔹 <strong>Desarrollo de Software Full-Stack:</strong> creo aplicaciones web y de escritorio con <strong>Python, Django, C#, HTML, CSS, JavaScript y SQL</strong>.  
-Integro front-end moderno con backend robusto, garantizando rendimiento y escalabilidad.<br><br>
-
-🤖 <strong>Automatización de Procesos:</strong> diseño scripts con <strong>Python + Selenium</strong> que automatizan tareas repetitivas en entornos técnicos y empresariales.  
-He implementado automatizaciones reales en el área de telecomunicaciones (configuración de ONUs, diagnóstico en OLTs y generación de reportes automáticos).<br><br>
-
-🧰 <strong>Soporte Técnico y Mantenimiento:</strong> realizo diagnóstico, reparación y optimización de equipos informáticos, además de mantenimiento preventivo, instalación de sistemas operativos y asistencia remota o presencial.<br><br>
-
-🛡️ <strong>Ciberseguridad y Redes:</strong> aplico buenas prácticas de seguridad y herramientas de <strong>hacking ético</strong> (Kali Linux, escaneo de vulnerabilidades) para fortalecer infraestructuras.  
-Tengo experiencia en entornos <strong>FTTH/GPON</strong>, combinando conocimientos de redes y software para ofrecer soluciones integrales.<br><br>
-
-En resumen, mis servicios buscan conectar la <strong>automatización y la eficiencia técnica</strong> con una visión de negocio sólida, aportando resultados medibles y sustentables.
+🔹 <strong>Desarrollo de Software Full-Stack:</strong> creo aplicaciones web y de escritorio con <strong>Python, Django, C#, HTML, CSS, JavaScript y SQL</strong>.<br>
+🔹 <strong>Automatización de Procesos:</strong> scripts con <strong>Python + Selenium</strong> para tareas repetitivas en telecomunicaciones e ISPs (ONUs, OLTs, reportes).<br>
+🔹 <strong>Soporte Técnico y Mantenimiento:</strong> diagnóstico, reparación y optimización de equipos; mantenimiento preventivo e instalación de SO.<br>
+🔹 <strong>Ciberseguridad y Redes:</strong> buenas prácticas y herramientas de <strong>hacking ético</strong> (Kali, escaneo de vulnerabilidades) y experiencia en <strong>FTTH/GPON</strong>.
 `;
 
-
+  // ====== Intents (unificados) ======
   const intents = [
-    { test:t=>/^(hola|buenas?|hey|hi|qué tal)/i.test(t),
-      run:()=>{ addMsg('¡Hola! ¿Qué querés ver?', 'bot');
+    {
+      test: t => /^(hola|buenas?|hey|hi|qué tal)/i.test(t),
+      run: () => {
+        addMsg('¡Hola! ¿Qué querés ver?', 'bot');
         quick([
-          {label:'Servicios',hash:'#servicios'},
+          {label:'Servicios',   hash:'#servicios'},
           {label:'Certificados',hash:'#certificados'},
-          {label:'Curriculum',hash:'#curriculum'},
-          {label:'Proyectos',hash:'#proyectos'},
-          {label:'Contacto',hash:'#contacto'}
+          {label:'Curriculum',  hash:'#curriculum'},
+          {label:'Proyectos',   hash:'#proyectos'},
+          {label:'Contacto',    hash:'#contacto'}
         ]);
       }
     },
-
-    // Bloques nuevos
-{ 
-  test: t => /(proyecto|proyectos)/i.test(t),
-  run: () => { 
-    addMsg('Te llevo a Proyectos…', 'bot');
-    addMsg(PRESENTACION, 'bot', true);
-    goTo('#proyectos');
-  }
-},
-{ 
-  test: t => /(certificado|certificados)/i.test(t),
-  run: () => { 
-    addMsg('Te llevo a Certificados…', 'bot');
-    addMsg(PRESENTACION, 'bot', true);
-    goTo('#certificados');
-  }
-},
-{ 
-  test: t => /(cv|curriculum|currículum|hoja de vida)/i.test(t),
-  run: () => { 
-    addMsg('Te llevo al Curriculum…', 'bot');
-    addMsg(PRESENTACION, 'bot', true);
-    goTo('#curriculum');
-  }
-},
-{ 
-  test: t => /(contacto|email|correo|mail|whatsapp|linkedin)/i.test(t),
-  run: () => { 
-    addMsg('Te llevo a Contacto…', 'bot');
-    addMsg(PRESENTACION, 'bot', true);
-    goTo('#contacto');
-  }
-},
-
-{ 
-  test: t => /(servicio|servicios)/i.test(t),
-  run: () => { 
-    addMsg('Te llevo a Servicios…', 'bot');
-    addMsg(SERVICIOS_INFO, 'bot', true);
-    goTo('#servicios');
-  }
-},
-
-
-    { test:t=>/(servicio|servicios)/i.test(t),   run:()=>{ addMsg('Te llevo a Servicios…','bot'); goTo('#servicios'); } },
-    { test:t=>/(certificado|certificados)/i.test(t), run:()=>{ addMsg('Abriendo Certificados…','bot'); goTo('#certificados'); } },
-    { test:t=>/(cv|curriculum|currículum)/i.test(t), run:()=>{ addMsg('Vamos al Curriculum…','bot'); goTo('#curriculum'); } },
-    { test:t=>/(proyecto|proyectos|portfolio)/i.test(t), run:()=>{ addMsg('Te muestro Proyectos…','bot'); goTo('#proyectos'); } },
-    { test:t=>/(contacto|email|correo|mail|whatsapp|linkedin)/i.test(t),
-  run:()=>{ addMsg('Te llevo a Contacto…','bot'); goTo('#contacto'); }},
-    { test:t=>/(ayuda|help|menú|menu)/i.test(t),
-      run:()=>{ addMsg('Elegí una opción:', 'bot');
+    {
+      test: t => /(proyecto|proyectos)/i.test(t),
+      run: () => { addMsg('Te llevo a Proyectos…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#proyectos'); }
+    },
+    {
+      test: t => /(certificado|certificados)/i.test(t),
+      run: () => { addMsg('Te llevo a Certificados…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#certificados'); }
+    },
+    {
+      test: t => /(cv|curriculum|currículum|hoja de vida)/i.test(t),
+      run: () => { addMsg('Te llevo al Curriculum…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#curriculum'); }
+    },
+    {
+      test: t => /(contacto|email|correo|mail|whatsapp|linkedin)/i.test(t),
+      run: () => { addMsg('Te llevo a Contacto…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#contacto'); }
+    },
+    {
+      test: t => /(servicio|servicios)/i.test(t),
+      run: () => { addMsg('Te llevo a Servicios…','bot'); addMsg(SERVICIOS_INFO,'bot',true); goTo('#servicios'); }
+    },
+    {
+      test: t => /(ayuda|help|menú|menu)/i.test(t),
+      run: () => {
+        addMsg('Elegí una opción:', 'bot');
         quick([
-          {label:'Servicios',hash:'#servicios'},
+          {label:'Servicios',   hash:'#servicios'},
           {label:'Certificados',hash:'#certificados'},
-          {label:'Curriculum',hash:'#curriculum'},
-          {label:'Proyectos',hash:'#proyectos'},
-          {label:'Contacto',hash:'#contacto'}
+          {label:'Curriculum',  hash:'#curriculum'},
+          {label:'Proyectos',   hash:'#proyectos'},
+          {label:'Contacto',    hash:'#contacto'}
         ]);
       }
     }
   ];
 
-  const fallback = () => addMsg('Puedo llevarte a una sección o darte mi contacto. Decime: “Servicios”, “Proyectos”, “Contacto” o “Ayuda”.','bot');
+  const fallback = () =>
+    addMsg('Puedo llevarte a una sección. Decime: “Servicios”, “Proyectos”, “Certificados”, “Curriculum”, “Contacto” o “Ayuda”.','bot');
 
   // Mensaje de bienvenida
   addMsg('¡Hola! ¿En qué te ayudo? (Servicios, Proyectos, Certificados, Curriculum o Contacto).', 'bot');
@@ -242,6 +225,7 @@ En resumen, mis servicios buscan conectar la <strong>automatización y la eficie
   });
 });
 </script>
+
 
     <!-- Navegación -->
     <nav class="navbar">
