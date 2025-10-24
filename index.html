@@ -78,13 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // ====== Utilidades UI ======
   const scrollBottom = () => { list.scrollTop = list.scrollHeight; };
 
-  const addMsg = (text, who='bot', asHTML=false) => {
-    const msg = document.createElement('div');
-    msg.className = who === 'bot' ? 'cb-msg cb-bot' : 'cb-msg cb-user';
-    if (asHTML) msg.innerHTML = text; else msg.textContent = text;
-    list.appendChild(msg);
-    scrollBottom();
-  };
+const addMsg = (text, who = 'bot', asHTML = false) => {
+  const el = document.createElement('div');
+  el.className = who === 'bot' ? 'cb-msg bot' : 'cb-msg user';
+  if (asHTML) el.innerHTML = text; else el.textContent = text;
+  list.appendChild(el);
+  // aseguramos que el contenedor sea flex en columna (por si otro CSS lo pisa)
+  list.style.display = 'flex';
+  list.style.flexDirection = 'column';
+  list.scrollTop = list.scrollHeight;
+};
+
 
   const goTo = (hash) => {
     const node = document.querySelector(hash);
