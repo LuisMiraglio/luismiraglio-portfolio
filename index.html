@@ -34,7 +34,10 @@
   </form>
 </div>
 
-<button id="cbLauncher" class="cb-launcher" aria-label="Abrir chat">💬</button>
+<button id="chatbot-launcher" class="cb-launcher">
+  <img src="assets/icons/chat-bot.png" alt="Chatbot" />
+</button>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const list    = document.getElementById('cbMessages');
   const input   = document.getElementById('cbInput');
   const form    = document.getElementById('cbForm');
-  const launcher= document.getElementById('cbLauncher');
+const launcher = document.getElementById('chatbot-launcher') 
+               || document.getElementById('cbLauncher');
   const btnClose= document.querySelector('.cb-close');
 
   if (!chat || !list || !input || !form || !launcher) {

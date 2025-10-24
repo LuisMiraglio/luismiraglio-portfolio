@@ -1233,6 +1233,7 @@ section{padding:var(--spacing-xxl) 0}
   backdrop-filter: blur(4px);
   transition: transform .2s ease, opacity .2s ease;
 }
+
 #chatbot.cb-hidden{
   transform: translateY(10px) scale(.98);
   opacity: 0;
@@ -1336,20 +1337,44 @@ section{padding:var(--spacing-xxl) 0}
 .cb-send:hover{ transform: translateY(-1px); }
 
 /* FAB / Launcher */
-.cb-launcher{
+/* FAB / Launcher */
+.cb-launcher {
   position: fixed;
-  right: 18px; bottom: 18px;
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg,#2563eb,#1e40af);
-  color:#fff; border:0; cursor:pointer;
-  box-shadow: 0 10px 26px rgba(37,99,235,.38);
-  z-index: 9999; font-size:22px;
+  right: 18px;
+  bottom: 18px;
+  width: 72px; /* más grande */
+  height: 72px;
+  border: none;
+  background: none; /* 🔹 eliminamos el círculo azul */
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: none; /* sin sombra del círculo */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.2s ease;
 }
-.cb-launcher:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(37,99,235,.48);
+
+/* Efecto hover */
+.cb-launcher:hover {
+  transform: scale(1.08);
 }
+
+/* Imagen del ícono del bot */
+.cb-launcher img {
+  width: 72px;  /* ajustá según el tamaño del dibujo */
+  height: 72px;
+  object-fit: contain;
+  filter: none; /* no aplicar filtro blanco, mantené los colores reales */
+  transition: transform 0.2s ease;
+}
+
+.cb-launcher:hover img {
+  transform: scale(1.12);
+}
+
 
 /* Responsive */
 @media (max-width:480px){
