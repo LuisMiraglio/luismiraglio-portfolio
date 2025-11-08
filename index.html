@@ -1,47 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luis Miraglio - Desarrollador Full Stack</title>
-    <link rel="icon" type="image/png" href="images/icono-web.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis Miraglio - Desarrollador Full Stack</title>
+  <link rel="icon" type="image/png" href="images/icono-web.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 
-
-
-
 <body>
- <!-- Chatbot (GitHub Pages friendly) -->
-<div id="chatbot" class="cb-hidden" aria-live="polite">
-  <div class="cb-header">
-    <div class="cb-title">Asistente</div>
-    <button class="cb-close" aria-label="Cerrar chat">×</button>
-  </div>
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h2>Luis Miraglio</h2>
+      </div>
+      <div class="nav-menu">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+        <a href="#proyectos" class="nav-link">Proyectos</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#curriculum" class="nav-link">Curriculum</a>
+        <a href="#certificados" class="nav-link">Certificados</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-  <div class="cb-messages" id="cbMessages" role="log" aria-label="Mensajes del chat"></div>
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <!-- Partículas -->
+    <div id="particles-js" class="hero-particles" aria-hidden="true"></div>
 
-  <form id="cbForm" class="cb-input-area" autocomplete="off">
-    <input id="cbInput" class="cb-input" type="text" placeholder="Escribe tu pregunta..." aria-label="Tu mensaje" />
-    <button class="cb-send" aria-label="Enviar">➤</button>
-  </form>
-</div>
+    <div class="hero-container">
+      <!-- Columna izquierda -->
+      <div class="hero-content">
+        <div class="hero-header">
+          <span class="hero-greeting" data-aos="fade-up">
+            Automatización & Software para ISPs y Pymes
+          </span>
 
-<!-- Launcher con imagen (sin círculo) -->
-<button id="chatbot-launcher" class="cb-launcher" aria-label="Abrir chat">
-  <img src="assets/icons/chat-bot.png" alt="Chatbot" />
-</button>
+          <h1 class="hero-title">
+            Optimizo <span class="highlight">redes informáticas</span> y desarrollo
+            <span class="highlight">soluciones a medida</span>
+          </h1>
 
+          <p class="hero-subtitle" data-aos="fade-right" data-aos-delay="150">
+            Scripts en producción (ONUs/GPON) + apps de gestión. Entrego con documentación y capacitación.
+          </p>
+
+          <div class="title-bar" data-aos="fade-right" data-aos-delay="250"></div>
+        </div>
+
+        <!-- Bullets -->
+        <ul class="hero-bullets">
+          <li><i class="fas fa-network-wired icon-blue"></i> Configuración y diagnóstico de redes FTTH / ISPs</li>
+          <li><i class="fas fa-robot icon-yellow"></i> Desarrollo de apps, bots y automatizaciones</li>
+          <li><i class="fas fa-clipboard-check icon-green"></i> Entregas listas para producción con capacitación</li>
+        </ul>
+
+        <!-- CTAs -->
+        <div class="hero-buttons">
+          <a href="#proyectos" class="btn btn-primary">Ver soluciones</a>
+          <a href="https://wa.me/5493493400086" target="_blank" class="btn btn-whatsapp">
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna derecha: tarjeta de código -->
+      <div class="hero-image">
+        <div class="profile-card code-card" aria-hidden="true">
+          <div class="code-window">
+<pre class="code-pre"><code>
+<span class="kw">class</span> <span class="id">Luis</span>:
+    <span class="var">title</span> = <span class="str">'Téc. Sup. en Redes & Dev'</span>
+
+    <span class="var">networks</span> = [<span class="str">'FTTH/GPON'</span>, <span class="str">'Cisco IOS'</span>]
+
+    <span class="var">backend</span>  = [<span class="str">'Python'</span>, <span class="str">'Django'</span>, <span class="str">'SQL'</span>]
+    <span class="var">frontend</span> = [<span class="str">'HTML'</span>, <span class="str">'CSS'</span>, <span class="str">'JS'</span>]
+    <span class="var">it</span>        = [<span class="str">'Hardware'</span>, <span class="str">'Software'</span>]
+
+    <span class="kw">def</span> <span class="fn">solve</span>(<span class="var">self</span>, <span class="var">pain</span>):
+        <span class="kw">return</span> <span class="str">'menos tiempo, menos errores'</span>
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHATBOT dentro del hero -->
+    <div id="chatbot" class="cb-hidden" aria-live="polite">
+      <div class="cb-header">
+        <div class="cb-title">Asistente</div>
+        <button class="cb-close" aria-label="Cerrar chat">×</button>
+      </div>
+
+      <div class="cb-messages" id="cbMessages" role="log" aria-label="Mensajes del chat"></div>
+
+      <form id="cbForm" class="cb-input-area" autocomplete="off">
+        <input id="cbInput" class="cb-input" type="text"
+               placeholder="Escribe tu pregunta..." aria-label="Tu mensaje" />
+        <button class="cb-send" aria-label="Enviar">➤</button>
+      </form>
+    </div>
+
+    <!-- Launcher con imagen -->
+    <button id="chatbot-launcher" class="cb-launcher" aria-label="Abrir chat">
+      <img src="assets/icons/chat-bot.png" alt="Chatbot" />
+    </button>
+
+    <!-- Script Chatbot -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // ====== Selectores según TU HTML ======
   const chat     = document.getElementById('chatbot');
   const list     = document.getElementById('cbMessages');
   const input    = document.getElementById('cbInput');
@@ -54,11 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // ====== Abrir / cerrar ======
+  // ===== Bloqueo de scroll del body =====
   const lockBody = (lock) => {
     document.body.classList.toggle('cb-lock', !!lock);
   };
 
+  // ===== Abrir / cerrar =====
   const openChat = () => {
     chat.classList.add('open');
     chat.classList.remove('cb-hidden');
@@ -75,39 +158,42 @@ document.addEventListener('DOMContentLoaded', () => {
   launcher.addEventListener('click', () => {
     chat.classList.contains('open') ? closeChat() : openChat();
   });
+
   if (btnClose) btnClose.addEventListener('click', closeChat);
 
   // Cerrar con ESC
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && chat.classList.contains('open')) closeChat();
+    if (e.key === 'Escape' && chat.classList.contains('open')) {
+      closeChat();
+    }
   });
 
-  // ====== Evitar que el scroll del chat “arrastre” el body en móvil ======
-  // (el CSS ya ayuda con overscroll-behavior; esto refuerza)
+  // Evitar que el scroll dentro del chat arrastre la página
   ['touchstart','touchmove','wheel'].forEach(evt => {
     list.addEventListener(evt, (e) => {
       e.stopPropagation();
     }, { passive: true });
   });
 
-  // ====== Limpia cualquier persistencia previa (no guardamos historial) ======
+  // Limpiar historial viejo (por si había algo guardado antes)
   try {
     localStorage.removeItem('chatbot_history');
     sessionStorage.removeItem('chatbot_history');
   } catch(e){}
 
-  // ====== Utilidades UI ======
-  const scrollBottom = () => { list.scrollTop = list.scrollHeight; };
+  // ===== Utils =====
+  const scrollBottom = () => {
+    list.scrollTop = list.scrollHeight;
+  };
 
   const addMsg = (text, who = 'bot', asHTML = false) => {
     const el = document.createElement('div');
     el.className = who === 'bot' ? 'cb-msg bot' : 'cb-msg user';
     if (asHTML) el.innerHTML = text; else el.textContent = text;
     list.appendChild(el);
-    // Forzar columna (por si otro CSS lo pisa)
     list.style.display = 'flex';
     list.style.flexDirection = 'column';
-    list.scrollTop = list.scrollHeight;
+    scrollBottom();
   };
 
   const goTo = (hash) => {
@@ -122,17 +208,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const quick = (items) => {
     const wrap = document.createElement('div');
-    wrap.className = 'msg-quick';              // coincide con tu CSS
+    wrap.className = 'msg-quick';
     items.forEach(({label, hash}) => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.className = 'chip';                    // coincide con tu CSS
+      b.className = 'chip';
       b.textContent = label;
       b.addEventListener('click', () => {
         addMsg(label, 'user');
         setTimeout(() => {
           goTo(hash);
           addMsg('Listo, te llevé a ' + label.toLowerCase() + '.', 'bot');
+          // Al navegar, cerramos el chat para devolver el scroll
+          closeChat();
         }, 120);
       });
       wrap.appendChild(b);
@@ -141,23 +229,22 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollBottom();
   };
 
-  // ====== Textos ======
+  // ===== Textos =====
   const PRESENTACION = `
 Te cuento un poco sobre mí: soy <strong>Técnico Superior en Redes Informáticas</strong>, egresado del Instituto <strong>Teclab</strong>.<br><br>
-Actualmente formo parte de la empresa <strong>Conectar SRL</strong>, radicada en <strong>Sunchales, Santa Fe</strong>, donde me desempeño tanto en el área de <strong>redes y soporte técnico</strong> como en el <strong>desarrollo y mantenimiento de software</strong>.<br><br>
-Combino mis conocimientos en infraestructura y programación para crear soluciones que optimizan procesos y mejoran la eficiencia operativa.
+Actualmente formo parte de la empresa <strong>Conectar SRL</strong>, en <strong>Sunchales, Santa Fe</strong>, donde trabajo tanto en <strong>redes y soporte técnico</strong> como en el <strong>desarrollo y mantenimiento de software</strong>.<br><br>
+Combino infraestructura y programación para crear soluciones que optimizan procesos y mejoran la eficiencia operativa.
 `;
 
   const SERVICIOS_INFO = `
-Desarrollo soluciones tecnológicas a medida que combinan <strong>programación, automatización y redes informáticas</strong> para optimizar procesos y reducir tiempos operativos.<br><br>
-
-🔹 <strong>Desarrollo de Software Full-Stack:</strong> creo aplicaciones web y de escritorio con <strong>Python, Django, C#, HTML, CSS, JavaScript y SQL</strong>.<br>
-🔹 <strong>Automatización de Procesos:</strong> scripts con <strong>Python + Selenium</strong> para tareas repetitivas en telecomunicaciones e ISPs (ONUs, OLTs, reportes).<br>
-🔹 <strong>Soporte Técnico y Mantenimiento:</strong> diagnóstico, reparación y optimización de equipos; mantenimiento preventivo e instalación de SO.<br>
-🔹 <strong>Ciberseguridad y Redes:</strong> buenas prácticas y herramientas de <strong>hacking ético</strong> (Kali, escaneo de vulnerabilidades) y experiencia en <strong>FTTH/GPON</strong>.
+Desarrollo soluciones tecnológicas a medida que combinan <strong>programación, automatización y redes informáticas</strong> para optimizar procesos y reducir tiempos.<br><br>
+🔹 <strong>Software Full-Stack:</strong> Python, Django, C#, HTML, CSS, JS, SQL.<br>
+🔹 <strong>Automatización:</strong> Python + Selenium para ONUs, OLTs, reportes y tareas repetitivas.<br>
+🔹 <strong>Soporte Técnico:</strong> diagnóstico, reparación, mantenimiento preventivo, instalación de sistemas.<br>
+🔹 <strong>Ciberseguridad & Redes:</strong> prácticas de hacking ético, Kali, FTTH/GPON, hardening de infraestructuras.
 `;
 
-  // ====== Intents (unificados) ======
+  // ===== Intents =====
   const intents = [
     {
       test: t => /^(hola|buenas?|hey|hi|qué tal)/i.test(t),
@@ -174,23 +261,48 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     },
     {
       test: t => /(proyecto|proyectos)/i.test(t),
-      run: () => { addMsg('Te llevo a Proyectos…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#proyectos'); }
+      run: () => {
+        addMsg('Te llevo a Proyectos…', 'bot');
+        addMsg(PRESENTACION, 'bot', true);
+        goTo('#proyectos');
+        closeChat();
+      }
     },
     {
       test: t => /(certificado|certificados)/i.test(t),
-      run: () => { addMsg('Te llevo a Certificados…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#certificados'); }
+      run: () => {
+        addMsg('Te llevo a Certificados…', 'bot');
+        addMsg(PRESENTACION, 'bot', true);
+        goTo('#certificados');
+        closeChat();
+      }
     },
     {
       test: t => /(cv|curriculum|currículum|hoja de vida)/i.test(t),
-      run: () => { addMsg('Te llevo al Curriculum…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#curriculum'); }
+      run: () => {
+        addMsg('Te llevo al Curriculum…', 'bot');
+        addMsg(PRESENTACION, 'bot', true);
+        goTo('#curriculum');
+        closeChat();
+      }
     },
     {
       test: t => /(contacto|email|correo|mail|whatsapp|linkedin)/i.test(t),
-      run: () => { addMsg('Te llevo a Contacto…','bot'); addMsg(PRESENTACION,'bot',true); goTo('#contacto'); }
+      run: () => {
+        addMsg('Te llevo a Contacto…', 'bot');
+        addMsg(PRESENTACION, 'bot', true);
+        goTo('#contacto');
+        closeChat();
+      }
     },
     {
       test: t => /(servicio|servicios)/i.test(t),
-      run: () => { addMsg('Te llevo a Servicios…','bot'); addMsg(SERVICIOS_INFO,'bot',true); goTo('#servicios'); }
+      run: () => {
+        addMsg('Te llevo a Servicios…', 'bot');
+        addMsg(SERVICIOS_INFO, 'bot', true);
+        goTo('#servicios');
+        closeChat();
+      }
     },
     {
       test: t => /(ayuda|help|menú|menu)/i.test(t),
@@ -207,11 +319,18 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     }
   ];
 
-  const fallback = () =>
-    addMsg('Puedo llevarte a una sección. Decime: “Servicios”, “Proyectos”, “Certificados”, “Curriculum”, “Contacto” o “Ayuda”.','bot');
+  const fallback = () => {
+    addMsg(
+      'Puedo llevarte a una sección. Decime: “Servicios”, “Proyectos”, “Certificados”, “Curriculum”, “Contacto” o “Ayuda”.',
+      'bot'
+    );
+  };
 
   // Mensaje de bienvenida
-addMsg('👋 ¡Hola! Soy el asistente de Luis. Puedo ayudarte a conocer sus proyectos, certificaciones o cómo contactarlo. ¿Por dónde te gustaría empezar?', 'bot');
+  addMsg(
+    '👋 ¡Hola! Soy el asistente de Luis. Puedo ayudarte a conocer sus proyectos, certificaciones o cómo contactarlo. ¿Por dónde te gustaría empezar?',
+    'bot'
+  );
 
   // Envío
   form.addEventListener('submit', (e) => {
@@ -225,96 +344,8 @@ addMsg('👋 ¡Hola! Soy el asistente de Luis. Puedo ayudarte a conocer sus proy
   });
 });
 </script>
+  </section>
 
-
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Luis Miraglio</h2>
-            </div>
-            <div class="nav-menu">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
-                <a href="#proyectos" class="nav-link">Proyectos</a>
-                <a href="#servicios" class="nav-link">Servicios</a>
-                <a href="#curriculum" class="nav-link">Curriculum</a>
-                <a href="#certificados" class="nav-link">Certificados</a>
-                <a href="#habilidades" class="nav-link">Habilidades</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-<section id="inicio" class="hero">
-  <!-- Partículas (particles.js) -->
-  <div id="particles-js" class="hero-particles" aria-hidden="true"></div>
-  <!-- Si algún día cambias de librería a canvas, descomenta: -->
-  <!-- <canvas id="hero-particles" class="hero-particles" aria-hidden="true"></canvas> -->
-
-  <div class="hero-container">
-    <!-- Columna izquierda -->
-    <div class="hero-content">
-      <div class="hero-header">
-        <span class="hero-greeting" data-aos="fade-up">
-          Automatización & Software para ISPs y Pymes
-        </span>
-
-        <h1 class="hero-title">
-          Optimizo <span class="highlight">redes informáticas</span> y desarrollo
-          <span class="highlight">soluciones a medida</span>
-        </h1>
-
-        <p class="hero-subtitle" data-aos="fade-right" data-aos-delay="150">
-          Scripts en producción (ONUs/GPON) + apps de gestión. Entrego con documentación y capacitación.
-        </p>
-
-        <div class="title-bar" data-aos="fade-right" data-aos-delay="250"></div>
-      </div>
-
-      <!-- Bullets -->
-      <ul class="hero-bullets">
-        <li><i class="fas fa-network-wired icon-blue"></i> Configuración y diagnóstico de redes FTTH / ISPs</li>
-        <li><i class="fas fa-robot icon-yellow"></i> Desarrollo de apps, bots y automatizaciones</li>
-        <li><i class="fas fa-clipboard-check icon-green"></i> Entregas listas para producción con capacitación</li>
-      </ul>
-
-      <!-- CTAs -->
-      <div class="hero-buttons">
-        <a href="#proyectos" class="btn btn-primary">Ver soluciones</a>
-        <a href="https://wa.me/5493493400086" target="_blank" class="btn btn-whatsapp">
-          </i> Hablar por WhatsApp
-        </a>
-      </div>
-    </div>
-
-<!-- Columna derecha: tarjeta de código -->
-<div class="hero-image">
-  <div class="profile-card code-card" aria-hidden="true">
-    <div class="code-window">
-      <pre class="code-pre"><code>
-<span class="kw">class</span> <span class="id">Luis</span>:
-    <span class="var">title</span> = <span class="str">'Téc. Sup. en Redes & Dev'</span>
-
-    <span class="var">networks</span> = [<span class="str">'FTTH/GPON'</span>, <span class="str">'Cisco IOS'</span>]
-
-    <span class="var">backend</span>  = [<span class="str">'Python'</span>, <span class="str">'Django'</span>, <span class="str">'SQL'</span>]
-    <span class="var">frontend</span> = [<span class="str">'HTML'</span>, <span class="str">'CSS'</span>, <span class="str">'JS'</span>]
-    <span class="var">it</span>        = [<span class="str">'Hardware'</span>, <span class="str">'Software'</span>]
-
-    <span class="kw">def</span> <span class="fn">solve</span>(<span class="var">self</span>, <span class="var">pain</span>):
-        <span class="kw">return</span> <span class="str">'menos tiempo, menos errores'</span><span class="code-caret" aria-hidden="true"></span>
-</code></pre>
-    </div>
-  </div>
-</div>
-</div>
-</section>
 
 <!-- Sección Sobre Mí (reemplazo completo) -->
 <section id="sobre-mi" class="about">
