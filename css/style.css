@@ -163,26 +163,82 @@ section{padding:var(--spacing-xxl) 0}
   color:#f1f5f9;margin:0 auto;max-width:860px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.45);
   position:relative;overflow:hidden;padding:40px 36px;font-size:1.05rem
 }
-/* Header */
-.modal-header{position:sticky;top:0;z-index:2;backdrop-filter:blur(6px);display:flex;align-items:center;gap:12px;padding:18px 22px}
-.modal-header h2 {
-  color: #fff;
-  text-shadow: 0 0 8px rgba(59,130,246,.7),
-               0 0 16px rgba(59,130,246,.4);
-  flex: 1;                 /* ocupa todo el espacio */
-  text-align: center;      /* centra el texto */
+/* Header del modal: título + flechas alineados sin solaparse */
+.modal-header{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* reparte título y nav */
+  gap: 12px;
+  padding: 18px 22px;
 }
 
-.modal-nav{position:absolute;right:22px;top:50%;transform:translateY(-50%);display:inline-flex;gap:10px;z-index:3}
-/* ===== Flechas del modal: versión visible y moderna ===== */
+/* Título ocupando el centro, sin que las flechas lo tapen */
+.modal-header h2{
+  color: #fff;
+  text-shadow:
+    0 0 8px rgba(59,130,246,.7),
+    0 0 16px rgba(59,130,246,.4);
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+/* Flechas: dentro del flujo, a la derecha, sin absolute */
 .modal-nav{
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;          /* 🔴 antes: absolute */
+  transform: none;           /* 🔴 quitamos translate */
   display: inline-flex;
   gap: 10px;
-  z-index: 3;               /* por encima del título */
+  z-index: 3;
+}
+
+/* Mantén el estilo visual de los botones tal cual lo tenías */
+.modal-nav button{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.06);
+  transition: background .2s, box-shadow .2s, transform .08s, border-color .2s;
+}
+
+.modal-nav button:hover{
+  background: rgba(59,130,246,.35);
+  border-color: rgba(59,130,246,.6);
+  box-shadow: 0 10px 24px rgba(59,130,246,.35);
+}
+
+.modal-nav button:active{
+  transform: translateY(1px);
+}
+
+/* Responsive: en pantallas chicas apilamos título y flechas */
+@media (max-width: 520px){
+  .modal-header{
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal-header h2{
+    text-align: center;
+  }
+  .modal-nav{
+    order: 2;
+  }
 }
 
 .modal-nav button{
