@@ -83,9 +83,43 @@ a,button{transition:all .2s ease}
 .btn-primary{background:var(--primary-color);color:#fff}
 .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.85)}
 .btn-whatsapp{background:#25d366;color:#0b0b0b;border:2px solid #25d366;font-weight:700;box-shadow:0 4px 12px rgba(37,211,102,.3)}
+.btn-webscraping{
+  background: linear-gradient(135deg, #facc15 0%, #2563eb 100%);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(250,204,21,.18);
+  color: #fff;
+}
+.btn-figma {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(249,115,22,.18);
+}
+.btn-jsmodern {
+  background: linear-gradient(135deg, #facc15 0%, #fbbf24 100%);
+  color: #18181b;
+  border: 1px solid rgba(0,0,0,.18);
+  box-shadow: 0 8px 18px rgba(250,204,21,.18);
+}
 .btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.25)}
 .btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(37,211,102,.45)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(37,99,235,.45);transition:all .2s ease-in-out}
+.btn-webscraping:hover{
+  background: linear-gradient(135deg, #fde047 0%, #3b82f6 100%);
+  box-shadow: 0 12px 26px rgba(37,99,235,.22);
+  transform: translateY(-2px);
+}
+.btn-figma:hover {
+  background: linear-gradient(135deg, #fdba74 0%, #ea580c 100%);
+  box-shadow: 0 12px 26px rgba(249,115,22,.22);
+  transform: translateY(-2px);
+}
+.btn-jsmodern:hover {
+  background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+  color: #18181b;
+  box-shadow: 0 12px 26px rgba(250,204,21,.22);
+  transform: translateY(-2px);
+}
 
 .hero-image{display:flex;justify-content:center}
 .profile-card{
@@ -142,11 +176,9 @@ section{padding:var(--spacing-xxl) 0}
 }
 
 .project-quick:hover {
-  background: linear-gradient(145deg, #2563eb, #1d4ed8);
+  background: linear-gradient(145deg, #B23B2F 0%, #6D1F19 100%);
+  box-shadow: 0 12px 26px rgba(139,44,34,.36);
   transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.3);
-
-
 }
 
 
@@ -155,7 +187,16 @@ section{padding:var(--spacing-xxl) 0}
 /* =========================================================
    MODAL OSCURO (versión final)
 ========================================================= */
-.modal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(4px);z-index:9999;overflow:auto;padding:24px 16px}
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.55);
+  backdrop-filter:blur(4px);
+  z-index:2000; /* Asegura que esté sobre la navbar */
+  overflow:auto;
+  padding:94px 16px 24px 16px; /* <-- padding-top igual o mayor a navbar (70px) + margen */
+}
 .modal.open{display:block}
 
 .modal-content{
@@ -163,6 +204,7 @@ section{padding:var(--spacing-xxl) 0}
   color:#f1f5f9;margin:0 auto;max-width:860px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.45);
   position:relative;overflow:hidden;padding:40px 36px;font-size:1.05rem
 }
+
 /* Header del modal: título + flechas alineados sin solaparse */
 .modal-header{
   position: sticky;
@@ -929,7 +971,7 @@ section{padding:var(--spacing-xxl) 0}
 /* Hover sutil como en Servicios */
 .cv-points li:hover{
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
   border-color:#c3d7ff;
   transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
 }
@@ -1105,25 +1147,6 @@ section{padding:var(--spacing-xxl) 0}
   color: inherit;
   margin: 0;
 }
-
-/* ===== Colores personalizados por red ===== */
-.contact-item.email {
-  background: #e43d30;
-  color: #fff;
-}
-.contact-item.linkedin {
-  background: #1d4ed8;
-  color: #fff;
-}
-.contact-item.github {
-  background: #0b0f19;
-  color: #fff;
-}
-.contact-item.whatsapp {
-  background: #22c55e;
-  color: #fff;
-}
-
 
 .contact .about-highlight{margin-top:10px}
 
@@ -1506,5 +1529,190 @@ body.cb-lock{
     width: 64px;
     height: 64px;
   }
+}
+
+/* Botón detalles certificado Web Scraping */
+.btn-webscraping-details {
+  background: linear-gradient(135deg, #facc15 0%, #2563eb 100%);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(250,204,21,.18);
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s, box-shadow .2s, transform .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-webscraping-details:hover {
+  background: linear-gradient(135deg, #fde047 0%, #3b82f6 100%);
+  box-shadow: 0 12px 26px rgba(37,99,235,.22);
+  transform: translateY(-2px);
+}
+
+/* Modal de detalles de certificado */
+.cert-modal-content {
+  background: linear-gradient(135deg, #facc15 0%, #2563eb 100%);
+  color: #1e293b;
+  max-width: 540px;
+  min-width: 0;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(37,99,235,.18);
+  padding: 0;
+  overflow: hidden;
+  font-size: 1.05rem;
+}
+.cert-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(90deg, #2563eb 0%, #facc15 100%);
+  color: #fff;
+  padding: 26px 28px 18px 28px; /* más padding arriba */
+  border-radius: 18px 18px 0 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  position: relative;
+  min-height: 80px;
+}
+.cert-modal-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: #fffbe7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(250,204,21,.15);
+  flex-shrink: 0;
+}
+.cert-modal-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+.cert-modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  flex: 1;
+  text-shadow: 0 2px 8px rgba(37,99,235,.18);
+  line-height: 1.2;
+  min-width: 0;
+  word-break: break-word;
+}
+.cert-modal-header .modal-close,
+.cert-modal-header .btn-modal-close {
+  background: #facc15;
+  color: #2563eb;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 8px 18px;
+  font-size: 1rem;
+  margin-left: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(250,204,21,.18);
+  transition: background .2s, color .2s;
+}
+.cert-modal-header .modal-close:hover,
+.cert-modal-header .btn-modal-close:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.cert-modal-body {
+  padding: 32px 28px 24px 28px;
+  background: #fffbe7;
+  color: #1e293b;
+  font-size: 1.07rem;
+}
+.cert-modal-body h4 {
+  color: #2563eb;
+  font-weight: 700;
+  margin: 18px 0 8px 0;
+  font-size: 1.08rem;
+}
+.cert-modal-body ul {
+  margin: 0 0 10px 18px;
+  padding: 0 0 0 18px;
+  color: #1e293b;
+  opacity: 1;
+}
+.cert-modal-body li {
+  margin-bottom: 4px;
+  font-size: 1.01rem;
+  color: #1e293b;
+  opacity: 1;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.cert-modal-body p, .cert-modal-body strong {
+  color: #1e293b;
+  opacity: 1;
+  font-weight: 600;
+}
+.cert-modal-body .tech-tag {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 0.95rem;
+  margin-right: 6px;
+  margin-bottom: 3px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+@media (max-width:600px) {
+  .cert-modal-content { max-width: 98vw; }
+  .cert-modal-header, .cert-modal-body { padding-left: 10px; padding-right: 10px; }
+  .cert-modal-header { padding-top: 18px; padding-bottom: 12px; }
+}
+
+/* Icono de detalles debajo del icono principal */
+.cert-details-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 75px auto 0 auto; /* MÁS ABAJO del icono principal */
+  background: transparent;   /* Sin fondo */
+  border: none;              /* Sin borde */
+  border-radius: 0;          /* Sin óvalo */
+  width: 28px;
+  height: 28px;
+  box-shadow: none;          /* Sin sombra */
+  cursor: pointer;
+  transition: transform .12s;
+  z-index: 2;
+  position: relative;
+  padding: 0;
+}
+.cert-details-icon:hover {
+  background: transparent;
+  transform: scale(1.18);
+}
+.cert-details-icon .cert-info-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+  filter: none;
+  transition: filter .18s;
+}
+.cert-details-icon:hover .cert-info-svg {
+  filter: drop-shadow(0 2px 6px #2563eb);
+}
+
+/* Centrado vertical del icono principal + info */
+.certificate-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
 }
 
