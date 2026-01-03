@@ -101,6 +101,12 @@ a,button{transition:all .2s ease}
   border: 1px solid rgba(0,0,0,.18);
   box-shadow: 0 8px 18px rgba(250,204,21,.18);
 }
+.btn-mcp {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(180,83,9,.18);
+}
 .btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.25)}
 .btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(37,211,102,.45)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(37,99,235,.45);transition:all .2s ease-in-out}
@@ -118,6 +124,12 @@ a,button{transition:all .2s ease}
   background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
   color: #18181b;
   box-shadow: 0 12px 26px rgba(250,204,21,.22);
+  transform: translateY(-2px);
+}
+.btn-mcp:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+  box-shadow: 0 12px 26px rgba(180,83,9,.22);
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -1679,7 +1691,7 @@ body.cb-lock{
   justify-content: center;
   margin: 75px auto 0 auto; /* MÁS ABAJO del icono principal */
   background: transparent;   /* Sin fondo */
-  border: none;              /* Sin borde */
+  border: none;          /* Sin borde */
   border-radius: 0;          /* Sin óvalo */
   width: 28px;
   height: 28px;
