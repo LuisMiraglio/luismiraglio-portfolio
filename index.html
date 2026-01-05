@@ -1319,13 +1319,19 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   <!-- Icono principal -->
   <div class="certificate-icon">
     <img src="assets/icons/diploma.svg" alt="Título Técnico" class="certificate-svg" />
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('teclab-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
 
   <!-- Contenido -->
   <div class="certificate-content">
     <h3 class="certificate-title">Técnico Superior en Redes Informáticas</h3>
-    <p class="certificate-issuer">Teclab Instituto Técnico — Egreso: 2024</p>
-    <p>📜 Resolución: RESOL-2024-1277-APN-SE#MCH</p>
+    <p class="certificate-issuer">Teclab Instituto Técnico Superior</p>
 
     <div class="certificate-actions">
       <a href="https://drive.google.com/file/d/1n4jfz-GYTYRl1oEQOyOsDNuhIONIGJP4/view?usp=drivesdk"
@@ -1337,10 +1343,22 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
-
-
-
+<!-- Modal detalles Teclab -->
+<div id="teclab-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="teclab-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/diploma.svg" alt="Título Técnico" />
+      </div>
+      <h2 id="teclab-cert-title">Técnico Superior en Redes Informáticas</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
+    </div>
+  </div>
+</div>
 
 <!-- AWS Certificate -->
 <div class="certificate-card" data-aos="fade-up">
@@ -1352,6 +1370,13 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   <!-- Ícono con SVG local -->
   <div class="certificate-icon">
     <img src="assets/icons/aws.svg" alt="AWS" class="certificate-svg" />
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('aws-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
 
   <div class="certificate-content">
@@ -1365,8 +1390,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
-
+<div id="aws-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="aws-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/aws.svg" alt="AWS" />
+      </div>
+      <h2 id="aws-cert-title">Fundamentos de la nube de AWS Academy</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
+    </div>
+  </div>
+</div>
 
 <!-- C# .NET Certificate -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
@@ -1377,6 +1415,13 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <div class="certificate-icon">
     <img src="assets/icons/csharp.svg" alt="C# .NET" class="certificate-svg" />
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('csharp-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
   <div class="certificate-content">
     <h3 class="certificate-title">Introducción a C# .NET</h3>
@@ -1389,8 +1434,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
-
+<div id="csharp-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="csharp-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/csharp.svg" alt="C# .NET" />
+      </div>
+      <h2 id="csharp-cert-title">Introducción a C# .NET</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
+    </div>
+  </div>
+</div>
 
 <!-- Python Advanced Certificate -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
@@ -1399,11 +1457,16 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
      target="_blank" rel="noopener noreferrer"
      aria-label="Abrir certificado: Python Avanzado"></a>
 
-  <!-- Ícono con SVG local -->
   <div class="certificate-icon">
     <img src="assets/icons/python.svg" alt="Python" class="certificate-svg" />
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('python-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
-
   <div class="certificate-content">
     <h3 class="certificate-title">Python Avanzado</h3>
     <p class="certificate-issuer">Educación IT</p>
@@ -1415,7 +1478,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
+<div id="python-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="python-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/python.svg" alt="Python" />
+      </div>
+      <h2 id="python-cert-title">Python Avanzado</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
+    </div>
+  </div>
+</div>
 
 <!-- Intro to Programming Certificate -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
@@ -1426,8 +1503,14 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <div class="certificate-icon">
     <img src="assets/icons/programming.svg" alt="Introducción a la Programación" class="certificate-svg">
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('introprog-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
-
   <div class="certificate-content">
     <h3 class="certificate-title">Introducción a la Programación</h3>
     <p class="certificate-issuer">Educación IT</p>
@@ -1439,7 +1522,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
+<div id="introprog-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="introprog-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/programming.svg" alt="Introducción a la Programación" />
+      </div>
+      <h2 id="introprog-cert-title">Introducción a la Programación</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
+    </div>
+  </div>
+</div>
 
 <!-- Flexin Mentorship Certificate -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
@@ -1450,6 +1547,13 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <div class="certificate-icon">
     <img src="assets/icons/mentorship.svg" alt="Mentoría Flexin" class="certificate-svg" />
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('mentoria-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
   <div class="certificate-content">
     <h3 class="certificate-title">Mentoría Flexin</h3>
@@ -1462,8 +1566,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
-
+<div id="mentoria-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="mentoria-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/mentorship.svg" alt="Mentoría Flexin" />
+      </div>
+      <h2 id="mentoria-cert-title">Mentoría Flexin</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
+    </div>
+  </div>
+</div>
 
 <!-- Industry 4.0 Certificate -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
@@ -1474,6 +1591,13 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <div class="certificate-icon">
     <img src="assets/icons/industry.svg" alt="Industria 4.0 - IIOT" class="certificate-svg">
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('industry-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
 
   <div class="certificate-content">
@@ -1487,7 +1611,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
+<div id="industry-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="industry-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/industry.svg" alt="Industria 4.0 - IIOT" />
+      </div>
+      <h2 id="industry-cert-title">Industria 4.0 - IIOT, Python y Ciberseguridad Industrial</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
+    </div>
+  </div>
+</div>
 
 <!-- Certificado WordPress con Elementor -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="600">
@@ -1499,6 +1637,13 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   <!-- Ícono WordPress con SVG local -->
   <div class="certificate-icon">
     <img src="assets/icons/wordpress.svg" alt="WordPress" class="certificate-svg" />
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('wordpress-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
 
   <div class="certificate-content">
@@ -1509,6 +1654,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
          target="_blank" rel="noopener noreferrer" class="btn-certificate btn-wordpress">
         <i class="fas fa-external-link-alt"></i> Ver Certificado
       </a>
+    </div>
+  </div>
+</div>
+<div id="wordpress-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="wordpress-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/wordpress.svg" alt="WordPress" />
+      </div>
+      <h2 id="wordpress-cert-title">WordPress con Elementor</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
     </div>
   </div>
 </div>
@@ -1523,6 +1683,13 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   <!-- Ícono -->
   <div class="certificate-icon">
     <img src="assets/icons/hacking-etico.png" alt="Hacking Ético" class="certificate-svg" />
+    <!-- Botón de detalles -->
+    <button type="button"
+      class="cert-details-icon"
+      aria-label="Ver detalles del certificado"
+      onclick="openModal('hacking-cert-modal')">
+      <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
+    </button>
   </div>
 
   <div class="certificate-content">
@@ -1535,6 +1702,21 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
          class="btn-certificate btn-hacking">
         <i class="fas fa-external-link-alt"></i> Ver Certificado
       </a>
+    </div>
+  </div>
+</div>
+<div id="hacking-cert-modal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="hacking-cert-title" tabindex="-1" aria-hidden="true">
+  <div class="modal-content cert-modal-content">
+    <div class="modal-header cert-modal-header">
+      <div class="cert-modal-icon">
+        <img src="assets/icons/hacking-etico.png" alt="Hacking Ético" />
+      </div>
+      <h2 id="hacking-cert-title">Ciberseguridad y Ethical Hacking</h2>
+      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+    </div>
+    <div class="modal-body cert-modal-body">
+      <p>A COMPLETAR</p>
     </div>
   </div>
 </div>
@@ -1567,7 +1749,6 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
 <!-- Modal de detalles del certificado Web Scraping -->
 <div id="webscraping-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="webscraping-cert-title" tabindex="-1" aria-hidden="true">
@@ -1675,7 +1856,6 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
 <!-- Modal de detalles del certificado Figma para Devs -->
 <div id="figma-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="figma-cert-title" tabindex="-1" aria-hidden="true">
@@ -1786,7 +1966,6 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
 <!-- Modal de detalles del certificado JavaScript Moderno -->
 <div id="jsmodern-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="jsmodern-cert-title" tabindex="-1" aria-hidden="true">
@@ -1887,7 +2066,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
      aria-label="Abrir certificado: Model Context Protocol"></a>
   <div class="certificate-icon">
     <img src="assets/icons/conexion.png" alt="Model Context Protocol" class="certificate-svg" />
-    <!-- Icono de detalles debajo del icono principal -->
+    <!-- Botón de detalles -->
     <button type="button"
       class="cert-details-icon"
       aria-label="Ver detalles del certificado"
@@ -1906,7 +2085,6 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-
 <!-- Modal de detalles del certificado Model Context Protocol -->
 <div id="mcp-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="mcp-cert-title" tabindex="-1" aria-hidden="true">
