@@ -1319,6 +1319,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   <!-- Icono principal -->
   <div class="certificate-icon">
     <img src="assets/icons/diploma.svg" alt="Título Técnico" class="certificate-svg" />
+
     <!-- Botón de detalles -->
     <button type="button"
       class="cert-details-icon"
@@ -1343,22 +1344,103 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
+
 <!-- Modal detalles Teclab -->
-<div id="teclab-cert-modal" class="modal" role="dialog" aria-modal="true"
-     aria-labelledby="teclab-cert-title" tabindex="-1" aria-hidden="true">
+<div id="teclab-cert-modal"
+     class="modal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="teclab-cert-title"
+     tabindex="-1"
+     aria-hidden="true">
+
   <div class="modal-content cert-modal-content">
+
+    <!-- Header -->
     <div class="modal-header cert-modal-header">
       <div class="cert-modal-icon">
         <img src="assets/icons/diploma.svg" alt="Título Técnico" />
       </div>
+
       <h2 id="teclab-cert-title">Técnico Superior en Redes Informáticas</h2>
-      <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
+
+      <button class="modal-close btn-modal-close"
+              type="button"
+              aria-label="Cerrar">
+        Cerrar
+      </button>
     </div>
+
+    <!-- Body -->
     <div class="modal-body cert-modal-body">
-      <p>A COMPLETAR</p>
+
+      <!-- Resumen -->
+      <div class="cert-modal-section">
+        <p class="cert-modal-summary">
+          Título oficial de nivel superior orientado al
+          <strong>diseño, implementación, administración y mantenimiento</strong>
+          de infraestructuras de redes informáticas, con enfoque práctico aplicado
+          a entornos corporativos y de telecomunicaciones.
+        </p>
+      </div>
+
+      <!-- Áreas de formación -->
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">Áreas de formación</h3>
+        <ul class="cert-modal-list">
+          <li>Fundamentos de redes <strong>LAN / WAN</strong> y arquitectura de Internet</li>
+          <li>Administración de redes <strong>TCP/IP</strong> y servicios esenciales (DHCP, DNS)</li>
+          <li>Configuración de conectividad y segmentación: <strong>NAT, VLANs, routing</strong></li>
+          <li>Operación y mantenimiento de infraestructura: routers, switches y equipos de red</li>
+          <li><strong>Seguridad de redes</strong>, buenas prácticas y criterios de disponibilidad</li>
+          <li>Diagnóstico y resolución de incidentes de conectividad en entornos reales</li>
+          <li>Documentación técnica, procedimientos y metodologías de soporte</li>
+        </ul>
+      </div>
+
+      <!-- Competencias -->
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">Competencias profesionales</h3>
+        <ul class="cert-modal-list">
+          <li>Implementar redes seguras, escalables y orientadas a la continuidad del servicio</li>
+          <li>Analizar y resolver fallas (capa física, enlace, red y servicios) con criterio técnico</li>
+          <li>Administrar servicios y recursos de red en organizaciones</li>
+          <li>Aplicar estándares, buenas prácticas operativas y enfoque preventivo</li>
+        </ul>
+      </div>
+
+      <!-- Perfil laboral -->
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">Perfil y salida laboral</h3>
+        <p class="cert-modal-text">
+          Formación alineada a roles de <strong>Técnico en Redes</strong>,
+          <strong>Soporte e Infraestructura IT</strong>,
+          <strong>Administrador de Redes</strong> y
+          <strong>Operación de conectividad</strong> en entornos empresariales.
+        </p>
+      </div>
+
+      <!-- Tecnologías -->
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">Tecnologías y conceptos</h3>
+        <div class="cert-modal-tags" aria-label="Tecnologías y conceptos">
+          <span class="cert-tag">LAN / WAN</span>
+          <span class="cert-tag">TCP/IP</span>
+          <span class="cert-tag">Routing</span>
+          <span class="cert-tag">VLAN</span>
+          <span class="cert-tag">NAT</span>
+          <span class="cert-tag">DHCP</span>
+          <span class="cert-tag">DNS</span>
+          <span class="cert-tag">Seguridad de redes</span>
+          <span class="cert-tag">Troubleshooting</span>
+          <span class="cert-tag">Documentación técnica</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
+
 
 <!-- AWS Certificate -->
 <div class="certificate-card" data-aos="fade-up">
@@ -1730,7 +1812,6 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <div class="certificate-icon">
     <img src="assets/icons/arrastrandose.png" alt="Web Scraping" class="certificate-svg" />
-    <!-- Icono de detalles debajo del icono principal -->
     <button type="button"
       class="cert-details-icon"
       aria-label="Ver detalles del certificado"
@@ -1738,6 +1819,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
       <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
     </button>
   </div>
+
   <div class="certificate-content">
     <h3 class="certificate-title">Web scraping con Python</h3>
     <p class="certificate-issuer">midudev</p>
@@ -1749,11 +1831,11 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-<!-- Modal de detalles del certificado Web Scraping -->
+
+<!-- Modal detalles Web Scraping (estilo “primero”: tarjetas + títulos unificados) -->
 <div id="webscraping-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="webscraping-cert-title" tabindex="-1" aria-hidden="true">
   <div class="modal-content cert-modal-content">
-
     <div class="modal-header cert-modal-header">
       <div class="cert-modal-icon">
         <img src="assets/icons/arrastrandose.png" alt="Web Scraping" />
@@ -1763,70 +1845,76 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
 
     <div class="modal-body cert-modal-body">
-      <p><strong>Curso – Midudev</strong></p>
-      <p>
-        Formación técnica en Web Scraping con Python, orientada a la extracción, procesamiento y automatización de datos desde sitios web estáticos y dinámicos, aplicando buenas prácticas y herramientas modernas.
-      </p>
-
-      <div class="modal-section">
-        <h4>🔍 Scraping con BeautifulSoup</h4>
-        <ul>
-          <li>Análisis y parsing de estructuras HTML</li>
-          <li>Extracción de datos específicos (precios, textos, enlaces)</li>
-          <li>Recuperación masiva de información desde listados</li>
-          <li>Navegación por el DOM para obtener información contextual</li>
-          <li>Scraping de sitios reales (ej: Wikipedia)</li>
-          <li>Extracción de datos por identificadores únicos</li>
-          <li>Obtención de metadatos mediante Open Graph</li>
-          <li>Evaluación de pros y contras de BeautifulSoup</li>
-          <li>Introducción a técnicas para evitar o gestionar CAPTCHAs</li>
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h4>🖥️ Automatización y CLI</h4>
-        <ul>
-          <li>Desarrollo de herramientas CLI en Python</li>
-          <li>Creación de un CLI orientado a SEO</li>
-          <li>Uso de colores y formatos en consola</li>
-          <li>Organización de scripts reutilizables</li>
-          <li>Prácticas de automatización aplicadas a casos reales</li>
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h4>⚙️ Scraping avanzado con Playwright</h4>
-        <ul>
-          <li>Introducción al scraping de contenido dinámico</li>
-          <li>Instalación y configuración de Playwright</li>
-          <li>Simulación de navegación real (browser automation)</li>
-          <li>Extracción de datos en sitios con JavaScript</li>
-          <li>Uso de XPaths para selección precisa de elementos</li>
-          <li>Testing y validación del scraper</li>
-          <li>Prácticas integradoras de scraping avanzado</li>
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h4>🧠 Competencias adquiridas</h4>
-        <ul>
-          <li>Diseño de scrapers robustos y reutilizables</li>
-          <li>Extracción estructurada de datos web</li>
-          <li>Automatización de procesos de recolección de información</li>
-          <li>Manejo de scraping estático y dinámico</li>
-          <li>Buenas prácticas técnicas y éticas de Web Scraping</li>
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h4>🛠️ Tecnologías utilizadas</h4>
-        <p>
-          Python · Requests · BeautifulSoup · Playwright · XPath · HTML · CLI
+      <div class="cert-modal-section">
+        <p class="cert-modal-summary">
+          Formación técnica en <strong>Web Scraping con Python</strong> orientada a la extracción, procesamiento y
+          automatización de datos desde sitios web <strong>estáticos y dinámicos</strong>, aplicando buenas prácticas,
+          selectores robustos y herramientas modernas.
         </p>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🔍 Scraping con BeautifulSoup</h3>
+        <ul class="cert-modal-list">
+          <li>Parsing de <strong>HTML</strong> y navegación por el DOM</li>
+          <li>Extracción de datos: textos, enlaces, atributos, precios y listados</li>
+          <li>Scraping de sitios reales (ej.: Wikipedia) y obtención por identificadores</li>
+          <li>Obtención de metadatos mediante <strong>Open Graph</strong></li>
+          <li>Evaluación de ventajas/limitaciones según el tipo de sitio</li>
+          <li>Introducción a gestión de bloqueos / CAPTCHAs</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🖥️ Automatización y CLI</h3>
+        <ul class="cert-modal-list">
+          <li>Construcción de herramientas <strong>CLI</strong> en Python</li>
+          <li>CLI orientado a SEO y análisis de contenido</li>
+          <li>Salida en consola con formatos/colores</li>
+          <li>Organización de scripts reutilizables y automatización</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">⚙️ Scraping avanzado con Playwright</h3>
+        <ul class="cert-modal-list">
+          <li>Scraping de contenido <strong>dinámico</strong> (renderizado por JavaScript)</li>
+          <li>Instalación y configuración de Playwright</li>
+          <li>Browser automation: navegación real, eventos y flujos</li>
+          <li>Selección precisa con <strong>XPath</strong> y estrategias de selectores</li>
+          <li>Testing/validación del scraper para mayor estabilidad</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🧠 Competencias adquiridas</h3>
+        <ul class="cert-modal-list">
+          <li>Diseño de scrapers <strong>robustos</strong> y reutilizables</li>
+          <li>Extracción estructurada y procesamiento de datos</li>
+          <li>Automatización de recolección de información</li>
+          <li>Manejo de scraping <strong>estático</strong> y <strong>dinámico</strong></li>
+          <li>Buenas prácticas técnicas y consideraciones éticas</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🛠️ Tecnologías y conceptos</h3>
+        <div class="cert-modal-tags" aria-label="Tecnologías y conceptos">
+          <span class="cert-tag">Python</span>
+          <span class="cert-tag">Requests</span>
+          <span class="cert-tag">BeautifulSoup</span>
+          <span class="cert-tag">Playwright</span>
+          <span class="cert-tag">XPath</span>
+          <span class="cert-tag">HTML</span>
+          <span class="cert-tag">DOM</span>
+          <span class="cert-tag">CLI</span>
+          <span class="cert-tag">Open Graph</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Certificado Figma para Devs -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="800">
@@ -1837,7 +1925,6 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <div class="certificate-icon">
     <img src="assets/icons/figma.png" alt="Figma para Devs" class="certificate-svg" />
-    <!-- Icono de detalles debajo del icono principal -->
     <button type="button"
       class="cert-details-icon"
       aria-label="Ver detalles del certificado"
@@ -1845,6 +1932,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
       <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
     </button>
   </div>
+
   <div class="certificate-content">
     <h3 class="certificate-title">Figma para Devs</h3>
     <p class="certificate-issuer">midudev</p>
@@ -1856,11 +1944,11 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-<!-- Modal de detalles del certificado Figma para Devs -->
+
+<!-- Modal detalles Figma para Devs (estilo “primero”) -->
 <div id="figma-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="figma-cert-title" tabindex="-1" aria-hidden="true">
   <div class="modal-content cert-modal-content">
-
     <div class="modal-header cert-modal-header">
       <div class="cert-modal-icon">
         <img src="assets/icons/figma.png" alt="Figma para Devs" />
@@ -1870,75 +1958,74 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
 
     <div class="modal-body cert-modal-body">
-      <p><strong>Curso – Figma</strong></p>
-      <p>
-        Capacitación técnica orientada a desarrolladores, enfocada en el uso de Figma como herramienta de diseño, prototipado y handoff, optimizando el flujo de trabajo entre diseño y desarrollo.
-      </p>
+      <div class="cert-modal-section">
+        <p class="cert-modal-summary">
+          Capacitación técnica orientada a desarrolladores para dominar <strong>Figma</strong> como herramienta de diseño,
+          prototipado y <strong>handoff</strong>, optimizando el flujo de trabajo entre diseño y desarrollo.
+        </p>
+      </div>
 
-      <div class="modal-section">
-        <h4>🧩 Diseño con Figma</h4>
-        <ul>
-          <li>Introducción a la interfaz y flujo de trabajo en Figma</li>
-          <li>Creación y organización de frames y grids</li>
-          <li>Uso de formas, vectores y SVGs</li>
-          <li>Manejo de texto y tipografía aplicado a UI</li>
-          <li>Prácticas de diseño orientadas a implementación real</li>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🧩 Diseño con Figma</h3>
+        <ul class="cert-modal-list">
+          <li>Interfaz, flujo de trabajo y organización de archivos</li>
+          <li>Creación de frames, grids y estructuras consistentes</li>
+          <li>Uso de formas, vectores y exportación de <strong>SVG</strong></li>
+          <li>Tipografía aplicada a UI y componentes</li>
+          <li>Buenas prácticas de diseño orientadas a implementación</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🎛️ Estilos y componentes</h4>
-        <ul>
-          <li>Definición y uso de variables de diseño</li>
-          <li>Creación y reutilización de componentes</li>
-          <li>Implementación de Auto Layout para layouts flexibles</li>
-          <li>Manejo de imágenes, máscaras y efectos visuales</li>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🎛️ Estilos, variables y componentes</h3>
+        <ul class="cert-modal-list">
+          <li>Definición de estilos y <strong>design tokens</strong></li>
+          <li>Creación/reutilización de componentes</li>
+          <li><strong>Auto Layout</strong> para layouts flexibles</li>
+          <li>Manejo de imágenes, máscaras y efectos</li>
           <li>Construcción de sistemas de diseño escalables</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🚀 Diseño avanzado</h4>
-        <ul>
-          <li>Uso de bibliotecas compartidas</li>
-          <li>Prototipado básico</li>
-          <li>Implementación de microinteracciones</li>
-          <li>Buenas prácticas para diseño mantenible y reutilizable</li>
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h4>🔧 Dev Mode & Handoff</h4>
-        <ul>
-          <li>Uso de Dev Mode para handoff diseñador ↔ desarrollador</li>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🔧 Dev Mode & Handoff</h3>
+        <ul class="cert-modal-list">
+          <li>Uso de <strong>Dev Mode</strong> para handoff diseñador ↔ dev</li>
           <li>Inspección de estilos, medidas y assets</li>
           <li>Extracción de valores CSS (spacing, colores, tipografías)</li>
-          <li>Integración directa de Figma con VS Code</li>
           <li>Optimización del flujo diseño → código</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🧠 Competencias adquiridas</h4>
-        <ul>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🧠 Competencias adquiridas</h3>
+        <ul class="cert-modal-list">
           <li>Interpretación precisa de diseños UI</li>
           <li>Reducción de fricción entre diseño y desarrollo</li>
-          <li>Creación de interfaces coherentes y escalables</li>
-          <li>Uso de Figma como herramienta técnica para desarrollo frontend</li>
+          <li>Interfaces coherentes, reutilizables y escalables</li>
+          <li>Handoff técnico listo para implementación</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🛠️ Herramientas y conceptos</h4>
-        <p>
-          Figma · Auto Layout · Design Tokens · Componentes · Prototipado · Dev Mode · Handoff
-        </p>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🛠️ Herramientas y conceptos</h3>
+        <div class="cert-modal-tags" aria-label="Herramientas y conceptos">
+          <span class="cert-tag">Figma</span>
+          <span class="cert-tag">Auto Layout</span>
+          <span class="cert-tag">Design Tokens</span>
+          <span class="cert-tag">Componentes</span>
+          <span class="cert-tag">Prototipado</span>
+          <span class="cert-tag">Dev Mode</span>
+          <span class="cert-tag">Handoff</span>
+          <span class="cert-tag">Export SVG</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Nuevo certificado: JavaScript Moderno -->
+
+<!-- Certificado JavaScript Moderno -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="900">
   <a class="card-link"
      href="https://drive.google.com/file/d/1vJfGMdZa5YE5gqTcibpag2_trOIh6t6i/view?usp=sharing"
@@ -1947,7 +2034,6 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <div class="certificate-icon">
     <img src="assets/icons/javascript-.svg" alt="JavaScript Moderno" class="certificate-svg" />
-    <!-- Icono de detalles debajo del icono principal -->
     <button type="button"
       class="cert-details-icon"
       aria-label="Ver detalles del certificado"
@@ -1955,6 +2041,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
       <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
     </button>
   </div>
+
   <div class="certificate-content">
     <h3 class="certificate-title">JavaScript Moderno</h3>
     <p class="certificate-issuer">midudev</p>
@@ -1966,11 +2053,11 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-<!-- Modal de detalles del certificado JavaScript Moderno -->
+
+<!-- Modal detalles JavaScript Moderno (estilo “primero”) -->
 <div id="jsmodern-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="jsmodern-cert-title" tabindex="-1" aria-hidden="true">
   <div class="modal-content cert-modal-content">
-
     <div class="modal-header cert-modal-header">
       <div class="cert-modal-icon">
         <img src="assets/icons/javascript-.svg" alt="JavaScript Moderno" />
@@ -1980,83 +2067,80 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
 
     <div class="modal-body cert-modal-body">
-      <p><strong>Curso – JavaScript (ES6+)</strong></p>
-      <p>
-        Formación técnica orientada al uso de características modernas de JavaScript, enfocada en escribir código más legible, eficiente, mantenible y optimizado, aplicando nuevos métodos, operadores y patrones del lenguaje.
-      </p>
+      <div class="cert-modal-section">
+        <p class="cert-modal-summary">
+          Formación técnica orientada a <strong>JavaScript ES6+</strong> y APIs modernas, enfocada en escribir código
+          más legible, eficiente y mantenible, aplicando nuevos métodos, operadores y patrones actuales del lenguaje.
+        </p>
+      </div>
 
-      <div class="modal-section">
-        <h4>🧱 Manejo avanzado de Arrays y estructuras</h4>
-        <ul>
-          <li>Uso del nuevo método Array.at()</li>
-          <li>Aplicación de inmutabilidad con array.with()</li>
-          <li>Agrupación de datos con Object.groupBy()</li>
-          <li>Operaciones de conjuntos con Set en JavaScript</li>
-          <li>Iteración y transformación eficiente de arrays</li>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🧱 Arrays, estructuras y colecciones</h3>
+        <ul class="cert-modal-list">
+          <li>Uso de <strong>Array.at()</strong> y acceso seguro</li>
+          <li>Inmutabilidad con <strong>array.with()</strong></li>
+          <li>Agrupación con <strong>Object.groupBy()</strong></li>
+          <li>Operaciones con <strong>Set</strong> y manejo de conjuntos</li>
+          <li>Iteración/transformación eficiente</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🔁 Novedades en Promesas</h4>
-        <ul>
-          <li>Uso de Promise.allSettled() para manejo de múltiples promesas</li>
-          <li>Ejecución concurrente con Promise.any()</li>
-          <li>Manejo simplificado de resultados con Promise.try()</li>
-          <li>Control avanzado de promesas con Promise.withResolvers()</li>
-          <li>Mejores prácticas para asincronismo y control de errores</li>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🔁 Asincronismo y Promesas</h3>
+        <ul class="cert-modal-list">
+          <li><strong>Promise.allSettled()</strong> para resultados completos</li>
+          <li><strong>Promise.any()</strong> para primer éxito</li>
+          <li><strong>Promise.try()</strong> y manejo simplificado</li>
+          <li><strong>Promise.withResolvers()</strong> (control avanzado)</li>
+          <li>Buenas prácticas de control de errores</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🧠 Nuevos operadores del lenguaje</h4>
-        <ul>
-          <li>Uso del operador Nullish Coalescing (??)</li>
-          <li>Operadores de asignación lógica: &&=, ||=, ??=</li>
-          <li>Escritura de lógica más clara y segura</li>
-          <li>Prevención de errores por valores null o undefined</li>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🧠 Operadores modernos</h3>
+        <ul class="cert-modal-list">
+          <li><strong>Nullish Coalescing</strong> (??)</li>
+          <li>Asignación lógica: <strong>&&=</strong>, <strong>||=</strong>, <strong>??=</strong></li>
+          <li>Lógica más clara y segura contra null/undefined</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>📖 Mejora de la legibilidad del código</h4>
-        <ul>
-          <li>Uso de Numeric Separators para mejorar la lectura de números</li>
-          <li>Aplicación de Symbol y propiedades descriptivas</li>
-          <li>Código más expresivo, mantenible y autoexplicativo</li>
-          <li>Enfoque en clean code y buenas prácticas modernas</li>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">📖 Legibilidad y buenas prácticas</h3>
+        <ul class="cert-modal-list">
+          <li><strong>Numeric separators</strong> para números legibles</li>
+          <li>Uso de <strong>Symbol</strong> y propiedades descriptivas</li>
+          <li>Enfoque en clean code y consistencia</li>
+          <li>Optimización de performance y robustez</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🛡️ Manejo de errores y optimización</h4>
-        <ul>
-          <li>Estrategias modernas de manejo de errores en JavaScript</li>
-          <li>Uso eficiente de iteradores en arrays</li>
-          <li>Optimización de flujos de ejecución</li>
-          <li>Prácticas para mejorar performance y robustez del código</li>
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h4>🧠 Competencias adquiridas</h4>
-        <ul>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🧠 Competencias adquiridas</h3>
+        <ul class="cert-modal-list">
           <li>Escritura de JavaScript moderno (ES6+)</li>
           <li>Manejo avanzado de asincronismo</li>
           <li>Código más limpio, legible y optimizado</li>
-          <li>Aplicación de nuevas APIs y features del lenguaje</li>
-          <li>Mejora de la calidad general del código JavaScript</li>
+          <li>Uso de features/APIs modernas del lenguaje</li>
         </ul>
       </div>
 
-      <div class="modal-section">
-        <h4>🛠️ Tecnologías y conceptos</h4>
-        <p>
-          JavaScript ES6+ · Promesas · Arrays · Set · Operadores modernos · Clean Code · Optimización
-        </p>
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🛠️ Tecnologías y conceptos</h3>
+        <div class="cert-modal-tags" aria-label="Tecnologías y conceptos">
+          <span class="cert-tag">JavaScript ES6+</span>
+          <span class="cert-tag">Promesas</span>
+          <span class="cert-tag">Arrays</span>
+          <span class="cert-tag">Set</span>
+          <span class="cert-tag">Operadores modernos</span>
+          <span class="cert-tag">Clean Code</span>
+          <span class="cert-tag">Optimización</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Certificado Model Context Protocol -->
 <div class="certificate-card" data-aos="fade-up" data-aos-delay="950">
@@ -2064,9 +2148,9 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
      href="https://drive.google.com/file/d/14-K0vonM_tAig4rSr0MhDeDQdR1_NACr/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
      aria-label="Abrir certificado: Model Context Protocol"></a>
+
   <div class="certificate-icon">
     <img src="assets/icons/conexion.png" alt="Model Context Protocol" class="certificate-svg" />
-    <!-- Botón de detalles -->
     <button type="button"
       class="cert-details-icon"
       aria-label="Ver detalles del certificado"
@@ -2074,6 +2158,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
       <img src="assets/icons/informacion.png" alt="Ver detalles" class="cert-info-svg" />
     </button>
   </div>
+
   <div class="certificate-content">
     <h3 class="certificate-title">Model Context Protocol</h3>
     <p class="certificate-issuer">midudev</p>
@@ -2085,7 +2170,8 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     </div>
   </div>
 </div>
-<!-- Modal de detalles del certificado Model Context Protocol -->
+
+<!-- Modal detalles MCP (estilo “primero”) -->
 <div id="mcp-cert-modal" class="modal" role="dialog" aria-modal="true"
      aria-labelledby="mcp-cert-title" tabindex="-1" aria-hidden="true">
   <div class="modal-content cert-modal-content">
@@ -2096,64 +2182,73 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
       <h2 id="mcp-cert-title">🧠 Model Context Protocol (MCP)</h2>
       <button class="modal-close btn-modal-close" type="button" aria-label="Cerrar">Cerrar</button>
     </div>
+
     <div class="modal-body cert-modal-body">
-      <p><strong>Curso – Introducción, Integración y Despliegue</strong></p>
-      <p>
-        Formación técnica sobre Model Context Protocol (MCP), un estándar moderno que permite conectar modelos de IA (LLMs) con herramientas, APIs y servicios externos, habilitando flujos de trabajo avanzados, automatización y capacidades extendidas en aplicaciones basadas en inteligencia artificial.
-      </p>
-      <div class="modal-section">
-        <h4>🔍 Introducción al MCP</h4>
-        <ul>
-          <li>Concepto y propósito del Model Context Protocol</li>
-          <li>Limitaciones de los modelos de IA tradicionales</li>
-          <li>Cómo MCP extiende las capacidades de los LLMs</li>
-          <li>Casos de uso reales para integración con sistemas externos</li>
-          <li>Buenas prácticas para diseñar interacciones IA ↔ servicios</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <h4>⚙️ Configuración y fundamentos</h4>
-        <ul>
-          <li>Configuración del entorno MCP</li>
-          <li>Conexión y pruebas de servidores MCP</li>
-          <li>Uso de bases de datos y APIs mediante MCP</li>
-          <li>Creación de tools y recursos accesibles por el modelo</li>
-          <li>Automatizaciones básicas usando MCP</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <h4>🔌 Integración y despliegue</h4>
-        <ul>
-          <li>Conexión de clientes MCP</li>
-          <li>Configuración y pruebas end-to-end</li>
-          <li>Uso del Inspector MCP para debugging</li>
-          <li>Conexión con APIs externas</li>
-          <li>Pruebas funcionales del protocolo MCP</li>
-          <li>Integración con Visual Studio Code</li>
-          <li>Automatización de flujos de navegación y testing</li>
-          <li>Uso de Playwright con MCP para automatización avanzada</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <h4>🧠 Competencias adquiridas</h4>
-        <ul>
-          <li>Diseño de sistemas IA con acceso a contexto externo</li>
-          <li>Integración de LLMs con APIs y servicios reales</li>
-          <li>Automatización de procesos mediante MCP</li>
-          <li>Debugging y testing de integraciones IA</li>
-          <li>Comprensión de arquitecturas modernas para aplicaciones con IA</li>
-        </ul>
-      </div>
-      <div class="modal-section">
-        <h4>🛠️ Tecnologías y conceptos</h4>
-        <p>
-          Model Context Protocol · LLMs · APIs · Automatización · Playwright · VS Code · Integración IA
+      <div class="cert-modal-section">
+        <p class="cert-modal-summary">
+          Formación técnica sobre <strong>Model Context Protocol (MCP)</strong>, un estándar moderno para conectar
+          modelos de IA (LLMs) con <strong>herramientas, APIs y servicios externos</strong>, habilitando automatización,
+          flujos end-to-end y capacidades extendidas en aplicaciones con IA.
         </p>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🔍 Fundamentos de MCP</h3>
+        <ul class="cert-modal-list">
+          <li>Propósito del protocolo y el problema que resuelve</li>
+          <li>Limitaciones del LLM “aislado” y necesidad de contexto/herramientas</li>
+          <li>Casos de uso: integración con sistemas internos y servicios externos</li>
+          <li>Buenas prácticas de diseño IA ↔ herramientas</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">⚙️ Configuración y arquitectura</h3>
+        <ul class="cert-modal-list">
+          <li>Configuración del entorno y pruebas de servidores MCP</li>
+          <li>Conexión a recursos (APIs / bases de datos) vía MCP</li>
+          <li>Creación de <strong>tools</strong> y recursos consumibles por el modelo</li>
+          <li>Automatizaciones básicas y patrones de integración</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🔌 Integración, debugging y despliegue</h3>
+        <ul class="cert-modal-list">
+          <li>Conexión de clientes MCP y pruebas end-to-end</li>
+          <li>Uso de <strong>Inspector</strong> para debugging</li>
+          <li>Integración con <strong>VS Code</strong> y flujo de trabajo</li>
+          <li>Automatización avanzada con <strong>Playwright</strong> (navegación/testing)</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🧠 Competencias adquiridas</h3>
+        <ul class="cert-modal-list">
+          <li>Diseño de sistemas IA con acceso a contexto externo</li>
+          <li>Integración de LLMs con APIs/servicios reales</li>
+          <li>Automatización de procesos mediante herramientas conectadas</li>
+          <li>Debugging y testing de integraciones IA</li>
+        </ul>
+      </div>
+
+      <div class="cert-modal-section">
+        <h3 class="cert-modal-subtitle">🛠️ Tecnologías y conceptos</h3>
+        <div class="cert-modal-tags" aria-label="Tecnologías y conceptos">
+          <span class="cert-tag">MCP</span>
+          <span class="cert-tag">LLMs</span>
+          <span class="cert-tag">APIs</span>
+          <span class="cert-tag">Automatización</span>
+          <span class="cert-tag">Playwright</span>
+          <span class="cert-tag">VS Code</span>
+          <span class="cert-tag">Integración IA</span>
+          <span class="cert-tag">Testing</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
-    </section>
+</section>
 
     <!-- Sección Habilidades -->
     <section id="habilidades" class="skills">
