@@ -1907,4 +1907,56 @@ body.cb-lock{
   .cert-modal-header h2{ font-size: 1.15rem; }
 }
 
+/* === FIX: botón "ver detalles" siempre dentro de la card === */
+.certificate-card{
+  position: relative; /* ya lo tenés, lo reafirmamos */
+  overflow: hidden;   /* evita que algo se "escape" */
+}
+
+/* el overlay link queda debajo de los botones */
+.card-link{ z-index: 1; }
+
+/* el botón de ver certificado y el icono de detalles por arriba */
+.certificate-actions .btn-certificate{ z-index: 2; position: relative; }
+.cert-details-icon{ z-index: 3; position: absolute; }
+
+/* --- Posición FINAL: abajo del ícono, centrado en la columna izquierda --- */
+.cert-details-icon{
+  /* tamaño consistente */
+  width: 28px;
+  height: 28px;
+
+  /* ubicación */
+  left: 34px;      /* 16px padding + (64-28)/2 = 34px */
+  bottom: 14px;    /* separación inferior prolija */
+
+  /* estilo (tu look actual) */
+  margin: 0 !important;     /* 🔥 mata el margin 75px */
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.cert-details-icon:hover{
+  transform: scale(1.18);
+}
+
+.cert-details-icon .cert-info-svg{
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Ajuste fino en pantallas muy chicas */
+@media (max-width: 420px){
+  .cert-details-icon{
+    left: 28px;   /* al achicarse la columna, queda mejor visualmente */
+    bottom: 12px;
+  }
+}
 
