@@ -2,14 +2,6 @@
 // Arranque
 // ============================
 document.addEventListener('DOMContentLoaded', function () {
-  // AOS
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-  });
-
   // ============================
   // Nav: resaltar sección activa
   // ============================
