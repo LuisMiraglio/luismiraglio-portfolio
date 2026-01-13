@@ -9,7 +9,7 @@ Sitio web personal y portfolio profesional de Luis Miraglio, Técnico Superior e
 
 ## Características principales
 
-- **Landing page moderna** con animaciones AOS y partículas en el hero.
+- **Landing page moderna** con animaciones GSAP y partículas en el hero.
 - **Secciones**: Sobre mí, Proyectos, Servicios, Curriculum, Certificados, Habilidades, Contacto.
 - **Grid de proyectos** con tarjetas clickeables y modales accesibles.
 - **Chatbot asistente** integrado en el hero para navegación rápida.
@@ -17,12 +17,12 @@ Sitio web personal y portfolio profesional de Luis Miraglio, Técnico Superior e
 - **Formulario de contacto** con feedback visual (demo).
 - **Certificados y CV** descargables y visualizables online.
 - **Habilidades técnicas** mostradas con íconos SVG.
-- **Animaciones y efectos visuales** con AOS y Particles.js.
+- **Animaciones y efectos visuales** con GSAP y Particles.js.
 
 ## Tecnologías utilizadas
 
 - **Frontend**: HTML5, CSS3, SCSS, JavaScript
-- **Animaciones**: [AOS](https://michalsnik.github.io/aos/), [Particles.js](https://vincentgarreau.com/particles.js/)
+- **Animaciones**: [GSAP](https://gsap.com/), [Particles.js](https://vincentgarreau.com/particles.js/)
 - **Íconos**: FontAwesome, SVG personalizados
 - **Backend (proyectos)**: Python, Django, C#, SQL, Tkinter, Selenium, PyInstaller
 - **DevOps y herramientas**: Git, GitHub, VS Code, Linux
