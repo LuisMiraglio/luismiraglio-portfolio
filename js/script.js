@@ -2,14 +2,6 @@
 // Arranque
 // ============================
 document.addEventListener('DOMContentLoaded', function () {
-  // AOS
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-  });
-
   // ============================
   // Nav: resaltar sección activa
   // ============================
@@ -247,6 +239,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Armar orden de modales
   modalOrder = Array.from(document.querySelectorAll('.modal')).map(m => m.id);
+
+  // ============================
+  // CERTIFICADOS — filtros
+  // ============================
+  const filters = document.querySelectorAll('.certificates-filters .filter-btn');
+  const certificateCards = document.querySelectorAll('.certificate-card[data-category]');
+  const certificatesCount = document.getElementById('certificates-count');
+
+  if (filters.length && certificateCards.length) {
+    const updateCount = (visible) => {
+      if (!certificatesCount) return;
+      const label = visible === certificateCards.length
+        ? 'Mostrando todos los certificados'
+        : `Mostrando ${visible} certificados`;
+      certificatesCount.textContent = label;
+    };
+
+    const applyFilter = (filter) => {
+      let visibleCount = 0;
+      certificateCards.forEach((card) => {
+        const categories = (card.dataset.category || '').split(' ');
+        const matches = filter === 'all' || categories.includes(filter);
+        card.classList.toggle('is-hidden', !matches);
+        if (matches) visibleCount += 1;
+      });
+      updateCount(visibleCount);
+    };
+
+    filters.forEach((button) => {
+      button.addEventListener('click', () => {
+        filters.forEach((btn) => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+        applyFilter(button.dataset.filter || 'all');
+      });
+    });
+
+    applyFilter('all');
+  }
 });
 
 // ============================
