@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: 'power2.out' } });
   heroTimeline
+    .from('.hero-badge .badge', { y: 12, opacity: 0, stagger: 0.08 })
     .from('.hero-greeting', { y: 16, opacity: 0 })
     .from('.hero-title', { y: 18, opacity: 0 }, '-=0.5')
     .from('.hero-subtitle', { y: 18, opacity: 0 }, '-=0.5')
     .from('.title-bar', { scaleX: 0, transformOrigin: 'left center', opacity: 0 }, '-=0.5')
     .from('.hero-bullets li', { y: 16, opacity: 0, stagger: 0.08 }, '-=0.4')
     .from('.hero-buttons .btn', { y: 14, opacity: 0, stagger: 0.12 }, '-=0.35')
+    .from('.hero-stats .stat-card', { y: 14, opacity: 0, stagger: 0.08 }, '-=0.3')
     .from('.hero-image .profile-card', { y: 20, opacity: 0 }, '-=0.6');
 
   if (typeof ScrollTrigger === 'undefined') {
@@ -41,6 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  gsap.from('.certificates-controls', {
+    opacity: 0,
+    y: 18,
+    duration: 0.7,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.certificates-controls',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
   gsap.utils.toArray('.about-box').forEach((element) => {
     gsap.from(element, {
       opacity: 0,
@@ -53,6 +67,32 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleActions: 'play none none reverse'
       }
     });
+  });
+
+  gsap.from('.about-list li', {
+    opacity: 0,
+    x: -12,
+    duration: 0.6,
+    ease: 'power2.out',
+    stagger: 0.08,
+    scrollTrigger: {
+      trigger: '.about-list',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  gsap.from('.about-stats .stat-card', {
+    opacity: 0,
+    y: 12,
+    duration: 0.6,
+    ease: 'power2.out',
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: '.about-stats',
+      start: 'top 90%',
+      toggleActions: 'play none none reverse'
+    }
   });
 
   gsap.utils.toArray('.service-block').forEach((element) => {
@@ -71,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const gridSelectors = [
     '.projects-grid .project-card',
+    '.featured-grid .project-card',
     '.services-grid .service-card',
     '.certificates-grid .certificate-card',
     '.skills-grid .skill-category'
@@ -112,6 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power2.out',
     scrollTrigger: {
       trigger: '.services-action, .cv-card',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  gsap.from('.contact-cta', {
+    opacity: 0,
+    y: 18,
+    duration: 0.7,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.contact-cta',
       start: 'top 85%',
       toggleActions: 'play none none reverse'
     }

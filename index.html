@@ -45,6 +45,11 @@
       <!-- Columna izquierda -->
       <div class="hero-content">
         <div class="hero-header">
+          <div class="hero-badge">
+            <span class="badge badge-primary">Automatización + Redes</span>
+            <span class="badge badge-outline">Soluciones para ISPs</span>
+          </div>
+
           <span class="hero-greeting">
             Automatización & Software para ISPs y Pymes
           </span>
@@ -1367,17 +1372,31 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
     <!-- Nueva Sección de Certificados -->
     <section id="certificados" class="certificates">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Mis Certificados</h2>
+    <div class="section-header">
+        <h2 class="section-title">Mis Certificados</h2>
       <div class="about-highlight">
         <p>Certificaciones que respaldan mis conocimientos técnicos</p>
       </div>
     </div>
 
+    <div class="certificates-controls">
+      <div class="certificates-filters" role="tablist" aria-label="Filtrar certificados">
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+        <button type="button" class="filter-btn" data-filter="redes" aria-pressed="false">Redes</button>
+        <button type="button" class="filter-btn" data-filter="cloud" aria-pressed="false">Cloud</button>
+        <button type="button" class="filter-btn" data-filter="desarrollo" aria-pressed="false">Desarrollo</button>
+        <button type="button" class="filter-btn" data-filter="seguridad" aria-pressed="false">Seguridad</button>
+        <button type="button" class="filter-btn" data-filter="automatizacion" aria-pressed="false">Automatización</button>
+        <button type="button" class="filter-btn" data-filter="diseno" aria-pressed="false">Diseño</button>
+        <button type="button" class="filter-btn" data-filter="otros" aria-pressed="false">Otros</button>
+      </div>
+      <p class="certificates-count" id="certificates-count">Mostrando todos los certificados</p>
+    </div>
+
             <div class="certificates-grid">
 
 <!-- Título Oficial (Teclab) -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="redes">
   <!-- overlay clickeable de toda la tarjeta -->
   <a class="card-link"
      href="https://drive.google.com/file/d/1n4jfz-GYTYRl1oEQOyOsDNuhIONIGJP4/view?usp=drivesdk"
@@ -1399,6 +1418,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
   <!-- Contenido -->
   <div class="certificate-content">
+    <span class="certificate-tag">Redes</span>
     <h3 class="certificate-title">Técnico Superior en Redes Informáticas</h3>
     <p class="certificate-issuer">Teclab Instituto Técnico Superior</p>
 
@@ -1511,7 +1531,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- AWS Certificate -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="cloud">
   <a class="card-link"
      href="https://www.credly.com/badges/6dc2dc11-ab64-453c-aaa7-73172656be59/"
      target="_blank" rel="noopener noreferrer"
@@ -1530,6 +1550,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Cloud</span>
     <h3 class="certificate-title">Fundamentos de la nube de AWS Academy</h3>
     <p class="certificate-issuer">Amazon Web Services (AWS)</p>
     <div class="certificate-actions">
@@ -1634,7 +1655,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- C# .NET Certificate -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="desarrollo">
   <a class="card-link"
      href="https://drive.google.com/file/d/1T0kiFsixuBw0z1H3E_RdA4xd9m8BFDYb/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -1652,6 +1673,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Desarrollo</span>
     <h3 class="certificate-title">Introducción a C# .NET</h3>
     <p class="certificate-issuer">Educación IT</p>
     <div class="certificate-actions">
@@ -1747,7 +1769,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Python Advanced Certificate -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="desarrollo">
   <a class="card-link"
      href="https://drive.google.com/file/d/1hiBPFaWbqvsZT-_enqEdC24zJrlAmhgS/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -1765,6 +1787,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Desarrollo</span>
     <h3 class="certificate-title">Python Avanzado</h3>
     <p class="certificate-issuer">Educación IT</p>
     <div class="certificate-actions">
@@ -1854,7 +1877,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Intro to Programming Certificate -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="desarrollo">
   <a class="card-link"
      href="https://drive.google.com/file/d/1BAZtkoOOljLKngUlGnu3PhlO8-y7AEqo/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -1872,6 +1895,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Desarrollo</span>
     <h3 class="certificate-title">Introducción a la Programación</h3>
     <p class="certificate-issuer">Educación IT</p>
     <div class="certificate-actions">
@@ -1957,7 +1981,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Flexin Mentorship Certificate -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="otros">
   <a class="card-link"
      href="https://drive.google.com/file/d/1nsQ5caf7mWvmKOHpgYUEaW5_4mfl3_JB/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -1975,6 +1999,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Otros</span>
     <h3 class="certificate-title">Mentoría Flexin</h3>
     <p class="certificate-issuer">Flexin</p>
     <div class="certificate-actions">
@@ -2064,7 +2089,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 </div>
 
 <!-- Industry 4.0 Certificate -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="seguridad">
   <a class="card-link"
      href="https://drive.google.com/file/d/1DzjVC5Ixg-ZsZbjrF7lmxPyS3ksezuRm/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -2082,6 +2107,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Seguridad</span>
     <h3 class="certificate-title">Industria 4.0 - IIOT, Python y Ciberseguridad Industrial</h3>
     <p class="certificate-issuer">INGELEARN</p>
     <div class="certificate-actions">
@@ -2166,7 +2192,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Certificado WordPress con Elementor -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="diseno">
   <a class="card-link"
      href="https://drive.google.com/file/d/1BdIxbgqQeKWn50iCf0HqiBPknMS05LdL/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -2185,6 +2211,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Diseño</span>
     <h3 class="certificate-title">WordPress con Elementor</h3>
     <p class="certificate-issuer">Raiola Networks</p>
     <div class="certificate-actions">
@@ -2268,7 +2295,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Hacking Ético -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="seguridad">
   <a class="card-link"
      href="https://drive.google.com/file/d/1ygeOhM6p0ozwYMzHW51nyIYPRDeFiAWA/view?usp=drivesdk"
      target="_blank" rel="noopener noreferrer"
@@ -2287,6 +2314,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Seguridad</span>
     <h3 class="certificate-title">Ciberseguridad y Ethical Hacking</h3>
     <p class="certificate-issuer">Hacker Mentor</p>
 
@@ -2382,7 +2410,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Web Scraping Certificate -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="automatizacion">
   <a class="card-link"
      href="https://drive.google.com/file/d/1RkTcc9g45Yc5JPsvoA5715gx5_PFaXPu/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -2399,6 +2427,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Automatización</span>
     <h3 class="certificate-title">Web scraping con Python</h3>
     <p class="certificate-issuer">midudev</p>
     <div class="certificate-actions">
@@ -2495,7 +2524,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Certificado Figma para Devs -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="diseno">
   <a class="card-link"
      href="https://drive.google.com/file/d/102OGIVaVqDwpG-DkLKBUufr3jMPxGjaS/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -2512,6 +2541,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Diseño</span>
     <h3 class="certificate-title">Figma para Devs</h3>
     <p class="certificate-issuer">midudev</p>
     <div class="certificate-actions">
@@ -2604,7 +2634,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Certificado JavaScript Moderno -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="desarrollo">
   <a class="card-link"
      href="https://drive.google.com/file/d/1vJfGMdZa5YE5gqTcibpag2_trOIh6t6i/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -2621,6 +2651,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Desarrollo</span>
     <h3 class="certificate-title">JavaScript Moderno</h3>
     <p class="certificate-issuer">midudev</p>
     <div class="certificate-actions">
@@ -2721,7 +2752,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
 
 
 <!-- Certificado Model Context Protocol -->
-<div class="certificate-card">
+<div class="certificate-card" data-category="otros">
   <a class="card-link"
      href="https://drive.google.com/file/d/14-K0vonM_tAig4rSr0MhDeDQdR1_NACr/view?usp=sharing"
      target="_blank" rel="noopener noreferrer"
@@ -2738,6 +2769,7 @@ Desarrollo soluciones tecnológicas a medida que combinan <strong>programación,
   </div>
 
   <div class="certificate-content">
+    <span class="certificate-tag">Otros</span>
     <h3 class="certificate-title">Model Context Protocol</h3>
     <p class="certificate-issuer">midudev</p>
     <div class="certificate-actions">
