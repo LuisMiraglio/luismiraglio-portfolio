@@ -21,7 +21,7 @@ Sitio web personal y portfolio profesional de Luis Miraglio, Técnico Superior e
 
 ## Tecnologías utilizadas
 
-- **Frontend**: HTML5, CSS3, SCSS, JavaScript
+- **Frontend**: HTML5, CSS3, SCSS, JavaScript.
 - **Animaciones**: [GSAP](https://gsap.com/), [Particles.js](https://vincentgarreau.com/particles.js/)
 - **Íconos**: FontAwesome, SVG personalizados
 - **Backend (proyectos)**: Python, Django, C#, SQL, Tkinter, Selenium, PyInstaller
