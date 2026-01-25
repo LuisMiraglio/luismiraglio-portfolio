@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "id": "datacom",
+      "title": "Automatización de ONUs DATACOM",
+      "image": "images/datacom.png",
+      "modalId": "datacom-modal",
+      "tags": ["Python", "Selenium", "FTTH"]
+    },
+    {
+      "id": "securecrt",
+      "title": "Diagnóstico ONU en Slots – SecureCRT Script",
+      "image": "images/securecrt-slots.png",
+      "modalId": "securecrt-modal",
+      "tags": ["SecureCRT", "Redes", "Automatización"]
+    },
+    {
+      "id": "stock",
+      "title": "Sistema de Control de Stock de Productos",
+      "image": "images/inventory-management.png",
+      "modalId": "stock-modal",
+      "tags": ["Python", "SQL", "Gestión"]
+    },
+    {
+      "id": "taskflow",
+      "title": "TaskFlow - Gestor de Tareas (Django)",
+      "image": "images/taskflow-1.png",
+      "modalId": "taskflow-modal",
+      "tags": ["Django", "Web", "Productividad"]
+    },
+    {
+      "id": "diagnostico",
+      "title": "Diagnóstico de Red",
+      "image": "images/diagnostico-red.png",
+      "modalId": "diagnostico-modal",
+      "tags": ["Redes", "Herramientas"]
+    },
+    {
+      "id": "menu",
+      "title": "Menú Desplegable (JS + SCSS)",
+      "image": "images/menu-desplegable.png",
+      "modalId": "menu-modal",
+      "tags": ["JavaScript", "SCSS"]
+    },
+    {
+      "id": "zebra",
+      "title": "Etiquetador de Viandas Cebra",
+      "image": "images/etiquetador-zebra.png",
+      "modalId": "cebra-modal",
+      "tags": ["Python", "Impresión"]
+    },
+    {
+      "id": "calculadora",
+      "title": "Calculadora en JavaScript",
+      "image": "images/calculadora-js.png",
+      "modalId": "calculadora-modal",
+      "tags": ["JavaScript", "UI"]
+    },
+    {
+      "id": "nodos",
+      "title": "Buscador de Nodos FTTH",
+      "image": "images/buscador-nodos.png",
+      "modalId": "nodos-ftth-modal",
+      "tags": ["FTTH", "Automatización"]
+    }
+  ]
+}
