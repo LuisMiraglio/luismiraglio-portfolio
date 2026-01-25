@@ -1,0 +1,28 @@
+{
+  "certificates": [
+    {
+      "id": "teclab-redes",
+      "title": "Técnico Superior en Redes Informáticas",
+      "issuer": "Teclab Instituto Técnico Superior",
+      "link": "https://drive.google.com/file/d/1n4jfz-GYTYRl1oEQOyOsDNuhIONIGJP4/view?usp=drivesdk",
+      "modalId": "teclab-cert-modal",
+      "tags": ["LAN/WAN", "TCP/IP", "Routing", "Seguridad de redes"]
+    },
+    {
+      "id": "aws-cloud-foundations",
+      "title": "Fundamentos de la nube de AWS Academy",
+      "issuer": "AWS Academy",
+      "link": "https://www.credly.com/badges/6dc2dc11-ab64-453c-aaa7-73172656be59/",
+      "modalId": "aws-cert-modal",
+      "tags": ["AWS", "Cloud", "Fundamentos"]
+    },
+    {
+      "id": "csharp-dotnet",
+      "title": "Introducción a C# .NET",
+      "issuer": "Educación IT",
+      "link": "https://drive.google.com/file/d/1T0kiFsixuBw0z1H3E_RdA4xd9m8BFDYb/view?usp=sharing",
+      "modalId": "csharp-cert-modal",
+      "tags": ["C#", ".NET", "Fundamentos"]
+    }
+  ]
+}
