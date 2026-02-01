@@ -415,7 +415,7 @@ section{padding:var(--spacing-xxl) 0}
 .certificates-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;align-items:stretch}
 .certificate-card {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: minmax(140px, 180px) 1fr;
   gap: 16px;
   padding: 16px;
   border-radius: 16px;
@@ -435,8 +435,27 @@ section{padding:var(--spacing-xxl) 0}
 
 .card-link{position:absolute;inset:0;z-index:1}
 .certificate-actions .btn-certificate{position:relative;z-index:2}
-.certificate-icon{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;background:#eef2ff;border:1px solid #e5e7eb}
-.certificate-icon .certificate-svg{width:48px;height:48px;display:block;object-fit:contain}
+.certificate-media{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+.certificate-preview{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+.certificate-preview--contain{
+  object-fit: contain;
+  padding: 10px;
+  background: #f8fafc;
+}
 .certificate-content{display:flex;flex-direction:column;min-height:160px}
 .certificate-actions{margin-top:auto}
 
@@ -499,8 +518,12 @@ section{padding:var(--spacing-xxl) 0}
 
 
 
-@media (max-width:640px){.certificate-content{min-height:140px}}
-@media (max-width:420px){.certificate-content{min-height:120px}.certificate-card{grid-template-columns:64px 1fr;gap:12px}}
+@media (max-width:640px){
+  .certificate-content{min-height:140px}
+  .certificate-card{grid-template-columns:1fr}
+  .certificate-media{aspect-ratio:16 / 10}
+}
+@media (max-width:420px){.certificate-content{min-height:120px}}
 
 /* =========================================================
    SERVICIOS — SIN EFECTOS, SOLO COLOR METALIZADO + ZOOM
@@ -1554,48 +1577,38 @@ body.cb-lock{
   .cert-modal-header { padding-top: 18px; padding-bottom: 12px; }
 }
 
-/* Icono de detalles debajo del icono principal */
-.cert-details-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 75px auto 0 auto; /* MÁS ABAJO del icono principal */
-  background: transparent;   /* Sin fondo */
-  border: none;          /* Sin borde */
-  border-radius: 0;          /* Sin óvalo */
-  width: 28px;
-  height: 28px;
-  box-shadow: none;          /* Sin sombra */
+/* Botón de detalles sobre la vista previa */
+.certificate-media .cert-details-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 999px;
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.18);
   cursor: pointer;
-  transition: transform .12s;
-  z-index: 2;
-  position: relative;
+  transition: transform .12s, box-shadow .12s;
   padding: 0;
+  z-index: 2;
 }
-.cert-details-icon:hover {
-  background: transparent;
-  transform: scale(1.18);
+.certificate-media .cert-details-icon:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.24);
 }
-.cert-details-icon .cert-info-svg {
-  width: 24px;
-  height: 24px;
+.certificate-media .cert-details-icon .cert-info-svg {
+  width: 18px;
+  height: 18px;
   display: block;
   object-fit: contain;
-  margin: 0 auto;
   filter: none;
   transition: filter .18s;
 }
-.cert-details-icon:hover .cert-info-svg {
-  filter: drop-shadow(0 2px 6px #2563eb);
-}
-
-/* Centrado vertical del icono principal + info */
-.certificate-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0;
+.certificate-media .cert-details-icon:hover .cert-info-svg {
+  filter: drop-shadow(0 2px 6px rgba(37, 99, 235, 0.5));
 }
 
 /* =========================================================
@@ -1788,44 +1801,3 @@ body.cb-lock{
 
 /* el botón de ver certificado y el icono de detalles por arriba */
 .certificate-actions .btn-certificate{ z-index: 2; position: relative; }
-.cert-details-icon{ z-index: 3; position: absolute; }
-
-/* --- Posición FINAL: abajo del ícono, centrado en la columna izquierda --- */
-.cert-details-icon{
-  /* tamaño consistente */
-  width: 28px;
-  height: 28px;
-
-  /* ubicación */
-  left: 34px;      /* 16px padding + (64-28)/2 = 34px */
-  bottom: 14px;    /* separación inferior prolija */
-
-  /* estilo (tu look actual) */
-  margin: 0 !important;     /* 🔥 mata el margin 75px */
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-}
-
-.cert-details-icon:hover{
-  transform: scale(1.18);
-}
-
-.cert-details-icon .cert-info-svg{
-  width: 24px;
-  height: 24px;
-  display: block;
-  object-fit: contain;
-}
-
-/* Ajuste fino en pantallas muy chicas */
-@media (max-width: 420px){
-  .cert-details-icon{
-    left: 28px;   /* al achicarse la columna, queda mejor visualmente */
-    bottom: 12px;
-  }
-}
