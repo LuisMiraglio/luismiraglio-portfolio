@@ -1,0 +1,1831 @@
+@import url('./sections/hero.css');
+@import url('./sections/projects.css');
+
+/* =========================================================
+   RESET + VARIABLES
+========================================================= */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary-color:#2563eb;
+  --secondary-color:#0f766e;
+  --accent-color:#3b82f6;
+  --success-color:#10b981;
+  --dark-color:#1e293b;
+  --light-color:#f1f5f9;
+  --white:#fff;
+
+  --gradient-1:linear-gradient(135deg,#2563eb 0%,#0f766e 100%);
+  --shadow-light:0 5px 15px rgba(0,0,0,.08);
+  --shadow-medium:0 10px 30px rgba(0,0,0,.1);
+  --shadow-heavy:0 20px 40px rgba(0,0,0,.15);
+
+  --border-radius:12px;
+  --spacing-xs:.5rem; --spacing-sm:1rem; --spacing-md:1.5rem; --spacing-lg:2.5rem; --spacing-xl:4rem; --spacing-xxl:6rem;
+
+  --background-main:#eaf1fb;
+  --section-pattern:url('data:image/svg+xml;utf8,<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="%23c7d2fe" fill-opacity="0.18"/><rect x="40" y="40" width="40" height="40" fill="%233b82f6" fill-opacity="0.08"/></svg>');
+}
+body{font-family:'Poppins',sans-serif;line-height:1.7;color:var(--dark-color);overflow-x:hidden;background:var(--background-main)}
+.container{max-width:1200px;margin:0 auto;padding:0 var(--spacing-md);width:100%}
+img{max-width:100%;height:auto;border-radius:var(--border-radius)}
+a,button{transition:all .2s ease}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:var(--shadow-light);z-index:1000}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 20px;height:70px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo h2{background:var(--gradient-1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700}
+.nav-menu{display:flex;gap:30px}
+.nav-link{position:relative;text-decoration:none;color:var(--dark-color);font-weight:500;padding-bottom:4px}
+.nav-link:hover{color:var(--primary-color)}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gradient-1);transition:width .3s;border-radius:2px}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+.nav-link.active{color:var(--primary-color);font-weight:600}
+.hamburger{display:none;flex-direction:column;cursor:pointer}
+.hamburger span{width:25px;height:3px;background:var(--dark-color);margin:3px 0}
+
+@media (max-width:768px){
+  .nav-menu{position:fixed;left:-100%;top:70px;flex-direction:column;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);width:100%;text-align:center;transition:.3s;box-shadow:0 10px 27px rgba(0,0,0,.15);z-index:999;padding:20px 0}
+  .nav-menu.active{left:0}
+  .nav-link{padding:15px 20px;display:block;border-bottom:1px solid rgba(0,0,0,.05);width:100%;font-size:1.1rem}
+  .nav-link:last-child{border-bottom:none}
+  .hamburger{display:flex}
+  .hamburger.active span:nth-child(1){transform:rotate(-45deg) translate(-5px,6px)}
+  .hamburger.active span:nth-child(2){opacity:0}
+  .hamburger.active span:nth-child(3){transform:rotate(45deg) translate(-5px,-6px)}
+}
+
+/* =========================================================
+   LAYOUT SECCIONES + PATRÓN
+========================================================= */
+section{padding:var(--spacing-xxl) 0}
+.about,.curriculum,.skills,.services,.projects,.certificates,.contact{
+  background:#fff;background-image:var(--section-pattern);
+  background-size:80px 80px;background-repeat:repeat;background-attachment:fixed;
+}
+.about-content,.projects-grid,.services-grid,.cv-container,.certificates-grid,.skills-grid,.contact-content{margin-top:var(--spacing-xl)}
+
+/* =========================================================
+   MODAL OSCURO (versión final)
+========================================================= */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.55);
+  backdrop-filter:blur(4px);
+  z-index:2000; /* Asegura que esté sobre la navbar */
+  overflow:auto;
+  padding:94px 16px 24px 16px; /* <-- padding-top igual o mayor a navbar (70px) + margen */
+}
+.modal.open{display:block}
+
+.modal-content{
+  background:linear-gradient(180deg,#1e293b 0%,#0f172a 100%);
+  color:#f1f5f9;margin:0 auto;max-width:860px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.45);
+  position:relative;overflow:hidden;padding:40px 36px;font-size:1.05rem
+}
+
+/* Header del modal: título + flechas alineados sin solaparse */
+.modal-header{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* reparte título y nav */
+  gap: 12px;
+  padding: 18px 22px;
+}
+
+/* Título ocupando el centro, sin que las flechas lo tapen */
+.modal-header h2{
+  color: #fff;
+  text-shadow:
+    0 0 8px rgba(59,130,246,.7),
+    0 0 16px rgba(59,130,246,.4);
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+/* Flechas: dentro del flujo, a la derecha, sin absolute */
+.modal-nav{
+  position: static;          /* 🔴 antes: absolute */
+  transform: none;           /* 🔴 quitamos translate */
+  display: inline-flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+/* Mantén el estilo visual de los botones tal cual lo tenías */
+.modal-nav button{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.06);
+  transition: background .2s, box-shadow .2s, transform .08s, border-color .2s;
+}
+
+.modal-nav button:hover{
+  background: rgba(59,130,246,.35);
+  border-color: rgba(59,130,246,.6);
+  box-shadow: 0 10px 24px rgba(59,130,246,.35);
+}
+
+.modal-nav button:active{
+  transform: translateY(1px);
+}
+
+/* Responsive: en pantallas chicas apilamos título y flechas */
+@media (max-width: 520px){
+  .modal-header{
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal-header h2{
+    text-align: center;
+  }
+  .modal-nav{
+    order: 2;
+  }
+}
+
+.modal-nav button{
+  /* tamaño y forma */
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+
+  /* alto contraste sobre fondo oscuro */
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+
+  /* sensación de “chip de vidrio” */
+  backdrop-filter: blur(6px);
+
+  /* centrado del carácter ‹ › */
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  line-height: 1;
+
+  /* feedback */
+  cursor: pointer;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.06);
+  transition: background .2s, box-shadow .2s, transform .08s, border-color .2s;
+}
+
+.modal-nav button:hover{
+  background: rgba(59,130,246,.35);       /* azul */
+  border-color: rgba(59,130,246,.6);
+  box-shadow: 0 10px 24px rgba(59,130,246,.35);
+}
+
+.modal-nav button:active{
+  transform: translateY(1px);
+}
+
+.modal-nav button{ border-radius: 999px; }
+@media (max-width: 520px){ .modal-nav button{ border-radius: 999px; } }
+
+
+/* Tamaño cómodo en pantallas chicas */
+@media (max-width: 520px){
+  .modal-nav{ right: 14px; }
+  .modal-nav button{
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-size: 20px;
+  }
+}
+
+
+/* Body + secciones */
+.modal-body{padding:22px}
+.modal-section{margin:18px 0;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.1)}
+.modal-section:last-child{border-bottom:none;padding-bottom:0}
+.modal-section h4{color:#38bdf8;font-weight:600;margin:0 0 10px}
+.modal-section p,.modal-section li{color:#e2e8f0}
+
+/* Galería */
+.modal-gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,1fr);gap:12px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory}
+.modal-gallery img{width:100%;height:340px;object-fit:contain;background:#0b1220;border:1px solid rgba(255,255,255,.1);border-radius:12px;scroll-snap-align:start}
+
+/* Repos / links */
+.repo-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:#93c5fd;text-decoration:none;padding:6px 0}
+.repo-link:hover{color:#bfdbfe}
+
+/* Footer */
+.modal-actions{
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(15,23,42,.9);
+  backdrop-filter: blur(6px);
+  padding: 14px 22px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  justify-content: center;   /* centra horizontal */
+  align-items: center;       /* centra vertical */
+}
+/* Botón Cerrar – estilo unificado con flechas */
+.btn-modal-close{
+  min-width: 140px;              /* ancho cómodo */
+  padding: 14px 20px;
+  border-radius: 999px;          /* mismo pill que flechas */
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255,255,255,.12);   /* fondo translúcido */
+  border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.06);
+  transition: background .2s, box-shadow .2s, transform .08s, border-color .2s;
+}
+
+.btn-modal-close:hover{
+  background: rgba(59,130,246,.35);  /* azul translúcido */
+  border-color: rgba(59,130,246,.6);
+  box-shadow: 0 10px 24px rgba(59,130,246,.35);
+}
+
+.btn-modal-close:active{
+  transform: translateY(1px);
+}
+
+.btn-modal-close:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.6), 0 6px 18px rgba(0,0,0,.35);
+}
+
+
+@media (max-width:880px){.modal-header{padding:16px 18px}.modal-body{padding:16px}.modal-gallery img{height:300px}}
+@media (max-width:520px){.modal-nav{right:16px}.modal-gallery img{height:250px}}
+
+/* Chips de tecnologías (solo icono) */
+.project-tech{display:flex;gap:12px;margin:16px 0}
+.project-tech.icons-only .tech-chip{
+  display:flex;align-items:center;justify-content:center;width:72px;height:72px;border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;background:rgba(255,255,255,.06);box-shadow:0 3px 8px rgba(0,0,0,.25)
+}
+.project-tech.icons-only img{width:48px;height:48px;display:block;object-fit:contain;transform:translateY(6px)} /* ajuste fino */
+
+/* =========================================================
+   SKILLS (tarjetas + iconos DEVICON)
+========================================================= */
+.skills{padding-bottom:120px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:25px}
+.skill-category{background:#fff;border-radius:14px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,.06);display:flex;flex-direction:column}
+.category-header{display:flex;justify-content:center;align-items:center;height:48px;margin-bottom:16px;border-bottom:1px solid #e5e7eb}
+.category-header h3{font-size:1.2rem;font-weight:700;color:#1e3a8a;margin:0;text-align:center}
+/* === Fondos personalizados por categoría de habilidades === */
+
+/* Backend – Azul técnico */
+.skill-category--backend {
+  background: linear-gradient(135deg, #dbeafe 0%, #60a5fa 50%, #2563eb 100%);
+  color: #fff;
+}
+
+/* Frontend – Violeta creativo */
+.skill-category--frontend {
+  background: linear-gradient(135deg, #ede9fe 0%, #c084fc 40%, #7c3aed 100%);
+  color: #fff;
+}
+
+/* Herramientas y DevOps – Verde moderno */
+.skill-category--tools {
+  background: linear-gradient(135deg, #dcfce7 0%, #86efac 40%, #16a34a 100%);
+  color: #fff;
+}
+
+/* Redes y Telecomunicaciones – Azul metalizado */
+.skill-category--networks {
+  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 50%, #1e3a8a 100%);
+  color: #fff;
+}
+
+/* Futura tarjeta (por ejemplo, Seguridad / QA) – Plata */
+.skill-category--security {
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 45%, #64748b 100%);
+  color: #fff;
+}
+
+/* REPARACIÓN Y MANTENIMIENTO (consistente con las otras) */
+.skill-category--hardware {
+  background: linear-gradient(
+    135deg,
+    #cfd9df 0%,   /* gris claro frío */
+    #e2ebf0 25%,  /* reflejo plateado */
+    #a6b8c9 60%,  /* azul acero */
+    #dae2e9 100%  /* brillo final */
+  );
+  color: #fff;
+}
+
+
+
+/* Ajuste de encabezado sobre fondos oscuros */
+.skill-category--backend .category-header,
+.skill-category--frontend .category-header,
+.skill-category--tools .category-header,
+.skill-category--networks .category-header,
+.skill-category--security .category-header {
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+.skill-category--backend .category-header h3,
+.skill-category--frontend .category-header h3,
+.skill-category--tools .category-header h3,
+.skill-category--networks .category-header h3,
+.skill-category--security .category-header h3 {
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,.15);
+}
+
+/* Tiles sobre fondo */
+.skill-category--backend .skill-tile,
+.skill-category--frontend .skill-tile,
+.skill-category--tools .skill-tile,
+.skill-category--networks .skill-tile,
+.skill-category--security .skill-tile {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Títulos unificados estilo negro metalizado */
+.skill-category .category-header h3 {
+  background: linear-gradient(90deg, #111827, #374151, #6b7280); /* negro → gris oscuro → gris acero */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* leve relieve */
+}
+
+/* efecto de brillo metálico al pasar el mouse */
+.skill-category .category-header h3 {
+  background-size: 250%;
+  transition: background-position 1.2s ease;
+}
+.skill-category:hover .category-header h3 {
+  background-position: right center;
+}
+
+
+
+
+/* Grid de iconos */
+.skill-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:14px}
+.skill-tile{background:#f9fafb;border-radius:12px;padding:14px;display:flex;justify-content:center;align-items:center;box-shadow:inset 0 1px 2px rgba(0,0,0,.05)}
+.skill-icon{width:42px;height:42px;object-fit:contain}
+
+/* Versión icons-only (backend/frontend) */
+.skill-tiles.icons-only{grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:16px;justify-items:center}
+.skill-tiles.icons-only .skill-tile{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px;transition:transform .18s,box-shadow .18s}
+.skill-tiles.icons-only .skill-tile:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(15,23,42,.1);border-color:#c7d2fe}
+.skill-tiles.icons-only .skill-icon{width:clamp(40px,5vw,60px);height:clamp(40px,5vw,60px)}
+
+/* =========================================================
+   CERTIFICADOS
+========================================================= */
+.certificates{position:relative;z-index:1}
+.certificates::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(37, 99, 235, 0.02)" width="50" height="50" x="25" y="25"/></svg>');pointer-events:none;opacity:.6;z-index:-1}
+.certificates-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;align-items:stretch}
+.certificate-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 25%, #e2e8f0 50%, #f8fafc 75%, #ffffff 100%);
+  background-size: 200% 200%;
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
+  height: 100%;
+  position: relative;
+  transition: background-position 2s ease, transform 0.15s, box-shadow 0.15s;
+}
+
+.certificate-card:hover {
+  background-position: 100% 0;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.12);
+}
+
+.card-link{position:absolute;inset:0;z-index:1}
+.certificate-actions .btn-certificate{position:relative;z-index:2}
+.certificate-icon{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;background:#eef2ff;border:1px solid #e5e7eb}
+.certificate-icon .certificate-svg{width:48px;height:48px;display:block;object-fit:contain}
+.certificate-content{display:flex;flex-direction:column;min-height:160px}
+.certificate-actions{margin-top:auto}
+
+.btn-certificate{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;background:linear-gradient(135deg,#2563eb,#1d4ed8);transition:transform .15s,box-shadow .15s,background .3s}
+.btn-certificate:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.btn-aws{background:linear-gradient(135deg,#f59e0b,#b45309)} 
+.btn-aws:hover{background:linear-gradient(135deg,#fbbf24,#92400e)}
+
+.btn-python{background:linear-gradient(135deg,#3776ab,#1e40af)} 
+.btn-python:hover{background:linear-gradient(135deg,#4a90e2,#153e75)}
+
+.btn-csharp{background:linear-gradient(135deg,#68217a,#4b1970)} 
+.btn-csharp:hover{background:linear-gradient(135deg,#8e44ad,#5e1d74)}
+
+.btn-wordpress{background:linear-gradient(135deg,#21759b,#1e3a5f)} 
+.btn-wordpress:hover{background:linear-gradient(135deg,#299ec6,#153248)}
+
+.btn-industry{background:linear-gradient(135deg,#16a34a,#065f46)} 
+.btn-industry:hover{background:linear-gradient(135deg,#22c55e,#064e3b)}
+
+.btn-mentoria{background:linear-gradient(135deg,#ec4899,#be185d)} 
+.btn-mentoria:hover{background:linear-gradient(135deg,#f472b6,#9d174d)}
+
+.btn-intro{background:linear-gradient(135deg,#3b82f6,#1e3a8a)} 
+.btn-intro:hover{background:linear-gradient(135deg,#60a5fa,#1e40af)}
+
+/* Botón exclusivo para Hacking Ético — rojo ladrillo */
+.btn-hacking{
+  background: linear-gradient(135deg, #8B2C22 0%, #5A1A15 100%);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(139,44,34,.28);
+  color:#fff;
+}
+
+.btn-hacking:hover{
+  background: linear-gradient(135deg, #B23B2F 0%, #6D1F19 100%);
+  box-shadow: 0 12px 26px rgba(139,44,34,.36);
+  transform: translateY(-2px);
+}
+
+/* Botón para el Título Oficial (misma lógica que los demás) */
+.btn-degree{
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(37,99,235,.25);
+}
+.btn-degree:hover{
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 12px 26px rgba(37,99,235,.35);
+}
+
+/* Iconito dentro del botón (reutilizable para todos) */
+.btn-certificate .btn-svg{
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+
+
+@media (max-width:640px){.certificate-content{min-height:140px}}
+@media (max-width:420px){.certificate-content{min-height:120px}.certificate-card{grid-template-columns:64px 1fr;gap:12px}}
+
+/* =========================================================
+   SERVICIOS — SIN EFECTOS, SOLO COLOR METALIZADO + ZOOM
+========================================================= */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* Estilo base de las tarjetas */
+.service-card {
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background: #1e3a8a; /* color de respaldo */
+}
+
+/* Hover con zoom */
+.service-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Ícono */
+.service-icon {
+  font-size: 40px;
+  color: #fff;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =======================================
+   COLORES METALIZADOS SUAVES POR SERVICIO
+======================================= */
+
+/* 1️⃣ Desarrollo y Automatización — Azul metálico */
+.service-card--dev {
+  background: linear-gradient(135deg, #4f80ff, #1e3a8a);
+}
+
+/* 2️⃣ Redes y Telecomunicaciones — Púrpura metálico */
+.service-card--net {
+  background: linear-gradient(135deg, #9b8cff, #4b2cb6);
+}
+
+/* 3️⃣ Soporte Técnico y Mantenimiento — Gris acero */
+.service-card--support {
+  background: linear-gradient(135deg, #9ca3af, #4b5563);
+}
+
+
+
+/* =======================================
+   Texto interno
+======================================= */
+
+.service-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.service-features i {
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   BOTÓN FINAL DE SERVICIOS — CTA DESTACADO
+========================================================= */
+
+.services-action {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 20px;
+}
+
+.services-action p {
+  font-size: 1.1rem;
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Botón principal */
+.btn-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #60a5fa 100%);
+  color: #fff;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo animado */
+.btn-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  transform: skewX(-20deg);
+  transition: all 0.5s;
+}
+
+.btn-cta:hover::before {
+  left: 125%;
+}
+
+.btn-cta:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+}
+
+
+/* Contenedor de ambos iconos */
+.service-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.service-svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+  opacity: 0.95;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Efecto leve al pasar el mouse */
+.service-svg:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+
+/* Fondo metálico azul */
+.service-card--dev {
+  background: linear-gradient(135deg, #4f80ff 0%, #1e3a8a 100%);
+  color: #fff;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CV (ligero)
+========================================================= */
+.cv-container{display:grid;grid-template-columns:360px 1fr;gap:24px;background:#fff;border-radius:16px;padding:22px;box-shadow:0 18px 40px rgba(6,22,46,.10)}
+@media (max-width:992px){.cv-container{grid-template-columns:1fr}}
+
+/* ===============================
+   FIX PACK – About, CV y Contacto
+   =============================== */
+
+.about-highlight,.section-ribbon{
+  width:100%;
+  background:linear-gradient(135deg,#1e3a8a,#2563eb);
+  color:#f9fafb;text-align:center;font-size:1.05rem;font-weight:600;
+  padding:16px 20px;margin:16px auto 26px;border-radius:12px;
+  box-shadow:0 6px 16px rgba(37,99,235,.25)
+}
+.about-highlight p{margin:0}
+
+.about-grid,.about-cards-container{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:28px
+}
+@media (max-width:992px){.about-grid,.about-cards-container{grid-template-columns:1fr}}
+
+/* === AMBAS TARJETAS: fondo gris metálico + borde azul === */
+.about-card,
+.about-box{
+  border-radius:16px;
+  padding:24px;
+  /* gris metálico con profundidad */
+  background:linear-gradient(135deg,#6b7280 0%, #4b5563 40%, #374151 100%);
+  color:#e9eefb;
+  border:2px solid #2563eb;               /* borde azul */
+  box-shadow:
+    0 10px 26px rgba(2,6,23,.18),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* ===== Título dentro de la tarjeta (sin degradado) ===== */
+.card-header,.about-title{
+  display:flex;align-items:center;gap:12px;margin:0 0 12px 0
+}
+.card-header i{color:#bfdbfe;font-size:1.25rem}
+
+/* OVERRIDE: quita el degradado y pone texto blanco legible */
+.card-header h3,
+.about-title{
+  font-size:1.1rem;
+  font-weight:800;
+  background:none !important;
+  -webkit-text-fill-color:unset !important;
+  background-clip:unset !important;
+  color:#ffffff;
+  text-shadow:0 1px 3px rgba(0,0,0,.35);
+  margin:0 0 12px 0;
+}
+
+/* PERFIL — Icono grande con micro-zoom (igual que service-svg) */
+.about-title .about-icon{
+  width:44px;
+  height:44px;
+  display:inline-block;
+  transition:transform .2s ease, filter .2s ease;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.12));
+}
+.about-title:hover .about-icon{
+  transform:scale(1.08);
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.18));
+}
+
+/* Mejor contraste de textos internos sobre el gris */
+.about-box p,
+.about-card p,
+.about-box li,
+.about-card li{ color:rgba(255,255,255,.95); }
+.about-box strong,
+.about-card strong{ color:#fff; }
+
+
+.pill-stack{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+.pill{background:#f5f8fd;color:#234;border:1px solid #dfe8fb;padding:6px 10px;border-radius:999px;font-size:.9rem;font-weight:500}
+
+.cv-section{margin:60px 0}
+.cv-card {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,       /* blanco platino */
+    #dbeafe 25%,      /* azul muy claro */
+    #93c5fd 60%,      /* azul acero */
+    #60a5fa 85%,      /* azul metalizado */
+    #dbeafe 100%      /* reflejo plateado */
+  );
+  border-radius: 16px;
+  padding: 30px 28px;
+  box-shadow:
+    0 12px 36px rgba(15, 23, 42, 0.12),
+    inset 0 0 10px rgba(255, 255, 255, 0.25);
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  color: #0f172a; /* texto oscuro para buen contraste */
+  border: 1px solid rgba(148,163,184,0.25); /* borde metálico sutil */
+  backdrop-filter: blur(6px);
+}
+
+.cv-name{font-size:1.8rem;font-weight:800;color:#0f172a;margin:0}
+.cv-role{font-size:1.05rem;color:#475569;margin:6px 0 0}
+.cv-summary{color:#334155;margin:16px 0;line-height:1.6}
+/* === CURRÍCULUM – Items tipo tarjeta/pastilla === */
+.cv-points{
+  list-style:none;
+  padding:0;
+  margin:14px 0 22px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;                     /* espacio entre pastillas */
+}
+
+.cv-points li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:0;
+  padding:14px 16px;
+  border-radius:14px;
+
+  /* pastilla clara con borde y leve relieve (funciona sobre fondos claros u oscuros) */
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  border:1px solid #dbe8ff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+
+  color:#0f172a;
+  font-weight:600;
+}
+
+/* Icono circular al estilo “check” */
+.cv-points i{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+
+  background:#e0ecff;          /* aro */
+  border:1px solid #c7daff;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.8);
+
+  color:#2563eb;               /* check azul (FontAwesome) */
+  flex-shrink:0;
+  font-size:14px;              /* tamaño del check */
+}
+
+/* Hover sutil como en Servicios */
+.cv-points li:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  border-color:#c3d7ff;
+  transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+
+
+/* Contenedor de botones */
+.cv-actions{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+/* Base de ambos botones */
+.btn-cv{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 26px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:15px;
+  line-height:1;
+  text-decoration:none;       /* sin subrayado */
+  color:#fff;
+  border:0;
+  transform:translateY(0) scale(1);
+  box-shadow:0 10px 22px rgba(2,6,23,.12);
+  transition:
+    transform .18s ease,
+    box-shadow .22s ease,
+    filter .22s ease,
+    background .22s ease;
+}
+
+/* Zoom + sombra al hover */
+.btn-cv:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 16px 34px rgba(2,6,23,.18);
+  filter:saturate(1.05);
+}
+.btn-cv:active{ transform:translateY(-1px) scale(1.01); }
+.btn-cv:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 3px rgba(255,255,255,.8), 0 0 0 6px rgba(37,99,235,.45);
+}
+
+/* ——— Colores ——— */
+/* Web: cian → azul (referencia a “online/web”) */
+.btn-online{
+  background:linear-gradient(135deg,#06b6d4 0%, #2563eb 100%); /* cian → azul */
+}
+
+/* PDF: rojo → granate (referencia a documento/pdf) */
+.btn-download{
+  background:linear-gradient(135deg,#ef4444 0%, #b91c1c 100%); /* rojo → granate */
+}
+
+/* Opcional: tono un poquito más brillante al hover */
+.btn-online:hover{
+  background:linear-gradient(135deg,#22d3ee 0%, #3b82f6 100%);
+}
+.btn-download:hover{
+  background:linear-gradient(135deg,#f87171 0%, #dc2626 100%);
+}
+
+/* Responsive: que no exploten en móvil */
+@media (max-width: 480px){
+  .btn-cv{ width:100%; padding:14px 20px; }
+}
+
+
+
+
+
+/* === CONTACTO (tarjetas dentro de columnas flex) === */
+.contact-content{
+  display:flex;gap:24px;flex-wrap:wrap
+}
+.contact-card {
+  flex: 1;
+  background: linear-gradient(135deg, #ede9fe, #818cf8);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+}
+
+
+/* =========================================================
+   CONTACTO – Tarjetas + botones internos (versión optimizada)
+========================================================= */
+.contact-content {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* ===== Tarjeta de contacto (estructura) ===== */
+.contact-card {
+  flex: 1;
+  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 40%, #60a5fa 100%); /* azul metalizado */
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* ===== Botones dentro de cada tarjeta ===== */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0f172a;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-item:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Icono dentro del botón ===== */
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* ===== Textos ===== */
+.contact-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: inherit;
+}
+.contact-item p,
+.contact-item small,
+.contact-item a {
+  color: inherit;
+  margin: 0;
+}
+
+.contact .about-highlight{margin-top:10px}
+
+/* =============================
+   Tarjeta de código (Hero)
+   ============================= */
+.code-card{
+  background:transparent;border:none;box-shadow:none;padding:0;max-width:520px;
+  transition:transform .25s ease,box-shadow .25s ease
+}
+.code-card:hover{transform:scale(1.03);box-shadow:0 16px 32px rgba(0,0,0,.25)}
+
+.code-window{
+  position:relative;border-radius:18px;padding:20px 22px 26px;
+  background:radial-gradient(120% 140% at 30% 20%,#0b1935 0%,#0e1d3f 45%,#0c162c 100%);
+  box-shadow:0 18px 48px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06)
+}
+.code-window::after{
+  content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(56,189,248,.06)
+}
+
+.code-pre{
+  margin:0;
+  font:500 15px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  color:#e5e7eb;white-space:pre
+}
+.code-pre .kw{color:#93c5fd}
+.code-pre .id{color:#fda4af}
+.code-pre .fn{color:#fbbf24}
+.code-pre .var{color:#94a3b8}
+.code-pre .str{color:#86efac}
+
+.code-window .code-caret{
+  position:static !important;display:inline-block !important;width:8px;height:18px;background:#a5b4fc;
+  margin-left:4px;vertical-align:-2px;animation:caretBlink 1s steps(1) infinite;border-radius:2px
+}
+@keyframes caretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* ===== Mobile / medianas para hero/code ===== */
+@media (max-width:768px){
+  .profile-card,.code-card{max-width:100%;height:auto;padding:16px}
+  .code-window{padding:16px;border-radius:14px}
+  .code-pre{font-size:.95rem;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+  .hero-buttons .btn{width:100%;min-height:56px;border-radius:12px}
+}
+@media (min-width:481px) and (max-width:768px){
+  .hero-title{font-size:clamp(2rem,5.6vw,2.8rem);line-height:1.2}
+  .hero-subtitle{font-size:1.05rem}
+  .hero-buttons .btn{min-height:54px}
+}
+
+
+
+/*TARJETAS DENTRO DE LAS TARJETAS DE MIS SERVICIOS*/
+.service-features.cards{
+  list-style:none;
+  padding:0;margin:0;
+  display:flex;flex-direction:column;gap:12px;
+}
+
+.feature-card{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 14px;border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,.14);
+  transition:transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.feature-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(59,130,246,.45); /* resalta con azul */
+  box-shadow:0 12px 26px rgba(0,0,0,.2);
+}
+
+/* Icono circular */
+.feature-card .feature-icon{
+  width:26px;height:26px;border-radius:50%;
+  background:#60a5fa; color:#0b1220; font-weight:900;
+  display:grid;place-items:center;font-size:13px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);
+}
+
+/* Texto */
+.feature-card .feature-text{
+  line-height:1.45;
+}
+
+
+/*TARJETA DERECHA, EN PERFIL*/
+
+/* === BLOQUES DENTRO DE "Qué hago" === */
+.service-block {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  border-color: #2563eb;
+}
+
+.service-block h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+}
+
+.service-block p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1e293b;
+  margin: 0;
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.service-icon:hover {
+  transform: scale(1.1);
+  background: rgba(37, 99, 235, 0.2);
+}
+
+
+/* ======================
+   CHATBOT – estilos base
+   ====================== */
+
+/* El hero tiene que ser referencia para el absoluto */
+#inicio.hero {
+  position: relative;
+}
+
+/* Ventana */
+#chatbot{
+  position: absolute;          /* <-- antes fixed */
+  right: 18px;
+  bottom: 88px;
+  width: 320px;
+  max-height: 70vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: #0f172a;
+  color: #e5edf7;
+  border-radius: 16px;
+  box-shadow: 0 18px 42px rgba(0,0,0,.35);
+  border: 1px solid rgba(99,102,241,.35);
+  overflow: hidden;
+  z-index: 20;                 /* sobre el contenido del hero */
+  backdrop-filter: blur(4px);
+  transition: transform .2s ease, opacity .2s ease;
+}
+#chatbot.cb-hidden{
+  transform: translateY(10px) scale(.98);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Header */
+.cb-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:10px 12px;
+  background: linear-gradient(135deg,#1e3a8a,#2563eb);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+.cb-title{ font-weight:800; letter-spacing:.2px; }
+.cb-close{
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  opacity:.9;
+}
+.cb-close:hover{ opacity:1; }
+
+/* Área de mensajes */
+.cb-messages{
+  padding:12px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  background: radial-gradient(120% 120% at 0% 0%, #111827 0%, #0b1220 100%);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Burbujas */
+.msg{
+  list-style:none;
+  max-width:82%;
+  padding:10px 12px;
+  border-radius:14px;
+  line-height:1.45;
+  font-size:.95rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+/* Bot (izquierda) */
+.msg-bot{
+  align-self:flex-start;
+  background:#0f244a;
+  color:#e5e7eb;
+  border:1px solid rgba(59,130,246,.35);
+  border-top-left-radius:6px;
+}
+/* Usuario (derecha) */
+.msg-user{
+  align-self:flex-end;
+  margin-left:auto;
+  background: linear-gradient(135deg,#2563eb,#1e40af);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.15);
+  border-top-right-radius:6px;
+}
+
+/* Quick replies */
+.msg-quick{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-self:flex-start;
+}
+.msg-quick .chip{
+  background:#0b1b36;
+  color:#e5e7eb;
+  border:1px solid rgba(59,130,246,.35);
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+}
+.msg-quick .chip:hover{ background:#133061; }
+
+/* Input */
+.cb-input-area{
+  display:flex;
+  gap:8px;
+  padding:10px;
+  border-top:1px solid rgba(255,255,255,.08);
+  background:#0b1325;
+}
+.cb-input{
+  flex:1;
+  border:1px solid rgba(255,255,255,.12);
+  background:#0f172a;
+  color:#e5edf7;
+  border-radius:12px;
+  padding:10px 12px;
+  outline:none;
+}
+.cb-input:focus{
+  border-color:#60a5fa;
+  box-shadow:0 0 0 3px rgba(96,165,250,.25);
+}
+.cb-send{
+  border:0;
+  border-radius:12px;
+  padding:10px 14px;
+  cursor:pointer;
+  color:#fff;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+.cb-send:hover{ transform: translateY(-1px); }
+
+/* =======================
+   FAB / Launcher (imagen)
+   ======================= */
+
+.cb-launcher{
+  position: absolute;          /* <-- antes fixed */
+  right: 18px;
+  bottom: 18px;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  background: transparent !important;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: none !important;
+  z-index: 19;                 /* debajo de la ventana del chat */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.cb-launcher:hover{ transform: scale(1.08); }
+
+.cb-launcher img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+  transition: transform .2s ease;
+}
+.cb-launcher:hover img{
+  transform: scale(1.12);
+}
+
+/* Al abrir el chat, ocultar el launcher */
+#chatbot.open + .cb-launcher{
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
+}
+
+/* FIX alineación (por si algo pisa clases) */
+.cb-messages{
+  display:flex !important;
+  flex-direction:column !important;
+}
+.cb-messages .msg,
+.cb-messages .cb-msg{
+  max-width:82%;
+  padding:10px 12px;
+  border-radius:14px;
+  line-height:1.45;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.cb-messages .msg-bot,
+.cb-messages .cb-msg.bot{
+  align-self:flex-start !important;
+  margin-right:auto !important;
+  background:#0f244a;
+  color:#e5e7eb;
+  border:1px solid rgba(59,130,246,.35);
+  border-top-left-radius:6px;
+}
+.cb-messages .msg-user,
+.cb-messages .cb-msg.user{
+  align-self:flex-end !important;
+  margin-left:auto !important;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.15);
+  border-top-right-radius:6px;
+}
+
+/* Bloqueo del scroll del body cuando el chat está abierto */
+body.cb-lock{
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width:480px){
+  #chatbot{
+    left: 12px;
+    right: 12px;
+    width: auto;
+    bottom: 90px;
+  }
+  .cb-launcher{
+    right: 14px;
+    bottom: 14px;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Botón detalles certificado Web Scraping */
+.btn-webscraping-details {
+  background: linear-gradient(135deg, #facc15 0%, #2563eb 100%);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 18px rgba(250,204,21,.18);
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s, box-shadow .2s, transform .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-webscraping-details:hover {
+  background: linear-gradient(135deg, #fde047 0%, #3b82f6 100%);
+  box-shadow: 0 12px 26px rgba(37,99,235,.22);
+  transform: translateY(-2px);
+}
+
+/* Modal de detalles de certificado */
+.cert-modal-content {
+  background: linear-gradient(135deg, #facc15 0%, #2563eb 100%);
+  color: #1e293b;
+  max-width: 540px;
+  min-width: 0;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(37,99,235,.18);
+  padding: 0;
+  overflow: hidden;
+  font-size: 1.05rem;
+}
+.cert-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(90deg, #2563eb 0%, #facc15 100%);
+  color: #fff;
+  padding: 26px 28px 18px 28px; /* más padding arriba */
+  border-radius: 18px 18px 0 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  position: relative;
+  min-height: 80px;
+}
+.cert-modal-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: #fffbe7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(250,204,21,.15);
+  flex-shrink: 0;
+}
+.cert-modal-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+.cert-modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  flex: 1;
+  text-shadow: 0 2px 8px rgba(37,99,235,.18);
+  line-height: 1.2;
+  min-width: 0;
+  word-break: break-word;
+}
+.cert-modal-header .modal-close,
+.cert-modal-header .btn-modal-close {
+  background: #facc15;
+  color: #2563eb;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 8px 18px;
+  font-size: 1rem;
+  margin-left: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(250,204,21,.18);
+  transition: background .2s, color .2s;
+}
+.cert-modal-header .modal-close:hover,
+.cert-modal-header .btn-modal-close:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.cert-modal-body {
+  padding: 32px 28px 24px 28px;
+  background: #fffbe7;
+  color: #1e293b;
+  font-size: 1.07rem;
+}
+.cert-modal-body h4 {
+  color: #2563eb;
+  font-weight: 700;
+  margin: 18px 0 8px 0;
+  font-size: 1.08rem;
+}
+.cert-modal-body ul {
+  margin: 0 0 10px 18px;
+  padding: 0 0 0 18px;
+  color: #1e293b;
+  opacity: 1;
+}
+.cert-modal-body li {
+  margin-bottom: 4px;
+  font-size: 1.01rem;
+  color: #1e293b;
+  opacity: 1;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.cert-modal-body p, .cert-modal-body strong {
+  color: #1e293b;
+  opacity: 1;
+  font-weight: 600;
+}
+.cert-modal-body .tech-tag {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 0.95rem;
+  margin-right: 6px;
+  margin-bottom: 3px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+@media (max-width:600px) {
+  .cert-modal-content { max-width: 98vw; }
+  .cert-modal-header, .cert-modal-body { padding-left: 10px; padding-right: 10px; }
+  .cert-modal-header { padding-top: 18px; padding-bottom: 12px; }
+}
+
+/* Icono de detalles debajo del icono principal */
+.cert-details-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 75px auto 0 auto; /* MÁS ABAJO del icono principal */
+  background: transparent;   /* Sin fondo */
+  border: none;          /* Sin borde */
+  border-radius: 0;          /* Sin óvalo */
+  width: 28px;
+  height: 28px;
+  box-shadow: none;          /* Sin sombra */
+  cursor: pointer;
+  transition: transform .12s;
+  z-index: 2;
+  position: relative;
+  padding: 0;
+}
+.cert-details-icon:hover {
+  background: transparent;
+  transform: scale(1.18);
+}
+.cert-details-icon .cert-info-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+  filter: none;
+  transition: filter .18s;
+}
+.cert-details-icon:hover .cert-info-svg {
+  filter: drop-shadow(0 2px 6px #2563eb);
+}
+
+/* Centrado vertical del icono principal + info */
+.certificate-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+/* =========================================================
+   CERT MODAL – BASE (para TODOS los certificados)
+   Pegar al final del CSS
+========================================================= */
+
+/* Contenedor del modal (contenido) */
+.cert-modal-content{
+  /* Neutral y elegante (base), no “amarillo fijo” */
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  color: var(--dark-color);
+  max-width: 720px;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.22);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* Header: icono + título + cerrar */
+.cert-modal-header{
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%);
+  color: #fff;
+  padding: 22px 22px;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+/* Ícono del header */
+.cert-modal-icon{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(255,255,255,.55);
+  box-shadow: 0 10px 24px rgba(2,6,23,.12);
+  flex-shrink:0;
+}
+.cert-modal-icon img{
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* ✅ Título con “otro color” (y estilo premium) */
+.cert-modal-header h2{
+  margin:0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 900;
+  flex:1;
+  min-width:0;
+
+  /* efecto tipo “glow” suave, profesional */
+  text-shadow:
+    0 0 10px rgba(59,130,246,.35),
+    0 10px 28px rgba(2,6,23,.25);
+}
+
+/* Botón cerrar (unificado, sin amarillo fijo) */
+.cert-modal-header .btn-modal-close,
+.cert-modal-header .modal-close{
+  background: rgba(255,255,255,.16);
+  color:#fff;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px;
+  font-weight: 800;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(2,6,23,.18);
+  transition: transform .12s, background .2s, border-color .2s;
+}
+.cert-modal-header .btn-modal-close:hover,
+.cert-modal-header .modal-close:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.35);
+}
+
+/* Body del modal */
+.cert-modal-body{
+  padding: 22px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, #ffffff 0%, #f8fafc 55%, #f1f5f9 100%);
+  color: var(--dark-color);
+  font-size: 1.02rem;
+}
+
+/* Resumen (primer párrafo) */
+.cert-modal-summary{
+  margin: 0;
+  color: #0f172a;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+/* ✅ Secciones como “tarjetas” */
+.cert-modal-section{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(148,163,184,.35);
+  border-radius: 16px;
+  padding: 16px 16px;
+  margin-top: 14px;
+  box-shadow:
+    0 10px 26px rgba(2,6,23,.06),
+    inset 0 1px 0 rgba(255,255,255,.65);
+}
+
+/* Título de cada sección */
+.cert-modal-subtitle{
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+
+  /* Tono fuerte pero elegante */
+  color: #1e3a8a;
+  letter-spacing: .2px;
+}
+
+/* Listas */
+.cert-modal-list{
+  margin: 0;
+  padding-left: 18px;
+}
+.cert-modal-list li{
+  margin: 8px 0;
+  color: #111827;
+  font-weight: 550;
+}
+
+/* Texto de secciones sin lista */
+.cert-modal-text{
+  margin: 0;
+  color: #111827;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Tags / chips (base reutilizable) */
+.cert-modal-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 8px;
+}
+.cert-tag{
+  display:inline-flex;
+  align-items:center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(37,99,235,.10);
+  border: 1px solid rgba(37,99,235,.18);
+  color: #1e3a8a;
+  font-weight: 800;
+  font-size: .92rem;
+  letter-spacing:.2px;
+}
+
+/* Hover sutil para secciones */
+.cert-modal-section:hover{
+  transform: translateY(-2px);
+  transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+  box-shadow: 0 14px 34px rgba(2,6,23,.10);
+  border-color: rgba(37,99,235,.25);
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  .cert-modal-content{ max-width: 96vw; }
+  .cert-modal-header{ padding: 18px 16px; }
+  .cert-modal-body{ padding: 16px; }
+  .cert-modal-header h2{ font-size: 1.15rem; }
+}
+
+/* === FIX: botón "ver detalles" siempre dentro de la card === */
+.certificate-card{
+  position: relative; /* ya lo tenés, lo reafirmamos */
+  overflow: hidden;   /* evita que algo se "escape" */
+}
+
+/* el overlay link queda debajo de los botones */
+.card-link{ z-index: 1; }
+
+/* el botón de ver certificado y el icono de detalles por arriba */
+.certificate-actions .btn-certificate{ z-index: 2; position: relative; }
+.cert-details-icon{ z-index: 3; position: absolute; }
+
+/* --- Posición FINAL: abajo del ícono, centrado en la columna izquierda --- */
+.cert-details-icon{
+  /* tamaño consistente */
+  width: 28px;
+  height: 28px;
+
+  /* ubicación */
+  left: 34px;      /* 16px padding + (64-28)/2 = 34px */
+  bottom: 14px;    /* separación inferior prolija */
+
+  /* estilo (tu look actual) */
+  margin: 0 !important;     /* 🔥 mata el margin 75px */
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.cert-details-icon:hover{
+  transform: scale(1.18);
+}
+
+.cert-details-icon .cert-info-svg{
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Ajuste fino en pantallas muy chicas */
+@media (max-width: 420px){
+  .cert-details-icon{
+    left: 28px;   /* al achicarse la columna, queda mejor visualmente */
+    bottom: 12px;
+  }
+}
