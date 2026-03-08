@@ -1,0 +1,55 @@
+<style>
+nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 16px 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.links a:hover {
+  opacity: 1;
+}
+</style>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="/">Luis Miraglio</a>
+
+    <div class="nav-links">
+      <a class="nav-link" href="#proyectos">Proyectos</a>
+      <a class="nav-link" href="#experiencia">Experiencia</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+      <a class="nav-link" href="#cv">CV</a>
+      <a class="nav-link" href="#certificaciones">Certificaciones</a>
+      <a class="nav-link" href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>

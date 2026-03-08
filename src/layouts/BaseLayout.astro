@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+
+const { title = "Luis Miraglio | Portfolio" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <slot />
+
+    <!-- Script navegación activa -->
+    <script type="module" src="/scripts/nav-active.js"></script>
+
+    <!-- Script: setea el delay por palabra -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".reveal-words").forEach((el) => {
+          let i = 0;
+
+          el.querySelectorAll("span").forEach((span) => {
+            if (span.classList.contains("break")) return;
+            span.style.setProperty("--i", String(i++));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
