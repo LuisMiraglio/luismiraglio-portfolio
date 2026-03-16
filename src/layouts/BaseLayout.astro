@@ -1,7 +1,12 @@
 ---
 import "../styles/global.css";
 
-const { title = "Luis Miraglio | Portfolio" } = Astro.props;
+const {
+  title = "Luis Miraglio | Portfolio",
+  description = "Portfolio de Luis Miraglio, Full-Stack Developer & Network Systems Specialist enfocado en soluciones End-to-End, automatización e infraestructura.",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
 ---
 
 <!DOCTYPE html>
@@ -9,11 +14,25 @@ const { title = "Luis Miraglio | Portfolio" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -21,12 +40,11 @@ const { title = "Luis Miraglio | Portfolio" } = Astro.props;
   </head>
 
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <slot />
 
-    <!-- Script navegación activa -->
     <script type="module" src="/scripts/nav-active.js"></script>
 
-    <!-- Script: setea el delay por palabra -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".reveal-words").forEach((el) => {
