@@ -16,51 +16,67 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 <BaseLayout>
   <Navbar />
 
-<main class="hero">
-  <div class="container">
-<h1 class="hero-title reveal-words" aria-label="Full-Stack Developer & Network Systems Specialist">
-  <span>Full-Stack</span>
-  <span>Developer</span>
-  <span class="break"><br /></span>
-  <span>&</span>
-  <span>Network</span>
-  <span>Systems</span>
-  <span>Specialist</span>
-</h1>
+<main id="contenido" class="hero" data-reveal>
+  <div class="container hero-layout">
+    <div class="hero-content">
+      <p class="hero-kicker">Full-Stack Developer · Network Systems Specialist</p>
 
-    <p class="subtitle">
-      Diseño y desarrollo soluciones End-to-End: desde el relevamiento de requerimientos y la arquitectura,
-      hasta el backend, frontend, infraestructura y despliegue en producción.
-      Integro software e infraestructura para crear sistemas sólidos, escalables y eficientes.
-    </p>
+      <h1 class="hero-title reveal-words" aria-label="Full-Stack Developer & Network Systems Specialist">
+        <span>Soluciones</span>
+        <span>Full-Stack</span>
+        <span class="break"><br /></span>
+        <span>con</span>
+        <span>mentalidad</span>
+        <span>de</span>
+        <span>infraestructura</span>
+      </h1>
 
-<div class="hero-metrics">
-  <div class="metric">
-    <span class="metric-value">+90%</span>
-    <span class="metric-label">Reducción de tiempos</span>
-  </div>
+      <p class="subtitle">
+        Diseño y desarrollo soluciones End-to-End: desde el relevamiento de requerimientos y la arquitectura,
+        hasta el backend, frontend, infraestructura y despliegue en producción.
+        Integro software e infraestructura para crear sistemas sólidos, escalables y eficientes.
+      </p>
 
-  <div class="metric">
-    <span class="metric-value">Full Stack</span>
-    <span class="metric-label">Desarrollo End-to-End</span>
-  </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-value">+90%</span>
+          <span class="metric-label">Reducción de tiempos</span>
+        </div>
 
-  <div class="metric">
-    <span class="metric-value">Infra + Code</span>
-    <span class="metric-label">Perfil híbrido</span>
-  </div>
-</div>
+        <div class="metric">
+          <span class="metric-value">Full Stack</span>
+          <span class="metric-label">Desarrollo End-to-End</span>
+        </div>
 
-    <div class="cta">
-      <a href="#proyectos" class="btn primary">Ver proyectos</a>
-      <a href="#contacto" class="btn ghost">Contactar</a>
+        <div class="metric">
+          <span class="metric-value">Infra + Code</span>
+          <span class="metric-label">Perfil híbrido</span>
+        </div>
+      </div>
+
+      <div class="cta">
+        <a href="#proyectos" class="btn primary">Ver proyectos</a>
+        <a href="#contacto" class="btn ghost">Contactar</a>
+      </div>
     </div>
+
+    <aside class="hero-panel" aria-label="Resumen técnico" data-reveal>
+      <p class="panel-label">Stack Snapshot</p>
+      <div class="panel-block">
+        <p><span>Backend</span> FastAPI · Django · .NET</p>
+        <p><span>Frontend</span> Astro · JavaScript · CSS</p>
+        <p><span>Infra</span> Docker · Linux · Networking</p>
+      </div>
+      <div class="panel-glow"></div>
+    </aside>
   </div>
+  <div class="hero-blur hero-blur-a" aria-hidden="true"></div>
+  <div class="hero-blur hero-blur-b" aria-hidden="true"></div>
 </main>
 
   <!-- ================= PROYECTOS ================= -->
 
-  <section id="proyectos" class="section">
+  <section id="proyectos" class="section" data-reveal>
     <div class="container">
       <h2>Proyectos</h2>
       <p class="section-subtitle">
@@ -98,6 +114,11 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
             {p.data.highlight && <p class="card-highlight">⭐ {p.data.highlight}</p>}
 
+            <div class="card-cta">
+              <span>Ver proyecto</span>
+              <span aria-hidden="true">→</span>
+            </div>
+
             <div class="tags">
               {p.data.tags.map((t) => (
                 <span>{t}</span>
@@ -111,14 +132,14 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
   <!-- ================= EXPERIENCIA PROFESIONAL ================= -->
 
-<section id="experiencia" class="section">
+<section id="experiencia" class="section" data-reveal>
   <div class="container">
     <h2>Experiencia Profesional</h2>
     <p class="section-subtitle">
       Desarrollo de soluciones tecnológicas aplicadas en entornos reales de producción.
     </p>
 
-    <div class="experience-card">
+    <div class="experience-card timeline">
       <div class="experience-header">
         <div class="experience-year">
           2024 - Actualidad
@@ -155,7 +176,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
 <!-- ================= SKILLS (Engineering layout) ================= -->
 
-<section id="skills" class="section">
+<section id="skills" class="section" data-reveal>
   <div class="container">
     <h2>Skills</h2>
     <p class="section-subtitle">
@@ -222,7 +243,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
 <!-- ================= SOBRE MI ================= -->
 
-<section id="sobre-mi" class="section">
+<section id="sobre-mi" class="section" data-reveal>
   <div class="container">
     <h2>Sobre mí</h2>
     <p class="section-subtitle">
@@ -275,7 +296,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
 <!-- ================= CV ================= -->
 
-<section id="cv" class="section">
+<section id="cv" class="section" data-reveal>
   <div class="container">
     <h2>Currículum</h2>
     <p class="section-subtitle">
@@ -324,7 +345,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
   <!-- ================= CERTIFICACIONES DESTACADAS ================= -->
 
-  <section id="certificaciones" class="section">
+  <section id="certificaciones" class="section" data-reveal>
     <div class="container">
       <h2>Certificaciones Destacadas</h2>
       <p class="section-subtitle">
@@ -333,8 +354,8 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
       <div class="projects-grid">
         {featuredCerts.map((c) => (
-          <div class="project-card">
-            <div class="cert-label">Certificado</div>
+          <div class={`project-card cert-card ${c.data.featured ? "is-featured" : ""}`}>
+            <div class="cert-label">Certificado destacado</div>
 
             {c.data.credentialUrl && (
               <a
@@ -358,7 +379,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
   <!-- ================= TODAS LAS CERTIFICACIONES (CON FILTROS) ================= -->
 
-  <section id="todas-las-certificaciones" class="section" data-cert-section>
+  <section id="todas-las-certificaciones" class="section" data-cert-section data-reveal>
     <div class="container">
       <h2>Todas las certificaciones</h2>
       <p class="section-subtitle">
@@ -376,7 +397,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
       <!-- Grid -->
       <div class="projects-grid" data-cert-grid>
         {otherCerts.map((c) => (
-          <div class="project-card" data-category={c.data.category}>
+          <div class="project-card cert-card" data-category={c.data.category}>
             {c.data.credentialUrl && (
               <a
                 class="card-link"
@@ -403,7 +424,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
   <!-- ================= CONTACTO ================= -->
 
-<section id="contacto" class="section section-variant">
+<section id="contacto" class="section section-variant" data-reveal>
   <div class="container">
     <h2>Contacto</h2>
     <p class="section-subtitle">
@@ -435,7 +456,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
             Enviar email
           </a>
 
-          <a class="btn ghost" href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noreferrer">
+          <a class="btn ghost" href="https://www.linkedin.com/in/luis-miraglio" target="_blank" rel="noreferrer">
             <!-- LinkedIn icon -->
             <svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M20.45 20.45h-3.55v-5.56c0-1.33-.03-3.04-1.86-3.04-1.86 0-2.14 1.45-2.14 2.95v5.65H9.35V9h3.41v1.56h.05c.48-.9 1.65-1.86 3.39-1.86 3.63 0 4.3 2.39 4.3 5.5v6.25ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
@@ -493,4 +514,17 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
     </div>
   </div>
 </section>
+
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© {new Date().getFullYear()} Luis Miraglio. Construido con Astro.</p>
+    <div class="footer-links">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="mailto:miraglioluis1@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
 </BaseLayout>
