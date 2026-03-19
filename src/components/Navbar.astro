@@ -1,9 +1,8 @@
-
 <nav class="navbar" aria-label="Navegación principal">
   <div class="container nav-inner">
     <a class="brand" href="/">Luis Miraglio</a>
 
-    <button class="nav-toggle" aria-label="Abrir menú" id="navToggle">
+    <button class="nav-toggle" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false" id="navToggle" type="button">
       <span class="hamburger"></span>
     </button>
 
@@ -17,43 +16,38 @@
       <a class="nav-link" href="#contacto">Contacto</a>
     </div>
   </div>
-
 </nav>
 
 <script is:inline>
-  function closeMenuIfMobile() {
+  function closeMenu() {
     const navLinks = document.getElementById('navLinks');
     const navToggle = document.getElementById('navToggle');
-    if (navLinks) navLinks.classList.remove('open');
-    if (navToggle) navToggle.classList.remove('active');
+
+    navLinks?.classList.remove('open');
+    navToggle?.classList.remove('active');
+    navToggle?.setAttribute('aria-expanded', 'false');
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    // Siempre cierra el menú al cargar
-    closeMenuIfMobile();
+
+    closeMenu();
 
     if (navToggle && navLinks) {
       navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-        navToggle.classList.toggle('active');
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
       });
     }
-    // Cierra el menú al hacer click en un enlace
-    if (navLinks) {
-      navLinks.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          closeMenuIfMobile();
-        });
-      });
-    }
-    // Cierra el menú si se cambia el tamaño de pantalla
+
+    navLinks?.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
     window.addEventListener('resize', () => {
-      if (window.innerWidth <= 760) {
-        closeMenuIfMobile();
-      }
+      if (window.innerWidth > 760) closeMenu();
     });
   });
 </script>
-</nav>
