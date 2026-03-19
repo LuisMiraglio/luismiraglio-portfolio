@@ -1,8 +1,13 @@
+
 <nav class="navbar" aria-label="Navegación principal">
   <div class="container nav-inner">
     <a class="brand" href="/">Luis Miraglio</a>
 
-    <div class="nav-links">
+    <button class="nav-toggle" aria-label="Abrir menú" id="navToggle">
+      <span class="hamburger"></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
       <a class="nav-link" href="#proyectos">Proyectos</a>
       <a class="nav-link" href="#experiencia">Experiencia</a>
       <a class="nav-link" href="#skills">Skills</a>
@@ -12,4 +17,42 @@
       <a class="nav-link" href="#contacto">Contacto</a>
     </div>
   </div>
+
+</nav>
+
+<script is:inline>
+  function closeMenuIfMobile() {
+    const navLinks = document.getElementById('navLinks');
+    const navToggle = document.getElementById('navToggle');
+    if (window.innerWidth <= 760) {
+      if (navLinks) navLinks.classList.remove('open');
+      if (navToggle) navToggle.classList.remove('active');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    closeMenuIfMobile();
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        navToggle.classList.toggle('active');
+      });
+    }
+    // Cierra el menú al hacer click en un enlace
+    if (navLinks) {
+      navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 760) {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('active');
+          }
+        });
+      });
+    }
+    // Cierra el menú si se cambia el tamaño de pantalla a móvil
+    window.addEventListener('resize', closeMenuIfMobile);
+  });
+</script>
 </nav>
