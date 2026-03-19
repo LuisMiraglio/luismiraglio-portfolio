@@ -24,16 +24,16 @@
   function closeMenuIfMobile() {
     const navLinks = document.getElementById('navLinks');
     const navToggle = document.getElementById('navToggle');
-    if (window.innerWidth <= 760) {
-      if (navLinks) navLinks.classList.remove('open');
-      if (navToggle) navToggle.classList.remove('active');
-    }
+    if (navLinks) navLinks.classList.remove('open');
+    if (navToggle) navToggle.classList.remove('active');
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
+    // Siempre cierra el menú al cargar
     closeMenuIfMobile();
+
     if (navToggle && navLinks) {
       navToggle.addEventListener('click', () => {
         navLinks.classList.toggle('open');
@@ -44,15 +44,16 @@
     if (navLinks) {
       navLinks.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-          if (window.innerWidth <= 760) {
-            navLinks.classList.remove('open');
-            navToggle.classList.remove('active');
-          }
+          closeMenuIfMobile();
         });
       });
     }
-    // Cierra el menú si se cambia el tamaño de pantalla a móvil
-    window.addEventListener('resize', closeMenuIfMobile);
+    // Cierra el menú si se cambia el tamaño de pantalla
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 760) {
+        closeMenuIfMobile();
+      }
+    });
   });
 </script>
 </nav>
