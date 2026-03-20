@@ -492,8 +492,26 @@ a { color: inherit; }
   background: rgba(95,157,255,.13);
 }
 
-.back-link { display: inline-block; margin-bottom: 16px; color: rgba(239,244,255,.75); text-decoration: none; }
-.back-link:hover { color: #fff; }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: rgba(239, 244, 255, 0.82);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.back-link:hover {
+  color: #fff;
+  border-color: rgba(95, 157, 255, 0.4);
+  background: rgba(95, 157, 255, 0.08);
+  transform: translateX(-2px);
+}
 .project-header { padding: 16px 0 24px; }
 .badge {
   display: inline-flex;
@@ -508,10 +526,117 @@ a { color: inherit; }
 .project-highlight { margin: 0 0 14px; padding: 10px 12px; border: 1px solid rgba(95,157,255,.35); border-radius: 12px; background: rgba(95,157,255,.14); }
 .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 
-.md { padding-top: 8px; }
-.md :global(h2) { margin-top: 28px; margin-bottom: 10px; }
-.md :global(p),
-.md :global(ul) { color: var(--text-muted); line-height: 1.75; }
+.md {
+  padding-top: 12px;
+  max-width: 860px;
+}
+
+.md :global(h2) {
+  margin: 3.2rem 0 1rem;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 0.7rem;
+}
+
+.md :global(h2)::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin-top: 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.md :global(h3) {
+  margin: 2rem 0 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: rgba(245, 248, 255, 0.96);
+}
+
+.md :global(p) {
+  margin: 0 0 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  font-size: 1.02rem;
+  max-width: 72ch;
+}
+
+.md :global(ul) {
+  margin: 0 0 1.4rem;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.md :global(li) {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.md :global(strong) {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.md :global(hr) {
+  border: 0;
+  height: 1px;
+  margin: 2rem 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+}
+
+.md :global(a) {
+  color: #9ec2ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(158, 194, 255, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.md :global(a:hover) {
+  color: #c8dbff;
+  border-color: rgba(200, 219, 255, 0.7);
+}
+
+.md :global(blockquote) {
+  margin: 1.6rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid rgba(95, 157, 255, 0.65);
+  border-radius: 0 14px 14px 0;
+  background: rgba(95, 157, 255, 0.08);
+  color: rgba(245, 248, 255, 0.88);
+}
+
+.md :global(code) {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.92em;
+  padding: 0.18em 0.45em;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #c8dbff;
+}
+
+.md :global(pre) {
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 14, 26, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.md > :global(section),
+.md > :global(div) {
+  scroll-margin-top: 100px;
+}
 
 .site-footer {
   border-top: 1px solid rgba(255,255,255,.08);
@@ -559,3 +684,28 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.project-image {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: #0b1e3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.project-image img {
+  max-width: 220px;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.35s ease;
+}
+

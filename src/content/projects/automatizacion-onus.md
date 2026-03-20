@@ -1,29 +1,44 @@
 ---
 title: "Automatización de Configuración de ONUs"
 description: "Aplicación en Python + Selenium que automatiza configuraciones masivas y elimina tareas manuales repetitivas."
+image: "/images/projects/onus.png"
 category: "Automation"
 highlight: "Reducción del 90–100% del tiempo técnico en tareas repetitivas"
-tags: ["Python", "Selenium", "Pynstaller", "Automation", "Networking"]
-repo: "https://github.com/LuisMiraglio/Script-DATACOM-DM986-416-AX30"
-demo: ""
-video: ""
+tags: ["Python", "Selenium", "Pyinstaller", "Automation", "Networking"]
+repo: "https://github.com/LuisMiraglio/datacom-dm986-selenium-automation"
 ---
 
-## 📌 Resumen
+## 🚀 Descripción General
 
-Sistema desarrollado para automatizar la configuración masiva de ONUs, eliminando procesos manuales repetitivos y reduciendo drásticamente los tiempos operativos del área técnica.
+Desarrollé una herramienta de automatización orientada a entornos reales de redes FTTH, diseñada para eliminar procesos manuales en la configuración de ONUs Datacom.
+
+La aplicación permite ejecutar configuraciones completas de forma automática a través de una interfaz gráfica simple, reduciendo significativamente los tiempos operativos del área técnica.
 
 ---
 
-## 🚩 Problema
+## ⚠️ Problema
 
-La configuración manual de equipos demandaba una gran cantidad de tiempo técnico y estaba expuesta a errores humanos en procesos repetitivos.
+La configuración manual de ONUs requería:
+
+- Acceso individual a cada equipo
+- Repetición constante de pasos técnicos
+- Alto consumo de tiempo operativo
+- Riesgo de errores humanos
+
+Esto generaba cuellos de botella en tareas masivas y afectaba la eficiencia del equipo técnico.
 
 ---
 
 ## ⚙️ Solución
 
-Desarrollé una aplicación en Python utilizando Selenium para interactuar directamente con el firmware de los equipos y ejecutar configuraciones automatizadas de forma segura y consistente.
+Se desarrolló una aplicación en Python que:
+
+- Automatiza la configuración de ONUs mediante Selenium
+- Interactúa directamente con el firmware de los equipos
+- Permite ingresar datos de forma centralizada
+- Ejecuta procesos repetitivos sin intervención manual
+
+Además, se implementó una interfaz gráfica (Tkinter) para facilitar su uso por parte del equipo técnico.
 
 ---
 
@@ -31,21 +46,24 @@ Desarrollé una aplicación en Python utilizando Selenium para interactuar direc
 
 - Desarrollo completo del sistema
 - Implementación de automatización con Selenium
-- Diseño de interfaz gráfica
-- Optimización de tiempos y pruebas en entorno real
+- Diseño de interfaz gráfica (Tkinter)
+- Testing en entorno real con equipos Datacom
+- Optimización de tiempos operativos
 
 ---
 
 ## 📊 Resultados
 
-- Reducción del 90–100% del tiempo en tareas repetitivas
-- Disminución de errores humanos
-- Mejora en la eficiencia operativa del área técnica
+- Reducción del 90–100% del tiempo en configuraciones repetitivas
+- Eliminación de errores manuales en procesos críticos
+- Mejora significativa en la productividad del área técnica
+- Estandarización de configuraciones
 
 ---
 
 ## 🧠 Aprendizajes
 
-- Automatización aplicada a entornos reales de red
-- Interacción con firmware mediante scripting
-- Diseño de herramientas internas orientadas a productividad
+- Automatización aplicada a infraestructura de red real
+- Integración entre software y hardware (equipos ONU)
+- Uso de Selenium en entornos no convencionales (no web tradicional)
+- Diseño de herramientas internas orientadas a eficiencia operativa

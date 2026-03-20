@@ -22,34 +22,6 @@ const { Content } = await render(project);
     <div class="container">
       <a href="/#proyectos" class="back-link">← Volver</a>
 
-      <header class="project-header">
-        <div class="badge">{project.data.category}</div>
-        <h1 class="project-title">{project.data.title}</h1>
-        <p class="project-desc">{project.data.description}</p>
-
-        {project.data.highlight && (
-          <p class="project-highlight">⭐ {project.data.highlight}</p>
-        )}
-
-        <div class="tags">
-          {project.data.tags.map((t) => (
-            <span>{t}</span>
-          ))}
-        </div>
-
-        <div class="links">
-          {project.data.repo && (
-            <a class="btn ghost" href={project.data.repo} target="_blank" rel="noreferrer">GitHub</a>
-          )}
-          {project.data.demo && (
-            <a class="btn ghost" href={project.data.demo} target="_blank" rel="noreferrer">Demo</a>
-          )}
-          {project.data.video && (
-            <a class="btn ghost" href={project.data.video} target="_blank" rel="noreferrer">Video</a>
-          )}
-        </div>
-      </header>
-
       <article class="md">
         <Content />
       </article>
