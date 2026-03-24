@@ -296,12 +296,15 @@ a { color: inherit; }
 
 .card-category {
   display: inline-flex;
-  margin-bottom: 10px;
-  padding: 5px 11px;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: .69rem;
+  font-size: 0.78rem;
+  font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
+  line-height: 1;
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.17);
   color: rgba(243,247,255,.88);
@@ -327,21 +330,39 @@ a { color: inherit; }
 }
 
 .card-link { position: absolute; inset: 0; z-index: 1; }
-.card-repo {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 3;
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.15);
-  color: rgba(255,255,255,.86);
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 2;
 }
-.card-repo:hover { border-color: rgba(95,157,255,.45); }
+
+.repo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(245, 248, 255, 0.9);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  position: relative;
+  z-index: 2;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.repo-badge:hover {
+  border-color: rgba(95, 157, 255, 0.4);
+  background: rgba(95, 157, 255, 0.08);
+  transform: translateY(-1px);
+}
 
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 24px; }
 .filter-btn {
@@ -707,5 +728,29 @@ a { color: inherit; }
   object-fit: contain;
   display: block;
   transition: transform 0.35s ease;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #7cffb2;
+  background: rgba(124, 255, 178, 0.1);
+  border: 1px solid rgba(124, 255, 178, 0.28);
+  position: relative;
+  z-index: 2;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7cffb2;
+  box-shadow: 0 0 0 4px rgba(124, 255, 178, 0.14);
 }
 

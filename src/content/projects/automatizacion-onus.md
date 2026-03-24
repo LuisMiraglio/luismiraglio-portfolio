@@ -3,6 +3,7 @@ title: "Automatización de Configuración de ONUs"
 description: "Aplicación en Python + Selenium que automatiza configuraciones masivas y elimina tareas manuales repetitivas."
 image: "/images/projects/onus.png"
 category: "Automation"
+status: "production"
 highlight: "Reducción del 90–100% del tiempo técnico en tareas repetitivas"
 tags: ["Python", "Selenium", "Pyinstaller", "Automation", "Networking"]
 repo: "https://github.com/LuisMiraglio/datacom-dm986-selenium-automation"
@@ -13,6 +14,8 @@ repo: "https://github.com/LuisMiraglio/datacom-dm986-selenium-automation"
 Desarrollé una herramienta de automatización orientada a entornos reales de redes FTTH, diseñada para eliminar procesos manuales en la configuración de ONUs Datacom.
 
 La aplicación permite ejecutar configuraciones completas de forma automática a través de una interfaz gráfica simple, reduciendo significativamente los tiempos operativos del área técnica.
+
+La solución se encuentra actualmente en uso en un entorno productivo real, formando parte del flujo operativo del área técnica y aportando mejoras concretas en eficiencia y tiempos de ejecución.
 
 ---
 

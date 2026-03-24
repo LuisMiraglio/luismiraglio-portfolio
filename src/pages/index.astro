@@ -58,7 +58,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
   </div>
 </main>
 
-  <!-- ================= PROYECTOS ================= -->
+<!-- ================= PROYECTOS ================= -->
 
 <section id="proyectos" class="section">
   <div class="container">
@@ -85,25 +85,34 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
             </div>
           )}
 
-          <!-- Icono GitHub -->
-          {p.data.repo && (
-            <a
-              class="card-repo"
-              href={p.data.repo}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Ver repositorio en GitHub"
-            >
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M12 .5C5.73.5.75 5.67.75 12.1c0 5.14 3.28 9.5 7.83 11.04.57.11.78-.25.78-.56v-2.04c-3.19.71-3.86-1.58-3.86-1.58-.52-1.36-1.27-1.72-1.27-1.72-1.04-.73.08-.72.08-.72 1.15.08 1.75 1.2 1.75 1.2 1.02 1.78 2.67 1.26 3.32.96.1-.76.4-1.26.73-1.55-2.55-.3-5.23-1.31-5.23-5.84 0-1.29.44-2.35 1.17-3.18-.12-.3-.51-1.52.11-3.17 0 0 .96-.32 3.14 1.21.91-.26 1.88-.39 2.85-.39.97 0 1.95.13 2.85.39 2.18-1.53 3.14-1.21 3.14-1.21.62 1.65.23 2.87.11 3.17.73.83 1.17 1.89 1.17 3.18 0 4.54-2.68 5.54-5.24 5.83.41.36.78 1.08.78 2.18v3.24c0 .31.21.67.79.56 4.55-1.54 7.82-5.9 7.82-11.04C23.25 5.67 18.27.5 12 .5z"
-                />
-              </svg>
-            </a>
-          )}
+          <div class="project-meta">
+            <div class="card-category">{p.data.category}</div>
 
-          <div class="card-category">{p.data.category}</div>
+            {p.data.status === "production" && (
+              <div class="status-badge">
+                <span class="status-dot"></span>
+                En producción
+              </div>
+            )}
+
+            {p.data.repo && (
+              <a
+                class="repo-badge"
+                href={p.data.repo}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ver repositorio en GitHub"
+              >
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12 .5C5.73.5.75 5.67.75 12.1c0 5.14 3.28 9.5 7.83 11.04.57.11.78-.25.78-.56v-2.04c-3.19.71-3.86-1.58-3.86-1.58-.52-1.36-1.27-1.72-1.27-1.72-1.04-.73.08-.72.08-.72 1.15.08 1.75 1.2 1.75 1.2 1.02 1.78 2.67 1.26 3.32.96.1-.76.4-1.26.73-1.55-2.55-.3-5.23-1.31-5.23-5.84 0-1.29.44-2.35 1.17-3.18-.12-.3-.51-1.52.11-3.17 0 0 .96-.32 3.14 1.21.91-.26 1.88-.39 2.85-.39.97 0 1.95.13 2.85.39 2.18-1.53 3.14-1.21 3.14-1.21.62 1.65.23 2.87.11 3.17.73.83 1.17 1.89 1.17 3.18 0 4.54-2.68 5.54-5.24 5.83.41.36.78 1.08.78 2.18v3.24c0 .31.21.67.79.56 4.55-1.54 7.82-5.9 7.82-11.04C23.25 5.67 18.27.5 12 .5z"
+                  />
+                </svg>
+                GitHub
+              </a>
+            )}
+          </div>
 
           <h3>{p.data.title}</h3>
           <p>{p.data.description}</p>

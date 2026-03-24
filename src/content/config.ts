@@ -12,6 +12,7 @@ const projects = defineCollection({
     repo: z.string().optional(),
     demo: z.string().optional(),
     video: z.string().optional(),
+    status: z.string().optional(),
   }),
 });
 
