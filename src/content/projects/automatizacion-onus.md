@@ -1,72 +1,65 @@
 ---
 title: "Automatización de Configuración de ONUs"
-description: "Aplicación en Python + Selenium que automatiza configuraciones masivas y elimina tareas manuales repetitivas."
+description: "Aplicación de escritorio en Python que automatiza la configuración inicial de ONUs Datacom y elimina por completo la carga manual del técnico."
 image: "/images/projects/onus.png"
 category: "Automation"
 status: "production"
-highlight: "Reducción del 90–100% del tiempo técnico en tareas repetitivas"
-tags: ["Python", "Selenium", "Pyinstaller", "Automation", "Networking"]
+highlight: "Reducción total del tiempo manual de configuración y eliminación de errores humanos en producción."
+tags: ["Python", "Selenium", "Tkinter", "PyInstaller", "Automation", "Networking"]
 repo: "https://github.com/LuisMiraglio/datacom-dm986-selenium-automation"
 ---
 
-## 🚀 Descripción General
+## Resumen
 
-Desarrollé una herramienta de automatización orientada a entornos reales de redes FTTH, diseñada para eliminar procesos manuales en la configuración de ONUs Datacom.
+Aplicación de automatización técnica desarrollada para configurar ONUs Datacom de forma estandarizada, rápida y sin intervención manual del técnico en tareas repetitivas de preparación de equipos.
 
-La aplicación permite ejecutar configuraciones completas de forma automática a través de una interfaz gráfica simple, reduciendo significativamente los tiempos operativos del área técnica.
+La herramienta fue pensada para resolver un proceso operativo real dentro de una empresa de servicios de internet, mejorando tiempos, consistencia y trazabilidad en la configuración inicial de equipos.
 
-La solución se encuentra actualmente en uso en un entorno productivo real, formando parte del flujo operativo del área técnica y aportando mejoras concretas en eficiencia y tiempos de ejecución.
+## Contexto
 
----
+Este proyecto fue desarrollado para **Conectar SRL** como una herramienta interna orientada a operación técnica real.
 
-## ⚠️ Problema
+La solución se encuentra actualmente en uso en producción y forma parte del flujo de trabajo del área técnica para preparar ONUs antes de su instalación en domicilios de clientes.
 
-La configuración manual de ONUs requería:
+## Problema
 
-- Acceso individual a cada equipo
-- Repetición constante de pasos técnicos
-- Alto consumo de tiempo operativo
-- Riesgo de errores humanos
+Antes de implementar esta automatización, cada ONU debía configurarse manualmente.
 
-Esto generaba cuellos de botella en tareas masivas y afectaba la eficiencia del equipo técnico.
+El proceso consistía en conectar el equipo por cable Ethernet, ingresar a su IP por defecto, acceder al panel de administración y aplicar uno por uno todos los parámetros necesarios para dejarlo operativo.
 
----
+Este flujo demandaba entre **5 y 8 minutos por equipo**, requería intervención manual constante y estaba expuesto a errores de carga, inconsistencias entre técnicos y pérdida de tiempo en tareas repetitivas.
 
-## ⚙️ Solución
+## Solución implementada
 
-Se desarrolló una aplicación en Python que:
+Desarrollé una aplicación de escritorio con interfaz gráfica simple que permite seleccionar entre distintos modelos soportados y cargar los datos necesarios para la configuración inicial del equipo, incluyendo:
 
-- Automatiza la configuración de ONUs mediante Selenium
-- Interactúa directamente con el firmware de los equipos
-- Permite ingresar datos de forma centralizada
-- Ejecuta procesos repetitivos sin intervención manual
+- usuario y contraseña por defecto
+- SSID de la red Wi-Fi
+- contraseña Wi-Fi
+- nueva contraseña de administración
 
-Además, se implementó una interfaz gráfica (Tkinter) para facilitar su uso por parte del equipo técnico.
+Una vez ingresados esos datos, la herramienta ejecuta automáticamente todo el proceso de configuración sobre la ONU utilizando Selenium, sin intervención manual del técnico durante la operación.
 
----
+Además, la aplicación registra cada configuración realizada, lo que aporta trazabilidad y control sobre los equipos procesados.
 
-## 👨‍💻 Mi Rol
+## Mi aporte
 
-- Desarrollo completo del sistema
-- Implementación de automatización con Selenium
-- Diseño de interfaz gráfica (Tkinter)
-- Testing en entorno real con equipos Datacom
-- Optimización de tiempos operativos
+Participé en el proyecto de punta a punta, incluyendo:
 
----
+- investigación previa para validar la viabilidad de automatización sobre ONUs Datacom
+- análisis del flujo manual original de configuración
+- desarrollo completo de la lógica de automatización
+- diseño de la interfaz gráfica en Tkinter
+- pruebas en entorno real con equipos físicos
+- empaquetado final de la herramienta como ejecutable `.exe`
 
-## 📊 Resultados
+## Impacto
 
-- Reducción del 90–100% del tiempo en configuraciones repetitivas
-- Eliminación de errores manuales en procesos críticos
-- Mejora significativa en la productividad del área técnica
-- Estandarización de configuraciones
+La herramienta generó un impacto operativo directo en el área técnica:
 
----
-
-## 🧠 Aprendizajes
-
-- Automatización aplicada a infraestructura de red real
-- Integración entre software y hardware (equipos ONU)
-- Uso de Selenium en entornos no convencionales (no web tradicional)
-- Diseño de herramientas internas orientadas a eficiencia operativa
+- reducción total del tiempo manual de configuración
+- eliminación de errores humanos en procesos repetitivos
+- estandarización de la configuración entre distintos técnicos
+- mejora de la velocidad operativa en tareas masivas
+- generación de registros por equipo configurado
+- uso real en entorno productivo dentro de la empresa
