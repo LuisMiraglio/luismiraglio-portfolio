@@ -307,16 +307,23 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
 <section id="cv" class="section">
   <div class="container">
-    <h2>Currículum</h2>
-    <p class="section-subtitle">
-      Descargá mi CV en PDF o abrilo online.
-    </p>
+    <div class="cv-section-head">
+      <h2>Currículum profesional</h2>
+      <p class="section-subtitle">
+        Accedé a una versión actualizada de mi perfil profesional, orientada a desarrollo Full-Stack, automatización e infraestructura.
+      </p>
+    </div>
 
-    <div class="cv-card">
-      <div>
-        <h3 class="cv-title">Luis Miraglio — Full-Stack Developer & Redes</h3>
-        <p class="cv-text">
-          Perfil técnico orientado a soluciones End-to-End, automatización y despliegue en producción.
+    <div class="cv-layout">
+      <div class="cv-panel cv-panel-main">
+        <span class="cv-eyebrow">CV listo para revisar</span>
+
+        <h3 class="cv-main-title">
+          Perfil técnico híbrido con foco en desarrollo, automatización y operación real.
+        </h3>
+
+        <p class="cv-main-text">
+          Una versión clara y actualizada de mi experiencia, proyectos y stack técnico, pensada para reclutadores, clientes y oportunidades profesionales.
         </p>
 
         <div class="cv-actions">
@@ -328,24 +335,46 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
             Ver online
           </a>
         </div>
+      </div>
 
-        <p class="cv-note">
-          Última actualización: <span class="cv-date">2026</span>
+      <div class="cv-panel cv-panel-info">
+        <span class="cv-mini-title">Enfoque</span>
+
+        <div class="cv-tags">
+          <span>Full-Stack</span>
+          <span>Automation</span>
+          <span>Networking</span>
+          <span>Production-ready</span>
+        </div>
+
+        <p class="cv-info-text">
+          Perfil orientado a construir soluciones completas, integrando software, procesos e infraestructura.
         </p>
       </div>
 
-      <div class="cv-meta">
-        <div class="cv-meta-row">
-          <span class="cv-label">Formato</span>
-          <span class="cv-value">PDF</span>
-        </div>
-        <div class="cv-meta-row">
-          <span class="cv-label">Idioma</span>
-          <span class="cv-value">Español</span>
-        </div>
-        <div class="cv-meta-row">
-          <span class="cv-label">Enfoque</span>
-          <span class="cv-value">Full-Stack • Automation • Networking</span>
+      <div class="cv-panel cv-panel-meta">
+        <span class="cv-mini-title">Datos del CV</span>
+
+        <div class="cv-meta-list">
+          <div class="cv-meta-item">
+            <span class="cv-meta-label">Formato</span>
+            <span class="cv-meta-value">PDF</span>
+          </div>
+
+          <div class="cv-meta-item">
+            <span class="cv-meta-label">Idioma</span>
+            <span class="cv-meta-value">Español</span>
+          </div>
+
+          <div class="cv-meta-item">
+            <span class="cv-meta-label">Perfil</span>
+            <span class="cv-meta-value">Desarrollo + Infraestructura</span>
+          </div>
+
+          <div class="cv-meta-item">
+            <span class="cv-meta-label">Actualización</span>
+            <span class="cv-meta-value">2026</span>
+          </div>
         </div>
       </div>
     </div>
@@ -364,19 +393,20 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
       <div class="projects-grid">
         {featuredCerts.map((c) => (
           <div class="project-card">
+          <div class="cert-top">
             <div class="cert-label">Certificado</div>
-
-            {c.data.credentialUrl && (
-              <a
-                class="card-link"
-                href={c.data.credentialUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Ver certificado"
-              ></a>
-            )}
-
             <div class="card-category">{c.data.category}</div>
+          </div>
+
+          {c.data.credentialUrl && (
+            <a
+              class="card-link"
+              href={c.data.credentialUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Ver certificado"
+            ></a>
+          )}
 
             <h3>{c.data.title}</h3>
             <p>{c.data.issuer} • {c.data.date}</p>
@@ -417,8 +447,10 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
               ></a>
             )}
 
-            <div class="cert-label">Certificado</div>
-            <div class="card-category">{c.data.category}</div>
+            <div class="cert-top">
+              <div class="cert-label">Certificado</div>
+              <div class="card-category">{c.data.category}</div>
+            </div>
 
             <h3>{c.data.title}</h3>
             <p>{c.data.issuer} • {c.data.date}</p>
