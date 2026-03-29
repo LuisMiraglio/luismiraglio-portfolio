@@ -17,6 +17,11 @@ const projects = defineCollection({
     relatedSlug: z.string().optional(),
     relatedLabel: z.string().optional(),
     playStore: z.string().url().optional(),
+    screenshots: z.array(z.object({
+      src: z.string(),
+      alt: z.string(),
+      label: z.string().optional(),
+    })).optional(),
   }),
 });
 

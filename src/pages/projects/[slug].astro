@@ -27,6 +27,7 @@ const {
   relatedSlug,
   relatedLabel,
   playStore,
+  screenshots = [],
 } = project.data;
 
 const repoUrl = repo;
@@ -104,6 +105,28 @@ const isProduction = status === "production";
           )}
         </div>
       </section>
+
+      {screenshots.length > 0 && (
+        <section class="project-gallery">
+          <div class="project-gallery-head">
+            <span class="project-gallery-label">Capturas reales</span>
+            <h2>Vista de la aplicación</h2>
+            <p>
+              Algunas pantallas reales del proyecto en uso, mostrando el flujo principal
+              de consulta y seguimiento vehicular.
+            </p>
+          </div>
+
+          <div class="project-gallery-track">
+            {screenshots.map((shot) => (
+              <figure class="project-shot">
+                <img src={shot.src} alt={shot.alt} loading="lazy" />
+                {shot.label && <figcaption>{shot.label}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
 
       <article class="project-content md">
         <Content />

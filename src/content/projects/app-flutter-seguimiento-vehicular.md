@@ -11,6 +11,22 @@ relatedTitle: "API backend para app móvil de gestión vehicular"
 relatedSlug: "api-avl-fastapi"
 relatedLabel: "Backend relacionado"
 playStore: "https://play.google.com/store/apps/details?id=com.conectar.seguimiento&pcampaignid=web_share"
+screenshots:
+  - src: "/images/projects/flutter/login.jpeg"
+    alt: "Pantalla de inicio de sesión"
+    label: "Inicio de sesión"
+  - src: "/images/projects/flutter/vehiculos.jpg"
+    alt: "Pantalla de visualización de flota"
+    label: "Flota"
+  - src: "/images/projects/flutter/detalle.jpg"
+    alt: "Pantalla de detalle de vehículo"
+    label: "Detalle"
+  - src: "/images/projects/flutter/recorrido.jpg"
+    alt: "Pantalla de recorrido y mapa"
+    label: "Recorridos"
+  - src: "/images/projects/flutter/paradas.jpg"
+    alt: "Pantalla de detalle de paradas"
+    label: "Paradas"
 ---
 
 ## Resumen
