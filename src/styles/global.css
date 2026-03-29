@@ -1483,3 +1483,58 @@ a {
     transition: none !important;
   }
 }
+
+.detail-badge--store {
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.detail-badge--store:hover {
+  border-color: rgba(95, 157, 255, 0.4);
+  background: rgba(95, 157, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.related-project {
+  margin-top: 3.2rem;
+}
+
+.related-project-label {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(242, 246, 255, 0.6);
+}
+
+.related-project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow: var(--shadow);
+}
+
+.related-project-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.related-project-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+@media (max-width: 760px) {
+  .related-project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -7,8 +7,10 @@ status: "production"
 highlight: "API en producción desplegada como servicio de Windows con NSSM, utilizada por una app móvil real."
 tags: ["Python", "FastAPI", "SQLAlchemy", "SQL Server", "JWT", "Backend"]
 repo: "PONER_URL_DEL_REPO_SI_LA_VAS_A_MOSTRAR"
+relatedTitle: "Aplicación móvil Flutter para seguimiento vehicular"
+relatedSlug: "app-flutter-seguimiento-vehicular"
+relatedLabel: "App relacionada"
 ---
-
 ## Resumen
 
 Desarrollo de una API backend en Python utilizando FastAPI para el sistema Conectar AVL, diseñada para exponer información de vehículos, servicios y usuarios a una aplicación móvil.

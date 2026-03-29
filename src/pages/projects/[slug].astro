@@ -23,6 +23,10 @@ const {
   image,
   highlight,
   tags = [],
+  relatedTitle,
+  relatedSlug,
+  relatedLabel,
+  playStore,
 } = project.data;
 
 const repoUrl = repo;
@@ -68,6 +72,18 @@ const isProduction = status === "production";
                 GitHub
               </a>
             )}
+
+            {playStore && (
+              <a
+                href={playStore}
+                class="detail-badge detail-badge--store"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ver ${title} en Play Store`}
+              >
+                Play Store
+              </a>
+            )}
           </div>
 
           <h1 class="project-title">{title}</h1>
@@ -92,6 +108,28 @@ const isProduction = status === "production";
       <article class="project-content md">
         <Content />
       </article>
+
+      {relatedSlug && relatedTitle && (
+        <section class="related-project">
+          <span class="related-project-label">
+            {relatedLabel || "Proyecto relacionado"}
+          </span>
+
+          <div class="related-project-card">
+            <div>
+              <h3>{relatedTitle}</h3>
+              <p>
+                Este proyecto forma parte del mismo ecosistema y complementa la solución
+                implementada en producción.
+              </p>
+            </div>
+
+            <a href={`/projects/${relatedSlug}`} class="btn ghost">
+              Ver proyecto
+            </a>
+          </div>
+        </section>
+      )}
     </div>
   </main>
 </BaseLayout>

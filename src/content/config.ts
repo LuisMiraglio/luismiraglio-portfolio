@@ -13,6 +13,10 @@ const projects = defineCollection({
     demo: z.string().optional(),
     video: z.string().optional(),
     status: z.string().optional(),
+    relatedTitle: z.string().optional(),
+    relatedSlug: z.string().optional(),
+    relatedLabel: z.string().optional(),
+    playStore: z.string().url().optional(),
   }),
 });
 
