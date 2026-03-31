@@ -67,19 +67,29 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
 <section id="proyectos" class="section">
   <div class="container">
-    <h2>Proyectos</h2>
-    <p class="section-subtitle">
-      Una selección de proyectos reales enfocados en automatización, web y herramientas internas.
-    </p>
+    <div class="projects-head">
+      <div>
+        <h2>Proyectos</h2>
+        <p class="section-subtitle">
+          Una selección de proyectos reales enfocados en automatización, backend, mobile y herramientas internas.
+        </p>
+      </div>
 
-    <div class="projects-grid">
+      <div class="projects-nav">
+        <button class="projects-arrow" type="button" id="projects-prev" aria-label="Ver proyectos anteriores">
+          ←
+        </button>
+        <button class="projects-arrow" type="button" id="projects-next" aria-label="Ver siguientes proyectos">
+          →
+        </button>
+      </div>
+    </div>
+
+    <div class="projects-carousel" id="projects-carousel">
       {projects.map((p) => (
-        <div class="project-card">
-          
-          <!-- Link invisible al detalle -->
-          <a class="card-link" href={`/projects/${p.slug}`} aria-label="Ver detalle"></a>
+        <article class="project-card project-card--carousel">
+          <a class="card-link" href={`/projects/${p.slug}`} aria-label={`Ver detalle de ${p.data.title}`}></a>
 
-          <!-- Imagen del proyecto -->
           {p.data.image && (
             <div class="project-image">
               <img
@@ -131,13 +141,32 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
               <span>{t}</span>
             ))}
           </div>
-
-        </div>
+        </article>
       ))}
     </div>
   </div>
-</section>
 
+  <script is:inline>
+    const carousel = document.getElementById("projects-carousel");
+    const prevBtn = document.getElementById("projects-prev");
+    const nextBtn = document.getElementById("projects-next");
+
+    if (carousel && prevBtn && nextBtn) {
+      const getScrollAmount = () => {
+        const card = carousel.querySelector(".project-card--carousel");
+        return card ? card.getBoundingClientRect().width + 18 : 360;
+      };
+
+      prevBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+      });
+    }
+  </script>
+</section>
 
   <!-- ================= EXPERIENCIA PROFESIONAL ================= -->
 

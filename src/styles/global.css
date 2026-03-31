@@ -399,6 +399,83 @@ a {
   gap: 18px;
 }
 
+.projects-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.projects-nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.projects-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(245, 248, 255, 0.92);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.projects-arrow:hover {
+  transform: translateY(-1px);
+  border-color: rgba(95, 157, 255, 0.42);
+  background: rgba(95, 157, 255, 0.08);
+}
+
+.projects-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(320px, 380px);
+  gap: 18px;
+  overflow-x: auto;
+  padding: 4px 4px 14px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.project-card--carousel {
+  scroll-snap-align: start;
+  min-height: 100%;
+}
+
+.projects-carousel::-webkit-scrollbar {
+  height: 10px;
+}
+
+.projects-carousel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 999px;
+}
+
+.projects-carousel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+@media (max-width: 760px) {
+  .projects-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .projects-nav {
+    justify-content: flex-end;
+  }
+
+  .projects-carousel {
+    grid-auto-columns: minmax(280px, 88vw);
+  }
+}
+
 .project-card,
 .experience-card,
 .cv-card,
