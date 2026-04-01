@@ -1,7 +1,7 @@
 ---
 title: "Aplicación móvil Flutter para seguimiento vehicular"
 description: "Aplicación móvil desarrollada en Flutter para consultar flota, recorridos, detenciones y actividad vehicular, conectada a una API propia y publicada en Play Store."
-image: "/images/projects/app-flutter-seguimiento.jpg"
+image: "/images/projects/app-flutter-seguimiento.png"
 category: "Mobile"
 status: "production"
 highlight: "App móvil en producción publicada en Play Store, integrada con backend propio y utilizada por clientes y operación interna."
