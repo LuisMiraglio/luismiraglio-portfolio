@@ -6,7 +6,30 @@ const {
   description = "Portfolio de Luis Miraglio, Full-Stack Developer & Network Systems Specialist enfocado en soluciones End-to-End, automatización e infraestructura.",
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const site = Astro.site ?? new URL(Astro.url.origin);
+const canonical = new URL(Astro.url.pathname, site).toString();
+const socialImage = new URL("/images/social/portfolio-og.svg", site).toString();
+const socialImageAlt = "Luis Miraglio - Full-Stack Developer";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Luis Miraglio",
+  url: canonical,
+  image: socialImage,
+  jobTitle: "Full-Stack Developer & Network Systems Specialist",
+  description,
+  email: "mailto:miraglioluis1@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Sunchales",
+    addressRegion: "Santa Fe",
+    addressCountry: "AR",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/luismiraglio/",
+    "https://github.com/LuisMiraglio",
+  ],
+};
 ---
 
 <!DOCTYPE html>
@@ -22,9 +45,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString(
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Luis Miraglio Portfolio" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -35,6 +66,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString(
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <title>{title}</title>
   </head>
