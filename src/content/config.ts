@@ -9,11 +9,7 @@ const certs = defineCollection({
     category: z.string(),
     credentialUrl: z.string().optional(),
     featured: z.boolean().default(false),
-    image: z.string().optional(),
   }),
 });
-
-
-
 
 export const collections = { certs };

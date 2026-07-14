@@ -5,7 +5,6 @@ date: "2025"
 category: "AI"
 credentialUrl: "/certs/mentoria-IA.pdf"
 featured: true
-image: ""
 ---
 
 Mentoría especializada enfocada en integración de Inteligencia Artificial

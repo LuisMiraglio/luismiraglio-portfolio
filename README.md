@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# Luis Miraglio Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Portfolio personal de Luis Miraglio construido con Astro. El sitio presenta el perfil profesional, experiencia, stack técnico, certificaciones, CV y canales de contacto.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- Astro 5
+- CSS global propio
+- Content Collections de Astro para certificaciones
+- Sitemap con `@astrojs/sitemap`
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura principal
 
 ```text
 /
 ├── public/
+│   ├── certs/              # PDFs de certificaciones
+│   ├── cv/                 # CV en PDF
+│   ├── images/social/      # Imagen Open Graph
+│   └── scripts/            # JavaScript del lado cliente
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/         # Componentes Astro reutilizables
+│   ├── content/certs/      # Certificaciones en Markdown
+│   ├── layouts/            # Layout base con SEO
+│   ├── pages/              # Páginas del sitio
+│   └── styles/             # Estilos globales
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Todos los comandos se ejecutan desde la raíz del repositorio:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Comando | Acción |
+| :-- | :-- |
+| `npm install` | Instala las dependencias del proyecto |
+| `npm run dev` | Inicia el servidor local de desarrollo |
+| `npm run build` | Genera la versión de producción en `dist/` |
+| `npm run preview` | Previsualiza el build de producción |
+| `npm run astro -- --help` | Muestra ayuda de la CLI de Astro |
 
-## 🧞 Commands
+## Contenido editable
 
-All commands are run from the root of the project, from a terminal:
+Las certificaciones se administran como archivos Markdown en `src/content/certs/`. Cada archivo incluye metadatos como título, institución, fecha, categoría, URL de credencial y si debe mostrarse como destacada.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## SEO y assets públicos
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+El layout base define metadatos SEO, Open Graph, Twitter Cards, canonical URL y JSON-LD de tipo `Person`. Los assets públicos se sirven desde `public/` y se referencian con rutas absolutas.
