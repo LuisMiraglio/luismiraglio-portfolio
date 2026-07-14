@@ -326,7 +326,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
               href={c.data.credentialUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label="Ver certificado"
+              aria-label={`Ver certificado: ${c.data.title}`}
             ></a>
           )}
 
@@ -365,7 +365,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
                 href={c.data.credentialUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Ver certificado"
+                aria-label={`Ver certificado: ${c.data.title}`}
               ></a>
             )}
 
@@ -478,7 +478,6 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 <footer class="site-footer">
   <div class="container footer-inner">
     <p>© {new Date().getFullYear()} Luis Miraglio. Construido con Astro.</p>
-    </div>
   </div>
 </footer>
 
