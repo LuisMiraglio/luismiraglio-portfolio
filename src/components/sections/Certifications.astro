@@ -1,0 +1,86 @@
+---
+const { featuredCerts, otherCerts, certCategories } = Astro.props;
+---
+
+  <!-- ================= CERTIFICACIONES DESTACADAS ================= -->
+
+  <section id="certificaciones" class="section">
+    <div class="container">
+      <h2>Certificaciones Destacadas</h2>
+      <p class="section-subtitle">
+        Certificaciones seleccionadas por relevancia para mi perfil Full-Stack.
+      </p>
+
+      <div class="cert-grid">
+        {featuredCerts.map((c) => (
+          <div class="cert-card">
+          <div class="cert-top">
+            <div class="cert-label">Certificado</div>
+            <div class="card-category">{c.data.category}</div>
+          </div>
+
+          {c.data.credentialUrl && (
+            <a
+              class="card-link"
+              href={c.data.credentialUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Ver certificado"
+            ></a>
+          )}
+
+            <h3>{c.data.title}</h3>
+            <p>{c.data.issuer} • {c.data.date}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TODAS LAS CERTIFICACIONES (CON FILTROS) ================= -->
+
+  <section id="todas-las-certificaciones" class="section" data-cert-section>
+    <div class="container">
+      <h2>Todas las certificaciones</h2>
+      <p class="section-subtitle">
+        Cursos y certificaciones adicionales organizados por temática.
+      </p>
+
+      <!-- Barra de filtros -->
+      <div class="filters" data-cert-filters>
+        <button class="filter-btn is-active" type="button" data-filter="all">Todas</button>
+        {certCategories.map((cat) => (
+          <button class="filter-btn" type="button" data-filter={cat}>{cat}</button>
+        ))}
+      </div>
+
+      <!-- Grid -->
+      <div class="cert-grid" data-cert-grid>
+        {otherCerts.map((c) => (
+          <div class="cert-card" data-category={c.data.category}>
+            {c.data.credentialUrl && (
+              <a
+                class="card-link"
+                href={c.data.credentialUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ver certificado"
+              ></a>
+            )}
+
+            <div class="cert-top">
+              <div class="cert-label">Certificado</div>
+              <div class="card-category">{c.data.category}</div>
+            </div>
+
+            <h3>{c.data.title}</h3>
+            <p>{c.data.issuer} • {c.data.date}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Script PRO (public/scripts) -->
+    <script type="module" src="/scripts/cert-filters.js"></script>
+  </section>
+
