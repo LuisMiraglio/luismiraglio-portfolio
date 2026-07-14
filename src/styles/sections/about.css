@@ -1,0 +1,42 @@
+/* ================= ABOUT ================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.22fr 0.95fr;
+  gap: 24px;
+}
+
+.about-highlight {
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(95, 157, 255, 0.35);
+  background: rgba(95, 157, 255, 0.14);
+}
+
+.about-main p {
+  margin: 0 0 12px;
+  color: rgba(239, 244, 255, 0.85);
+  line-height: 1.75;
+}
+
+.about-points {
+  display: grid;
+  gap: 10px;
+}
+
+.about-item {
+  padding: 14px 15px;
+  box-shadow: none;
+}
+
+.about-item h3 {
+  margin: 0 0 5px;
+  font-size: 0.98rem;
+}
+
+.about-item p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}

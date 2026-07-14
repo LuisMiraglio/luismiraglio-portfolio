@@ -1,0 +1,31 @@
+/* ================= ANIMATIONS ================= */
+
+.hero-title.reveal-words {
+  --start-delay: 0.45s;
+  --stagger: 0.14s;
+  --dur: 0.66s;
+}
+
+.reveal-words span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(9px);
+  animation: wordIn var(--dur) cubic-bezier(.18, .85, .18, 1) forwards;
+  animation-delay: calc(var(--start-delay) + (var(--i) * var(--stagger)));
+}
+
+.reveal-words .break {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+@keyframes wordIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}

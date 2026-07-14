@@ -1,0 +1,74 @@
+/* ================= HERO ================= */
+
+.hero {
+  padding: 82px 0 110px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+  text-wrap: balance;
+}
+
+.subtitle,
+.section-subtitle {
+  color: var(--text-muted);
+  line-height: 1.72;
+  font-size: 1.02rem;
+}
+
+.subtitle {
+  margin: 1.2rem 0 0;
+  max-width: 72ch;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+  max-width: 840px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.metric:hover {
+  transform: translateY(-4px);
+  border-color: rgba(95, 157, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.metric-value {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #9ec2ff;
+}
+
+.metric-label {
+  margin-top: 0.2rem;
+  color: rgba(231, 236, 255, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}

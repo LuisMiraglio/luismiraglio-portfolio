@@ -1,0 +1,33 @@
+/* ================= EXPERIENCE ================= */
+
+.experience-card {
+  padding: 26px;
+}
+
+.experience-header {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.experience-year {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(95, 157, 255, 0.16);
+  border: 1px solid rgba(95, 157, 255, 0.4);
+  font-size: 0.82rem;
+}
+
+.experience-role {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+}
+
+.experience-list {
+  margin: 0 0 16px;
+  padding-left: 18px;
+  line-height: 1.75;
+  color: rgba(241, 245, 255, 0.88);
+}

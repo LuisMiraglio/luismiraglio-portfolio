@@ -1,0 +1,22 @@
+/* ================= FILTERS ================= */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 24px;
+}
+
+.filter-btn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(245, 248, 255, 0.9);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter-btn.is-active {
+  border-color: rgba(95, 157, 255, 0.5);
+  background: rgba(95, 157, 255, 0.18);
+}

@@ -1,0 +1,130 @@
+/* ================= CONTACT ================= */
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+}
+
+.contact-cta {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(650px 250px at 15% 5%, rgba(95, 157, 255, 0.2), transparent 60%),
+    radial-gradient(500px 250px at 90% 0%, rgba(143, 102, 255, 0.16), transparent 58%);
+  pointer-events: none;
+}
+
+.contact-cta > * {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-cta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.contact-cta h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 10px;
+  font-size: 0.78rem;
+}
+
+.availability .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7cffb2;
+  box-shadow: 0 0 0 4px rgba(124, 255, 178, 0.15);
+}
+
+.contact-text {
+  color: rgba(237, 242, 255, 0.86);
+  line-height: 1.72;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-footnote {
+  margin: 14px 0 0;
+  color: rgba(239, 244, 255, 0.68);
+  font-size: 0.9rem;
+}
+
+.contact-info {
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 11px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.02);
+  transition: 0.2s ease;
+}
+
+.info-row:hover {
+  border-color: rgba(95, 157, 255, 0.4);
+  background: rgba(95, 157, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.info-ic {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.info-ic svg {
+  width: 18px;
+  height: 18px;
+}
+
+.info-label {
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(244, 247, 255, 0.58);
+}
+
+.info-value {
+  color: rgba(244, 248, 255, 0.9);
+  margin-top: 2px;
+}
