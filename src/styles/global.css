@@ -310,6 +310,7 @@ a {
 
 .btn:focus-visible,
 .nav-link:focus-visible,
+.nav-toggle:focus-visible,
 .filter-btn:focus-visible,
 .info-row:focus-visible,
 .card-repo:focus-visible {
@@ -520,6 +521,36 @@ a {
 .filter-btn.is-active {
   border-color: rgba(95, 157, 255, 0.5);
   background: rgba(95, 157, 255, 0.18);
+}
+
+[data-cert-section] {
+  padding-top: 76px;
+}
+
+[data-cert-section] h2 {
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+}
+
+[data-cert-section] .section-subtitle {
+  margin-bottom: 20px;
+}
+
+[data-cert-section] .cert-grid {
+  gap: 14px;
+}
+
+[data-cert-section] .cert-card {
+  padding: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+[data-cert-section] .cert-card h3 {
+  font-size: 1.12rem;
+  margin-bottom: 0.45rem;
+}
+
+[data-cert-section] .cert-card p {
+  margin-bottom: 0;
 }
 
 /* ================= EXPERIENCE ================= */
@@ -1022,7 +1053,6 @@ a {
   }
 
   .nav-links {
-    display: none !important;
     flex-direction: column;
     width: 100%;
     background: rgba(7, 12, 22, 0.95);
@@ -1034,13 +1064,23 @@ a {
     border-radius: 0 0 18px 18px;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+    transform: translateY(-8px);
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease,
+      transform 0.2s ease,
+      max-height 0.2s ease;
   }
 
   .nav-links.open {
-    display: flex !important;
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    max-height: 360px;
   }
 
   .hero {
