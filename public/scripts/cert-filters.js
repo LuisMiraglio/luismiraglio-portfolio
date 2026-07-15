@@ -22,7 +22,9 @@ function initCertFilters() {
     });
 
     buttons.forEach((btn) => {
-      btn.classList.toggle("is-active", btn.dataset.filter === value);
+      const isActive = btn.dataset.filter === value;
+      btn.classList.toggle("is-active", isActive);
+      btn.setAttribute("aria-pressed", String(isActive));
     });
   };
 

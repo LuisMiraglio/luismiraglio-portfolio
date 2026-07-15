@@ -20,8 +20,7 @@
 .nav-link:focus-visible,
 .nav-toggle:focus-visible,
 .filter-btn:focus-visible,
-.info-row:focus-visible,
-.card-repo:focus-visible {
+.info-row:focus-visible {
   outline: 2px solid rgba(143, 102, 255, 0.9);
   outline-offset: 2px;
 }

@@ -25,7 +25,7 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
               href={c.data.credentialUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label="Ver certificado"
+              aria-label={`Ver certificado: ${c.data.title}`}
             ></a>
           )}
 
@@ -48,9 +48,9 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
 
       <!-- Barra de filtros -->
       <div class="filters" data-cert-filters>
-        <button class="filter-btn is-active" type="button" data-filter="all">Todas</button>
+        <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">Todas</button>
         {certCategories.map((cat) => (
-          <button class="filter-btn" type="button" data-filter={cat}>{cat}</button>
+          <button class="filter-btn" type="button" data-filter={cat} aria-pressed="false">{cat}</button>
         ))}
       </div>
 
@@ -64,7 +64,7 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
                 href={c.data.credentialUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Ver certificado"
+                aria-label={`Ver certificado: ${c.data.title}`}
               ></a>
             )}
 
