@@ -1,0 +1,107 @@
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 940px) {
+  .skills-stack,
+  .contact-wrap,
+  .about-grid,
+  .cv-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-inner {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0 12px;
+    min-height: 0;
+  }
+
+  .nav-links {
+    display: none !important;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(7, 12, 22, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 18px 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    border-radius: 0 0 18px 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hero {
+    padding: 54px 0 72px;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+
+  .cert-card,
+  .experience-card,
+  .contact-cta,
+  .cv-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(1120px, calc(100% - 1.2rem));
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 11vw, 3.2rem);
+    max-width: 10ch;
+  }
+
+  .subtitle,
+  .section-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .metric {
+    min-height: 82px;
+  }
+
+
+  .cta,
+  .contact-actions,
+  .cv-actions {
+    gap: 10px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

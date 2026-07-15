@@ -1,0 +1,55 @@
+/* ================= SKILLS ================= */
+
+.skills-stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 32px;
+}
+
+.skill-group {
+  padding: 8px 0;
+}
+
+.skill-title {
+  margin: 0 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-title::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--skill-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--skill-accent), transparent 80%);
+}
+
+.skill-rule {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.24), transparent);
+  margin-bottom: 11px;
+}
+
+.skill-items {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-items span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.skill-backend { --skill-accent: #5f9dff; }
+.skill-frontend { --skill-accent: #8f66ff; }
+.skill-mobile { --skill-accent: #00c8ff; }
+.skill-db { --skill-accent: #f4be3b; }
+.skill-auto { --skill-accent: #42dda0; }
+.skill-devops { --skill-accent: #ff7a7a; }
