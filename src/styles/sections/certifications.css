@@ -14,7 +14,11 @@
 .about-item {
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: linear-gradient(170deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(
+    170deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.02)
+  );
   box-shadow: var(--shadow);
 }
 
@@ -22,16 +26,23 @@
   position: relative;
   padding: 24px;
   overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .cert-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(560px 180px at 15% 0%, rgba(95, 157, 255, 0.2), transparent 68%);
+  background: radial-gradient(
+    560px 180px at 15% 0%,
+    rgba(95, 157, 255, 0.2),
+    transparent 68%
+  );
   opacity: 0;
-  transition: 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .cert-card:hover {
@@ -68,8 +79,7 @@
 }
 
 .cert-top .card-category {
-  margin: 0;
-  margin-left: auto;
+  margin: 0 0 0 auto;
 }
 
 .card-category {
@@ -104,4 +114,36 @@
   position: absolute;
   inset: 0;
   z-index: 1;
+}
+
+/* Menor peso visual para el listado completo de certificaciones */
+
+[data-cert-section] {
+  padding-top: 76px;
+}
+
+[data-cert-section] h2 {
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+}
+
+[data-cert-section] .section-subtitle {
+  margin-bottom: 20px;
+}
+
+[data-cert-section] .cert-grid {
+  gap: 14px;
+}
+
+[data-cert-section] .cert-card {
+  padding: 18px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+[data-cert-section] .cert-card h3 {
+  margin-bottom: 0.45rem;
+  font-size: 1.12rem;
+}
+
+[data-cert-section] .cert-card p {
+  margin-bottom: 0;
 }

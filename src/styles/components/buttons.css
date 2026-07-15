@@ -18,6 +18,7 @@
 
 .btn:focus-visible,
 .nav-link:focus-visible,
+.nav-toggle:focus-visible,
 .filter-btn:focus-visible,
 .info-row:focus-visible,
 .card-repo:focus-visible {
