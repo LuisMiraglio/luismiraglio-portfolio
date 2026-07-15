@@ -244,7 +244,7 @@ a {
 
 .hero-metrics {
   display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
   gap: 12px;
   margin-top: 30px;
   max-width: 840px;
@@ -1045,10 +1045,6 @@ a {
 
   .hero {
     padding: 54px 0 72px;
-  }
-
-  .hero-metrics {
-    grid-template-columns: 1fr;
   }
 
   .section {
