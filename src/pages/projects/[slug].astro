@@ -6,14 +6,19 @@ import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
-  return projects.map((project) => ({ params: { slug: project.data.slug }, props: { project } }));
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
 }
 
 const { project } = Astro.props;
 const { Content } = await project.render();
+
 const pageTitle = `${project.data.title} | Caso de estudio | Luis Miraglio`;
 const pageDescription = project.data.summary;
-const canonical = `/projects/${project.data.slug}/`;
+const canonical = `/projects/${project.slug}/`;
 ---
 
 <BaseLayout
@@ -28,7 +33,9 @@ const canonical = `/projects/${project.data.slug}/`;
 
   <main id="contenido" class="project-detail">
     <article class="container project-detail-shell">
-      <a class="project-back-link" href="/#proyectos">← Volver al portfolio</a>
+      <a class="project-back-link" href="/#proyectos">
+        ← Volver al portfolio
+      </a>
 
       <header class="project-hero-detail">
         <div class="project-detail-kicker">
@@ -36,23 +43,29 @@ const canonical = `/projects/${project.data.slug}/`;
           <span>{project.data.status}</span>
           <span>{project.data.year}</span>
         </div>
+
         <h1>{project.data.title}</h1>
         <p>{project.data.summary}</p>
       </header>
 
-      <section class="project-detail-overview" aria-label="Resumen del proyecto">
+      <section
+        class="project-detail-overview"
+        aria-label="Resumen del proyecto"
+      >
         <div>
           <h2>Rol</h2>
           <ul>
             {project.data.role.map((item) => <li>{item}</li>)}
           </ul>
         </div>
+
         <div>
           <h2>Stack</h2>
           <ul class="project-detail-tags">
             {project.data.stack.map((tech) => <li>{tech}</li>)}
           </ul>
         </div>
+
         <div>
           <h2>Impacto</h2>
           <p>{project.data.impact}</p>
@@ -60,19 +73,63 @@ const canonical = `/projects/${project.data.slug}/`;
       </section>
 
       <figure class="project-detail-image">
-        <img src={project.data.image.src} alt={project.data.image.alt} />
+        <img
+          src={project.data.image.src}
+          alt={project.data.image.alt}
+        />
       </figure>
 
-      <section class="project-links-panel" aria-labelledby="project-links-title">
+      <section
+        class="project-links-panel"
+        aria-labelledby="project-links-title"
+      >
         <h2 id="project-links-title">Enlaces disponibles</h2>
+
         <div class="project-links-list">
-          {project.data.repositoryUrl && !project.data.privateRepository ? (
-            <a class="btn ghost" href={project.data.repositoryUrl} target="_blank" rel="noreferrer noopener">Repositorio</a>
-          ) : project.data.privateRepository ? (
-            <p>Código privado por confidencialidad. Se comparte arquitectura, stack y decisiones técnicas sin exponer información sensible.</p>
-          ) : null}
-          {project.data.demoUrl && <a class="btn ghost" href={project.data.demoUrl} target="_blank" rel="noreferrer noopener">Demo</a>}
-          {project.data.videoUrl && <a class="btn ghost" href={project.data.videoUrl} target="_blank" rel="noreferrer noopener">Video</a>}
+          {
+            project.data.repositoryUrl &&
+            !project.data.privateRepository ? (
+              <a
+                class="btn ghost"
+                href={project.data.repositoryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Repositorio
+              </a>
+            ) : project.data.privateRepository ? (
+              <p>
+                Código privado por confidencialidad. Se comparte arquitectura,
+                stack y decisiones técnicas sin exponer información sensible.
+              </p>
+            ) : null
+          }
+
+          {
+            project.data.demoUrl && (
+              <a
+                class="btn ghost"
+                href={project.data.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Demo
+              </a>
+            )
+          }
+
+          {
+            project.data.videoUrl && (
+              <a
+                class="btn ghost"
+                href={project.data.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Video
+              </a>
+            )
+          }
         </div>
       </section>
 

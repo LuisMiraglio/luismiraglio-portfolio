@@ -40,7 +40,7 @@ const sortedProjects = [...projects].sort((a, b) => a.data.order - b.data.order)
             </ul>
 
             <div class="project-card-actions" aria-label={`Enlaces de ${project.data.title}`}>
-              <a class="btn primary" href={`/projects/${project.data.slug}/`}>
+              <a class="btn primary" href={`/projects/${project.slug}/`}>
                 Ver caso de estudio
               </a>
               {project.data.repositoryUrl && !project.data.privateRepository && (
