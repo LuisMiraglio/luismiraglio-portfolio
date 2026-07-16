@@ -34,12 +34,14 @@
 
 .skill-items {
   margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.skill-items span {
+.skill-items li {
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.12);
