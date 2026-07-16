@@ -1,67 +1,108 @@
-<!-- ================= SKILLS (Engineering layout) ================= -->
+<!-- ================= SKILLS (Capabilities map) ================= -->
 
-<section id="skills" class="section">
+<section id="skills" class="section skills-section" aria-labelledby="skills-title">
   <div class="container">
-    <h2>Skills</h2>
+    <p class="section-kicker">Mapa de capacidades</p>
+    <h2 id="skills-title">Skills</h2>
     <p class="section-subtitle">
-      Stack técnico organizado por áreas. Enfocado en desarrollo End-to-End, automatización e infraestructura.
+      Capacidades técnicas conectadas para construir soluciones End-to-End: backend, automatización,
+      experiencia de usuario, datos e infraestructura de producción.
     </p>
 
-    <div class="skills-stack">
-      <!-- Backend -->
-      <div class="skill-group skill-backend">
-        <h3 class="skill-title">Backend</h3>
-        <div class="skill-rule"></div>
-        <ul class="skill-items">
-          <li>Python</li><li>FastAPI</li><li>Django</li><li>Flask</li><li>.NET</li><li>JWT</li>
+    <div class="skills-map" aria-label="Mapa de capacidades técnicas">
+      <div class="skills-core" aria-labelledby="skills-core-title">
+        <span class="skills-core-eyebrow">Enfoque central</span>
+        <h3 id="skills-core-title">Soluciones End-to-End</h3>
+        <p>
+          Combino desarrollo de software, automatización operativa e infraestructura para llevar sistemas
+          desde la lógica de negocio hasta el despliegue y operación.
+        </p>
+      </div>
+
+      <div class="skills-capability skill-backend">
+        <div class="skill-heading">
+          <span class="skill-index" aria-hidden="true">01</span>
+          <div>
+            <h3>Backend y APIs</h3>
+            <p>Servicios, lógica de negocio e integraciones REST conectadas con datos.</p>
+          </div>
+        </div>
+        <ul class="skill-primary" aria-label="Capacidades principales de Backend y APIs">
+          <li>APIs REST</li>
+          <li>Autenticación JWT</li>
+        </ul>
+        <ul class="skill-tools" aria-label="Tecnologías de Backend y APIs">
+          <li>Python</li><li>FastAPI</li><li>Django</li><li>Flask</li><li>.NET</li>
         </ul>
       </div>
 
-      <!-- Frontend -->
-      <div class="skill-group skill-frontend">
-        <h3 class="skill-title">Frontend</h3>
-        <div class="skill-rule"></div>
-        <ul class="skill-items">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Astro</li><li>Bootstrap</li>
+      <div class="skills-capability skill-auto">
+        <div class="skill-heading">
+          <span class="skill-index" aria-hidden="true">02</span>
+          <div>
+            <h3>Automatización</h3>
+            <p>Scripts y flujos operativos para reducir tareas manuales y conectar procesos.</p>
+          </div>
+        </div>
+        <ul class="skill-primary" aria-label="Capacidades principales de Automatización">
+          <li>Automatización operativa</li>
+          <li>Web Scraping</li>
+        </ul>
+        <ul class="skill-tools" aria-label="Tecnologías de Automatización">
+          <li>Python</li><li>Selenium</li><li>Scripts</li><li>CLI</li>
         </ul>
       </div>
 
-      <!-- Mobile -->
-      <div class="skill-group skill-mobile">
-        <h3 class="skill-title">Mobile</h3>
-        <div class="skill-rule"></div>
-        <ul class="skill-items">
-          <li>Flutter</li><li>Dart</li><li>Google Play</li><li>AAB</li>
+      <div class="skills-capability skill-infra">
+        <div class="skill-heading">
+          <span class="skill-index" aria-hidden="true">03</span>
+          <div>
+            <h3>Infraestructura y despliegue</h3>
+            <p>Entornos, control de versiones y servicios necesarios para operar en producción.</p>
+          </div>
+        </div>
+        <ul class="skill-primary" aria-label="Capacidades principales de Infraestructura y despliegue">
+          <li>Servicios y producción</li>
+          <li>Redes</li>
         </ul>
-      </div>
-
-      <!-- Bases de datos -->
-      <div class="skill-group skill-db">
-        <h3 class="skill-title">Bases de datos</h3>
-        <div class="skill-rule"></div>
-        <ul class="skill-items">
-          <li>SQL Server</li><li>PostgreSQL</li><li>SQLite</li><li>SQL</li>
-        </ul>
-      </div>
-
-      <!-- Automatización -->
-      <div class="skill-group skill-auto">
-        <h3 class="skill-title">Automatización</h3>
-        <div class="skill-rule"></div>
-        <ul class="skill-items">
-          <li>Selenium</li><li>Web Scraping</li><li>Scripts</li><li>CLI</li>
-        </ul>
-      </div>
-
-      <!-- DevOps & Infra -->
-      <div class="skill-group skill-devops">
-        <h3 class="skill-title">DevOps & Infra</h3>
-        <div class="skill-rule"></div>
-        <ul class="skill-items">
+        <ul class="skill-tools" aria-label="Tecnologías de Infraestructura y despliegue">
           <li>Git</li><li>GitHub</li><li>Docker</li><li>Linux</li><li>Windows Server</li><li>Networking</li><li>FTTH</li>
+        </ul>
+      </div>
+
+      <div class="skills-capability skill-frontend">
+        <div class="skill-heading">
+          <span class="skill-index" aria-hidden="true">04</span>
+          <div>
+            <h3>Frontend y UI</h3>
+            <p>Interfaces web y mobile enfocadas en claridad, recorrido del usuario y publicación.</p>
+          </div>
+        </div>
+        <ul class="skill-primary" aria-label="Capacidades principales de Frontend y UI">
+          <li>Interfaces web</li>
+          <li>Aplicaciones mobile</li>
+        </ul>
+        <ul class="skill-tools" aria-label="Tecnologías de Frontend y UI">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Astro</li><li>Bootstrap</li><li>Flutter</li><li>Dart</li><li>Google Play</li><li>AAB</li>
+        </ul>
+      </div>
+
+      <div class="skills-capability skill-data">
+        <div class="skill-heading">
+          <span class="skill-index" aria-hidden="true">05</span>
+          <div>
+            <h3>Datos y bases de datos</h3>
+            <p>Persistencia, consultas SQL e integración de motores relacionales con aplicaciones.</p>
+          </div>
+        </div>
+        <ul class="skill-primary" aria-label="Capacidades principales de Datos y bases de datos">
+          <li>Consultas SQL</li>
+          <li>Modelado relacional</li>
+        </ul>
+        <ul class="skill-tools" aria-label="Tecnologías de Datos y bases de datos">
+          <li>SQL Server</li><li>PostgreSQL</li><li>SQLite</li><li>SQL</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-
