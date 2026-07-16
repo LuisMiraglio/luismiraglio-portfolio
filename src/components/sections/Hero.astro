@@ -1,49 +1,103 @@
 <main id="contenido" class="hero">
-  <div class="container">
-    <h1
-      class="hero-title reveal-words"
-      aria-label="Full-Stack Developer & Network Systems Specialist"
-    >
-      <span>Full-Stack</span>
-      <span>Developer</span>
-      <span class="break"><br /></span>
-      <span>&</span>
-      <span>Network</span>
-      <span>Systems</span>
-      <span>Specialist</span>
-    </h1>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1
+        class="hero-title reveal-words"
+        aria-label="Full-Stack Developer & Network Systems Specialist"
+      >
+        <span>Full-Stack</span>
+        <span>Developer</span>
+        <span class="break"><br /></span>
+        <span>&</span>
+        <span>Network</span>
+        <span>Systems</span>
+        <span>Specialist</span>
+      </h1>
 
-    <p class="subtitle">
-      Diseño y desarrollo soluciones End-to-End: desde el relevamiento de requerimientos y la arquitectura,
-      hasta el backend, frontend, infraestructura y despliegue en producción.
-      Integro software e infraestructura para crear sistemas sólidos, escalables y eficientes.
-    </p>
+      <p class="subtitle">
+        Diseño y desarrollo soluciones End-to-End: desde el relevamiento de requerimientos y la arquitectura,
+        hasta el backend, frontend, infraestructura y despliegue en producción.
+        Integro software e infraestructura para crear sistemas sólidos, escalables y eficientes.
+      </p>
 
-    <div class="hero-metrics">
-      <div class="metric">
-        <span class="metric-value">+90%</span>
-        <span class="metric-label">Reducción de tiempos</span>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-value">+90%</span>
+          <span class="metric-label">Reducción de tiempos</span>
+        </div>
+
+        <div class="metric">
+          <span class="metric-value">Soluciones activas</span>
+          <span class="metric-label">Implementadas en producción</span>
+        </div>
+
+        <div class="metric">
+          <span class="metric-value">Full Stack</span>
+          <span class="metric-label">Desarrollo End-to-End</span>
+        </div>
+
+        <div class="metric">
+          <span class="metric-value">Infra + Code</span>
+          <span class="metric-label">Perfil híbrido</span>
+        </div>
       </div>
 
-      <div class="metric">
-        <span class="metric-value">Soluciones activas</span>
-        <span class="metric-label">Implementadas en producción</span>
-      </div>
-
-      <div class="metric">
-        <span class="metric-value">Full Stack</span>
-        <span class="metric-label">Desarrollo End-to-End</span>
-      </div>
-
-      <div class="metric">
-        <span class="metric-value">Infra + Code</span>
-        <span class="metric-label">Perfil híbrido</span>
+      <div class="cta">
+        <a href="#contacto" class="btn primary">Contactar</a>
+        <a href="#cv" class="btn ghost">Ver CV</a>
       </div>
     </div>
 
-    <div class="cta">
-      <a href="#contacto" class="btn primary">Contactar</a>
-      <a href="#cv" class="btn ghost">Ver CV</a>
-    </div>
+    <aside class="hero-system" aria-hidden="true">
+      <div class="system-shell">
+        <div class="system-header">
+          <span class="system-dot is-blue"></span>
+          <span class="system-dot is-violet"></span>
+          <span class="system-dot is-green"></span>
+          <span class="system-status">pipeline.end-to-end</span>
+        </div>
+
+        <div class="system-flow">
+          <div class="system-node node-frontend">
+            <span class="node-kicker">01</span>
+            <strong>Frontend</strong>
+            <small>UI · estados · eventos</small>
+          </div>
+
+          <div class="system-node node-api">
+            <span class="node-kicker">02</span>
+            <strong>API / Backend</strong>
+            <small>REST · lógica · datos</small>
+          </div>
+
+          <div class="system-node node-auto">
+            <span class="node-kicker">03</span>
+            <strong>Automatización</strong>
+            <small>jobs · scripts · checks</small>
+          </div>
+
+          <div class="system-node node-infra">
+            <span class="node-kicker">04</span>
+            <strong>Infra / Producción</strong>
+            <small>deploy · monitoreo</small>
+          </div>
+
+          <svg class="system-lines" viewBox="0 0 420 330" role="presentation" focusable="false">
+            <path class="flow-line main-line" d="M95 80 C155 78 172 120 208 150 S292 190 330 238" />
+            <path class="flow-line branch-line" d="M210 154 C242 128 270 128 310 106" />
+            <path class="flow-line branch-line is-soft" d="M105 250 C150 215 174 210 220 222" />
+            <circle class="flow-pulse pulse-one" cx="95" cy="80" r="4" />
+            <circle class="flow-pulse pulse-two" cx="208" cy="150" r="4" />
+            <circle class="flow-pulse pulse-three" cx="330" cy="238" r="4" />
+          </svg>
+        </div>
+
+        <div class="system-log">
+          <span><b>build</b> checks passed</span>
+          <span><b>api</b> latency stable</span>
+          <span><b>deploy</b> production ready</span>
+        </div>
+      </div>
+    </aside>
   </div>
 </main>
