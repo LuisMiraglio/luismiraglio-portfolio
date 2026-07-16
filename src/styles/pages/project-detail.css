@@ -1,0 +1,132 @@
+/* ================= PROJECT DETAIL ================= */
+
+.project-detail {
+  padding: 56px 0 88px;
+}
+
+.project-detail-shell {
+  max-width: 960px;
+}
+
+.project-back-link {
+  display: inline-flex;
+  margin-bottom: 28px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.project-back-link:hover,
+.project-back-link:focus-visible {
+  color: #fff;
+}
+
+.project-hero-detail h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.project-hero-detail p {
+  max-width: 74ch;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.project-detail-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 34px 0;
+}
+
+.project-detail-overview > div,
+.project-links-panel {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.project-detail-overview h2,
+.project-links-panel h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.project-detail-overview ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.project-detail-overview p,
+.project-links-panel p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.project-detail-image {
+  margin: 0 0 28px;
+  overflow: hidden;
+  border: 1px solid rgba(95, 157, 255, 0.18);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-detail-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-links-panel {
+  margin-bottom: 34px;
+}
+
+.project-links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-content {
+  color: rgba(241, 245, 255, 0.9);
+  line-height: 1.8;
+}
+
+.project-content h2 {
+  margin: 38px 0 12px;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  letter-spacing: -0.02em;
+}
+
+.project-content p,
+.project-content li {
+  color: var(--text-muted);
+}
+
+.project-content ul {
+  padding-left: 22px;
+}
+
+@media (max-width: 820px) {
+  .project-detail-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-detail {
+    padding-top: 36px;
+  }
+
+  .project-links-list .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

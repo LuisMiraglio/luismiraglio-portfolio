@@ -4,12 +4,15 @@ import "../styles/global.css";
 const {
   title = "Luis Miraglio | Portfolio",
   description = "Portfolio de Luis Miraglio, Full-Stack Developer & Network Systems Specialist enfocado en soluciones End-to-End, automatización e infraestructura.",
+  canonical: canonicalProp,
+  socialImage: socialImageProp = "/images/social/portfolio-og.svg",
+  socialImageAlt = "Luis Miraglio - Full-Stack Developer",
+  ogType = "website",
 } = Astro.props;
 
 const site = Astro.site ?? new URL(Astro.url.origin);
-const canonical = new URL(Astro.url.pathname, site).toString();
-const socialImage = new URL("/images/social/portfolio-og.svg", site).toString();
-const socialImageAlt = "Luis Miraglio - Full-Stack Developer";
+const canonical = canonicalProp ? new URL(canonicalProp, site).toString() : new URL(Astro.url.pathname, site).toString();
+const socialImage = new URL(socialImageProp, site).toString();
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -41,7 +44,7 @@ const jsonLd = {
     <meta name="theme-color" content="#0b1020" />
     <link rel="canonical" href={canonical} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

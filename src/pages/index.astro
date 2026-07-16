@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Hero from "../components/sections/Hero.astro";
 import Experience from "../components/sections/Experience.astro";
 import Skills from "../components/sections/Skills.astro";
+import Projects from "../components/sections/Projects.astro";
 import About from "../components/sections/About.astro";
 import CvSection from "../components/sections/CvSection.astro";
 import Certifications from "../components/sections/Certifications.astro";
@@ -12,7 +13,9 @@ import Footer from "../components/sections/Footer.astro";
 import { getCollection } from "astro:content";
 
 const certs = await getCollection("certs");
+const projects = await getCollection("projects");
 
+const featuredProjects = projects.filter((project) => project.data.featured);
 const featuredCerts = certs.filter((c) => c.data.featured);
 const otherCerts = certs.filter((c) => !c.data.featured);
 
@@ -25,6 +28,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
   <Hero />
   <Experience />
+  <Projects projects={featuredProjects} />
   <Skills />
   <About />
   <CvSection />

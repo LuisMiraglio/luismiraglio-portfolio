@@ -6,10 +6,12 @@
 @import "./sections/certifications.css";
 @import "./components/filters.css";
 @import "./sections/experience.css";
+@import "./sections/projects.css";
 @import "./sections/skills.css";
 @import "./sections/about.css";
 @import "./sections/cv.css";
 @import "./sections/contact.css";
 @import "./sections/footer.css";
+@import "./pages/project-detail.css";
 @import "./utilities/animations.css";
 @import "./utilities/responsive.css";

@@ -1,0 +1,71 @@
+---
+const { projects } = Astro.props;
+const sortedProjects = [...projects].sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="proyectos" class="section projects-section" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="projects-heading">
+      <div>
+        <h2 id="projects-title">Proyectos</h2>
+        <p class="section-subtitle">
+          Casos de estudio técnicos con foco en automatización, arquitectura e impacto operativo real.
+        </p>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      {sortedProjects.map((project) => (
+        <article class="project-card">
+          <div class="project-card-media">
+            <img src={project.data.image.src} alt={project.data.image.alt} loading="lazy" />
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-kicker">
+              <span>{project.data.category}</span>
+              <span>{project.data.status}</span>
+            </div>
+
+            <h3>{project.data.title}</h3>
+            <p>{project.data.summary}</p>
+
+            <dl class="project-card-impact">
+              <dt>Impacto</dt>
+              <dd>{project.data.impact}</dd>
+            </dl>
+
+            <ul class="project-stack" aria-label={`Stack principal de ${project.data.title}`}>
+              {project.data.stack.slice(0, 4).map((tech) => <li>{tech}</li>)}
+            </ul>
+
+            <div class="project-card-actions" aria-label={`Enlaces de ${project.data.title}`}>
+              <a class="btn primary" href={`/projects/${project.data.slug}/`}>
+                Ver caso de estudio
+              </a>
+              {project.data.repositoryUrl && !project.data.privateRepository && (
+                <a class="btn ghost" href={project.data.repositoryUrl} target="_blank" rel="noreferrer noopener">
+                  Repositorio
+                </a>
+              )}
+              {project.data.demoUrl && (
+                <a class="btn ghost" href={project.data.demoUrl} target="_blank" rel="noreferrer noopener">
+                  Demo
+                </a>
+              )}
+              {project.data.videoUrl && (
+                <a class="btn ghost" href={project.data.videoUrl} target="_blank" rel="noreferrer noopener">
+                  Video
+                </a>
+              )}
+            </div>
+
+            {project.data.privateRepository && (
+              <p class="project-private-note">Código privado por confidencialidad.</p>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
