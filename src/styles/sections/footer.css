@@ -1,33 +1,17 @@
-/* ================= FOOTER ================= */
+/* ================= FOOTER · CONTINUIDAD DEL CIERRE ================= */
 
 .site-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 28px 0 42px;
-  background: rgba(255, 255, 255, 0.015);
+  position: relative;
+  padding: 18px 0 38px;
+  border-top: 0;
+  background: rgba(7, 11, 20, .98);
 }
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  color: rgba(239, 245, 255, 0.72);
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0 max(1.1rem, calc((100% - 1120px) / 2)) auto;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(95,157,255,.25), rgba(255,255,255,.06), transparent);
 }
-
-.footer-inner p {
-  margin: 0;
-}
-
-.footer-links {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: #fff;
-}
+.footer-inner { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-top: 18px; color: rgba(239,245,255,.58); font-size: .86rem; }
+.footer-inner p { margin: 0; }

@@ -4,20 +4,22 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
 
   <!-- ================= CERTIFICACIONES DESTACADAS ================= -->
 
-  <section id="certificaciones" class="section">
+  <section id="certificaciones" class="section certifications-featured">
     <div class="container">
-      <h2>Certificaciones Destacadas</h2>
-      <p class="section-subtitle">
-        Certificaciones seleccionadas por relevancia para mi perfil Full-Stack.
-      </p>
+      <header class="certifications-heading">
+        <h2>Certificaciones Destacadas</h2>
+        <p class="section-subtitle">
+          Certificaciones seleccionadas por relevancia para mi perfil Full-Stack.
+        </p>
+      </header>
 
       <div class="cert-grid">
         {featuredCerts.map((c) => (
-          <div class="cert-card">
-          <div class="cert-top">
-            <div class="cert-label">Certificado</div>
-            <div class="card-category">{c.data.category}</div>
-          </div>
+          <article class="cert-card">
+            <div class="cert-top">
+              <div class="cert-label">Certificado</div>
+              <div class="card-category">{c.data.category}</div>
+            </div>
 
           {c.data.credentialUrl && (
             <a
@@ -31,7 +33,7 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
 
             <h3>{c.data.title}</h3>
             <p>{c.data.issuer} • {c.data.date}</p>
-          </div>
+          </article>
         ))}
       </div>
     </div>
@@ -39,7 +41,7 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
 
   <!-- ================= TODAS LAS CERTIFICACIONES (CON FILTROS) ================= -->
 
-  <section id="todas-las-certificaciones" class="section" data-cert-section>
+  <section id="todas-las-certificaciones" class="section certifications-index" data-cert-section>
     <div class="container">
       <h2>Todas las certificaciones</h2>
       <p class="section-subtitle">
@@ -57,7 +59,7 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
       <!-- Grid -->
       <div class="cert-grid" data-cert-grid>
         {otherCerts.map((c) => (
-          <div class="cert-card" data-category={c.data.category}>
+          <article class="cert-card" data-category={c.data.category}>
             {c.data.credentialUrl && (
               <a
                 class="card-link"
@@ -75,7 +77,7 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
 
             <h3>{c.data.title}</h3>
             <p>{c.data.issuer} • {c.data.date}</p>
-          </div>
+          </article>
         ))}
       </div>
     </div>
@@ -83,4 +85,3 @@ const { featuredCerts, otherCerts, certCategories } = Astro.props;
     <!-- Script PRO (public/scripts) -->
     <script type="module" src="/scripts/cert-filters.js"></script>
   </section>
-

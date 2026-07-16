@@ -1,13 +1,19 @@
 <!-- ================= EXPERIENCIA PROFESIONAL ================= -->
 
-<section id="experiencia" class="section">
+<section id="experiencia" class="section experience-section">
   <div class="container">
-    <h2>Experiencia Profesional</h2>
-    <p class="section-subtitle">
-      Desarrollo de soluciones tecnológicas aplicadas en entornos reales de producción.
-    </p>
+    <header class="experience-intro">
+      <h2>Experiencia Profesional</h2>
+      <p class="section-subtitle">
+        Desarrollo de soluciones tecnológicas aplicadas en entornos reales de producción.
+      </p>
+    </header>
 
-    <div class="experience-card">
+    <article class="experience-entry">
+      <div class="experience-rail" aria-hidden="true">
+        <span class="experience-node"></span>
+      </div>
+
       <div class="experience-header">
         <div class="experience-year">
           2024 - Actualidad
@@ -21,7 +27,7 @@
         </div>
       </div>
 
-      <ul class="experience-list">
+      <ul class="experience-list" aria-label="Responsabilidades y resultados">
         <li>Lidero el ciclo de vida completo de desarrollo (End-to-End) para aplicaciones web, móviles y herramientas de automatización.</li>
         <li>Relevamiento de requerimientos, diseño de arquitectura, desarrollo backend/frontend y despliegue en servidores Windows/Linux.</li>
         <li>Desarrollo de APIs REST con Python (FastAPI, Django, Flask) y .NET, integradas con SQL Server y PostgreSQL.</li>
@@ -30,7 +36,7 @@
         <li>Mantenimiento evolutivo y soporte de infraestructura de software, asegurando estabilidad operativa.</li>
       </ul>
 
-      <div class="tags">
+      <div class="tags experience-tags" aria-label="Tecnologías utilizadas">
         <span>Python</span>
         <span>FastAPI</span>
         <span>Flutter</span>
@@ -38,6 +44,6 @@
         <span>Selenium</span>
         <span>Networking</span>
       </div>
-    </div>
+    </article>
   </div>
 </section>

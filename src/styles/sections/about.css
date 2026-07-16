@@ -1,42 +1,88 @@
-/* ================= ABOUT ================= */
+/* ================= ABOUT · PERFIL EDITORIAL ================= */
+
+.about-section {
+  border-top: 0;
+  background: linear-gradient(110deg, rgba(95, 157, 255, 0.055), transparent 42%);
+}
+
+.about-section::before { display: none; }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.22fr 0.95fr;
-  gap: 24px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.75fr);
+  gap: clamp(48px, 8vw, 100px);
+  align-items: start;
 }
+
+.about-heading { margin-bottom: 38px; }
+.about-heading .section-subtitle { margin-bottom: 0; }
 
 .about-highlight {
-  margin-bottom: 14px;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(95, 157, 255, 0.35);
-  background: rgba(95, 157, 255, 0.14);
+  position: relative;
+  margin: 0 0 32px;
+  padding: 4px 0 4px 28px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: clamp(1.28rem, 2.4vw, 1.8rem);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
 }
 
-.about-main p {
-  margin: 0 0 12px;
-  color: rgba(239, 244, 255, 0.85);
-  line-height: 1.75;
+.about-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  border-radius: 99px;
+  background: linear-gradient(var(--accent), var(--accent-2));
+}
+
+.about-main > p {
+  max-width: 68ch;
+  margin: 0 0 18px;
+  color: rgba(239, 244, 255, 0.82);
+  line-height: 1.82;
 }
 
 .about-points {
   display: grid;
-  gap: 10px;
+  gap: 0;
+  margin-top: 42px;
+  border-top: 1px solid var(--line);
 }
 
 .about-item {
-  padding: 14px 15px;
+  position: relative;
+  padding: 18px 4px 18px 34px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
   box-shadow: none;
 }
 
-.about-item h3 {
-  margin: 0 0 5px;
-  font-size: 0.98rem;
+.about-item::before {
+  content: "0" counter(about-item);
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color: rgba(95, 157, 255, 0.72);
+  font: 700 0.68rem/1 monospace;
 }
 
-.about-item p {
-  margin: 0;
-  color: var(--text-muted);
-  line-height: 1.6;
+.about-points { counter-reset: about-item; }
+.about-item { counter-increment: about-item; }
+.about-item h3 { margin: 0 0 7px; font-size: 1rem; }
+.about-item p { margin: 0; color: var(--text-muted); line-height: 1.6; }
+
+@media (max-width: 940px) {
+  .about-grid { grid-template-columns: 1fr; gap: 12px; }
+  .about-points { margin-top: 24px; grid-template-columns: repeat(2, 1fr); border-top: 0; column-gap: 28px; }
+  .about-item { border-top: 1px solid var(--line); }
+}
+
+@media (max-width: 600px) {
+  .about-points { grid-template-columns: 1fr; }
+  .about-highlight { padding-left: 20px; }
 }
