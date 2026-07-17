@@ -19,8 +19,8 @@ stack:
   - "PyInstaller"
 impact: "Reducción aproximada del tiempo operativo de entre 90 % y 100 %."
 image:
-  src: "/images/projects/automatizacion-onus-placeholder.svg"
-  alt: "Placeholder reemplazable del caso de estudio Automatización ONUs"
+  src: "/images/projects/automatizacion-onus-flow.svg"
+  alt: "Flujo técnico de la aplicación Automatización ONUs, desde la entrada operativa hasta la ejecución completada"
 privateRepository: true
 order: 1
 ---

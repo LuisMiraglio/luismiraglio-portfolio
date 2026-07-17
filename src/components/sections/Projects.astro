@@ -1,71 +1,128 @@
 ---
 const { projects } = Astro.props;
 const sortedProjects = [...projects].sort((a, b) => a.data.order - b.data.order);
+const [featuredProject, ...secondaryProjects] = sortedProjects;
+
+const processSteps = [
+  { number: "01", label: "Entrada manual" },
+  { number: "02", label: "Python + Selenium" },
+  { number: "03", label: "Interfaz de escritorio" },
+  { number: "04", label: "Uso en producción" },
+];
 ---
 
 <section id="proyectos" class="section projects-section" aria-labelledby="projects-title">
   <div class="container">
-    <div class="projects-heading">
-      <div>
-        <h2 id="projects-title">Proyectos</h2>
-        <p class="section-subtitle">
-          Casos de estudio técnicos con foco en automatización, arquitectura e impacto operativo real.
-        </p>
-      </div>
-    </div>
+    <header class="projects-heading">
+      <p class="projects-eyebrow">Caso destacado</p>
+      <h2 id="projects-title">Proyectos</h2>
+      <p class="section-subtitle">
+        Ingeniería aplicada a problemas reales, desde el análisis del proceso hasta su uso en producción.
+      </p>
+    </header>
 
-    <div class="projects-grid">
-      {sortedProjects.map((project) => (
-        <article class="project-card">
-          <div class="project-card-media">
-            <img src={project.data.image.src} alt={project.data.image.alt} loading="lazy" />
+    {featuredProject && (
+      <article class="featured-project">
+        <div class="featured-project-visual">
+          <img
+            src={featuredProject.data.image.src}
+            alt={featuredProject.data.image.alt}
+            loading="lazy"
+            width="1200"
+            height="760"
+          />
+          <div class="visual-caption" aria-hidden="true">
+            <span class="visual-status-dot"></span>
+            Flujo operativo automatizado
+          </div>
+        </div>
+
+        <div class="featured-project-content">
+          <div class="project-meta">
+            <span>{featuredProject.data.category}</span>
+            <span class="project-status"><i aria-hidden="true"></i>{featuredProject.data.status}</span>
           </div>
 
-          <div class="project-card-body">
-            <div class="project-card-kicker">
-              <span>{project.data.category}</span>
-              <span>{project.data.status}</span>
+          <h3>{featuredProject.data.title}</h3>
+          <p class="project-summary">{featuredProject.data.summary}</p>
+
+          <div class="project-narrative">
+            <div>
+              <span class="narrative-label">Problema real</span>
+              <p>Un flujo operativo repetitivo que dependía de múltiples pasos manuales.</p>
             </div>
-
-            <h3>{project.data.title}</h3>
-            <p>{project.data.summary}</p>
-
-            <dl class="project-card-impact">
-              <dt>Impacto</dt>
-              <dd>{project.data.impact}</dd>
-            </dl>
-
-            <ul class="project-stack" aria-label={`Stack principal de ${project.data.title}`}>
-              {project.data.stack.slice(0, 4).map((tech) => <li>{tech}</li>)}
-            </ul>
-
-            <div class="project-card-actions" aria-label={`Enlaces de ${project.data.title}`}>
-              <a class="btn primary" href={`/projects/${project.slug}/`}>
-                Ver caso de estudio
-              </a>
-              {project.data.repositoryUrl && !project.data.privateRepository && (
-                <a class="btn ghost" href={project.data.repositoryUrl} target="_blank" rel="noreferrer noopener">
-                  Repositorio
-                </a>
-              )}
-              {project.data.demoUrl && (
-                <a class="btn ghost" href={project.data.demoUrl} target="_blank" rel="noreferrer noopener">
-                  Demo
-                </a>
-              )}
-              {project.data.videoUrl && (
-                <a class="btn ghost" href={project.data.videoUrl} target="_blank" rel="noreferrer noopener">
-                  Video
-                </a>
-              )}
+            <div>
+              <span class="narrative-label">Solución</span>
+              <p>Una aplicación de escritorio que centraliza y automatiza la ejecución.</p>
             </div>
+          </div>
 
-            {project.data.privateRepository && (
-              <p class="project-private-note">Código privado por confidencialidad.</p>
+          <dl class="project-impact">
+            <dt>Impacto operativo</dt>
+            <dd>{featuredProject.data.impact}</dd>
+          </dl>
+
+          <div class="project-supporting-data">
+            <div>
+              <span class="supporting-label">Stack técnico</span>
+              <ul class="project-stack" aria-label={`Stack principal de ${featuredProject.data.title}`}>
+                {featuredProject.data.stack.map((tech) => <li>{tech}</li>)}
+              </ul>
+            </div>
+            <div>
+              <span class="supporting-label">Rol</span>
+              <p>{featuredProject.data.role.join(" · ")}</p>
+            </div>
+          </div>
+
+          <div class="project-actions">
+            <a class="btn primary project-cta" href={`/projects/${featuredProject.slug}/`}>
+              Ver caso de estudio <span aria-hidden="true">→</span>
+            </a>
+            {featuredProject.data.privateRepository && (
+              <p class="project-private-note">
+                <span aria-hidden="true">◈</span> Código privado por confidencialidad
+              </p>
             )}
           </div>
-        </article>
-      ))}
-    </div>
+        </div>
+
+        <div class="project-process" aria-labelledby="process-title">
+          <div class="process-heading">
+            <span id="process-title">Del proceso manual al uso real</span>
+            <span aria-hidden="true">Flujo / 04 etapas</span>
+          </div>
+          <ol>
+            {processSteps.map((step) => (
+              <li>
+                <span class="process-number">{step.number}</span>
+                <span>{step.label}</span>
+              </li>
+            ))}
+            <li class="process-result">
+              <span class="process-number">Resultado</span>
+              <strong>90–100 %</strong>
+              <span>menos tiempo operativo aprox.</span>
+            </li>
+          </ol>
+        </div>
+      </article>
+    )}
+
+    {secondaryProjects.length > 0 && (
+      <div class="secondary-projects" aria-label="Más casos de estudio">
+        {secondaryProjects.map((project) => (
+          <article class="secondary-project">
+            <img src={project.data.image.src} alt={project.data.image.alt} loading="lazy" />
+            <div>
+              <span>{project.data.category}</span>
+              <h3>{project.data.title}</h3>
+              <p>{project.data.summary}</p>
+              <a href={`/projects/${project.slug}/`}>Ver caso de estudio de {project.data.title}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
   </div>
 </section>
