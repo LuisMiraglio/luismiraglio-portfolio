@@ -15,7 +15,6 @@ import { getCollection } from "astro:content";
 const certs = await getCollection("certs");
 const projects = await getCollection("projects");
 
-const featuredProjects = projects.filter((project) => project.data.featured);
 const featuredCerts = certs.filter((c) => c.data.featured);
 const otherCerts = certs.filter((c) => !c.data.featured);
 
@@ -28,7 +27,7 @@ const certCategories = Array.from(new Set(otherCerts.map((c) => c.data.category)
 
   <Hero />
   <Experience />
-  <Projects projects={featuredProjects} />
+  <Projects projects={projects} />
   <Skills />
   <About />
   <CvSection />

@@ -35,6 +35,22 @@
   line-height: 1.75;
 }
 
+.project-hero-detail .project-detail-company {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.project-detail-company a {
+  color: var(--accent);
+  font-weight: 650;
+  text-underline-offset: 3px;
+}
+
+.project-detail-company a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .project-detail-overview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -94,6 +110,35 @@
   gap: 10px;
 }
 
+.project-gallery {
+  margin-bottom: 34px;
+}
+
+.project-gallery h2 {
+  font-size: 1.25rem;
+}
+
+.project-gallery ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-gallery li {
+  overflow: hidden;
+  border: 1px solid rgba(95, 157, 255, 0.18);
+  border-radius: var(--radius);
+}
+
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .project-content {
   color: rgba(241, 245, 255, 0.9);
   line-height: 1.8;
@@ -128,5 +173,9 @@
   .project-links-list .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .project-gallery ul {
+    grid-template-columns: 1fr;
   }
 }

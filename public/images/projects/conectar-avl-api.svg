@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitectura de Conectar AVL API</title><desc id="desc">Flujo simple entre una aplicación cliente, autenticación JWT, API REST, SQL Server y sistema AVL.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111b36"/><stop offset="1" stop-color="#0a1022"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="960" height="420" rx="30" fill="url(#bg)"/>
+  <g fill="none" stroke="#5f9dff" stroke-width="3" opacity=".65"><path d="M205 210h105"/><path d="M470 210h105"/><path d="M735 175h70v-65"/><path d="M735 245h70v65"/></g>
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <g transform="translate(55 145)"><rect width="150" height="130" rx="18" fill="#172544" stroke="#5f9dff"/><rect x="37" y="25" width="76" height="52" rx="5" fill="none" stroke="#9ec1ff" stroke-width="3"/><path d="M60 95h30m-15-18v18" stroke="#9ec1ff" stroke-width="3"/><text x="75" y="116" fill="#f6f8ff" font-size="16">Cliente</text></g>
+    <g transform="translate(310 125)"><rect width="160" height="170" rx="22" fill="#1b3158" stroke="#76aaff" stroke-width="2"/><path d="M80 34l31 13v24c0 25-18 39-31 45-13-6-31-20-31-45V47z" fill="none" stroke="#a6c7ff" stroke-width="4"/><text x="80" y="139" fill="#f6f8ff" font-size="20" font-weight="700">API REST</text><text x="80" y="160" fill="#a6c7ff" font-size="14">JWT</text></g>
+    <g transform="translate(575 145)"><rect width="160" height="130" rx="18" fill="#172544" stroke="#5f9dff"/><path d="M46 42c0-11 68-11 68 0v48c0 11-68 11-68 0zm0 0c0 11 68 11 68 0m-68 24c0 11 68 11 68 0" fill="none" stroke="#9ec1ff" stroke-width="3"/><text x="80" y="116" fill="#f6f8ff" font-size="16">SQL Server</text></g>
+    <g transform="translate(805 45)"><rect width="110" height="130" rx="18" fill="#172544" stroke="#5f9dff"/><circle cx="55" cy="50" r="20" fill="none" stroke="#9ec1ff" stroke-width="3"/><path d="M55 30v20l14 9" stroke="#9ec1ff" stroke-width="3"/><text x="55" y="103" fill="#f6f8ff" font-size="15">Sistema</text><text x="55" y="122" fill="#f6f8ff" font-size="15">AVL</text></g>
+    <g transform="translate(805 245)"><rect width="110" height="130" rx="18" fill="#172544" stroke="#5f9dff"/><path d="M55 30c-16 0-28 12-28 28 0 22 28 47 28 47s28-25 28-47c0-16-12-28-28-28zm0 18a10 10 0 110 20 10 10 0 010-20z" fill="none" stroke="#9ec1ff" stroke-width="3"/><text x="55" y="122" fill="#f6f8ff" font-size="14">Geocoding</text></g>
+  </g>
+</svg>

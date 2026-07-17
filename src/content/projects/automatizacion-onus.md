@@ -22,6 +22,7 @@ image:
   src: "/images/projects/automatizacion-onus-placeholder.svg"
   alt: "Placeholder reemplazable del caso de estudio Automatización ONUs"
 privateRepository: true
+company: "Conectar Servicios"
 order: 1
 ---
 
