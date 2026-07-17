@@ -1,55 +1,85 @@
 ---
 const { projects } = Astro.props;
 const sortedProjects = [...projects].sort((a, b) => a.data.order - b.data.order);
+const featuredProject = sortedProjects.find((project) => project.data.featured);
+const secondaryProjects = sortedProjects.filter((project) => !project.data.featured);
 ---
 
 <section id="proyectos" class="section projects-section" aria-labelledby="projects-title">
   <div class="container">
-    <header class="projects-heading">
-      <p class="projects-eyebrow">Caso destacado</p>
-      <h2 id="projects-title">Proyectos</h2>
-    </header>
-
-    <div class="projects-list">
-      {sortedProjects.map((project) => (
-        <article class="featured-project">
-          <div class="featured-project-visual">
-            <img
-              src={project.data.image.src}
-              alt={project.data.image.alt}
-              loading="lazy"
-              width="1200"
-              height="720"
-            />
-          </div>
-
-          <div class="featured-project-content">
-            <div class="project-meta">
-              <span>{project.data.category}</span>
-              <span class="project-status"><i aria-hidden="true"></i>{project.data.status}</span>
-            </div>
-
-            <h3>{project.data.title}</h3>
-            <p class="project-summary">{project.data.summary}</p>
-
-            <dl class="project-impact">
-              <dt>Impacto</dt>
-              <dd>{project.data.impact}</dd>
-            </dl>
-
-            <ul class="project-stack" aria-label={`Stack principal de ${project.data.title}`}>
-              {project.data.stack.map((tech) => <li>{tech}</li>)}
-            </ul>
-
-            <div class="project-actions">
-              <a class="btn primary" href={`/projects/${project.slug}/`}>Ver caso de estudio</a>
-              {project.data.privateRepository && (
-                <p class="project-private-note">Código privado por confidencialidad.</p>
-              )}
-            </div>
-          </div>
-        </article>
-      ))}
+    <div class="projects-heading">
+      <div>
+        <h2 id="projects-title">Proyectos</h2>
+        <p class="section-subtitle">
+          Casos de estudio técnicos con foco en automatización, arquitectura e impacto operativo real.
+        </p>
+      </div>
     </div>
+
+    {featuredProject && (
+      <article class="project-card-featured">
+        <div class="project-card-media">
+          <img src={featuredProject.data.image.src} alt={featuredProject.data.image.alt} loading="lazy" />
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-kicker">
+            <span>{featuredProject.data.category}</span>
+            <span>{featuredProject.data.status}</span>
+          </div>
+          <h3>{featuredProject.data.title}</h3>
+          <p>{featuredProject.data.summary}</p>
+          {featuredProject.data.company && (
+            <p class="project-company">Desarrollado para {featuredProject.data.companyUrl ? (
+              <a href={featuredProject.data.companyUrl} target="_blank" rel="noopener noreferrer">{featuredProject.data.company}</a>
+            ) : featuredProject.data.company}</p>
+          )}
+          <dl class="project-card-impact"><dt>Impacto</dt><dd>{featuredProject.data.impact}</dd></dl>
+          <ul class="project-stack" aria-label={`Stack principal de ${featuredProject.data.title}`}>
+            {featuredProject.data.stack.slice(0, 4).map((tech) => <li>{tech}</li>)}
+          </ul>
+          <div class="project-card-actions" aria-label={`Enlaces de ${featuredProject.data.title}`}>
+            <a class="btn primary" href={`/projects/${featuredProject.slug}/`}>Ver caso de estudio</a>
+          </div>
+          {featuredProject.data.privateRepository && <p class="project-private-note">Código privado por confidencialidad.</p>}
+        </div>
+      </article>
+    )}
+
+    {secondaryProjects.length > 0 && (
+      <section class="other-projects" aria-labelledby="other-projects-title">
+        <h3 id="other-projects-title">Otros proyectos</h3>
+        <div class="secondary-projects-grid">
+          {secondaryProjects.map((project) => (
+            <article class="secondary-project-card">
+              <div class="secondary-project-media">
+                <img src={project.data.image.src} alt={project.data.image.alt} loading="lazy" />
+              </div>
+              <div class="secondary-project-body">
+                <div class="project-card-kicker">
+                  <span>{project.data.category}</span>
+                  <span>{project.data.status}</span>
+                </div>
+                <h4>{project.data.title}</h4>
+                <p class="secondary-project-summary">{project.data.summary}</p>
+                {project.data.company && (
+                  <p class="project-company">Desarrollado para {project.data.companyUrl ? (
+                    <a href={project.data.companyUrl} target="_blank" rel="noopener noreferrer">{project.data.company}</a>
+                  ) : project.data.company}</p>
+                )}
+                <ul class="project-stack" aria-label={`Stack principal de ${project.data.title}`}>
+                  {project.data.stack.slice(0, 4).map((tech) => <li>{tech}</li>)}
+                </ul>
+                <dl class="secondary-project-value"><dt>Valor principal</dt><dd>{project.data.impact}</dd></dl>
+                <div class="project-card-actions" aria-label={`Enlaces de ${project.data.title}`}>
+                  <a class="btn primary" href={`/projects/${project.slug}/`}>Ver proyecto</a>
+                  {project.data.playStoreUrl && <a class="btn ghost" href={project.data.playStoreUrl} target="_blank" rel="noopener noreferrer">Ver en Google Play</a>}
+                </div>
+                {project.data.privateRepository && <p class="project-private-note">Código privado por confidencialidad.</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
   </div>
 </section>

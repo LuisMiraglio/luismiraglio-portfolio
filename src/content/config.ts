@@ -20,7 +20,7 @@ const projects = defineCollection({
     category: z.string(),
     status: z.string(),
     featured: z.boolean().default(false),
-    year: z.number(),
+    year: z.number().optional(),
     role: z.array(z.string()),
     stack: z.array(z.string()),
     impact: z.string(),
@@ -33,6 +33,12 @@ const projects = defineCollection({
     videoUrl: z.string().url().optional(),
     privateRepository: z.boolean().default(false),
     company: z.string().optional(),
+    companyUrl: z.string().url().optional(),
+    playStoreUrl: z.string().url().optional(),
+    gallery: z.array(z.object({
+      src: z.string(),
+      alt: z.string(),
+    })).optional(),
     order: z.number(),
   }),
 });

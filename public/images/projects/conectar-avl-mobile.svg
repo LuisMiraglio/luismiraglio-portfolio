@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustración temporal de Conectar AVL Mobile</title><desc id="desc">Composición reemplazable de un teléfono móvil mostrando un mapa estilizado y la conexión segura con una API.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111b36"/><stop offset="1" stop-color="#0a1022"/></linearGradient><linearGradient id="map" x2="0" y2="1"><stop stop-color="#203c65"/><stop offset="1" stop-color="#142644"/></linearGradient></defs>
+  <rect width="960" height="420" rx="30" fill="url(#bg)"/>
+  <g opacity=".55" fill="none" stroke="#5f9dff" stroke-width="3"><path d="M0 92c150 70 270-20 410 43s286 23 550-30"/><path d="M0 325c190-90 300 30 460-46s320 18 500-38"/></g>
+  <g transform="translate(350 25)"><rect width="260" height="370" rx="38" fill="#090e1c" stroke="#76aaff" stroke-width="3"/><rect x="16" y="16" width="228" height="338" rx="28" fill="url(#map)"/><rect x="100" y="8" width="60" height="10" rx="5" fill="#76aaff"/>
+    <g fill="none" stroke="#8ab4f8" stroke-width="7" opacity=".65"><path d="M20 105c75 20 102-55 220-23"/><path d="M30 280c60-85 135-50 205-130"/><path d="M65 20c25 105 130 144 160 310"/></g>
+    <g transform="translate(128 175)"><path d="M0-50c-28 0-50 22-50 50 0 38 50 82 50 82S50 38 50 0C50-28 28-50 0-50z" fill="#5f9dff" stroke="#c8dcff" stroke-width="3"/><circle r="16" fill="#101a31"/></g>
+    <rect x="34" y="280" width="192" height="54" rx="15" fill="#0f1c35" stroke="#5f9dff"/><circle cx="62" cy="307" r="10" fill="#69d3a5"/><path d="M84 299h105m-105 16h72" stroke="#dbe8ff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <g font-family="system-ui,sans-serif" fill="#f6f8ff"><text x="80" y="180" font-size="28" font-weight="700">Vehículos</text><text x="80" y="218" font-size="28" font-weight="700">y recorridos</text><text x="80" y="258" fill="#9ebce8" font-size="17">Experiencia móvil</text><text x="690" y="190" font-size="24" font-weight="700">Flutter</text><text x="690" y="225" fill="#9ebce8" font-size="17">API propia</text><text x="690" y="254" fill="#9ebce8" font-size="17">Mapas</text></g>
+  <text x="920" y="395" text-anchor="end" fill="#7f98be" font-family="system-ui,sans-serif" font-size="13">Ilustración temporal reemplazable</text>
+</svg>

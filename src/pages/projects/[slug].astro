@@ -41,11 +41,20 @@ const canonical = `/projects/${project.slug}/`;
         <div class="project-detail-kicker">
           <span>{project.data.category}</span>
           <span>{project.data.status}</span>
-          <span>{project.data.year}</span>
+          {project.data.year && <span>{project.data.year}</span>}
         </div>
 
         <h1>{project.data.title}</h1>
         <p>{project.data.summary}</p>
+        {project.data.company && (
+          <p class="project-detail-company">
+            Desarrollado para {project.data.companyUrl ? (
+              <a href={project.data.companyUrl} target="_blank" rel="noopener noreferrer">
+                {project.data.company}
+              </a>
+            ) : project.data.company}
+          </p>
+        )}
       </header>
 
       <section
@@ -130,8 +139,32 @@ const canonical = `/projects/${project.slug}/`;
               </a>
             )
           }
+
+          {
+            project.data.playStoreUrl && (
+              <a
+                class="btn ghost"
+                href={project.data.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver en Google Play
+              </a>
+            )
+          }
         </div>
       </section>
+
+      {project.data.gallery?.length > 0 && (
+        <section class="project-gallery" aria-labelledby="project-gallery-title">
+          <h2 id="project-gallery-title">Galería</h2>
+          <ul>
+            {project.data.gallery.map((image) => (
+              <li><img src={image.src} alt={image.alt} loading="lazy" /></li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <div class="project-content">
         <Content />
